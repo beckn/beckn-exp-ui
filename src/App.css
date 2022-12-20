@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.beckn-app {
+  position: relative;
+  background: url("../public/assets/beckn-background.svg");
+  height: 100vh;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  display: grid;
+  align-content: center;
+  text-align: center;
+}
+.beckn-app-container {
+  max-width: 1600px;
+  width: 80%;
+  margin: 0 auto;
+}
