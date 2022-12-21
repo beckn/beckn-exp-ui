@@ -1,10 +1,11 @@
 import "./App.css";
+import MobilityCard from "./common/MobilityCard/MobilityCard";
 
 function App() {
   return (
     <div className="beckn-app">
       <div className="beckn-app-container">
-        <h3>Beckn Experience center</h3>
+        <MobilityCard />
       </div>
     </div>
   );

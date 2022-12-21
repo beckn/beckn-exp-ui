@@ -1,0 +1,160 @@
+.mobility-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  height: 60vh;
+  position: relative;
+}
+#mobility {
+  width: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#RHP {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#gateway {
+  width: 200px;
+  margin: 0 auto;
+}
+#gateway > div {
+  color: #fff;
+  padding: 10px 25px;
+  background: #000;
+  border-radius: 12px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+#MTP {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#whatsappMobility {
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.mobility-row img {
+  height: 200px;
+}
+.step {
+  height: 20px;
+  width: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.whatsapp-img {
+  width: 50px;
+  position: absolute;
+  left: 37.5%;
+  top: 34%;
+}
+.mobilityFooter {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.mobilityFooter .GWP {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.mobilityFooter .GWP > img {
+  width: 250px;
+  z-index: 99;
+  position: relative;
+}
+.mobilityFooter .MWP {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.mobilityFooter .MWP > img {
+  width: 160px;
+  z-index: 99;
+  position: relative;
+}
+.mobilityFooter .circle {
+  position: absolute !important;
+  left: 90px;
+  width: 160px !important;
+  z-index: 0 !important;
+}
+.GWP-text {
+  padding: 10px;
+  background: #d5ffce;
+  width: 190px;
+  margin: 0 0 0 auto;
+  margin-bottom: 60px;
+  border-radius: 12px;
+  position: relative;
+  font-size: 14px;
+}
+.GWP-text:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.GWP-text:after {
+  border-left: solid transparent 4px;
+  border-right: solid transparent 4px;
+  border-top: solid #d5ffce 60px;
+  bottom: -60px;
+  content: " ";
+  height: 0;
+  left: 25%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+.MWP-text {
+  padding: 10px;
+  background: #fff;
+  width: 170px;
+  margin: 0 auto;
+  border-radius: 12px;
+  position: relative;
+  font-size: 14px;
+  top: 0px;
+  left: -70px;
+}
+.MWP-text:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.MWP-text:after {
+  border-left: solid transparent 4px;
+  border-right: solid transparent 4px;
+  border-top: solid #fff 40px;
+  bottom: -35px;
+  content: " ";
+  height: 0;
+  left: 24%;
+  margin-left: 60px;
+  position: absolute;
+  width: 0;
+  transform: rotate(328deg);
+}

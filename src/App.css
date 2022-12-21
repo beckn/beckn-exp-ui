@@ -1,11 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Poppins;
 }
 .beckn-app {
   position: relative;
-  background: url("../public/assets/beckn-background.svg");
+  background: url("../src/assets/beckn-background.svg");
   height: 100vh;
   margin: 0 auto;
   background-size: cover;
@@ -16,7 +19,7 @@
   text-align: center;
 }
 .beckn-app-container {
-  max-width: 1600px;
-  width: 80%;
-  margin: 0 auto;
+  /* max-width: 1600px;
+  width: 70%;
+  margin: 0 auto; */
 }
