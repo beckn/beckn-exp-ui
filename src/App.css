@@ -12,7 +12,7 @@
   background-position: center center;
   background-attachment: fixed;
   display: grid;
-  align-content: center;
+  /* align-content: center; */
   text-align: center;
 }
 .beckn-app-container {

@@ -1,0 +1,20 @@
+.Title{
+    /* text-align: center;  */
+    font-family: 'Poppins';
+    font-style: normal;
+    color: white;
+    font-weight: 275;
+    padding-top: 75px;
+}
+
+.mainTitle{
+    font-size: 80px;
+    height: 240px;   
+    line-height: 120px;
+}
+
+.secTitle{
+    height: 90px;
+    font-size: 60px;
+    line-height: 90px;
+}

@@ -1,10 +1,11 @@
 import "./App.css";
+import TitleScreenContainer from "./common/TitleScreen/titleScreenContainer";
 
 function App() {
   return (
     <div className="beckn-app">
       <div className="beckn-app-container">
-        <h3>Beckn Experience center</h3>
+        <TitleScreenContainer/>
       </div>
     </div>
   );
