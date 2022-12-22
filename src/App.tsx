@@ -10,6 +10,7 @@ import ScanQrForTravelBuddy from "./rider/scanQrForTravelBuddy";
 import MobilityCard from "./common/MobilityCard/MobilityCard";
 import { useRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import AcceptRideForTaxiHub from "./driver/AcceptRideforTaxiHub";
 function App() {
   const useInterval = (callback: any, delay: any) => {
     const savedCallback = useRef() as any;
@@ -53,6 +54,10 @@ function App() {
           <Route
             path="/MobilityCard"
             element={<MobilityCard useInterval={useInterval} expId={expId} />}
+          />
+          <Route
+            path="/acceptRideForTaxiHub"
+            element={<AcceptRideForTaxiHub />}
           />
         </Routes>
       </Router>
