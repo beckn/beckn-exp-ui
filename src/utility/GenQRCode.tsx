@@ -5,7 +5,7 @@ interface Props {
 }
 const GenQRCode = ({ expId }: Props) => {
   const [data, setData] = useState(
-    `https://taxibap-staging.becknprotocol.io/?${expId}`
+    `https://taxibap-staging.becknprotocol.io?${expId}`
   );
 
   // console.log(expId);
