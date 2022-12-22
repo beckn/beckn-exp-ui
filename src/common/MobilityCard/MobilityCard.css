@@ -8,57 +8,86 @@
   height: 60vh;
   position: relative;
 }
-#mobility {
-  width: 200px;
+.mobility {
+  width: 130px;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+}
+.bordermobility {
+  width: 150px;
   position: absolute;
   left: 0;
   top: 0;
+  height: 150px;
+  border: 2px solid #fff;
 }
-#RHP {
-  width: 200px;
+.RHP,
+.borderRHP {
+  width: 130px;
   position: absolute;
   right: 0;
   top: 0;
+  height: 130px;
+  display: flex;
+  align-items: center;
 }
-#gateway {
-  width: 200px;
+.gateway,
+.bordergateway {
+  width: 110px;
   margin: 0 auto;
+  background: none !important;
 }
-#gateway > div {
+.gateway > div {
   color: #fff;
-  padding: 10px 25px;
-  background: #000;
+  background: #000 !important;
   border-radius: 12px;
-  max-width: 200px;
+  max-width: 100px;
   margin: 0 auto;
+  height: 100px;
+  border-radius: 50%;
+  display: grid;
+  align-content: center;
 }
-#MTP {
-  width: 200px;
+.MTP,
+.borderMTP {
+  width: 130px;
+  height: 130px;
   position: absolute;
   right: 0;
   bottom: 0;
+  display: flex;
+  align-items: center;
 }
-#whatsappMobility {
-  width: 200px;
+.whatsappMobility,
+.borderwhatsappMobility {
+  width: 130px;
   position: absolute;
-  bottom: 0;
   left: 0;
+  bottom: 0;
+  height: 130px;
+  display: flex;
+  align-items: center;
 }
 .mobility-row img {
-  height: 200px;
+  height: 80px;
+  margin: 0 auto;
 }
 .step {
   height: 20px;
   width: 20px;
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: #fff;
 }
-.whatsapp-img {
+/* .whatsapp-img {
   width: 50px;
   position: absolute;
   left: 37.5%;
   top: 34%;
-}
+} */
 .mobilityFooter {
   display: flex;
   justify-content: space-between;
@@ -82,14 +111,14 @@
   right: 0;
 }
 .mobilityFooter .MWP > img {
-  width: 160px;
+  width: 130px;
   z-index: 99;
   position: relative;
 }
 .mobilityFooter .circle {
   position: absolute !important;
   left: 90px;
-  width: 160px !important;
+  width: 130px !important;
   z-index: 0 !important;
 }
 .GWP-text {
@@ -157,4 +186,14 @@
   position: absolute;
   width: 0;
   transform: rotate(328deg);
+}
+
+.eventMessage {
+  position: absolute;
+  color: #fff;
+  font-size: 14px;
+  top: 23px;
+}
+.event_9 {
+  transform: rotate(50deg);
 }

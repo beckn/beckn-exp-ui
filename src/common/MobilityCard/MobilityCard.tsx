@@ -1,4 +1,3 @@
-import { ArcherContainer, ArcherElement } from "react-archer";
 import myMobility from "../../assets/myMobility.svg";
 import RHP from "../../assets/RHP.svg";
 import whatsappMobility from "../../assets/whatsappMobility.svg";
@@ -39,11 +38,14 @@ const CardMobility = (props: any) => {
       <div className="mobility-row">
         {mobilityCardArr.map((ele, ind) => {
           return (
-            <div id={ele.id}>
-              {ele.img ? <img src={ele.img} alt="" /> : <div>{ele.title}</div>}
-              {ele.img === `${whatsappMobility}` ? (
-                <img className="whatsapp-img " src={whatsapp} alt="" />
-              ) : null}
+            <div className={`border${ele.id}`} id={ele.id}>
+              <div className={ele.id} style={{ background: "#ACD1F0" }}>
+                {ele.img ? (
+                  <img src={ele.img} alt="" />
+                ) : (
+                  <div>{ele.title}</div>
+                )}
+              </div>
             </div>
           );
         })}
@@ -68,19 +70,77 @@ const MobilityCard = () => {
     {
       sourceId: "mobility",
       targetId: "gateway",
-      step: 1,
+      step: 9,
+      eventMessage: "Searching",
+    },
+    {
+      sourceId: "gateway",
+      targetId: "RHP",
+      step: 2,
     },
     {
       sourceId: "gateway",
       targetId: "MTP",
       step: 2,
     },
-    {
-      sourceId: "mobility",
-      targetId: "RHP",
-      step: 3,
-    },
+    // {
+    //   sourceId: "RHP",
+    //   targetId: "gateway",
+    //   step: 3,
+    // eventMessage: "receiving catalogues",
+    // },
+    // {
+    //   sourceId: "MTP",
+    //   targetId: "gateway",
+    //   step: 3,
+    // eventMessage: "receiving catalogues",
+    // },
+    // {
+    //   sourceId: "gateway",
+    //   targetId: "mobility",
+    //   step: 4,
+    // eventMessage: "forwarding catalogues",
+    // },
+    // {
+    //   sourceId: "mobility",
+    //   targetId: "RHP",
+    //   step: 5,
+    // },
+    // {
+    //   sourceId: "mobility",
+    //   targetId: "RHP",
+    //   step: 6,
+    //   eventMessage: "product selected",
+    // },
+    // {
+    //   sourceId: "RHP",
+    //   targetId: "mobility",
+    //   step: 7,
+    //   eventMessage: "receiving quote",
+    // },
+    // {
+    //   sourceId: "mobility",
+    //   targetId: "RHP",
+    //   step: 8,
+    //   eventMessage: "initiating ride",
+    // },
+    // {
+    //   sourceId: "mobility",
+    //   targetId: "RHP",
+    //   step: 7,
+    //   eventMessage: "confirming ride",
+    // },
   ];
+
+  const setStepColor = (step: number) => {
+    if (step === 1 || step === 2) {
+      return " #23DFDF";
+    } else if (step === 3) {
+      return "#FB1E1E";
+    } else {
+      return "#fff";
+    }
+  };
 
   return (
     <div>
@@ -92,11 +152,21 @@ const MobilityCard = () => {
               <Xarrow
                 start={ele.sourceId}
                 end={ele.targetId}
-                lineColor={"#fff"}
-                headColor={"#fff"}
+                lineColor={setStepColor(ele.step)}
+                headColor={setStepColor(ele.step)}
                 path={"straight"}
-                labels={<div className="step">{ele.step}</div>}
+                labels={{
+                  start: (
+                    <h3 className={`eventMessage event_${ele.step}`}>
+                      Searching
+                    </h3>
+                  ),
+                  middle: <div className="step">{ele.step}</div>,
+                }}
               />
+              {/* {ele.eventMessage && (
+                <h3 className="eventMessage">{ele.eventMessage}</h3>
+              )} */}
             </>
           );
         })}
