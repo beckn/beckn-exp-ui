@@ -4,7 +4,11 @@ import Lady from "../assets/lady.svg";
 import Qr from "../assets/Qr.svg";
 import GenQRCode from "../utility/GenQRCode";
 
-const DriverATaxi = () => {
+interface Props {
+  expId: string;
+}
+
+const DriverATaxi = ({ expId }: Props) => {
   return (
     <div>
       <QrScanner
@@ -12,7 +16,7 @@ const DriverATaxi = () => {
         desccription={
           "Please pick up the device on your right and scan the QR code"
         }
-        logo={<GenQRCode/>}
+        logo={<GenQRCode expId={expId} />}
       />
     </div>
   );

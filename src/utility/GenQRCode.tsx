@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import QRcode from "react-qr-code";
-import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
-
-const GenQRCode: React.FC = () => {
-  const expId = uuidv4();
+interface Props {
+  expId: string;
+}
+const GenQRCode = ({ expId }: Props) => {
   const [data, setData] = useState(
     `https://taxibap-staging.becknprotocol.io/?experience_id:${expId}`
   );
@@ -19,9 +18,7 @@ const GenQRCode: React.FC = () => {
   // }, [])
   return (
     <div>
-      <QRcode style={{width:"180px", opacity:"0.5"}} value={data} 
-      
-      />
+      <QRcode style={{ width: "180px", opacity: "0.5" }} value={data} />
     </div>
   );
 };
