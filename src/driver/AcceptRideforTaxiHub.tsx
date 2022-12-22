@@ -1,15 +1,13 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { Link } from "react-router-dom";
 import BecknLogoIcon from "../assets/becknLogoIcon.svg";
 import Title from "../common/title";
 import CardWithContent from "../common/cardWithContent";
-import VisualiseIccon from "../assets/VisualizeIcon.svg";
-import BulbIcon from "../assets/bulbIcon.svg";
 import TiltArrow from "../assets/tiltArrow.svg";
-import driveTaxi from "../assets/driveTaxi.svg";
-import bookRideLogo from "../assets/bookRideLogo.svg";
-const ChoiceToDo = () => {
+import taxiIcon from "../assets/taxiIcon.svg";
+import yatriIcon from "../assets/yatriIcon.svg";
+import { Link } from "react-router-dom";
+const AcceptRideForTaxiHub = () => {
   return (
     <Box className="main-container" style={{ width: "100%" }}>
       <Box>
@@ -29,7 +27,7 @@ const ChoiceToDo = () => {
           }}
         >
           <Title
-            titleText={"what do you want to do?"}
+            titleText={"select platform to accept rides"}
             className="visualizationTitle"
           />
         </Box>
@@ -38,24 +36,24 @@ const ChoiceToDo = () => {
         >
           <Box style={{ marginTop: "80px", display: "flex" }}>
             <Link
-              to="/TravelBuddy"
+              to="/DriverATaxi"
               style={{ textDecoration: "none", color: "#000" }}
             >
               <CardWithContent
-                mainIconUrl={bookRideLogo}
+                mainIconUrl={taxiIcon}
                 arrowIconUrl={TiltArrow}
-                MainTitle={"book a ride"}
-                subTitle={"be a passenger"}
+                MainTitle={"taxi hub"}
+                subTitle={"local taxi application"}
               />
             </Link>
             <Link
-              to="/acceptRideForTaxiHub"
+              to="/useWhatsapp"
               style={{ textDecoration: "none", color: "#000" }}
             >
               <CardWithContent
-                mainIconUrl={driveTaxi}
+                mainIconUrl={yatriIcon}
                 arrowIconUrl={TiltArrow}
-                MainTitle={"drive a taxi"}
+                MainTitle={"yatri partner"}
                 subTitle={"recieve a ride request"}
               />
             </Link>
@@ -67,4 +65,4 @@ const ChoiceToDo = () => {
   );
 };
 
-export default ChoiceToDo;
+export default AcceptRideForTaxiHub;
