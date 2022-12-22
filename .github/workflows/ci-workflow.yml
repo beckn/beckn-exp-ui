@@ -12,7 +12,7 @@ jobs:
     - name: deploying changes
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.BACKENDHOST }}
+        host: ${{ secrets.FRONTENDHOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
