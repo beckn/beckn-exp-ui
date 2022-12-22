@@ -1,0 +1,27 @@
+name: Deploying exp-ui
+on:
+  push:
+    branches:
+    - main
+ 
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploying changes
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.BACKENDHOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd beckn-exp-ui
+          git checkout main
+          git pull
+          npm install
+          npm run build
+          sleep 10
+          pm2 kill
+          pm2 serve build 3000 --spa
