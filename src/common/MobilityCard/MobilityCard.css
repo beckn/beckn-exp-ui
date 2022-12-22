@@ -1,0 +1,238 @@
+.mobility-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  height: 70vh;
+  position: relative;
+}
+#mobility {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+.mobility {
+  width: 130px;
+  height: 130px;
+  display: grid;
+  align-content: center;
+}
+.bordermobility {
+  width: 130px;
+  height: 130px;
+  display: grid;
+  align-content: center;
+  margin: 40px 80px;
+}
+#RHP {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+.RHP,
+.borderRHP {
+  width: 130px;
+  height: 130px;
+  display: grid;
+  align-content: center;
+  margin: 40px;
+}
+#gateway {
+  margin: 0 auto;
+  background: none !important;
+  display: grid;
+  align-content: end;
+}
+.gateway,
+.bordergateway {
+  width: 110px;
+  margin: 0 auto;
+  background: none !important;
+}
+.gateway > div {
+  color: #fff;
+  background: #000 !important;
+  border-radius: 12px;
+  max-width: 100px;
+  margin: 0 auto;
+  height: 100px;
+  border-radius: 50%;
+  display: grid;
+  align-content: center;
+}
+#MTP {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+.MTP,
+.borderMTP {
+  width: 130px;
+  height: 130px;
+  display: grid;
+  align-content: center;
+  margin: 40px;
+}
+#whatsappMobility {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+.whatsappMobility,
+.borderwhatsappMobility {
+  width: 130px;
+  height: 130px;
+  display: grid;
+  align-content: center;
+}
+
+.borderwhatsappMobility {
+  margin: 40px 80px;
+}
+.mobility-row img {
+  height: 80px;
+  margin: 0 auto;
+}
+.step {
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+/* .whatsapp-img {
+  width: 50px;
+  position: absolute;
+  left: 37.5%;
+  top: 34%;
+} */
+.mobilityFooter {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.mobilityFooter .GWP {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.mobilityFooter .GWP > img {
+  width: 250px;
+  z-index: 99;
+  position: relative;
+}
+.mobilityFooter .MWP {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.mobilityFooter .MWP > img {
+  width: 130px;
+  z-index: 99;
+  position: relative;
+}
+.mobilityFooter .circle {
+  position: absolute !important;
+  left: 90px;
+  width: 130px !important;
+  z-index: 0 !important;
+}
+.GWP-text {
+  padding: 10px;
+  background: #d5ffce;
+  width: 190px;
+  margin: 0 0 0 auto;
+  margin-bottom: 60px;
+  border-radius: 12px;
+  position: relative;
+  font-size: 14px;
+}
+.GWP-text:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.GWP-text:after {
+  border-left: solid transparent 4px;
+  border-right: solid transparent 4px;
+  border-top: solid #d5ffce 60px;
+  bottom: -60px;
+  content: " ";
+  height: 0;
+  left: 25%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+.MWP-text {
+  padding: 10px;
+  background: #fff;
+  width: 170px;
+  margin: 0 auto;
+  border-radius: 12px;
+  position: relative;
+  font-size: 14px;
+  top: 0px;
+  left: -70px;
+}
+.MWP-text:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.MWP-text:after {
+  border-left: solid transparent 4px;
+  border-right: solid transparent 4px;
+  border-top: solid #fff 40px;
+  bottom: -35px;
+  content: " ";
+  height: 0;
+  left: 24%;
+  margin-left: 60px;
+  position: absolute;
+  width: 0;
+  transform: rotate(328deg);
+}
+
+.eventMessage {
+  position: absolute;
+  color: #fff;
+  font-size: 14px;
+  top: -15px;
+}
+
+.Xarrow:not(:last-child) svg {
+  padding-top: 30px !important;
+  height: auto !important;
+}
+
+.Xarrow:not(:last-child) .step {
+  margin-top: 58px !important;
+}
+.Xarrow:not(:last-child) .eventMessage {
+  margin-top: 30px !important;
+}
+/* .event_9 {
+  transform: rotate(50deg);
+} */
