@@ -93,19 +93,18 @@ const MobilityCard = ({ useInterval, expId }: Props) => {
 
   useInterval(() => {
     fetchEvent();
-    console.log("first-->", events);
   }, 2000);
 
-  const setStepColor = (step: number) => {
-    if (step === 1 || step === 2) {
-      return " #23DFDF";
-    } else if (step === 3) {
-      return "#FB1E1E";
-    } else {
-      return "#fff";
-    }
-  };
-  console.log("events-ujjawal", events);
+  // const setStepColor = (step: number) => {
+  //   if (step === 1 || step === 2) {
+  //     return " #23DFDF";
+  //   } else if (step === 3) {
+  //     return "#FB1E1E";
+  //   } else {
+  //     return "#fff";
+  //   }
+  // };
+
   if (events.length === 0) {
     return (
       <div>
