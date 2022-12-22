@@ -3,9 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-.beckn-app {
-  position: relative;
+
+ .beckn-app {
   background: url("../public/assets/beckn-background.svg");
+  position: relative;
   height: 100vh;
   margin: 0 auto;
   background-size: cover;
@@ -14,9 +15,40 @@
   display: grid;
   align-content: center;
   text-align: center;
-}
+} 
+
 .beckn-app-container {
   max-width: 1600px;
   width: 80%;
   margin: 0 auto;
+  font-family: 'Poppins';
+}
+
+.main-container{
+  background: url("../public/assets/beckn-background.svg");
+  height: 100vh;
+}
+
+.button-container{
+    border: 1px solid #ABD4FA !important;
+    color: #ABD4FA;
+    width: 220px;
+    font-size: 12px;
+    height: 45px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.Title{
+    font-family: 'Poppins';
+    font-style: normal;
+    color: white;
+    font-weight: 275;
+    /* padding-top: 75px; */
+  }
+  .visualizationTitle{
+    font-size: 60px;
+    height: 130px;   
+    line-height: 120px;
+    
 }
