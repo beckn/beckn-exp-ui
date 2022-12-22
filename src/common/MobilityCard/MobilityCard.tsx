@@ -23,7 +23,7 @@ const CardMobility = (props: any) => {
     },
 
     {
-      title: "Getway",
+      title: "Gateway",
       id: "gateway",
     },
     {
@@ -70,28 +70,31 @@ const CardMobility = (props: any) => {
 };
 interface Props {
   useInterval: (callback: any, delay: any) => void;
+  expId: string;
 }
-const MobilityCard = ({ useInterval }: Props) => {
-  const [events, setEvents] = useState([]);
-  
-  
-  
+const MobilityCard = ({ useInterval, expId }: Props) => {
+  const [events, setEvents] = useState<any>([]);
 
-  const experienceId = "exp-123";
   const fetchEvent = async () => {
-    const res = await axios.get(
-      `https://api.experience.becknprotocol.io/event/${experienceId}`
-    );
-    setEvents(res.data.events);
+    try {
+      const res = await axios.get(
+        `https://api.experience.becknprotocol.io/event/${expId}`
+      );
+
+      setEvents(res.data.events);
+    } catch (err) {
+      console.log(`err ${err}`);
+    }
   };
   useEffect(() => {
-    fetchEvent();
+    // fetchEvent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
   useInterval(() => {
     fetchEvent();
-    console.log('first-->', events)
-  }, 5000);
+    console.log("first-->", events);
+  }, 2000);
 
   const setStepColor = (step: number) => {
     if (step === 1 || step === 2) {
@@ -102,7 +105,73 @@ const MobilityCard = ({ useInterval }: Props) => {
       return "#fff";
     }
   };
-
+  console.log("events-ujjawal", events);
+  if (events.length === 0) {
+    return (
+      <div>
+        {/* <Xwrapper>
+      <CardMobility />
+      {events.map((ele, ind) => {
+        return (
+          <div className="Xarrow">
+            <Xarrow
+              start={ele.sourceId}
+              end={ele.targetId}
+              lineColor={setStepColor(ele.step)}
+              headColor={setStepColor(ele.step)}
+              path={"straight"}
+              labels={{
+                start: (
+                  <h3 className={`eventMessage event_${ele.step}`}>
+                    Searching
+                  </h3>
+                ),
+                middle: <div className="step">{ele.step}</div>,
+              }}
+            />
+          </div>
+        );
+      })}
+    </Xwrapper> */}
+        <Xwrapper>
+          <CardMobility />
+          {/* {events.map(
+        (
+          ele: {
+            event_source_id: any;
+            event_destination_id: any;
+            event_id: any;
+            event_code: any;
+          },
+          ind
+        ) => {
+          return (
+            <>
+              <Xarrow
+                start={ele?.event_source_id}
+                end={ele?.event_destination_id}
+                lineColor={"#fff"}
+                headColor={"#fff"}
+                path={"straight"}
+                labels={<div className="step">{ele?.event_code}</div>}
+                animateDrawing={true}
+              />
+            </>
+          );
+        }
+      )} */}
+          <Xarrow
+            start={null as any}
+            end={null as any}
+            lineColor={"#fff"}
+            headColor={"#fff"}
+            path={"straight"}
+            animateDrawing={true}
+          />
+        </Xwrapper>
+      </div>
+    );
+  }
   return (
     <div>
       {/* <Xwrapper>
@@ -131,12 +200,13 @@ const MobilityCard = ({ useInterval }: Props) => {
       </Xwrapper> */}
       <Xwrapper>
         <CardMobility />
-        {events.map(
+        {/* {events.map(
           (
             ele: {
               event_source_id: any;
               event_destination_id: any;
               event_id: any;
+              event_code: any;
             },
             ind
           ) => {
@@ -148,12 +218,22 @@ const MobilityCard = ({ useInterval }: Props) => {
                   lineColor={"#fff"}
                   headColor={"#fff"}
                   path={"straight"}
-                  labels={<div className="step">{ele?.event_id}</div>}
+                  labels={<div className="step">{ele?.event_code}</div>}
+                  animateDrawing={true}
                 />
               </>
             );
           }
-        )}
+        )} */}
+        <Xarrow
+          start={events[0].event_source_id}
+          end={events[0].event_destination_id}
+          lineColor={"#fff"}
+          headColor={"#fff"}
+          path={"straight"}
+          labels={<div className="step">{events[0].event_code}</div>}
+          animateDrawing={true}
+        />
       </Xwrapper>
     </div>
   );

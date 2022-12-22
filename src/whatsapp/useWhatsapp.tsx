@@ -3,7 +3,11 @@ import QrScanner from "../common/qrScanner";
 import Lady from "../assets/lady.svg";
 import GenQRCode from "../utility/GenQRCode";
 
-const useWhatsapp = () => {
+interface Props {
+  expId: string;
+}
+
+const useWhatsapp = ({ expId }: Props) => {
   return (
     <div>
       <QrScanner
@@ -11,7 +15,7 @@ const useWhatsapp = () => {
         desccription={
           "Please pick up the device on your right and scan the QR code"
         }
-        logo={<GenQRCode/>}
+        logo={<GenQRCode expId={expId} />}
       />
     </div>
   );
