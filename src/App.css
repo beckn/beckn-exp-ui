@@ -2,9 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
- .beckn-app {
+.beckn-app {
   background: url("../public/assets/beckn-background.svg");
   position: relative;
   height: 100vh;
@@ -15,40 +16,94 @@
   display: grid;
   align-content: center;
   text-align: center;
-} 
+}
 
 .beckn-app-container {
   max-width: 1600px;
   width: 80%;
   margin: 0 auto;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
-.main-container{
+.main-container {
   background: url("../public/assets/beckn-background.svg");
   height: 100vh;
 }
 
-.button-container{
-    border: 1px solid #ABD4FA !important;
-    color: #ABD4FA;
-    width: 220px;
-    font-size: 12px;
-    height: 45px;
-    display: flex;
-    justify-content: flex-start;
+.button-container {
+  border: 1px solid #abd4fa !important;
+  color: #abd4fa;
+  width: 220px;
+  font-size: 12px;
+  height: 45px;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.Title{
-    font-family: 'Poppins';
-    font-style: normal;
-    color: white;
-    font-weight: 275;
-    /* padding-top: 75px; */
-  }
-  .visualizationTitle{
-    font-size: 60px;
-    height: 130px;   
-    line-height: 120px;
-    
+.Title {
+  font-family: "Poppins";
+  font-style: normal;
+  color: white;
+  font-weight: 275;
+  /* padding-top: 75px; */
+}
+.visualizationTitle {
+  font-size: 60px;
+  height: 130px;
+  line-height: 120px;
+}
+
+.image-url-container img:nth-child(2) {
+  display: none;
+}
+
+.image-url-container:hover img:nth-child(1) {
+  display: none;
+}
+
+.image-url-container:hover img:nth-child(2) {
+  display: block;
+}
+.hover_card:hover {
+  background: #abd4fa !important;
+}
+.image-url-container img:nth-child(2) {
+  display: none;
+}
+.hover_card:hover .css-a0tfil-MuiTypography-root,
+.hover_card:hover .css-1nbruak-MuiTypography-root {
+  color: #000 !important;
+}
+.hover_card:hover .image-url-container img:nth-child(1) {
+  display: none;
+}
+.hover_card:hover .image-url-container img:nth-child(2) {
+  display: block;
+}
+.image-url-container img:nth-child(2) {
+  display: none;
+}
+
+.image-url-container:hover img:nth-child(1) {
+  display: none;
+}
+
+.image-url-container:hover img:nth-child(2) {
+  display: block;
+}
+.hover_card:hover {
+  background: #abd4fa !important;
+}
+.image-url-container img:nth-child(2) {
+  display: none;
+}
+.hover_card:hover .css-a0tfil-MuiTypography-root,
+.hover_card:hover .css-1nbruak-MuiTypography-root {
+  color: #000 !important;
+}
+.hover_card:hover .image-url-container img:nth-child(1) {
+  display: none;
+}
+.hover_card:hover .image-url-container img:nth-child(2) {
+  display: block;
 }
