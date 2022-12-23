@@ -7,7 +7,9 @@ import CardWithContent from "../common/cardWithContent";
 import VisualiseIccon from "../assets/VisualizeIcon.svg";
 import BulbIcon from "../assets/bulbIcon.svg";
 import TiltArrow from "../assets/tiltArrow.svg";
-
+import VisuliseIconinBlack from "../../src/assets/VisuliseIconinBlack.svg";
+import tiltArrowblack from "../assets/tiltArrowblack.svg";
+import BulbIconBlack from "../assets/bulbIconBlack.svg";
 const VisualizeAction = () => {
   return (
     <Box
@@ -27,15 +29,24 @@ const VisualizeAction = () => {
           />
         </Box>
         <Box style={{ marginTop: "40px", display: "flex" }}>
-          <Link to="/ChoiceToDo" style={{ textDecoration: "none", color: "#000" }}>
-          <CardWithContent
-            mainIconUrl={VisualiseIccon}
-            arrowIconUrl={TiltArrow}
-            MainTitle={"visualise beckn in action "}
-            subTitle={"experience beckn enabled live"}
-          />
+          <Link
+            to="/ChoiceToDo"
+            style={{ textDecoration: "none", color: "#000" }}
+          >
+            <CardWithContent
+              mainIconUrlInBlack={VisuliseIconinBlack}
+              arrowIconInBlackColor={tiltArrowblack}
+              className="hover_card"
+              mainIconUrl={VisualiseIccon}
+              arrowIconUrl={TiltArrow}
+              MainTitle={"visualise beckn in action "}
+              subTitle={"experience beckn enabled live"}
+            />
           </Link>
           <CardWithContent
+            mainIconUrlInBlack={BulbIconBlack}
+            arrowIconInBlackColor={tiltArrowblack}
+            className="hover_card"
             mainIconUrl={BulbIcon}
             arrowIconUrl={TiltArrow}
             MainTitle={"learn about beckn"}

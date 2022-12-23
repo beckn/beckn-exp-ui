@@ -9,6 +9,9 @@ import BulbIcon from "../assets/bulbIcon.svg";
 import TiltArrow from "../assets/tiltArrow.svg";
 import driveTaxi from "../assets/driveTaxi.svg";
 import bookRideLogo from "../assets/bookRideLogo.svg";
+import bookRideLogoBlack from "../assets/bookRideLogoBlack.svg";
+import tiltArrowblack from "../assets/tiltArrowblack.svg";
+import driveTaxiBlack from "../assets/driveTaxiBlack.svg";
 const ChoiceToDo = () => {
   return (
     <Box className="main-container" style={{ width: "100%" }}>
@@ -42,6 +45,9 @@ const ChoiceToDo = () => {
               style={{ textDecoration: "none", color: "#000" }}
             >
               <CardWithContent
+                mainIconUrlInBlack={bookRideLogoBlack}
+                arrowIconInBlackColor={tiltArrowblack}
+                className="hover_card"
                 mainIconUrl={bookRideLogo}
                 arrowIconUrl={TiltArrow}
                 MainTitle={"book a ride"}
@@ -53,6 +59,9 @@ const ChoiceToDo = () => {
               style={{ textDecoration: "none", color: "#000" }}
             >
               <CardWithContent
+                mainIconUrlInBlack={driveTaxiBlack}
+                arrowIconInBlackColor={tiltArrowblack}
+                className="hover_card"
                 mainIconUrl={driveTaxi}
                 arrowIconUrl={TiltArrow}
                 MainTitle={"drive a taxi"}

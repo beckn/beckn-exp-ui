@@ -7,6 +7,8 @@ import TiltArrow from "../assets/tiltArrow.svg";
 import taxiIcon from "../assets/taxiIcon.svg";
 import yatriIcon from "../assets/yatriIcon.svg";
 import { Link } from "react-router-dom";
+import tiltArrowblack from "../assets/tiltArrowblack.svg";
+
 const AcceptRideForTaxiHub = () => {
   return (
     <Box className="main-container" style={{ width: "100%" }}>
@@ -40,8 +42,11 @@ const AcceptRideForTaxiHub = () => {
               style={{ textDecoration: "none", color: "#000" }}
             >
               <CardWithContent
+                mainIconUrlInBlack={taxiIcon}
+                arrowIconInBlackColor={tiltArrowblack}
                 mainIconUrl={taxiIcon}
                 arrowIconUrl={TiltArrow}
+                className="hover_card"
                 MainTitle={"taxi hub"}
                 subTitle={"local taxi application"}
               />
@@ -51,8 +56,11 @@ const AcceptRideForTaxiHub = () => {
               style={{ textDecoration: "none", color: "#000" }}
             >
               <CardWithContent
+                mainIconUrlInBlack={yatriIcon}
+                arrowIconInBlackColor={tiltArrowblack}
                 mainIconUrl={yatriIcon}
                 arrowIconUrl={TiltArrow}
+                className="hover_card"
                 MainTitle={"yatri partner"}
                 subTitle={"recieve a ride request"}
               />
