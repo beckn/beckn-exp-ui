@@ -11,6 +11,11 @@ import MobilityCard from "./common/MobilityCard/MobilityCard";
 import { useRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import AcceptRideForTaxiHub from "./driver/AcceptRideforTaxiHub";
+import WhatWouldYouDoLikeToNext from "./Feedback/whatWouldYouDoLikeToNext";
+import ThankYouForVisitBecknExpCenter from "./assets/thankYouForVisitBecknExpCenter";
+import YourFeedbackIsValubleForUs from "./Feedback/YourFeedbackIsValubleForUs";
+import DidYouLikeBecknExp from "./Feedback/DidYouLikeBecknExp";
+import ImproveTheExp from "./Feedback/ImproveTheExp";
 function App() {
   const useInterval = (callback: any, delay: any) => {
     const savedCallback = useRef() as any;
@@ -59,18 +64,22 @@ function App() {
             path="/acceptRideForTaxiHub"
             element={<AcceptRideForTaxiHub />}
           />
+          <Route
+            path="/WhatWouldYouDoLikeToNext"
+            element={<WhatWouldYouDoLikeToNext />}
+          />
+          <Route
+            path="/thankYouForVisitBecknExpCenter"
+            element={<ThankYouForVisitBecknExpCenter />}
+          />
+          <Route
+            path="/yourFeedbackIsValubleForUs"
+            element={<YourFeedbackIsValubleForUs />}
+          />
+          <Route path="/didYouLikeBecknExp" element={<DidYouLikeBecknExp />} />
+          <Route path="/improveTheExp" element={<ImproveTheExp />} />
         </Routes>
       </Router>
-      {/* <div className="beckn-app-container"> */}
-      {/* <h3>Beckn Experience center</h3> */}
-      {/* <Navbar/> */}
-      {/* <Layout /> */}
-      {/* <WelcomeToExpCenter/> */}
-      {/* <VisualizeAction/> */}
-      {/* <ChoiceToDo/> */}
-      {/* <TravelBuddy/> */}
-      {/* <DriverATaxi/> */}
-      {/* </div> */}
     </div>
   );
 }
