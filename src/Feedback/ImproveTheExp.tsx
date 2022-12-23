@@ -30,6 +30,7 @@ const ImproveTheExp = () => {
             width: "360px",
             marginTop: "30px",
             background: "#1E1E1E",
+            color: "#fff",
           }}
           name="textarea"
           id="textarea"

@@ -1,7 +1,6 @@
 import myMobility from "../../assets/myMobility.svg";
 import RHP from "../../assets/RHP.svg";
 import whatsappMobility from "../../assets/whatsappMobility.svg";
-import whatsapp from "../../assets/whatsapp.svg";
 import MTP from "../../assets/MTP.svg";
 import GWP from "../../assets/girlWithPhone.svg";
 import MWP from "../../assets/menWithPhone.svg";
@@ -57,14 +56,14 @@ const CardMobility = (props: any) => {
       </div>
       <div className="mobilityFooter">
         <div className="GWP">
-          <div className="GWP-text">Hello world</div>
+          <div className="GWP-text">{props.riderText}</div>
 
           <img src={GWP} alt="" />
 
           <img className="circle" src={circle} alt="" />
         </div>
         <div className="MWP">
-          <div className="MWP-text">Hello world</div>
+          <div className="MWP-text">{props.driverText}</div>
           <Link to="/WhatWouldYouDoLikeToNext">
             <img src={MWP} alt="" />
           </Link>
@@ -128,7 +127,6 @@ const MobilityCard = ({ useInterval, expId }: Props) => {
       })}
     </Xwrapper> */}
         <Xwrapper>
-          <CardMobility />
           {/* {events.map(
         (
           ele: {
@@ -154,6 +152,7 @@ const MobilityCard = ({ useInterval, expId }: Props) => {
           );
         }
       )} */}
+          <CardMobility driverText={"driver"} riderText={"rider"} />
           <Xarrow
             start={null as any}
             end={null as any}
@@ -166,6 +165,12 @@ const MobilityCard = ({ useInterval, expId }: Props) => {
       </div>
     );
   }
+  // if (
+  //   events.length > 0 &&
+  //   events[0].event_code === "recieved_payconfirmation"
+  // ) {
+  //   window.location.href = "/";
+  // }
   return (
     <div>
       {/* <Xwrapper>
@@ -193,7 +198,10 @@ const MobilityCard = ({ useInterval, expId }: Props) => {
         })}
       </Xwrapper> */}
       <Xwrapper>
-        <CardMobility />
+        <CardMobility
+          driverText={"driver"}
+          riderText={events[0].event_message}
+        />
         {/* {events.map(
           (
             ele: {
@@ -225,7 +233,7 @@ const MobilityCard = ({ useInterval, expId }: Props) => {
           lineColor={"#fff"}
           headColor={"#fff"}
           path={"straight"}
-          labels={<div className="step">{events[0].event_code}</div>}
+          labels={<div className="step">{events[0].event_title}</div>}
           animateDrawing={true}
         />
       </Xwrapper>
