@@ -10,6 +10,7 @@ import "./MobilityCard.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CardMobility = (props: any) => {
   const mobilityCardArr = [
@@ -56,13 +57,17 @@ const CardMobility = (props: any) => {
       </div>
       <div className="mobilityFooter">
         <div className="GWP">
-          <div className="GWP-text">Hello word</div>
+          <div className="GWP-text">Hello world</div>
+
           <img src={GWP} alt="" />
+
           <img className="circle" src={circle} alt="" />
         </div>
         <div className="MWP">
-          <div className="MWP-text">Hello word</div>
-          <img src={MWP} alt="" />
+          <div className="MWP-text">Hello world</div>
+          <Link to="/WhatWouldYouDoLikeToNext">
+            <img src={MWP} alt="" />
+          </Link>
         </div>
       </div>
     </>
