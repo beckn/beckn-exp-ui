@@ -3,12 +3,10 @@ import QrScanner from "../common/qrScanner";
 import Lady from "../assets/lady.svg";
 import GenQRCode from "../utility/GenQRCode";
 import { Link } from "react-router-dom";
-
 interface Props {
   expId: string;
 }
 const ScanQrForTravelBuddy = ({ expId }: Props) => {
-  console.log(`component `);
   const postExpId = async () => {
     await fetch("https://api.experience.becknprotocol.io/xc/experience", {
       method: "POST",
@@ -27,10 +25,11 @@ const ScanQrForTravelBuddy = ({ expId }: Props) => {
       }), // body data type must match "Content-Type" header
     })
       .then((response) => response.json())
-      .then((result) => console.log(result))
+      .then((result) => console.log(result.experience_id, "result"))
       .catch((error) => console.log("error", error));
   };
   useEffect(() => {
+    localStorage.setItem("expId", expId);
     postExpId();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

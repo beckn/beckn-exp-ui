@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import BecknLogoIcon from "../assets/becknLogoIcon.svg";
+import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import Title from "../common/title";
 import CardWithContent from "../common/cardWithContent";
 import TiltArrow from "../assets/tiltArrow.svg";
@@ -15,7 +15,7 @@ const TravelBuddy = () => {
     <Box className="main-container" style={{ width: "100%" }}>
       <Box>
         <img
-          style={{ marginTop: "50px", marginLeft: "30px" }}
+          style={{ marginTop: "50px", marginLeft: "30px", display: "flex" }}
           src={BecknLogoIcon}
           alt={"BecknLogoIcon"}
         />

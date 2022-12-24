@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .beckn-app {
@@ -22,7 +22,7 @@
   max-width: 1600px;
   width: 80%;
   margin: 0 auto;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif !important;
 }
 
 .main-container {
@@ -41,12 +41,12 @@
 }
 
 .Title {
-  font-family: "Poppins";
   font-style: normal;
   color: white;
   font-weight: 275;
   /* padding-top: 75px; */
 }
+
 .visualizationTitle {
   font-size: 60px;
   height: 130px;

@@ -8,33 +8,17 @@ import DriverATaxi from "./driver/DriverATaxi";
 import UseWhatsapp from "./whatsapp/useWhatsapp";
 import ScanQrForTravelBuddy from "./rider/scanQrForTravelBuddy";
 import MobilityCard from "./common/MobilityCard/MobilityCard";
-import { useRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import AcceptRideForTaxiHub from "./driver/AcceptRideforTaxiHub";
 import WhatWouldYouDoLikeToNext from "./Feedback/whatWouldYouDoLikeToNext";
-import ThankYouForVisitBecknExpCenter from "./assets/thankYouForVisitBecknExpCenter";
+import ThankYouForVisitBecknExpCenter from "./Feedback/ThankYouForVisitBecknExpCenter";
 import YourFeedbackIsValubleForUs from "./Feedback/YourFeedbackIsValubleForUs";
 import DidYouLikeBecknExp from "./Feedback/DidYouLikeBecknExp";
 import ImproveTheExp from "./Feedback/ImproveTheExp";
+
 function App() {
-  const useInterval = (callback: any, delay: any) => {
-    const savedCallback = useRef() as any;
-    useEffect(() => {
-      savedCallback.current = callback;
-    }, [callback]);
-    useEffect(() => {
-      function tick() {
-        savedCallback.current();
-      }
-      if (delay !== null) {
-        const id = setInterval(tick, delay);
-        return () => clearInterval(id);
-      }
-    }, [delay]);
-  };
-
   const expId = uuidv4();
-
+  console.log(`expId ${expId} app`);
   return (
     <div className="beckn-app">
       <Router>
@@ -56,10 +40,7 @@ function App() {
           <Route path="/useWhatsapp" element={<UseWhatsapp expId={expId} />} />
 
           {/* Node-communication */}
-          <Route
-            path="/MobilityCard"
-            element={<MobilityCard useInterval={useInterval} expId={expId} />}
-          />
+          <Route path="/MobilityCard" element={<MobilityCard />} />
           <Route
             path="/acceptRideForTaxiHub"
             element={<AcceptRideForTaxiHub />}
