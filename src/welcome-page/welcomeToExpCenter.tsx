@@ -9,7 +9,7 @@ import Button, { ButtonProps } from "@mui/material/Button";
 const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: "#ABD4FA",
   border: "1px solid #ABD4FA",
-  backgroundColor: "#0E0E0E",
+  backgroundColor: "#0E0E0F",
   textTransform: "lowercase",
   fontSize: "24px",
   padding: "20px 45px 20px 15px",
@@ -33,9 +33,10 @@ const WelcomeToExpCenter = () => {
         >
           <Typography
             style={{
-              color: "#FFFF",
+              color: "#FFFFFF",
               fontSize: "80px",
               width: "80%",
+              fontWeight: "275",
             }}
           >
             welcome to the beckn experience centre

@@ -1,6 +1,4 @@
 import React from "react";
-import { Typography } from "@mui/material";
-// import "./titleScreen.css";
 
 interface titlePropModal {
   titleText: string;

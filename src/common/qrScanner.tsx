@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Card, CardContent, Typography, CardMedia } from "@mui/material";
-import BecknLogoIcon from "../assets/becknLogoIcon.svg";
+import { Box, Card, CardContent, Typography } from "@mui/material";
+import BecknLogoIcon from "../assets/becklogoSmall.svg";
 
 interface qrScannerPropsModal {
   imageUrl: any;
@@ -17,7 +17,7 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
     <Box className="main-container" style={{ width: "100%" }}>
       <Box>
         <img
-          style={{ marginTop: "50px", marginLeft: "30px" }}
+          style={{ marginTop: "50px", marginLeft: "30px", display: "flex" }}
           src={BecknLogoIcon}
           alt={"BecknLogoIcon"}
         />
@@ -57,7 +57,7 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
               >
                 {desccription}
               </Typography>
-             {logo}
+              {logo}
             </CardContent>
           </Card>
         </Box>
