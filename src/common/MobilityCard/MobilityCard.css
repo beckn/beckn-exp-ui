@@ -107,10 +107,8 @@
   height: 20px;
   width: 20px;
   position: relative;
-  right: 165px;
-  /* border-radius: 4px; */
+  border-radius: 1px;
   background-color: #fff;
-  color: #000;
 }
 /* .whatsapp-img {
   width: 50px;
