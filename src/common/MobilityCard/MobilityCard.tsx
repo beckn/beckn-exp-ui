@@ -72,7 +72,9 @@ const MobilityCard = () => {
             animateDrawing={true}
             headSize={7}
             path={"straight"}
-            labels={<div className="step"></div>}
+            labels={{
+              middle: <div className="step"></div>,
+            }}
           />
         )}
       </Xwrapper>
