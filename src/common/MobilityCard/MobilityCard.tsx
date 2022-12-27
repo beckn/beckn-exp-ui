@@ -39,44 +39,46 @@ const MobilityCard = () => {
   // eslint-disable-next-line array-callback-return
   const slicedArr: any[] = [];
 
-  events.map((event: any) => {
-    if (
-      (event.event_source_id === "gateway" &&
-        event.event_destination_id === "taxi") ||
-      (event.event_source_id === "gateway" &&
-        event.event_destination_id === "yatri")
-    ) {
-      console.log(`if`);
-      return slicedArr.push(...events.slice(1, events.length));
-    } else if (
-      (event.event_source_id === "yatri" &&
-        event.event_destination_id === "gateway") ||
-      (event.event_source_id === "taxi" &&
-        event.event_destination_id === "gateway")
-    ) {
-      console.log(`else if`);
-      slicedArr.splice(0);
-      return slicedArr.push(...events.slice(3, events.length));
-    } else if (
-      event.event_source_id === "gateway" &&
-      event.event_destination_id === "mobility"
-    ) {
-      console.log(`else if 2`);
-      slicedArr.splice(0);
-      return slicedArr.push(
-        ...events.slice(
-          events[events.length - 2].event_source_id === "taxi"
-            ? events.length - 1
-            : events.length - 2,
-          events.length
-        )
-      );
-    } else {
-      console.log(`else`);
-      slicedArr.splice(0);
-      return slicedArr.push(...events.slice(-1));
-    }
-  });
+  events
+    .sort((a: any, b: any) => a.event_id - b.event_id)
+    .map((event: any) => {
+      if (
+        (event.event_source_id === "gateway" &&
+          event.event_destination_id === "taxi") ||
+        (event.event_source_id === "gateway" &&
+          event.event_destination_id === "yatri")
+      ) {
+        console.log(`if`);
+        return slicedArr.push(...events.slice(1, events.length));
+      } else if (
+        (event.event_source_id === "yatri" &&
+          event.event_destination_id === "gateway") ||
+        (event.event_source_id === "taxi" &&
+          event.event_destination_id === "gateway")
+      ) {
+        console.log(`else if`);
+        slicedArr.splice(0);
+        return slicedArr.push(...events.slice(3, events.length));
+      } else if (
+        event.event_source_id === "gateway" &&
+        event.event_destination_id === "mobility"
+      ) {
+        console.log(`else if 2`);
+        slicedArr.splice(0);
+        return slicedArr.push(
+          ...events.slice(
+            events[events.length - 2].event_source_id === "taxi"
+              ? events.length - 1
+              : events.length - 2,
+            events.length
+          )
+        );
+      } else {
+        console.log(`else`);
+        slicedArr.splice(0);
+        return slicedArr.push(...events.slice(-1));
+      }
+    });
   const duplicate = slicedArr.filter(
     (item, index) =>
       slicedArr.findIndex((item2) => item2.event_code === item.event_code) ===
