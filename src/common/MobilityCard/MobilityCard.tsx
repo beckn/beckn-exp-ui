@@ -9,12 +9,13 @@ import BecknLogoIcon from "../../assets/becklogoSmall.svg";
 
 const MobilityCard = () => {
   const navigate = useNavigate();
+
   const [events, setEvents] = useState<any>([]);
   const expId = localStorage.getItem("expId");
   const fetchEvent = async () => {
     try {
       const res = await axios.get(
-        `https://api.experience.becknprotocol.io/event/${expId}`
+        `https://api.experience.becknprotocol.io/v2/event/${expId}`
       );
 
       setEvents(res.data.events);
@@ -29,67 +30,81 @@ const MobilityCard = () => {
 
   if (
     events.length > 0 &&
-    events[events.length - 1].event_code === "recieved_payconfirmation"
+    events[events.length - 1].event.eventMessage.eventCode ===
+      "recieved_payconfirmation"
   ) {
     setTimeout(() => {
       navigate("/WhatWouldYouDoLikeToNext");
-      // window.location.href = "/WhatWouldYouDoLikeToNext";
     }, 5000);
   }
-  // eslint-disable-next-line array-callback-return
-  const slicedArr: any[] = [];
 
+  const slicedArr: any[] = [];
   events
-    .sort((a: any, b: any) => a.event_id - b.event_id)
+    .sort((a: any, b: any) => a.eventId - b.eventId)
+    // eslint-disable-next-line array-callback-return
     .map((event: any) => {
       if (
-        (event.event_source_id === "gateway" &&
-          event.event_destination_id === "taxi") ||
-        (event.event_source_id === "gateway" &&
-          event.event_destination_id === "yatri")
+        (event.event.eventSource.id === "1" &&
+          event.event.eventDestination.id === "3") ||
+        (event.event.eventSource.id === "1" &&
+          event.event.eventDestination.id === "5")
       ) {
-        console.log(`if`);
-        return slicedArr.push(...events.slice(1, events.length));
-      } else if (
-        (event.event_source_id === "yatri" &&
-          event.event_destination_id === "gateway") ||
-        (event.event_source_id === "taxi" &&
-          event.event_destination_id === "gateway")
-      ) {
-        console.log(`else if`);
-        slicedArr.splice(0);
-        return slicedArr.push(...events.slice(3, events.length));
-      } else if (
-        event.event_source_id === "gateway" &&
-        event.event_destination_id === "mobility"
-      ) {
-        console.log(`else if 2`);
         slicedArr.splice(0);
         return slicedArr.push(
           ...events.slice(
-            events[events.length - 2].event_source_id === "taxi"
-              ? events.length - 1
-              : events.length - 2,
-            events.length
+            events[events.length - 1].event.eventSource.id === "1" ? 1 : 0,
+            events[events.length - 1].event.eventSource.id === "1"
+              ? events.length
+              : 0
+          )
+        );
+      } else if (
+        (event.event.eventSource.id === "5" &&
+          event.event.eventDestination.id === "1") ||
+        (event.event.eventSource.id === "3" &&
+          event.event.eventDestination.id === "1")
+      ) {
+        slicedArr.splice(0);
+        return slicedArr.push(
+          ...events.slice(
+            events[events.length - 1].event.eventDestination.id === "1" ? 3 : 0,
+            events[events.length - 1].event.eventDestination.id === "1"
+              ? events.length
+              : 0
+          )
+        );
+      } else if (
+        event.event.eventSource.id === "1" &&
+        event.event.eventDestination.id === "2"
+      ) {
+        slicedArr.splice(0);
+        return slicedArr.push(
+          ...events.slice(
+            events[events.length - 1].event.eventDestination.id === "2" ? 5 : 0,
+            events[events.length - 1].event.eventDestination.id === "2"
+              ? events.length
+              : 0
           )
         );
       } else {
-        console.log(`else`);
         slicedArr.splice(0);
         return slicedArr.push(...events.slice(-1));
       }
     });
-  const duplicate = slicedArr.filter(
-    (item, index) =>
-      slicedArr.findIndex((item2) => item2.event_code === item.event_code) ===
-      index
-  );
+
+  function onlyUnique(value: any, index: any, self: string | any[]) {
+    return self.indexOf(value) === index;
+  }
+  let unique = slicedArr.filter(onlyUnique);
   console.log(
-    duplicate.map((e) => e),
+    unique.map((e) => e),
     "duplicate"
   );
+  console.log(
+    events.map((e: any) => e).sort((a: any, b: any) => a.eventId - b.eventId),
+    "events"
+  );
 
-  console.log(events, "events");
   return (
     <div>
       <img
@@ -103,29 +118,37 @@ const MobilityCard = () => {
       />
       <Xwrapper>
         <NodeComponent
-          driverText={"driver"}
-          riderText={events.length > 0 ? events[0].event_message : "rider"}
+          driverText={
+            events.length > 0
+              ? events[events.length - 1].event.eventMessage.bppMessage
+              : "driver"
+          }
+          riderText={
+            events.length > 0
+              ? events[events.length - 1].event.eventMessage.bapMessage
+              : "rider"
+          }
         />
         {events.length > 0 &&
-          duplicate.map((event: any) => {
+          unique.map((event: any) => {
             return (
               <Xarrow
-                key={event.event_code}
-                start={event.event_source_id}
-                end={event.event_destination_id}
+                key={event.eventId}
+                start={event.event.eventSource.id}
+                end={event.event.eventDestination.id}
                 lineColor={
-                  event.event_source_id === "taxi" ||
-                  event.event_source_id === "yatri" ||
-                  (event.event_source_id === "gateway" &&
-                    event.event_destination_id === "mobility")
+                  event.event.eventSource.id === "3" ||
+                  event.event.eventSource.id === "5" ||
+                  (event.event.eventSource.id === "1" &&
+                    event.event.eventDestination.id === "2")
                     ? "#FB1E1E"
                     : "#23DFDF"
                 }
                 headColor={
-                  event.event_source_id === "taxi" ||
-                  event.event_source_id === "yatri" ||
-                  (event.event_source_id === "gateway" &&
-                    event.event_destination_id === "mobility")
+                  event.event.eventSource.id === "3" ||
+                  event.event.eventSource.id === "5" ||
+                  (event.event.eventSource.id === "1" &&
+                    event.event.eventDestination.id === "2")
                     ? "#FB1E1E"
                     : "#23DFDF"
                 }
@@ -136,61 +159,7 @@ const MobilityCard = () => {
               />
             );
           })}
-        {/* {events.length > 0 && (
-          <Xarrow
-            key={events[0].event_id}
-            start={events[0].event_source_id}
-            end={events[0].event_destination_id}
-            lineColor={
-              events[0].event_source_id === "taxi" ||
-              (events[0].event_source_id === "gateway" &&
-                events[0].event_destination_id === "mobility")
-                ? "#FB1E1E"
-                : "#23DFDF"
-            }
-            headColor={
-              events[0].event_source_id === "taxi" ||
-              (events[0].event_source_id === "gateway" &&
-                events[0].event_destination_id === "mobility")
-                ? "#FB1E1E"
-                : "#23DFDF"
-            }
-            animateDrawing={true}
-            headSize={7}
-            path={"straight"}
-            labels={<div className="step"></div>}
-          />
-        )} */}
       </Xwrapper>
-
-      {/* <Xarrow
-          start={events[0].event_source_id}
-          end={events[0].event_destination_id}
-          lineColor={"#fff"}
-          headColor={"#fff"}
-          path={"straight"}
-          labels={<div className="step">{events[0].event_title}</div>}
-          animateDrawing={true}
-        />
-            // if (events.length === 0) {
-  //   return (
-  //     <div>
-  //       <Xwrapper>
-  //         <NodeComponent driverText={"driver"} riderText={"rider"} />
-  //         <Xarrow
-  //           start={null as any}
-  //           end={null as any}
-  //           lineColor={"#fff"}
-  //           headColor={"#fff"}
-  //           path={"straight"}
-  //           animateDrawing={true}
-  //         />
-  //       </Xwrapper>
-  //     </div>
-  //   );
-  // }
-
-        */}
     </div>
   );
 };

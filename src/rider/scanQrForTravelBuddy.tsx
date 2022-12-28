@@ -8,7 +8,7 @@ interface Props {
 }
 const ScanQrForTravelBuddy = ({ expId }: Props) => {
   const postExpId = async () => {
-    await fetch("https://api.experience.becknprotocol.io/xc/experience", {
+    await fetch("https://api.experience.becknprotocol.io/v2/xc/experience", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -17,15 +17,13 @@ const ScanQrForTravelBuddy = ({ expId }: Props) => {
       referrerPolicy: "no-referrer",
       body: JSON.stringify({
         experienceId: expId,
-        domainId: "mobility",
-        active: true,
+        experienceCenterId: "1",
         eventSourceAppId: "1",
-        created_at: Date.now(),
-        last_modified_at: Date.now(),
+        start_ts: Date.now(),
       }), // body data type must match "Content-Type" header
     })
-      .then((response) => response.json())
-      .then((result) => console.log(result.experience_id, "result"))
+      .then((response) => console.log(`Event Created with`, response))
+
       .catch((error) => console.log("error", error));
   };
   useEffect(() => {

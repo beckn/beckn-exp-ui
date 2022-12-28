@@ -12,24 +12,29 @@ const NodeComponent = (props: any) => {
   const mobilityCardArr = [
     {
       img: `${myMobility}`,
-      id: "mobility",
+      name: "mobility",
+      id: "2",
     },
     {
       img: `${RHP}`,
-      id: "taxi",
+      name: "taxi",
+      id: "3",
     },
 
     {
       title: "Gateway",
-      id: "gateway",
+      name: "gateway",
+      id: "1",
     },
     {
       img: `${whatsappMobility}`,
-      id: "whatsappMobility",
+      name: "whatsappMobility",
+      id: "4",
     },
     {
       img: `${MTP}`,
-      id: "yatri",
+      name: "yatri",
+      id: "5",
     },
   ];
   return (
@@ -37,9 +42,9 @@ const NodeComponent = (props: any) => {
       <div className="mobility-row">
         {mobilityCardArr.map((ele, ind) => {
           return (
-            <div id={ele.id} key={ind}>
-              <div className={`border${ele.id}`}>
-                <div className={ele.id} style={{ background: "#ACD1F0" }}>
+            <div id={ele.id} className={`${ele.name}s`} key={ind}>
+              <div className={`border${ele.name}`}>
+                <div className={ele.name} style={{ background: "#ACD1F0" }}>
                   {ele.img ? (
                     <img src={ele.img} alt="" />
                   ) : (

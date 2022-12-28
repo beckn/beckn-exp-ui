@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import BecknLogoIcon from "../assets/becknLogoIcon.svg";
@@ -19,6 +19,9 @@ const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
 }));
 
 const WelcomeToExpCenter = () => {
+  useEffect(() => {
+    localStorage.removeItem("expId");
+  }, []);
   return (
     <Box
       className="main-container"
