@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import QRcode from "react-qr-code";
 interface Props {
   expId: string;
+  url: string;
 }
-const GenQRCode = ({ expId }: Props) => {
-  const url = `https://taxibap-staging.becknprotocol.io?${expId}`;
+const GenQRCode = ({ expId, url }: Props) => {
   return (
     <div>
       <QRcode style={{ width: "180px", opacity: "0.5" }} value={url} />

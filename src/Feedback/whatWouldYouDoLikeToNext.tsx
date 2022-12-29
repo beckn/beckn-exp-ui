@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
-import BecknLogoIcon from "../assets/becknLogoIcon.svg";
+import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import { styled } from "@mui/material/styles";
 import Button, { ButtonProps } from "@mui/material/Button";
 import TiltArrowInBlack from "../assets/tiltArrowblack.svg";
 import TiltArrow from "../assets/tiltArrow.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import homeIcon from "../assets/homeIcon.png";
 
 const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
   width: "224px",
@@ -62,6 +63,7 @@ const whatWouldYouDoLikeToNext = () => {
   }, [updateExpId]);
   return (
     <motion.div
+      style={{ overflow: "hidden" }}
       initial={{ width: "0%" }}
       animate={{ width: "100%" }}
       exit={{
@@ -71,23 +73,39 @@ const whatWouldYouDoLikeToNext = () => {
     >
       <Box
         className="main-container"
-        style={{ display: "flex", justifyContent: "center", width: "100%" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          height: "100vh",
+          alignItems: "center",
+        }}
       >
         <Box style={{ textAlign: "center" }}>
-          <Box style={{ marginTop: "80px", marginBottom: "40px" }}>
+          <Box style={{ marginBottom: "60px" }}>
             <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+          </Box>
+          <Box
+            style={{
+              cursor: "pointer",
+              position: "absolute",
+              right: "50px",
+              top: "30px",
+            }}
+          >
+            <img src={homeIcon} alt={"HomeIcon"} />
           </Box>
           <Box>
             <Typography color={"#FFFF"}>
-              <Typography fontSize={"70px"}>congratulations!</Typography>
-              <Typography fontSize={"70px"}>
+              <Typography fontSize={"60px"}>congratulations!</Typography>
+              <Typography fontSize={"60px"}>
                 you just performed your first transaction on
               </Typography>
-              <Typography fontSize={"70px"}>
+              <Typography fontSize={"60px"}>
                 a beckn enabled open mobility network
               </Typography>
             </Typography>
-            <Typography fontSize={"45px"} color={"#FFFF"}>
+            <Typography mt={6} fontSize={"30px"} color={"#FFFF"}>
               What would you like to do next?
             </Typography>
           </Box>

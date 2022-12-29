@@ -6,13 +6,9 @@
 }
 
 .beckn-app {
-  background: url("../public/assets/beckn-background.svg");
+  background: url("./assets/beckn-background.png");
   position: relative;
   height: 100vh;
-  margin: 0 auto;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
   display: grid;
   align-content: center;
   text-align: center;
@@ -26,8 +22,9 @@
 }
 
 .main-container {
-  background: url("../public/assets/beckn-background.svg") cover center center;
-  height: 100vh;
+  background: url("./assets/beckn-background.png");
+  background-size: 100% 100%;
+  height: 80vh;
 }
 
 .button-container {
@@ -49,7 +46,6 @@
 
 .visualizationTitle {
   font-size: 60px;
-  height: 130px;
   line-height: 120px;
 }
 
