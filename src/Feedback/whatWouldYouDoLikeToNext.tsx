@@ -6,6 +6,7 @@ import Button, { ButtonProps } from "@mui/material/Button";
 import TiltArrowInBlack from "../assets/tiltArrowblack.svg";
 import TiltArrow from "../assets/tiltArrow.svg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
   width: "224px",
@@ -60,59 +61,68 @@ const whatWouldYouDoLikeToNext = () => {
     localStorage.removeItem("expId");
   }, [updateExpId]);
   return (
-    <Box
-      className="main-container"
-      style={{ display: "flex", justifyContent: "center", width: "100%" }}
+    <motion.div
+      initial={{ width: "0%" }}
+      animate={{ width: "100%" }}
+      exit={{
+        x: window.innerWidth,
+        transition: { ease: "easeOut", duration: 0.2 },
+      }}
     >
-      <Box style={{ textAlign: "center" }}>
-        <Box style={{ marginTop: "80px", marginBottom: "40px" }}>
-          <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-        </Box>
-        <Box>
-          <Typography color={"#FFFF"}>
-            <Typography fontSize={"70px"}>congratulations!</Typography>
-            <Typography fontSize={"70px"}>
-              you just performed your first transaction on
-            </Typography>
-            <Typography fontSize={"70px"}>
-              a beckn enabled open mobility network
-            </Typography>
-          </Typography>
-          <Typography fontSize={"45px"} color={"#FFFF"}>
-            What would you like to do next?
-          </Typography>
-        </Box>
-        <Box style={{ marginTop: "40px" }}>
-          <Box>
-            <ColorButton
-              endIcon={
-                <img
-                  width={"10px"}
-                  src={TiltArrowInBlack}
-                  alt={"BecknLogoIcon"}
-                />
-              }
-            >
-              view my journey
-            </ColorButton>
+      <Box
+        className="main-container"
+        style={{ display: "flex", justifyContent: "center", width: "100%" }}
+      >
+        <Box style={{ textAlign: "center" }}>
+          <Box style={{ marginTop: "80px", marginBottom: "40px" }}>
+            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
           </Box>
-          <Box marginTop={"42px"}>
-            <Link
-              to={"/didYouLikeBecknExp"}
-              style={{ textDecoration: "none", color: "#000" }}
-            >
-              <ColorButtonSec
+          <Box>
+            <Typography color={"#FFFF"}>
+              <Typography fontSize={"70px"}>congratulations!</Typography>
+              <Typography fontSize={"70px"}>
+                you just performed your first transaction on
+              </Typography>
+              <Typography fontSize={"70px"}>
+                a beckn enabled open mobility network
+              </Typography>
+            </Typography>
+            <Typography fontSize={"45px"} color={"#FFFF"}>
+              What would you like to do next?
+            </Typography>
+          </Box>
+          <Box style={{ marginTop: "40px" }}>
+            <Box>
+              <ColorButton
                 endIcon={
-                  <img width={"10px"} src={TiltArrow} alt={"BecknLogoIcon"} />
+                  <img
+                    width={"10px"}
+                    src={TiltArrowInBlack}
+                    alt={"BecknLogoIcon"}
+                  />
                 }
               >
-                no, i'm done
-              </ColorButtonSec>
-            </Link>
+                view my journey
+              </ColorButton>
+            </Box>
+            <Box marginTop={"42px"}>
+              <Link
+                to={"/didYouLikeBecknExp"}
+                style={{ textDecoration: "none", color: "#000" }}
+              >
+                <ColorButtonSec
+                  endIcon={
+                    <img width={"10px"} src={TiltArrow} alt={"BecknLogoIcon"} />
+                  }
+                >
+                  no, i'm done
+                </ColorButtonSec>
+              </Link>
+            </Box>
           </Box>
         </Box>
       </Box>
-    </Box>
+    </motion.div>
   );
 };
 
