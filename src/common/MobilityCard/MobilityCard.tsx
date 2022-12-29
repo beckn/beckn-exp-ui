@@ -88,6 +88,7 @@ const MobilityCard = () => {
   );
 
   console.log(events, "events");
+
   return (
     <div>
       <img
@@ -105,33 +106,54 @@ const MobilityCard = () => {
           riderText={events.length > 0 ? events[0].event_message : "rider"}
         />
         {events.length > 0 &&
-          duplicate.map((event: any) => {
+          duplicate.map((event: any, ind: number) => {
             return (
-              <Xarrow
-                key={event.event_code}
-                start={event.event_source_id}
-                end={event.event_destination_id}
-                lineColor={
-                  event.event_source_id === "taxi" ||
-                  event.event_source_id === "yatri" ||
-                  (event.event_source_id === "gateway" &&
-                    event.event_destination_id === "mobility")
-                    ? "#FB1E1E"
-                    : "#23DFDF"
-                }
-                headColor={
-                  event.event_source_id === "taxi" ||
-                  event.event_source_id === "yatri" ||
-                  (event.event_source_id === "gateway" &&
-                    event.event_destination_id === "mobility")
-                    ? "#FB1E1E"
-                    : "#23DFDF"
-                }
-                animateDrawing={true}
-                headSize={7}
-                path={"straight"}
-                labels={<div className="step"></div>}
-              />
+              <div className="Xarrow">
+                <Xarrow
+                  key={event.event_code}
+                  start={event.event_source_id}
+                  end={event.event_destination_id}
+                  lineColor={
+                    event.event_source_id === "taxi" ||
+                    event.event_source_id === "yatri" ||
+                    (event.event_source_id === "gateway" &&
+                      event.event_destination_id === "mobility")
+                      ? "#FB1E1E"
+                      : "#23DFDF"
+                  }
+                  headColor={
+                    event.event_source_id === "taxi" ||
+                    event.event_source_id === "yatri" ||
+                    (event.event_source_id === "gateway" &&
+                      event.event_destination_id === "mobility")
+                      ? "#FB1E1E"
+                      : "#23DFDF"
+                  }
+                  animateDrawing={true}
+                  headSize={7}
+                  path={"straight"}
+                  labels={{
+                    start: (
+                      <div>
+                        <h3
+                          className={`eventMessage event_${
+                            event?.event_destination_id + event?.event_source_id
+                          }`}
+                        >
+                          {event?.event_title}
+                        </h3>
+                      </div>
+                    ),
+                    middle: (
+                      <div
+                        className={`step step_${
+                          event?.event_source_id + event?.event_destination_id
+                        }`}
+                      ></div>
+                    ),
+                  }}
+                />
+              </div>
             );
           })}
         {/* {events.length > 0 && (

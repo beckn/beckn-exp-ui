@@ -75,7 +75,7 @@
   margin: 15px;
 }
 
-.gateway>div {
+.gateway > div {
   color: #fff;
   background: #000 !important;
   max-width: 200px;
@@ -138,6 +138,18 @@
   color: #000;
   transform: rotate(130deg);
 }
+.step_mobilitytaxi {
+  transform: rotate(180deg);
+}
+.step_gatewayyatri {
+  transform: rotate(127deg);
+}
+.step_gatewaytaxi {
+  transform: rotate(148deg);
+}
+.step_taxigateway {
+  transform: rotate(148deg);
+}
 
 /* .whatsapp-img {
   width: 50px;
@@ -159,7 +171,7 @@
   left: 0;
 }
 
-.mobilityFooter .GWP>img {
+.mobilityFooter .GWP > img {
   width: 250px;
   z-index: 99;
   position: relative;
@@ -171,7 +183,7 @@
   right: 0;
 }
 
-.mobilityFooter .MWP>img {
+.mobilityFooter .MWP > img {
   width: 130px;
   z-index: 99;
   position: relative;
@@ -255,7 +267,6 @@
 }
 
 .eventMessage {
-  position: absolute;
   color: #fff;
   font-size: 14px;
   top: -15px;
@@ -270,14 +281,65 @@
   margin-top: 58px !important;
 }
 
-.Xarrow:not(:last-child) .eventMessage {
+/* .Xarrow:not(:last-child) .eventMessage {
   margin-top: 30px !important;
-}
+} */
 
 /* .event_9 {
   transform: rotate(50deg);
 } */
-.Xarrow:not(:last-child) svg {
-  padding-top: 30px !important;
-  height: auto !important;
+
+.Xarrow {
+  position: relative;
+}
+
+.event_gatewaymobility {
+  transform: rotate(36deg);
+  margin-top: 30px;
+}
+.event_mobilitygateway {
+  transform: rotate(35deg);
+  margin-bottom: 70px;
+}
+.event_yatrigateway {
+  transform: rotate(31deg);
+  margin-top: 25px;
+}
+.event_taxigateway {
+  transform: rotate(-32deg);
+  margin-bottom: 142px;
+}
+.event_gatewaytaxi {
+  transform: rotate(-34deg);
+  margin-top: 21px;
+}
+.event_gatewayyatri {
+  transform: rotate(34deg);
+  margin-bottom: 142px;
+}
+.event_taximobility {
+  margin-bottom: 37px;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .event_mobilitygateway {
+    transform: rotate(58deg);
+    margin-bottom: 93px;
+  }
+  .event_gatewaymobility {
+    transform: rotate(55deg);
+    margin-top: 77px;
+  }
+  .event_taxigateway {
+    transform: rotate(-24deg);
+  }
+  .event_yatrigateway {
+    transform: rotate(24deg);
+  }
+  .event_gatewayyatri {
+    transform: rotate(25deg);
+  }
+  .event_gatewaytaxi {
+    transform: rotate(-25deg);
+  }
 }
