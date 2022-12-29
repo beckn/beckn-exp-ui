@@ -1,9 +1,18 @@
 import React from "react";
 import menWithCar from "../assets/menWithCar.png";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const YourFeedbackIsValubleForUs = () => {
   return (
-    <div style={{ overflow: "hidden" }}>
+    <motion.div
+      style={{ overflow: "hidden" }}
+      initial={{ width: "0%" }}
+      animate={{ width: "100%" }}
+      exit={{
+        x: window.innerWidth,
+        transition: { ease: "easeOut", duration: 0.2 },
+      }}
+    >
       <div
         style={{
           padding: "20px",
@@ -65,7 +74,7 @@ const YourFeedbackIsValubleForUs = () => {
       <div>
         <img src={menWithCar} alt="" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

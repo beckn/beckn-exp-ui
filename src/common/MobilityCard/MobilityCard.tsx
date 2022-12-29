@@ -6,6 +6,7 @@ import NodeComponent from "./NodeComponent";
 import useInterval from "./useInterval";
 import { useNavigate } from "react-router-dom";
 import BecknLogoIcon from "../../assets/becklogoSmall.svg";
+import { motion } from "framer-motion";
 
 const MobilityCard = () => {
   const navigate = useNavigate();
@@ -106,7 +107,14 @@ const MobilityCard = () => {
   );
 
   return (
-    <div>
+    <motion.div
+      initial={{ width: "0%" }}
+      animate={{ width: "100%" }}
+      exit={{
+        x: window.innerWidth,
+        transition: { ease: "easeOut", duration: 0.2 },
+      }}
+    >
       <img
         src={BecknLogoIcon}
         alt={"BecknLogoIcon"}
@@ -160,7 +168,7 @@ const MobilityCard = () => {
             );
           })}
       </Xwrapper>
-    </div>
+    </motion.div>
   );
 };
 

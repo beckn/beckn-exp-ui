@@ -26,7 +26,7 @@
 }
 
 .main-container {
-  background: url("../public/assets/beckn-background.svg");
+  background: url("../public/assets/beckn-background.svg") cover center center;
   height: 100vh;
 }
 
@@ -51,6 +51,14 @@
   font-size: 60px;
   height: 130px;
   line-height: 120px;
+}
+
+.goBack {
+  position: "absolute";
+  left: "50%";
+  top: "50%";
+  transform: translate(-"50%", -"50%");
+  color: "#fff";
 }
 
 .image-url-container img:nth-child(2) {

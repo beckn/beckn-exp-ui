@@ -2,6 +2,7 @@ import QrScanner from "../common/qrScanner";
 import Man from "../assets/man.svg";
 import GenQRCode from "../utility/GenQRCode";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface Props {
   expId: string;
@@ -9,7 +10,14 @@ interface Props {
 
 const DriverATaxi = ({ expId }: Props) => {
   return (
-    <div>
+    <motion.div
+      initial={{ width: "0%" }}
+      animate={{ width: "100%" }}
+      exit={{
+        x: window.innerWidth,
+        transition: { ease: "easeOut", duration: 0.2 },
+      }}
+    >
       <Link
         to="/MobilityCard"
         style={{ textDecoration: "none", color: "#000" }}
@@ -22,7 +30,7 @@ const DriverATaxi = ({ expId }: Props) => {
           logo={<GenQRCode expId={expId} />}
         />
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
