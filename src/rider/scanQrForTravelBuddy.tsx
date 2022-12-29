@@ -51,7 +51,12 @@ const ScanQrForTravelBuddy = ({ expId }: Props) => {
           desccription={
             "Please pick up the device on your right and scan the QR code"
           }
-          logo={<GenQRCode expId={expId} />}
+          logo={
+            <GenQRCode
+              expId={expId}
+              url={`https://taxibap-staging.becknprotocol.io?${expId}`}
+            />
+          }
         />
       </Link>
     </motion.div>

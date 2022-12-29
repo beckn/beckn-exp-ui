@@ -10,6 +10,7 @@ interface cardContentPropsModal {
   mainIconUrlInBlack?: any;
   arrowIconInBlackColor?: any;
   className?: string;
+  onClick?: () => void;
 }
 const useStyles = makeStyles((theme: any) => ({
   root: {
@@ -40,7 +41,7 @@ const CardWithContent: React.FC<cardContentPropsModal> = ({
     <Card
       className={className}
       style={{
-        width: "639px",
+        width: "100%",
         height: "245px",
         border: "1px solid #272727",
         background:

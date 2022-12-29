@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
+import homeIcon from "../assets/homeIcon.png";
 
 interface qrScannerPropsModal {
   imageUrl: any;
@@ -14,19 +15,39 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
   logo,
 }: qrScannerPropsModal) => {
   return (
-    <Box className="main-container" style={{ width: "100%" }}>
-      <Box>
-        <img
-          style={{ marginTop: "50px", marginLeft: "30px", display: "flex" }}
-          src={BecknLogoIcon}
-          alt={"BecknLogoIcon"}
-        />
+    <Box
+      className="main-container"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        minHeight: "100vh",
+        flexDirection: "column",
+      }}
+    >
+      <Box
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "96%",
+          margin: "0 auto",
+          marginTop: "20px",
+        }}
+      >
+        <Box>
+          <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+        </Box>
+        <Box style={{ cursor: "pointer" }}>
+          <img src={homeIcon} alt={"HomeIcon"} />
+        </Box>
       </Box>
       <Box
         style={{
           display: "flex",
           justifyContent: "space-around",
           height: "100%",
+          alignItems: "center",
         }}
       >
         <Box>
@@ -36,7 +57,7 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
             alt={"Lady"}
           />
         </Box>
-        <Box>
+        <Box style={{ height: "max-content" }}>
           <Card
             sx={{
               maxWidth: 445,

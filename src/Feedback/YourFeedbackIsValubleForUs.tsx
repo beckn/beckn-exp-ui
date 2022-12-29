@@ -1,6 +1,9 @@
 import React from "react";
-import menWithCar from "../assets/menWithCar.png";
+import menWithCar from "../assets/car-with-a-man.png";
 import { Link } from "react-router-dom";
+import BecknLogoIcon from "../assets/becklogoSmall.svg";
+import homeIcon from "../assets/homeIcon.png";
+import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 const YourFeedbackIsValubleForUs = () => {
   return (
@@ -13,67 +16,105 @@ const YourFeedbackIsValubleForUs = () => {
         transition: { ease: "easeOut", duration: 0.2 },
       }}
     >
-      <div
+      <Box
+        className="main-container"
         style={{
-          padding: "20px",
-          height: "600px",
-          width: "440px",
-          background: "#1E1E1E",
-          position: "absolute",
-          left: "108px",
-          top: "22%",
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          minHeight: "100vh",
+          flexDirection: "column",
         }}
       >
-        <p
-          style={{
-            fontSize: "48px",
-            color: "#fff",
-            padding: "20px",
-            resize: "none",
-          }}
-        >
-          your feedback is valuable to us
-        </p>
-        <textarea
-          style={{
-            height: "160px",
-            width: "360px",
-            marginTop: "30px",
-            background: "#1E1E1E",
-            color: "#fff",
-          }}
-          name="textarea"
-          id="textarea"
-        ></textarea>
-        <div
+        <Box
           style={{
             display: "flex",
-            width: "100%",
+            justifyContent: "space-between",
             alignItems: "center",
-            marginTop: "30px",
+            width: "96%",
+            margin: "0 auto",
+            marginTop: "20px",
+          }}
+        >
+          <Box>
+            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+          </Box>
+          <Box style={{ cursor: "pointer" }}>
+            <img src={homeIcon} alt={"HomeIcon"} />
+          </Box>
+        </Box>
+        <Box
+          style={{
+            textAlign: "center",
+            height: "100vh",
+            width: "80%",
+            margin: "60px auto",
+            display: "flex",
+            justifyContent: "space-between",
           }}
         >
           <div
             style={{
-              padding: "8px 20px",
-              background: "#ACD1F0",
-              borderRadius: "12px",
-              width: "100px",
-              margin: "0 auto",
+              width: "440px",
+              background: "#1E1E1E",
             }}
           >
-            <Link
-              to="/thankYouForVisitBecknExpCenter"
-              style={{ textDecoration: "none", color: "#000" }}
+            <p
+              style={{
+                fontSize: "48px",
+                color: "#fff",
+                padding: "30px ",
+                resize: "none",
+              }}
             >
-              Submit
-            </Link>
+              your feedback is valuable to us
+            </p>
+            <textarea
+              style={{
+                height: "160px",
+                width: "360px",
+                marginTop: "20px",
+                background: "#1E1E1E",
+                color: "#fff",
+              }}
+              name="textarea"
+              id="textarea"
+            ></textarea>
+            <div
+              style={{
+                padding: "8px 20px",
+                background: "#ACD1F0",
+                borderRadius: "12px",
+                width: "100px",
+                margin: "5px auto",
+              }}
+            >
+              <Link
+                to="/thankYouForVisitBecknExpCenter"
+                style={{ textDecoration: "none", color: "#000" }}
+              >
+                Submit
+              </Link>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                alignItems: "center",
+                marginTop: "30px",
+              }}
+            ></div>
           </div>
-        </div>
-      </div>
-      <div>
-        <img src={menWithCar} alt="" />
-      </div>
+          <Box
+            style={{
+              maxWidth: "640px",
+              display: "grid",
+              alignContent: "center",
+            }}
+          >
+            <img src={menWithCar} alt="" style={{ width: "100%" }} />
+          </Box>
+        </Box>
+      </Box>
     </motion.div>
   );
 };

@@ -7,6 +7,8 @@ import useInterval from "./useInterval";
 import { useNavigate } from "react-router-dom";
 import BecknLogoIcon from "../../assets/becklogoSmall.svg";
 import { motion } from "framer-motion";
+import { Box } from "@mui/material";
+import homeIcon from "../../assets/homeIcon.png";
 
 const MobilityCard = () => {
   const navigate = useNavigate();
@@ -75,8 +77,10 @@ const MobilityCard = () => {
           )
         );
       } else if (
-        event.event.eventSource.id === "1" &&
-        event.event.eventDestination.id === "2"
+        (event.event.eventSource.id === "1" &&
+          event.event.eventDestination.id === "2") ||
+        (event.event.eventSource.id === "2" &&
+          event.event.eventDestination.id === "4")
       ) {
         slicedArr.splice(0);
         return slicedArr.push(
@@ -115,59 +119,96 @@ const MobilityCard = () => {
         transition: { ease: "easeOut", duration: 0.2 },
       }}
     >
-      <img
-        src={BecknLogoIcon}
-        alt={"BecknLogoIcon"}
-        style={{
-          marginTop: "-97px",
-          marginLeft: "30px",
-          display: "flex",
-        }}
-      />
-      <Xwrapper>
-        <NodeComponent
-          driverText={
-            events.length > 0
-              ? events[events.length - 1].event.eventMessage.bppMessage
-              : "driver"
-          }
-          riderText={
-            events.length > 0
-              ? events[events.length - 1].event.eventMessage.bapMessage
-              : "rider"
-          }
-        />
-        {events.length > 0 &&
-          unique.map((event: any) => {
-            return (
-              <Xarrow
-                key={event.eventId}
-                start={event.event.eventSource.id}
-                end={event.event.eventDestination.id}
-                lineColor={
-                  event.event.eventSource.id === "3" ||
-                  event.event.eventSource.id === "5" ||
-                  (event.event.eventSource.id === "1" &&
-                    event.event.eventDestination.id === "2")
-                    ? "#FB1E1E"
-                    : "#23DFDF"
-                }
-                headColor={
-                  event.event.eventSource.id === "3" ||
-                  event.event.eventSource.id === "5" ||
-                  (event.event.eventSource.id === "1" &&
-                    event.event.eventDestination.id === "2")
-                    ? "#FB1E1E"
-                    : "#23DFDF"
-                }
-                animateDrawing={true}
-                headSize={7}
-                path={"straight"}
-                labels={<div className="step"></div>}
-              />
-            );
-          })}
-      </Xwrapper>
+      <Box className="main-container" style={{ height: "100vh" }}>
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "96%",
+            margin: "0 auto",
+            marginTop: "20px",
+          }}
+        >
+          <Box>
+            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+          </Box>
+          <Box style={{ cursor: "pointer" }}>
+            <img src={homeIcon} alt={"HomeIcon"} />
+          </Box>
+        </Box>
+        <Xwrapper>
+          <NodeComponent
+            driverText={
+              events.length > 0
+                ? events[events.length - 1].event.eventMessage.bppMessage
+                : "driver"
+            }
+            riderText={
+              events.length > 0
+                ? events[events.length - 1].event.eventMessage.bapMessage
+                : "rider"
+            }
+          />
+          {events.length > 0 &&
+            unique.map((event: any) => {
+              return (
+                <div className="Xarrow">
+                  <Xarrow
+                    key={event.eventId}
+                    start={event.event.eventSource.id}
+                    end={event.event.eventDestination.id}
+                    lineColor={
+                      event.event.eventSource.id === "3" ||
+                      event.event.eventSource.id === "5" ||
+                      (event.event.eventSource.id === "1" &&
+                        event.event.eventDestination.id === "2") ||
+                      (event.event.eventSource.id === "1" &&
+                        event.event.eventDestination.id === "4")
+                        ? "#FB1E1E"
+                        : "#23DFDF"
+                    }
+                    headColor={
+                      event.event.eventSource.id === "3" ||
+                      event.event.eventSource.id === "5" ||
+                      (event.event.eventSource.id === "1" &&
+                        event.event.eventDestination.id === "2") ||
+                      (event.event.eventSource.id === "1" &&
+                        event.event.eventDestination.id === "4")
+                        ? "#FB1E1E"
+                        : "#23DFDF"
+                    }
+                    animateDrawing={true}
+                    headSize={7}
+                    path={"straight"}
+                    labels={{
+                      start: (
+                        <h3
+                          className={`eventMessage event_${
+                            event?.event.eventDestination.id +
+                            "_" +
+                            event?.event.eventSource.id
+                          }`}
+                        >
+                          {event?.event.eventMessage.actionMessage}
+                        </h3>
+                      ),
+                      middle: (
+                        <div
+                          className={`step step_${
+                            event?.event.eventSource.id +
+                            "_" +
+                            event?.event.eventDestination.id
+                          }`}
+                        ></div>
+                      ),
+                    }}
+                  />
+                </div>
+              );
+            })}
+        </Xwrapper>
+      </Box>
     </motion.div>
   );
 };

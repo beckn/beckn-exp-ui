@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import BecknLogoIcon from "../assets/becknLogoIcon.svg";
+import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import feedbackQr from "../assets/feedbackQr.svg";
 import { motion } from "framer-motion";
+import homeIcon from "../assets/homeIcon.png";
 
 const ThankYouForVisitBecknExpCenter = () => {
   return (
@@ -16,34 +17,46 @@ const ThankYouForVisitBecknExpCenter = () => {
     >
       <Box
         className="main-container"
-        style={{ display: "flex", justifyContent: "center", width: "100%" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          height: "100vh",
+          alignItems: "center",
+        }}
       >
-        <Box style={{ textAlign: "center", width: "90%" }}>
-          <Box style={{ marginTop: "80px", marginBottom: "40px" }}>
+        <Box style={{ textAlign: "center" }}>
+          <Box style={{ marginBottom: "60px" }}>
             <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
           </Box>
           <Box
-            style={{ display: "flex", justifyContent: "center", width: "100%" }}
+            style={{
+              cursor: "pointer",
+              position: "absolute",
+              right: "50px",
+              top: "30px",
+            }}
           >
-            <Box
-              width={"80%"}
-              height={"550px"}
-              style={{ textAlign: "center", backgroundColor: "#1E1E1E" }}
-            >
-              <Box color={"#FFFF"}>
-                <Typography fontSize={"70px"}>
-                  thank you for visiting the
-                </Typography>
-                <Typography fontSize={"70px"}>
-                  beckn experience centre
-                </Typography>
-              </Box>
-              <Typography fontSize={"45px"} color={"#FFFF"}>
-                join our collective
+            <img src={homeIcon} alt={"HomeIcon"} />
+          </Box>
+          <Box
+            style={{
+              textAlign: "center",
+              backgroundColor: "#1E1E1E",
+              padding: "40px",
+            }}
+          >
+            <Box color={"#FFFF"}>
+              <Typography fontSize={"70px"}>
+                thank you for visiting the
               </Typography>
-              <Box style={{ marginTop: "30px", marginBottom: "40px" }}>
-                <img src={feedbackQr} alt={"BecknLogoIcon"} />
-              </Box>
+              <Typography fontSize={"70px"}>beckn experience centre</Typography>
+            </Box>
+            <Typography fontSize={"45px"} color={"#FFFF"}>
+              join our collective
+            </Typography>
+            <Box style={{ marginTop: "30px", marginBottom: "40px" }}>
+              <img src={feedbackQr} alt={"BecknLogoIcon"} />
             </Box>
           </Box>
         </Box>
