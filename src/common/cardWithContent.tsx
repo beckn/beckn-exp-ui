@@ -44,6 +44,7 @@ const CardWithContent: React.FC<cardContentPropsModal> = ({
         width: "100%",
         height: "245px",
         border: "1px solid #272727",
+        minWidth: "600px",
         background:
           "linear-gradient(0deg, #000000, #000000),linear-gradient(0deg, #272727, #272727)",
       }}
@@ -63,9 +64,26 @@ const CardWithContent: React.FC<cardContentPropsModal> = ({
           alignItems={"center"}
           color={"green"}
         >
-          <Box paddingLeft={"40px"} className="image-url-container">
-            <img src={mainIconUrl} alt={"BecknLogoIcon"} />
-            <img src={mainIconUrlInBlack} alt={"BecknLogoIcon"} />
+          <Box
+            paddingLeft={"40px"}
+            className="image-url-container"
+            style={{
+              height: "80px",
+              width: "180px",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={mainIconUrl}
+              alt={"BecknLogoIcon"}
+              style={{ height: "100%", width: "100%" }}
+            />
+            <img
+              src={mainIconUrlInBlack}
+              alt={"BecknLogoIcon"}
+              style={{ height: "100%", width: "100%" }}
+            />
           </Box>
           <Box paddingLeft={"40px"} textAlign={"left"}>
             <Typography

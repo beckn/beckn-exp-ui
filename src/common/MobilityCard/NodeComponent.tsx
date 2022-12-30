@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import myMobility from "../../assets/myMobility.svg";
 import RHP from "../../assets/RHP.svg";
 import whatsappMobility from "../../assets/whatsappMobility.svg";
-import MTP from "../../assets/MTP.svg";
+import LuxeCab from "../../assets/LuxeCab.png";
 import GWP from "../../assets/girlWithPhone.svg";
 import MWP from "../../assets/menWithPhone.svg";
 import circle from "../../assets/circle.svg";
@@ -34,7 +34,7 @@ const NodeComponent = (props: any) => {
       id: "4",
     },
     {
-      img: `${MTP}`,
+      img: `${LuxeCab}`,
       name: "yatri",
       id: "5",
     },

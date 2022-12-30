@@ -3,15 +3,23 @@ import Man from "../assets/man.svg";
 import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
+import { Box, Modal } from "@mui/material";
+import ErrorModal from "../common/ErrorModal";
+import BecknLogoIcon from "../assets/becklogoSmall.svg";
+import homeIcon from "../assets/homeIcon.png";
 
 interface Props {
   expId: string;
 }
 
 const DriverATaxi = ({ expId }: Props) => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
   const navigate = useNavigate();
   const postExpId = async () => {
     await fetch("https://api.experience.becknprotocol.io/v2/xc/experience", {
@@ -70,18 +78,55 @@ const DriverATaxi = ({ expId }: Props) => {
         transition: { ease: "easeOut", duration: 0.2 },
       }}
     >
-      <QrScanner
-        imageUrl={Man}
-        desccription={
-          "Please pick up the device on your right and scan the QR code"
-        }
-        logo={
-          <GenQRCode
-            expId={expId}
-            url={`https://taxibpp.becknprotocol.io?${expId}`}
-          />
-        }
-      />
+      <Box
+        className="main-container"
+        style={{
+          width: "100%",
+          minHeight: "100vh",
+          flexDirection: "column",
+          overflow: "hidden",
+        }}
+      >
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "96%",
+            margin: "0 auto",
+            marginTop: "20px",
+          }}
+        >
+          <Box>
+            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+          </Box>
+          <Box style={{ cursor: "pointer", zIndex: "99" }} onClick={handleOpen}>
+            <img src={homeIcon} alt={"HomeIcon"} />
+            <Modal open={open}>
+              <ErrorModal
+                titleText={"Are you sure?"}
+                subTitle={
+                  "You are about to exit this experience. Click ‘confirm’ to continue."
+                }
+                colorbuttonText={"Cancel"}
+                buttonText={"Confirm"}
+              />
+            </Modal>
+          </Box>
+        </Box>
+        <QrScanner
+          imageUrl={Man}
+          desccription={
+            "Please pick up the device on your right and scan the QR code"
+          }
+          logo={
+            <GenQRCode
+              expId={expId}
+              url={`https://taxibpp.becknprotocol.io?${expId}`}
+            />
+          }
+        />
+      </Box>
     </motion.div>
   );
 };

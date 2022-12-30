@@ -277,6 +277,10 @@
   align-content: center;
   margin: 40px 0px 40px 20px;
 }
+.yatri > img {
+  height: 100% !important;
+  width: 100% !important;
+}
 .gateways {
   margin: 0 auto;
   background: none !important;
@@ -403,17 +407,18 @@
   /* left: 90px; */
   width: 130px !important;
   z-index: 0 !important;
-}.circle-driver-active{
+}
+.circle-driver-active {
   position: absolute !important;
   right: 139px;
-    bottom: 67px;
+  bottom: 67px;
   width: 130px !important;
   z-index: 0 !important;
 }
-.circle-driver{
-  position: absolute !important; 
+.circle-driver {
+  position: absolute !important;
   left: 111px;
-    bottom: 106px;
+  bottom: 106px;
   width: 130px !important;
   z-index: 0 !important;
 }
