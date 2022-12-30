@@ -35,12 +35,15 @@ const ViewMyJourney = () => {
   // const PATH = "/admin/orders";
   return (
     <motion.div
-      initial={{ width: "0%" }}
-      animate={{ width: "100%" }}
-      exit={{
-        x: window.innerWidth,
-        transition: { ease: "easeIn", duration: 0.2 },
-      }}
+      // initial={{ width: "0%" }}
+      // animate={{ width: "100%" }}
+      // exit={{
+      //   x: window.innerWidth,
+      //   transition: { ease: "easeIn", duration: 0.2 },
+      // }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
       style={{ background: "aqua" }}
     >
       <div className="sequence">sequential flow</div>
