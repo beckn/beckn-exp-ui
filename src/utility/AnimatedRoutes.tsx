@@ -22,7 +22,7 @@ import Luxecabe from "../driver/Luxecabe";
 const AnimatedRoutes = ({ expId }: any) => {
   const location = useLocation();
   return (
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<WelcomeToExpCenter />} />
         <Route path="/VisualizeAction" element={<VisualizeAction />} />

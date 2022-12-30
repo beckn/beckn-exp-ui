@@ -7,6 +7,7 @@
 
 .beckn-app {
   background: url("./assets/beckn-background.png");
+  background-size: 100% 100%;
   position: relative;
   height: 100vh;
   display: grid;
