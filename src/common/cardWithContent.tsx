@@ -44,7 +44,7 @@ const CardWithContent: React.FC<cardContentPropsModal> = ({
         width: "100%",
         height: "245px",
         border: "1px solid #272727",
-        minWidth: "600px",
+        minWidth: "480px",
         background:
           "linear-gradient(0deg, #000000, #000000),linear-gradient(0deg, #272727, #272727)",
       }}
@@ -68,8 +68,6 @@ const CardWithContent: React.FC<cardContentPropsModal> = ({
             paddingLeft={"40px"}
             className="image-url-container"
             style={{
-              height: "80px",
-              width: "120px",
               display: "flex",
               alignItems: "center",
             }}

@@ -6,7 +6,8 @@ import Title from "../common/title";
 import CardWithContent from "../common/cardWithContent";
 import TiltArrow from "../assets/tiltArrow.svg";
 import taxiIcon from "../assets/taxiIcon.svg";
-import LuxeCabSequentialflow from "../assets/LuxeCabSequentialflow.png";
+import LuxeCabSequentialflow from "../assets/luxecab.svg";
+import LuxeCabHover from "../assets/luxecabBackground.svg";
 import tiltArrowblack from "../assets/tiltArrowblack.svg";
 import { motion } from "framer-motion";
 import homeIcon from "../assets/homeIcon.png";
@@ -85,7 +86,7 @@ const AcceptRideForTaxiHub = () => {
                 style={{ textDecoration: "none", color: "#000" }}
               >
                 <CardWithContent
-                  mainIconUrlInBlack={LuxeCabSequentialflow}
+                  mainIconUrlInBlack={LuxeCabHover}
                   arrowIconInBlackColor={tiltArrowblack}
                   mainIconUrl={LuxeCabSequentialflow}
                   arrowIconUrl={TiltArrow}
