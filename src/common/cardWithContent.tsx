@@ -69,7 +69,7 @@ const CardWithContent: React.FC<cardContentPropsModal> = ({
             className="image-url-container"
             style={{
               height: "80px",
-              width: "180px",
+              width: "120px",
               display: "flex",
               alignItems: "center",
             }}

@@ -15,28 +15,28 @@ const NodeComponent = (props: any) => {
     {
       img: `${myMobility}`,
       name: "mobility",
-      id: "2",
+      id: "mobilityreferencebap.becknprotocol.io",
     },
     {
       img: `${RHP}`,
       name: "taxi",
-      id: "3",
+      id: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
     },
 
     {
       title: "Gateway",
       name: "gateway",
-      id: "1",
+      id: "gateway.becknprotocol.io",
     },
     {
       img: `${whatsappMobility}`,
       name: "whatsappMobility",
-      id: "4",
+      id: "mobilityreferencebap-staging.becknprotocol.io",
     },
     {
       img: `${LuxeCab}`,
       name: "yatri",
-      id: "5",
+      id: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
     },
   ];
   const expId = localStorage.getItem("expId");

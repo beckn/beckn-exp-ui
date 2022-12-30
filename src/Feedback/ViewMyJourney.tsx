@@ -14,7 +14,7 @@ const ViewMyJourney = () => {
   const fetchEvent = async () => {
     try {
       const res = await axios.get(
-        `https://api.experience.becknprotocol.io/v2/event/f5b0caf2-166b-4c9d-af9f-a76a4e1271c7`
+        `https://api.experience.becknprotocol.io/v2/event/${expId}`
       );
 
       setEvents(res.data.events);
