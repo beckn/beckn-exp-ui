@@ -18,10 +18,12 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd beckn-exp-ui
+          git stash
           git checkout main
           git pull
           npm install
           npm run build
           sleep 10
           pm2 kill
-          pm2 start --name=exp-ui  npm -- start
+          pm2 server build --spa
+          # pm2 start --name=exp-ui  npm -- start
