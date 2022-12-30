@@ -403,17 +403,18 @@
   /* left: 90px; */
   width: 130px !important;
   z-index: 0 !important;
-}.circle-driver-active{
+}
+.circle-driver-active {
   position: absolute !important;
   right: 139px;
-    bottom: 67px;
+  bottom: 67px;
   width: 130px !important;
   z-index: 0 !important;
 }
-.circle-driver{
-  position: absolute !important; 
+.circle-driver {
+  position: absolute !important;
   left: 111px;
-    bottom: 106px;
+  bottom: 106px;
   width: 130px !important;
   z-index: 0 !important;
 }
@@ -502,52 +503,59 @@
 .Xarrow {
   position: relative;
 }
-.event_1_2 {
+/* // Gateway	 	gateway.becknprotocol.io
+// Travelbuddy	 	mobilityreferencebap.becknprotocol.io
+// TravelHub	 	becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in
+// Whatsapp	 	mobilityreferencebap-staging.becknprotocol.io
+// LuxeCabs	 	becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp
+// Yatri	 	api.sandbox.beckn.juspay.in/bpp/cab/v1/3041599b-2fcf-45e1-bfd5-115db5cd1353
+          */
+.event_gateway.becknprotocol.io_mobilityreferencebap.becknprotocol.io {
   transform: rotate(36deg);
   margin-top: 30px;
 }
-.event_2_1 {
+.event_mobilityreferencebap.becknprotocol.io_gateway.becknprotocol.io {
   transform: rotate(35deg);
   margin-bottom: 70px;
 }
-.event_5_1 {
+.event_becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp_gateway.becknprotocol.io {
   transform: rotate(31deg);
   margin-top: 25px;
 }
-.event_3_1 {
+.event_becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in_gateway.becknprotocol.io {
   transform: rotate(-32deg);
   margin-bottom: 142px;
 }
-.event_1_3 {
+.event_gateway.becknprotocol.io_becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in {
   transform: rotate(-34deg);
   margin-top: 21px;
 }
-.event_1_5 {
+.event_gateway.becknprotocol.io_becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp {
   transform: rotate(34deg);
   margin-bottom: 142px;
 }
-.event_2_3 {
+.event_mobilityreferencebap.becknprotocol.io_becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in {
   margin-bottom: 37px;
 }
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .event_1_2 {
+  .event_gateway.becknprotocol.io_mobilityreferencebap.becknprotocol.io {
     transform: rotate(58deg);
     margin-bottom: 93px;
   }
-  .event_2_1 {
+  .event_mobilityreferencebap.becknprotocol.io_gateway.becknprotocol.io {
     transform: rotate(55deg);
     margin-top: 77px;
   }
-  .event_1_3 {
+  .event_gateway.becknprotocol.io_becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in {
     transform: rotate(-24deg);
   }
-  .event_3_1 {
+  .event_becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in_gateway.becknprotocol.io {
     transform: rotate(24deg);
   }
-  .event_1_5 {
+  .event_gateway.becknprotocol.io_becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp {
     transform: rotate(25deg);
   }
-  .event_5_1 {
+  .event_becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp_gateway.becknprotocol.io {
     transform: rotate(-25deg);
   }
 }
