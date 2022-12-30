@@ -4,10 +4,10 @@ import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import Title from "../common/title";
 import CardWithContent from "../common/cardWithContent";
 import TiltArrow from "../assets/tiltArrow.svg";
-import RedditLogo from "../assets/redditLogo.svg";
+import WhatsappLogoBlack from "../assets/whatsappLogoBlack.png";
 import Car from "../assets/car.svg";
 import { Link, useNavigate } from "react-router-dom";
-import redditLogoBlack from "../assets/redditLogoBlack.svg";
+import WhatsappLogo from "../assets/whatsappLogo.png";
 import tiltArrowblack from "../assets/tiltArrowblack.svg";
 import carBlack from "../assets/carBlack.svg";
 import { motion } from "framer-motion";
@@ -97,10 +97,10 @@ const TravelBuddy = () => {
                 style={{ textDecoration: "none", color: "#000", width: "100%" }}
               >
                 <CardWithContent
-                  mainIconUrlInBlack={redditLogoBlack}
+                  mainIconUrlInBlack={WhatsappLogoBlack}
                   arrowIconInBlackColor={tiltArrowblack}
                   className="hover_card"
-                  mainIconUrl={RedditLogo}
+                  mainIconUrl={WhatsappLogo}
                   arrowIconUrl={TiltArrow}
                   MainTitle={"whatsapp"}
                   subTitle={"book a ride via  chat "}
