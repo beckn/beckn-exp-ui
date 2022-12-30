@@ -81,7 +81,7 @@ const AcceptRideForTaxiHub = () => {
                 />
               </Link>
               <Link
-                to="/useWhatsapp"
+                to="/luxecabe"
                 style={{ textDecoration: "none", color: "#000" }}
               >
                 <CardWithContent

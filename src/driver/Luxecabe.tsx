@@ -1,21 +1,20 @@
-import QrScanner from "../common/qrScanner";
-import Man from "../assets/man.svg";
-import GenQRCode from "../utility/GenQRCode";
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import Man from "../assets/man.svg";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useInterval from "../common/MobilityCard/useInterval";
+import { motion } from "framer-motion";
 import { Box, Modal } from "@mui/material";
 import ErrorModal from "../common/ErrorModal";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
+import QrScanner from "../common/qrScanner";
+import GenQRCode from "../utility/GenQRCode";
 
 interface Props {
   expId: string;
 }
-
-const DriverATaxi = ({ expId }: Props) => {
+const Luxecabe = ({ expId }: Props) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -33,7 +32,7 @@ const DriverATaxi = ({ expId }: Props) => {
         experienceId: expId,
         experienceCenterId: "2",
         eventSourceAppId:
-          "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
+          "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
         start_ts: Date.now(),
       }), // body data type must match "Content-Type" header
     })
@@ -132,4 +131,4 @@ const DriverATaxi = ({ expId }: Props) => {
   );
 };
 
-export default DriverATaxi;
+export default Luxecabe;
