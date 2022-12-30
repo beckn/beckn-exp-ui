@@ -7,8 +7,9 @@ import useInterval from "./useInterval";
 import { useNavigate } from "react-router-dom";
 import BecknLogoIcon from "../../assets/becklogoSmall.svg";
 import { motion } from "framer-motion";
-import { Box } from "@mui/material";
+import { Box, Modal } from "@mui/material";
 import homeIcon from "../../assets/homeIcon.png";
+import ErrorModal from "../ErrorModal";
 
 const MobilityCard = () => {
   const navigate = useNavigate();
@@ -110,6 +111,11 @@ const MobilityCard = () => {
     "events"
   );
 
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
   return (
     <motion.div
       initial={{ width: "0%" }}
@@ -133,8 +139,18 @@ const MobilityCard = () => {
           <Box>
             <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
           </Box>
-          <Box style={{ cursor: "pointer" }}>
+          <Box style={{ cursor: "pointer" }} onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
+            <Modal open={open}>
+              <ErrorModal
+                titleText={"Are you sure?"}
+                subTitle={
+                  "You are about to exit this experience. Click ‘confirm’ to continue."
+                }
+                colorbuttonText={"Cancel"}
+                buttonText={"Confirm"}
+              />
+            </Modal>
           </Box>
         </Box>
         <Xwrapper>

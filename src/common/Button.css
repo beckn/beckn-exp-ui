@@ -1,0 +1,26 @@
+.btn {
+  background: #abd4fa;
+  border-radius: 30px;
+  color: #000000;
+  padding: 5px 15px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.btn span {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Poppins";
+}
+.color-button {
+  background: #1e1e1e;
+  font-family: "Poppins";
+  padding: 5px 15px;
+  text-align: center;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  border: 1px solid white;
+  margin-left: 5px;
+  cursor: pointer;
+}

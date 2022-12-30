@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import menWithCar from "../assets/car-with-a-man.png";
 import tiltArrowBlack from "../assets/tiltArrowblack.svg";
 import tiltArrow from "../assets/tiltArrow.svg";
 import { Link } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Modal } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import { motion } from "framer-motion";
+import ErrorModal from "../common/ErrorModal";
 const DidYouLikeBecknExp = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
   return (
     <>
       <motion.div
@@ -42,8 +47,18 @@ const DidYouLikeBecknExp = () => {
             <Box>
               <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
             </Box>
-            <Box style={{ cursor: "pointer" }}>
+            <Box style={{ cursor: "pointer" }} onClick={handleOpen}>
               <img src={homeIcon} alt={"HomeIcon"} />
+              <Modal open={open}>
+                <ErrorModal
+                  titleText={"Are you sure?"}
+                  subTitle={
+                    "You are about to exit this experience. Click ‘confirm’ to continue."
+                  }
+                  colorbuttonText={"Cancel"}
+                  buttonText={"Confirm"}
+                />
+              </Modal>
             </Box>
           </Box>
           <Box

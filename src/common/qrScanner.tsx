@@ -1,7 +1,5 @@
-import React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
-import homeIcon from "../assets/homeIcon.png";
+import React, { useState } from "react";
+import { Box, Card, CardContent, Modal, Typography } from "@mui/material";
 import Arrow from "../assets/arrow.svg";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
@@ -35,33 +33,7 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
   logo,
 }: qrScannerPropsModal) => {
   return (
-    <Box
-      className="main-container"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        width: "100%",
-        minHeight: "100vh",
-        flexDirection: "column",
-      }}
-    >
-      <Box
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          width: "96%",
-          margin: "0 auto",
-          marginTop: "20px",
-        }}
-      >
-        <Box>
-          <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-        </Box>
-        <Box style={{ cursor: "pointer" }}>
-          <img src={homeIcon} alt={"HomeIcon"} />
-        </Box>
-      </Box>
+    <>
       <Box
         style={{
           display: "flex",
@@ -108,22 +80,21 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
                   alignItems: "center",
                 }}
               >
-              <Link
-                to="/MobilityCard"
-                style={{ textDecoration: "none",color: "#AED3F0", }}
-              >
-                <ColorButton
-                  endIcon={<img src={Arrow} alt={""} />}
+                <Link
+                  to="/MobilityCard"
+                  style={{ textDecoration: "none", color: "#AED3F0" }}
                 >
-                  Next
-                </ColorButton>
-              </Link>
+                  <ColorButton endIcon={<img src={Arrow} alt={""} />}>
+                    Next
+                  </ColorButton>
+                </Link>
               </Box>
             </CardContent>
           </Card>
         </Box>
       </Box>
-    </Box>
+      {/* </Box> */}
+    </>
   );
 };
 

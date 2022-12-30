@@ -76,7 +76,12 @@ const useWhatsapp = ({ expId }: Props) => {
         desccription={
           "Please pick up the device on your right and scan the QR code"
         }
-        logo={<GenQRCode expId={expId} url={""} />}
+        logo={
+          <GenQRCode
+            expId={expId}
+            url={`https://wa.me/+918217350525?text=hi?${expId}`}
+          />
+        }
       />
     </motion.div>
   );
