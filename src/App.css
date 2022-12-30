@@ -48,6 +48,20 @@
   font-size: 60px;
   line-height: 120px;
 }
+.sequence {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 45px;
+  font-family: Poppins sans-serif;
+  font-weight: 300;
+}
+
+.signal text {
+  fill: #fff;
+}
 
 .goBack {
   position: "absolute";

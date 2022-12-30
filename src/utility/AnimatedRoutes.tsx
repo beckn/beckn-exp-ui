@@ -15,6 +15,7 @@ import UseWhatsapp from "../whatsapp/useWhatsapp";
 import ScanQrForTravelBuddy from "../rider/scanQrForTravelBuddy";
 import MobilityCard from "../common/MobilityCard/MobilityCard";
 import { AnimatePresence } from "framer-motion";
+import ViewMyJourney from "../Feedback/ViewMyJourney";
 
 const AnimatedRoutes = ({ expId }: any) => {
   const location = useLocation();
@@ -57,6 +58,20 @@ const AnimatedRoutes = ({ expId }: any) => {
         />
         <Route path="/didYouLikeBecknExp" element={<DidYouLikeBecknExp />} />
         <Route path="/improveTheExp" element={<ImproveTheExp />} />
+        <Route
+          path="*"
+          element={
+            <h1
+              style={{
+                color: "#fff",
+              }}
+              className="main-container"
+            >
+              Error 404 : Page Not Found
+            </h1>
+          }
+        />
+        <Route path="/viewMyJourney" element={<ViewMyJourney />} />
       </Routes>
     </AnimatePresence>
   );
