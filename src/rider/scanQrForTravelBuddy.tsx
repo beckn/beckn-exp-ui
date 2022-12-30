@@ -37,7 +37,7 @@ const ScanQrForTravelBuddy = ({ expId }: Props) => {
       body: JSON.stringify({
         experienceId: expId,
         experienceCenterId: "1",
-        eventSourceAppId: "1",
+        eventSourceAppId: "mobilityreferencebap.becknprotocol.io",
         start_ts: Date.now(),
       }), // body data type must match "Content-Type" header
     })

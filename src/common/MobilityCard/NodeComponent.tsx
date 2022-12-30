@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import myMobility from "../../assets/myMobility.svg";
 import RHP from "../../assets/RHP.svg";
 import whatsappMobility from "../../assets/whatsappMobility.svg";
-import MTP from "../../assets/MTP.svg";
+import LuxeCab from "../../assets/LuxeCab.png";
 import GWP from "../../assets/girlWithPhone.svg";
 import MWP from "../../assets/menWithPhone.svg";
 import circle from "../../assets/circle.svg";
@@ -34,9 +34,9 @@ const NodeComponent = (props: any) => {
       id: "mobilityreferencebap-staging.becknprotocol.io",
     },
     {
-      img: `${MTP}`,
-      name: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
-      id: "5",
+      img: `${LuxeCab}`,
+      name: "yatri",
+      id: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
     },
   ];
   const expId = localStorage.getItem("expId");

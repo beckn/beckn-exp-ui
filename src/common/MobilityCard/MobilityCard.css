@@ -277,6 +277,10 @@
   align-content: center;
   margin: 40px 0px 40px 20px;
 }
+.yatri > img {
+  height: 100% !important;
+  width: 100% !important;
+}
 .gateways {
   margin: 0 auto;
   background: none !important;
