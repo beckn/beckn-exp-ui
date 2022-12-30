@@ -390,6 +390,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 2;
 }
 .mobilityFooter .MWP > img {
   width: 130px;
@@ -403,15 +404,15 @@
   z-index: 0 !important;
 }.circle-driver-active{
   position: absolute !important;
-  right: 136px;
-    bottom: 126px;
+  right: 139px;
+    bottom: 67px;
   width: 130px !important;
   z-index: 0 !important;
 }
 .circle-driver{
   position: absolute !important; 
-  left: 90px;
-  bottom: 127px;
+  left: 111px;
+    bottom: 106px;
   width: 130px !important;
   z-index: 0 !important;
 }
