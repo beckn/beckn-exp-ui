@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
-import { Box, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Box, Modal, Typography } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import feedbackQr from "../assets/feedbackQr.svg";
 import { motion } from "framer-motion";
 import homeIcon from "../assets/homeIcon.png";
+import ErrorModal from "../common/ErrorModal";
+import { useNavigate } from "react-router-dom";
 
 const ThankYouForVisitBecknExpCenter = () => {
+  // const navigate = useNavigate();
   const expId = localStorage.getItem("expId");
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const updateExpId = async () => {
@@ -60,8 +63,11 @@ const ThankYouForVisitBecknExpCenter = () => {
               right: "50px",
               top: "30px",
             }}
+            // onClick={() => navigate("/")}
           >
-            <img src={homeIcon} alt={"HomeIcon"} />
+            <a href="/">
+              <img src={homeIcon} alt={"HomeIcon"} />
+            </a>
           </Box>
           <Box
             style={{

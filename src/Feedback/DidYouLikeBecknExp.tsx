@@ -86,7 +86,7 @@ const DidYouLikeBecknExp = () => {
                   resize: "none",
                 }}
               >
-                Awesome! Please share your valuable feedback with us.
+                did you like the beckn experience?
               </p>
 
               <div
