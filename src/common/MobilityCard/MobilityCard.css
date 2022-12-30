@@ -398,7 +398,20 @@
 }
 .mobilityFooter .circle {
   position: absolute !important;
+  /* left: 90px; */
+  width: 130px !important;
+  z-index: 0 !important;
+}.circle-driver-active{
+  position: absolute !important;
+  right: 136px;
+    bottom: 126px;
+  width: 130px !important;
+  z-index: 0 !important;
+}
+.circle-driver{
+  position: absolute !important; 
   left: 90px;
+  bottom: 127px;
   width: 130px !important;
   z-index: 0 !important;
 }

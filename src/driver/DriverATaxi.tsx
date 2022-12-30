@@ -48,18 +48,18 @@ const DriverATaxi = ({ expId }: Props) => {
         to="/MobilityCard"
         style={{ textDecoration: "none", color: "#000" }}
       > */}
-        <QrScanner
-          imageUrl={Man}
-          desccription={
-            "Please pick up the device on your right and scan the QR code"
-          }
-          logo={
-            <GenQRCode
-              expId={expId}
-              url={`https://taxibpp.becknprotocol.io?${expId}`}
-            />
-          }
-        />
+      <QrScanner
+        imageUrl={Man}
+        desccription={
+          "Please pick up the device on your right and scan the QR code"
+        }
+        logo={
+          <GenQRCode
+            expId={expId}
+            url={`https://taxibpp.becknprotocol.io?${expId}`}
+          />
+        }
+      />
       {/* </Link> */}
     </motion.div>
   );

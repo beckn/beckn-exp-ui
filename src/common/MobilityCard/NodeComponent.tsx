@@ -7,6 +7,8 @@ import MTP from "../../assets/MTP.svg";
 import GWP from "../../assets/girlWithPhone.svg";
 import MWP from "../../assets/menWithPhone.svg";
 import circle from "../../assets/circle.svg";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const NodeComponent = (props: any) => {
   const mobilityCardArr = [
@@ -37,6 +39,23 @@ const NodeComponent = (props: any) => {
       id: "5",
     },
   ];
+  const expId = localStorage.getItem("expId");
+  const [experienceCenterId, setExperienceCenterId] = useState<any>("");
+  const fetchEvent = async () => {
+    try {
+      const res = await axios.get(
+        `https://api.experience.becknprotocol.io/v2/event/${expId}`
+      );
+      setExperienceCenterId(res.data.experienceSession.experienceCenterId);
+    } catch (error) {
+      console.log(`error ${error}`);
+    }
+  };
+  console.log(experienceCenterId);
+
+  useEffect(() => {
+    fetchEvent();
+  }, []);
   return (
     <>
       <div className="mobility-row">
@@ -61,8 +80,6 @@ const NodeComponent = (props: any) => {
           <div className="GWP-text">{props.riderText}</div>
 
           <img src={GWP} alt="" />
-
-          <img className="circle" src={circle} alt="" />
         </div>
         <div className="MWP">
           <div className="MWP-text">{props.driverText}</div>
@@ -70,6 +87,15 @@ const NodeComponent = (props: any) => {
             <img src={MWP} alt="" />
           </Link>
         </div>
+        <img
+          className={`circle ${
+            experienceCenterId === "2"
+              ? "circle-driver-active"
+              : "circle-driver"
+          }`}
+          src={circle}
+          alt=""
+        />
       </div>
     </>
   );
