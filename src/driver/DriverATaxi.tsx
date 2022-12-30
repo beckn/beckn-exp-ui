@@ -23,7 +23,7 @@ const DriverATaxi = ({ expId }: Props) => {
       referrerPolicy: "no-referrer",
       body: JSON.stringify({
         experienceId: expId,
-        experienceCenterId: "1",
+        experienceCenterId: "2",
         eventSourceAppId: "1",
         start_ts: Date.now(),
       }), // body data type must match "Content-Type" header
