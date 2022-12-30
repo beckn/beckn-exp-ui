@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import QrScanner from "../common/qrScanner";
 import Lady from "../assets/lady.svg";
 import GenQRCode from "../utility/GenQRCode";
@@ -6,12 +6,20 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
+import { Box, Modal } from "@mui/material";
+import ErrorModal from "../common/ErrorModal";
+import BecknLogoIcon from "../assets/becklogoSmall.svg";
+import homeIcon from "../assets/homeIcon.png";
 
 interface Props {
   expId: string;
 }
 
 const useWhatsapp = ({ expId }: Props) => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
   const navigate = useNavigate();
 
   const postExpId = async () => {
@@ -71,18 +79,56 @@ const useWhatsapp = ({ expId }: Props) => {
         transition: { ease: "easeOut", duration: 0.2 },
       }}
     >
-      <QrScanner
-        imageUrl={Lady}
-        desccription={
-          "Please pick up the device on your right and scan the QR code"
-        }
-        logo={
-          <GenQRCode
-            expId={expId}
-            url={`https://wa.me/+918217350525?text=hi?${expId}`}
-          />
-        }
-      />
+      {" "}
+      <Box
+        className="main-container"
+        style={{
+          width: "100%",
+          minHeight: "100vh",
+          flexDirection: "column",
+          overflow: "hidden",
+        }}
+      >
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "96%",
+            margin: "0 auto",
+            marginTop: "20px",
+          }}
+        >
+          <Box>
+            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+          </Box>
+          <Box style={{ cursor: "pointer", zIndex: "99" }} onClick={handleOpen}>
+            <img src={homeIcon} alt={"HomeIcon"} />
+            <Modal open={open}>
+              <ErrorModal
+                titleText={"Are you sure?"}
+                subTitle={
+                  "You are about to exit this experience. Click ‘confirm’ to continue."
+                }
+                colorbuttonText={"Cancel"}
+                buttonText={"Confirm"}
+              />
+            </Modal>
+          </Box>
+        </Box>
+        <QrScanner
+          imageUrl={Lady}
+          desccription={
+            "Please pick up the device on your right and scan the QR code"
+          }
+          logo={
+            <GenQRCode
+              expId={expId}
+              url={`https://wa.me/+918217350525?text=hi?${expId}`}
+            />
+          }
+        />
+      </Box>
     </motion.div>
   );
 };
