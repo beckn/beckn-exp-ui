@@ -119,10 +119,10 @@ const ScanQrForTravelBuddy = ({ expId }: Props) => {
             </Modal>
           </Box>
         </Box>
-        <Link
+        {/* <Link
           to="/MobilityCard"
           style={{ textDecoration: "none", color: "#000" }}
-        >
+        > */}
           <QrScanner
             imageUrl={Lady}
             desccription={
@@ -135,7 +135,7 @@ const ScanQrForTravelBuddy = ({ expId }: Props) => {
               />
             }
           />
-        </Link>
+        {/* </Link> */}
       </Box>
     </motion.div>
   );

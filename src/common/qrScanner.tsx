@@ -49,13 +49,15 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
             alt={"Lady"}
           />
         </Box>
-        <Box style={{ height: "max-content" }}>
+        <Box>
           <Card
             sx={{
               maxWidth: 445,
               height: "70%",
               background: "#1E1E1E",
               textAlign: "center",
+              minHeight:"600px",
+              position:"relative"
             }}
           >
             <CardContent>
@@ -73,18 +75,17 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
               {logo}
               <Box
                 style={{
-                  margin: "30px auto",
-                  padding: "6px",
-                  display: "flex",
-                  justifyContent: "space-around",
-                  alignItems: "center",
+                  position:"absolute",
+                  bottom:"40px",
+                  width:"100%",
+                  left:"0",
                 }}
               >
                 <Link
                   to="/MobilityCard"
                   style={{ textDecoration: "none", color: "#AED3F0" }}
                 >
-                  <ColorButton endIcon={<img src={Arrow} alt={""} />}>
+                  <ColorButton endIcon={<img src={Arrow} alt={""} />} style={{margin:"0 auto"}}>
                     Next
                   </ColorButton>
                 </Link>

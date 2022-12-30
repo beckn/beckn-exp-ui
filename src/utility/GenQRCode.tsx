@@ -7,7 +7,7 @@ interface Props {
 const GenQRCode = ({ expId, url }: Props) => {
   return (
     <div>
-      <QRcode style={{ width: "180px", opacity: "0.5" }} value={url} />
+      <QRcode style={{ width: "120px", opacity: "0.5", height: "120px" }} value={url} />
     </div>
   );
 };
