@@ -25,5 +25,5 @@ jobs:
           npm run build
           sleep 10
           pm2 kill
-          pm2 server build --spa
+          pm2 serve build 3000 --spa
           # pm2 start --name=exp-ui  npm -- start
