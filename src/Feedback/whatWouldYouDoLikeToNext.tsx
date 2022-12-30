@@ -1,4 +1,5 @@
-import { Box, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Box, Modal, Typography } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import { styled } from "@mui/material/styles";
 import Button, { ButtonProps } from "@mui/material/Button";
@@ -7,6 +8,7 @@ import TiltArrow from "../assets/tiltArrow.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import homeIcon from "../assets/homeIcon.png";
+import ErrorModal from "../common/ErrorModal";
 
 const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
   width: "224px",
@@ -35,7 +37,36 @@ const ColorButtonSec = styled(Button)<ButtonProps>(({ theme }) => ({
   },
 }));
 
-const whatWouldYouDoLikeToNext = () => {
+const WhatWouldYouDoLikeToNext = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const expId = localStorage.getItem("expId");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const updateExpId = async () => {
+    await fetch("https://api.experience.becknprotocol.io/xc/experience", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify({
+        experienceId: expId,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log(result.experience_id, "result"))
+      .catch((error) => console.log("error", error));
+  };
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    updateExpId();
+    localStorage.removeItem("expId");
+  }, [updateExpId]);
+
   return (
     <motion.div
       style={{ overflow: "hidden" }}
@@ -67,8 +98,19 @@ const whatWouldYouDoLikeToNext = () => {
               right: "50px",
               top: "30px",
             }}
+            onClick={handleOpen}
           >
             <img src={homeIcon} alt={"HomeIcon"} />
+            <Modal open={open}>
+              <ErrorModal
+                titleText={"Are you sure?"}
+                subTitle={
+                  "You are about to exit this experience. Click ‘confirm’ to continue."
+                }
+                colorbuttonText={"Cancel"}
+                buttonText={"Confirm"}
+              />
+            </Modal>
           </Box>
           <Box>
             <Typography color={"#FFFF"}>
@@ -121,4 +163,4 @@ const whatWouldYouDoLikeToNext = () => {
   );
 };
 
-export default whatWouldYouDoLikeToNext;
+export default WhatWouldYouDoLikeToNext;

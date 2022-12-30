@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import menWithCar from "../assets/car-with-a-man.png";
 import { Link } from "react-router-dom";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
-import { Box } from "@mui/material";
+import { Box, Modal } from "@mui/material";
 import { motion } from "framer-motion";
+import ErrorModal from "../common/ErrorModal";
 const YourFeedbackIsValubleForUs = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
   return (
     <motion.div
       style={{ overflow: "hidden" }}
@@ -39,8 +44,18 @@ const YourFeedbackIsValubleForUs = () => {
           <Box>
             <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
           </Box>
-          <Box style={{ cursor: "pointer" }}>
+          <Box style={{ cursor: "pointer" }} onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
+            <Modal open={open}>
+              <ErrorModal
+                titleText={"Are you sure?"}
+                subTitle={
+                  "You are about to exit this experience. Click ‘confirm’ to continue."
+                }
+                colorbuttonText={"Cancel"}
+                buttonText={"Confirm"}
+              />
+            </Modal>
           </Box>
         </Box>
         <Box

@@ -96,15 +96,20 @@ const VisualizeAction = () => {
                 subTitle={"experience beckn enabled live"}
               />
             </Link>
-            <CardWithContent
-              mainIconUrlInBlack={BulbIconBlack}
-              arrowIconInBlackColor={tiltArrowblack}
-              className="hover_card"
-              mainIconUrl={BulbIcon}
-              arrowIconUrl={TiltArrow}
-              MainTitle={"learn about beckn"}
-              subTitle={"understanding what is beckn"}
-            />
+            <Link
+              to="/IframeVideo"
+              style={{ textDecoration: "none", color: "#000", width: "100%" }}
+            >
+              <CardWithContent
+                mainIconUrlInBlack={BulbIconBlack}
+                arrowIconInBlackColor={tiltArrowblack}
+                className="hover_card"
+                mainIconUrl={BulbIcon}
+                arrowIconUrl={TiltArrow}
+                MainTitle={"learn about beckn"}
+                subTitle={"understanding what is beckn"}
+              />
+            </Link>
           </Box>
           <Box
             style={{

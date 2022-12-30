@@ -1,0 +1,43 @@
+.modal-container {
+  position: relative;
+  width: 900px;
+  height: 290px;
+  background: #1e1e1e;
+  margin: 40px auto;
+}
+.title-text {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  justify-content: space-between;
+  display: flex;
+}
+.cross-icon {
+  position: relative;
+  margin-left: 443px;
+  width: 42.43px;
+}
+.modal-box {
+  margin-left: 46px;
+}
+.subtitle-text {
+  position: relative;
+  max-width: 838px;
+  padding-top: 49px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+}
+.button {
+  display: flex;
+  margin-top: 90px;
+  justify-content: end;
+}
+.beckn-app {
+  text-align: left !important;
+}

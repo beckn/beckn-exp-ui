@@ -283,6 +283,7 @@
   display: grid;
   align-content: end;
   margin: 0px auto;
+  text-align: center;
 }
 .gateway,
 .bordergateway {

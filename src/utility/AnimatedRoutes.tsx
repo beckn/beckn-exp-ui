@@ -14,8 +14,9 @@ import DriverATaxi from "../driver/DriverATaxi";
 import UseWhatsapp from "../whatsapp/useWhatsapp";
 import ScanQrForTravelBuddy from "../rider/scanQrForTravelBuddy";
 import MobilityCard from "../common/MobilityCard/MobilityCard";
-import { AnimatePresence } from "framer-motion";
 import ViewMyJourney from "../Feedback/ViewMyJourney";
+import IframeVideo from "../common/IframeVideo";
+import { AnimatePresence } from "framer-motion";
 
 const AnimatedRoutes = ({ expId }: any) => {
   const location = useLocation();
@@ -26,6 +27,7 @@ const AnimatedRoutes = ({ expId }: any) => {
         <Route path="/VisualizeAction" element={<VisualizeAction />} />
         <Route path="/ChoiceToDo" element={<ChoiceToDo />} />
         <Route path="/TravelBuddy" element={<TravelBuddy />} />
+        <Route path="/IframeVideo" element={<IframeVideo />} />
 
         {/* Travel buddy */}
         <Route
