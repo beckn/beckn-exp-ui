@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import BecknLogoIcon from "../assets/becknLogoIcon.svg";
 import Title from "../common/title";
@@ -6,11 +7,13 @@ import CardWithContent from "../common/cardWithContent";
 import TiltArrow from "../assets/tiltArrow.svg";
 import taxiIcon from "../assets/taxiIcon.svg";
 import yatriIcon from "../assets/yatriIcon.svg";
-import { Link } from "react-router-dom";
 import tiltArrowblack from "../assets/tiltArrowblack.svg";
 import { motion } from "framer-motion";
+import backArrw from "../assets/backArrw.png";
 
 const AcceptRideForTaxiHub = () => {
+const navigate = useNavigate();
+
   return (
     <motion.div
       initial={{ width: "0%" }}
@@ -75,6 +78,23 @@ const AcceptRideForTaxiHub = () => {
                 />
               </Link>
             </Box>
+          </Box>
+          <Box
+            style={{
+              background: "black",
+              color: "#AED3F0",
+              width: "104px",
+              margin: "40px auto",
+              padding: "6px",
+              borderRadius: "12px",
+              cursor: "pointer",
+              display: "flex",
+              justifyContent: "space-around",
+              fontSize: "14px",
+            }}
+            onClick={() => navigate(-1)}
+          >
+            <img src={backArrw} alt="" /> Go Back
           </Box>
         </Box>
       </Box>

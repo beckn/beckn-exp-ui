@@ -44,10 +44,10 @@ const DriverATaxi = ({ expId }: Props) => {
         transition: { ease: "easeOut", duration: 0.2 },
       }}
     >
-      <Link
+      {/* <Link
         to="/MobilityCard"
         style={{ textDecoration: "none", color: "#000" }}
-      >
+      > */}
         <QrScanner
           imageUrl={Man}
           desccription={
@@ -60,7 +60,7 @@ const DriverATaxi = ({ expId }: Props) => {
             />
           }
         />
-      </Link>
+      {/* </Link> */}
     </motion.div>
   );
 };

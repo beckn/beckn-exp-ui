@@ -19,10 +19,10 @@ const useWhatsapp = ({ expId }: Props) => {
         transition: { ease: "easeOut", duration: 0.2 },
       }}
     >
-      <Link
+      {/* <Link
         to="/MobilityCard"
         style={{ textDecoration: "none", color: "#000" }}
-      >
+      > */}
         <QrScanner
           imageUrl={Lady}
           desccription={
@@ -30,7 +30,7 @@ const useWhatsapp = ({ expId }: Props) => {
           }
           logo={<GenQRCode expId={expId} url={""} />}
         />
-      </Link>
+      {/* </Link> */}
     </motion.div>
   );
 };
