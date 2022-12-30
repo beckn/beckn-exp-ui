@@ -2,12 +2,32 @@ import React from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
+import Arrow from "../assets/arrow.svg";
+import { Link } from "react-router-dom";
+import { styled } from "@mui/material/styles";
+import Button, { ButtonProps } from "@mui/material/Button";
 
 interface qrScannerPropsModal {
   imageUrl: any;
   desccription: string;
   logo: any;
 }
+
+const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
+  background: "black",
+  color: "#AED3F0",
+  width: "104px",
+  padding: "6px",
+  borderRadius: "12px",
+  cursor: "pointer",
+  display: "flex",
+  justifyContent: "space-around",
+  fontSize: "16px",
+  textTransform: "lowercase",
+  "&:hover": {
+    backgroundColor: "#0E0E0E",
+  },
+}));
 
 const QrScanner: React.FC<qrScannerPropsModal> = ({
   imageUrl,
@@ -79,6 +99,26 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
                 {desccription}
               </Typography>
               {logo}
+              <Box
+                style={{
+                  margin: "30px auto",
+                  padding: "6px",
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                }}
+              >
+              <Link
+                to="/MobilityCard"
+                style={{ textDecoration: "none",color: "#AED3F0", }}
+              >
+                <ColorButton
+                  endIcon={<img src={Arrow} alt={""} />}
+                >
+                  Next
+                </ColorButton>
+              </Link>
+              </Box>
             </CardContent>
           </Card>
         </Box>
