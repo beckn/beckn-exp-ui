@@ -9,6 +9,7 @@ import MWP from "../../assets/menWithPhone.svg";
 import circle from "../../assets/circle.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useInterval from "./useInterval";
 
 const NodeComponent = (props: any) => {
   const mobilityCardArr = [
@@ -41,12 +42,15 @@ const NodeComponent = (props: any) => {
   ];
   const expId = localStorage.getItem("expId");
   const [experienceCenterId, setExperienceCenterId] = useState<any>("");
+
+  const [events, setEvents] = useState<any>([]);
   const fetchEvent = async () => {
     try {
       const res = await axios.get(
         `https://api.experience.becknprotocol.io/v2/event/${expId}`
       );
       setExperienceCenterId(res.data.experienceSession.experienceCenterId);
+      setEvents(res.data.events);
     } catch (error) {
       console.log(`error ${error}`);
     }
@@ -56,9 +60,36 @@ const NodeComponent = (props: any) => {
   useEffect(() => {
     fetchEvent();
   }, []);
+
+  const sortedEvents = events
+    .map((e: any) => e)
+    .sort((a: any, b: any) => b.eventId - a.eventId);
+  console.log(sortedEvents, "sortedEvents");
+
+  useInterval(() => {
+    fetchEvent();
+  }, 500);
+
   return (
     <>
       <div className="mobility-row">
+        {events.length > 0 &&
+        (sortedEvents[0].event.eventMessage.eventCode === "mbwa_pickup_loc" ||
+          sortedEvents[0].event.eventMessage.eventCode === "mbwa_drop_loc" ||
+          sortedEvents[0].event.eventMessage.eventCode === "motb_pickup_loc" ||
+          sortedEvents[0].event.eventMessage.eventCode === "motb_drop_loc") ? (
+          <h3
+            style={{
+              color: "white",
+              position: "absolute",
+              top: "0.5%",
+              left: "0%",
+            }}
+          >
+            {events[0].event.eventMessage.actionMessage}
+          </h3>
+        ) : null}
+
         {mobilityCardArr.map((ele, ind) => {
           return (
             <div id={ele.id} className={`${ele.name}s`} key={ind}>
