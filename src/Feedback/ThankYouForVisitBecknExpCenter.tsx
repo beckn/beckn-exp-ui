@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import feedbackQr from "../assets/feedbackQr.svg";
@@ -6,6 +6,30 @@ import { motion } from "framer-motion";
 import homeIcon from "../assets/homeIcon.png";
 
 const ThankYouForVisitBecknExpCenter = () => {
+  const expId = localStorage.getItem("expId");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const updateExpId = async () => {
+    await fetch("https://api.experience.becknprotocol.io/xc/experience", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify({
+        experienceId: expId,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log(result.experience_id, "result"))
+      .catch((error) => console.log("error", error));
+  };
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    updateExpId();
+    localStorage.removeItem("expId");
+  }, [updateExpId]);
   return (
     <motion.div
       initial={{ width: "0%" }}
