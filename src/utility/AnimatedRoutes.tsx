@@ -17,6 +17,7 @@ import MobilityCard from "../common/MobilityCard/MobilityCard";
 import ViewMyJourney from "../Feedback/ViewMyJourney";
 import IframeVideo from "../common/IframeVideo";
 import { AnimatePresence } from "framer-motion";
+import Luxecabe from "../driver/Luxecabe";
 
 const AnimatedRoutes = ({ expId }: any) => {
   const location = useLocation();
@@ -74,6 +75,7 @@ const AnimatedRoutes = ({ expId }: any) => {
           }
         />
         <Route path="/viewMyJourney" element={<ViewMyJourney />} />
+        <Route path="/luxecabe" element={<Luxecabe expId={expId} />} />
       </Routes>
     </AnimatePresence>
   );
