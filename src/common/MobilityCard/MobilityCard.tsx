@@ -48,46 +48,64 @@ const MobilityCard = () => {
     // eslint-disable-next-line array-callback-return
     .map((event: any) => {
       if (
-        (event.event.eventSource.id === "1" &&
-          event.event.eventDestination.id === "3") ||
-        (event.event.eventSource.id === "1" &&
-          event.event.eventDestination.id === "5")
+        (event.event.eventSource.id === "gateway.becknprotocol.io" &&
+          event.event.eventDestination.id ===
+            "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in") ||
+        (event.event.eventSource.id === "gateway.becknprotocol.io" &&
+          event.event.eventDestination.id ===
+            "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp")
       ) {
         slicedArr.splice(0);
         return slicedArr.push(
           ...events.slice(
-            events[events.length - 1].event.eventSource.id === "1" ? 1 : 0,
-            events[events.length - 1].event.eventSource.id === "1"
+            events[events.length - 1].event.eventSource.id ===
+              "gateway.becknprotocol.io"
+              ? 1
+              : 0,
+            events[events.length - 1].event.eventSource.id ===
+              "gateway.becknprotocol.io"
               ? events.length
               : 0
           )
         );
       } else if (
-        (event.event.eventSource.id === "5" &&
-          event.event.eventDestination.id === "1") ||
-        (event.event.eventSource.id === "3" &&
-          event.event.eventDestination.id === "1")
+        (event.event.eventSource.id ===
+          "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" &&
+          event.event.eventDestination.id === "gateway.becknprotocol.io") ||
+        (event.event.eventSource.id ===
+          "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" &&
+          event.event.eventDestination.id === "gateway.becknprotocol.io")
       ) {
         slicedArr.splice(0);
         return slicedArr.push(
           ...events.slice(
-            events[events.length - 1].event.eventDestination.id === "1" ? 3 : 0,
-            events[events.length - 1].event.eventDestination.id === "1"
+            events[events.length - 1].event.eventDestination.id ===
+              "gateway.becknprotocol.io"
+              ? 3
+              : 0,
+            events[events.length - 1].event.eventDestination.id ===
+              "gateway.becknprotocol.io"
               ? events.length
               : 0
           )
         );
       } else if (
-        (event.event.eventSource.id === "1" &&
-          event.event.eventDestination.id === "2") ||
-        (event.event.eventSource.id === "2" &&
-          event.event.eventDestination.id === "4")
+        (event.event.eventSource.id === "gateway.becknprotocol.io" &&
+          event.event.eventDestination.id ===
+            "mobilityreferencebap.becknprotocol.io") ||
+        (event.event.eventSource.id === "gateway.becknprotocol.io" &&
+          event.event.eventDestination.id ===
+            "mobilityreferencebap-staging.becknprotocol.io")
       ) {
         slicedArr.splice(0);
         return slicedArr.push(
           ...events.slice(
-            events[events.length - 1].event.eventDestination.id === "2" ? 5 : 0,
-            events[events.length - 1].event.eventDestination.id === "2"
+            events[events.length - 1].event.eventDestination.id ===
+              "mobilityreferencebap.becknprotocol.io"
+              ? 5
+              : 0,
+            events[events.length - 1].event.eventDestination.id ===
+              "mobilityreferencebap.becknprotocol.io"
               ? events.length
               : 0
           )
@@ -186,22 +204,34 @@ const MobilityCard = () => {
                         : event.event.eventDestination.id
                     }
                     lineColor={
-                      event.event.eventSource.id === "3" ||
-                      event.event.eventSource.id === "5" ||
-                      (event.event.eventSource.id === "1" &&
-                        event.event.eventDestination.id === "2") ||
-                      (event.event.eventSource.id === "1" &&
-                        event.event.eventDestination.id === "4")
+                      event.event.eventSource.id ===
+                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" ||
+                      event.event.eventSource.id ===
+                        "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" ||
+                      (event.event.eventSource.id ===
+                        "gateway.becknprotocol.io" &&
+                        event.event.eventDestination.id ===
+                          "mobilityreferencebap.becknprotocol.io") ||
+                      (event.event.eventSource.id ===
+                        "gateway.becknprotocol.io" &&
+                        event.event.eventDestination.id ===
+                          "mobilityreferencebap-staging.becknprotocol.io")
                         ? "#FB1E1E"
                         : "#23DFDF"
                     }
                     headColor={
-                      event.event.eventSource.id === "3" ||
-                      event.event.eventSource.id === "5" ||
-                      (event.event.eventSource.id === "1" &&
-                        event.event.eventDestination.id === "2") ||
-                      (event.event.eventSource.id === "1" &&
-                        event.event.eventDestination.id === "4")
+                      event.event.eventSource.id ===
+                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" ||
+                      event.event.eventSource.id ===
+                        "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" ||
+                      (event.event.eventSource.id ===
+                        "gateway.becknprotocol.io" &&
+                        event.event.eventDestination.id ===
+                          "mobilityreferencebap.becknprotocol.io") ||
+                      (event.event.eventSource.id ===
+                        "gateway.becknprotocol.io" &&
+                        event.event.eventDestination.id ===
+                          "mobilityreferencebap-staging.becknprotocol.io")
                         ? "#FB1E1E"
                         : "#23DFDF"
                     }
