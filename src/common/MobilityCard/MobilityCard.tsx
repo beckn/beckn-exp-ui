@@ -203,6 +203,23 @@ const MobilityCard = () => {
                         ? ""
                         : event.event.eventDestination.id
                     }
+                    startAnchor={
+                      ( event.event.eventSource.id === "mobilityreferencebap-staging.becknprotocol.io" && 
+                        event.event.eventDestination.id === "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in")
+                      ? "top" 
+                      : ( event.event.eventSource.id === "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" && 
+                        event.event.eventDestination.id === "mobilityreferencebap.becknprotocol.io")?
+                        "top":"auto"
+                    }
+                    endAnchor={
+                      ( event.event.eventSource.id === "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" && 
+                        event.event.eventDestination.id === "mobilityreferencebap-staging.becknprotocol.io")
+                      ? "top" 
+                      : ( event.event.eventSource.id === "mobilityreferencebap.becknprotocol.io" && 
+                        event.event.eventDestination.id === "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp")?
+                        "top":"auto"
+                    }
+                    curveness={0.6}
                     lineColor={
                       event.event.eventSource.id ===
                         "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" ||
@@ -237,7 +254,28 @@ const MobilityCard = () => {
                     }
                     animateDrawing={true}
                     headSize={7}
-                    path={"straight"}
+                    // path={"straight"}
+                    path={
+                      ( event.event.eventSource.id ===
+                        "mobilityreferencebap-staging.becknprotocol.io" &&
+                        event.event.eventDestination.id ===
+                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" )||
+                      ( event.event.eventSource.id ===
+                        "mobilityreferencebap.becknprotocol.io" &&
+                        event.event.eventDestination.id ===
+                        "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" )
+                      ? "smooth"
+                      : ( event.event.eventSource.id ===
+                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" &&
+                        event.event.eventDestination.id ===
+                        "mobilityreferencebap-staging.becknprotocol.io" )||
+                      ( event.event.eventSource.id ===
+                        "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" &&
+                        event.event.eventDestination.id ===
+                        "mobilityreferencebap.becknprotocol.io" )
+                        ? "smooth"
+                        : "straight"
+                    }
                     labels={{
                       start: (
                         <h3
