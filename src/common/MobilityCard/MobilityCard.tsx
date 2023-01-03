@@ -240,24 +240,26 @@ const MobilityCard = () => {
                     path={"straight"}
                     labels={{
                       start: (
-                        <h3
-                          className={`eventMessage event_${
-                            event?.event.eventDestination.id +
-                            "_" +
-                            event?.event.eventSource.id
-                          }`}
-                        >
-                          {event?.event.eventMessage.eventCode ===
-                            "mbwa_pickup_loc" ||
-                          event?.event.eventMessage.eventCode ===
-                            "mbwa_drop_loc" ||
-                          event?.event.eventMessage.eventCode ===
-                            "motb_pickup_loc" ||
-                          event?.event.eventMessage.eventCode ===
-                            "motb_drop_loc"
-                            ? ""
-                            : event?.event.eventMessage.actionMessage}
-                        </h3>
+                        <div>
+                          <h3
+                            className={`eventMessage event_${
+                              event?.event.eventSource.name +
+                              "_" +
+                              event?.event.eventDestination.name
+                            }`}
+                          >
+                            {event?.event.eventMessage.eventCode ===
+                              "mbwa_pickup_loc" ||
+                            event?.event.eventMessage.eventCode ===
+                              "mbwa_drop_loc" ||
+                            event?.event.eventMessage.eventCode ===
+                              "motb_pickup_loc" ||
+                            event?.event.eventMessage.eventCode ===
+                              "motb_drop_loc"
+                              ? ""
+                              : event?.event.eventMessage.actionMessage}
+                          </h3>
+                        </div>
                       ),
                       middle:
                         event?.event.eventMessage.eventCode ===
@@ -272,9 +274,9 @@ const MobilityCard = () => {
                         ) : (
                           <div
                             className={`step step_${
-                              event?.event.eventSource.id +
+                              event?.event.eventSource.name +
                               "_" +
-                              event?.event.eventDestination.id
+                              event?.event.eventDestination.name
                             }`}
                           ></div>
                         ),

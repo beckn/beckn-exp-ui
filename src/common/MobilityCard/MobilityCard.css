@@ -492,11 +492,15 @@
   top: -15px;
 }
 .Xarrow:not(:last-child) svg {
-  padding-top: 30px !important;
+  padding-top: 40px !important;
+  height: auto !important;
+}
+.Xarrow:not(:last-child) h3{
+  padding-top: 60px !important;
   height: auto !important;
 }
 .Xarrow:not(:last-child) .step {
-  margin-top: 58px !important;
+  margin-top: 80px !important;
 }
 /* .Xarrow:not(:last-child) .eventMessage {
   margin-top: 30px !important;
@@ -562,4 +566,50 @@
   .event_becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp_gateway.becknprotocol.io {
     transform: rotate(-25deg);
   }
+}
+.event_Gateway_TravelBuddy{
+  transform: rotate(34deg);
+  margin-bottom: 120px;
+}
+.event_TravelBuddy_Gateway{
+  transform: rotate(35deg);
+  margin-top: 31px;
+}
+.event_TravelBuddy_TaxiHub{
+  margin-bottom: 20px
+}
+.event_Gateway_TaxiHub{
+  transform: rotate(328deg);
+  margin-bottom: 110px
+}
+.event_Gateway_LuxeCabs{
+  transform: rotate(32deg);
+    margin-top: 48px;
+    margin-left: 15px
+}
+.event_TaxiHub_Gateway{
+  transform: rotate(-31deg);
+    margin-top: 30px;
+}
+.event_LuxeCabs_Gateway{
+  transform: rotate(34deg);
+    margin-bottom: 109px;
+}
+.event_TaxiHub_TravelBuddy{
+  margin-bottom: 20px
+}
+.step_TaxiHub_Gateway{
+  transform: rotate(53deg);
+}
+.step_LuxeCabs_Gateway{
+  transform: rotate(38deg);
+}
+.step_Gateway_TaxiHub{
+  transform: rotate(52deg);
+}
+.step_TravelBuddy_TaxiHub{
+  transform: rotate(90deg);
+}
+.step_TaxiHub_TravelBuddy{
+  transform: rotate(90deg);
 }
