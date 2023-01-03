@@ -127,7 +127,7 @@ const useWhatsapp = ({ expId }: Props) => {
           logo={
             <GenQRCode
               expId={expId}
-              url={`https://wa.me/+918217350525?text=hi?${expId}`}
+              url={`https://wa.me/+918217350525?text=hi`}
             />
           }
         />
