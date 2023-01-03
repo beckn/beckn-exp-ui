@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";

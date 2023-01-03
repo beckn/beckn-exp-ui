@@ -23,6 +23,7 @@
     "react-qr-code": "^2.0.11",
     "react-router-dom": "^6.6.0",
     "react-scripts": "5.0.1",
+    "react-sd": "^1.0.2",
     "react-sequence-diagram": "^0.0.12",
     "react-xarrows": "^2.0.2",
     "typescript": "^4.9.4",
