@@ -126,3 +126,18 @@
 .hover_card:hover .image-url-container img:nth-child(2) {
   display: block;
 }
+
+.source-node {
+  background: rgb(172, 209, 240) !important;
+}
+.dest-node {
+  background: #FFFF !important;
+}
+.source-node-border{
+  /* width: 200px !important;
+  height: 200px !important; */
+  border: 2px solid #FFFF;
+  /* text-align: center !important; */
+  
+
+}

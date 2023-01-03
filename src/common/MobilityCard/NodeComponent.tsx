@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-
 import myMobility from "../../assets/myMobility.svg";
 import RHP from "../../assets/RHP.svg";
 import whatsappMobility from "../../assets/whatsappMobility.svg";
-import LuxeCab from "../../assets/LuxeCab.png";
+import LuxeCab from "../../assets/luxe.svg";
 import GWP from "../../assets/girlWithPhone.svg";
 import MWP from "../../assets/menWithPhone.svg";
 import circle from "../../assets/circle.svg";
@@ -23,7 +22,6 @@ const NodeComponent = (props: any) => {
       name: "taxi",
       id: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
     },
-
     {
       title: "Gateway",
       name: "gateway",
@@ -55,7 +53,6 @@ const NodeComponent = (props: any) => {
       console.log(`error ${error}`);
     }
   };
-  console.log(experienceCenterId);
 
   useEffect(() => {
     fetchEvent();
@@ -64,11 +61,36 @@ const NodeComponent = (props: any) => {
   const sortedEvents = events
     .map((e: any) => e)
     .sort((a: any, b: any) => b.eventId - a.eventId);
-  console.log(sortedEvents, "sortedEvents");
 
   useInterval(() => {
     fetchEvent();
   }, 500);
+
+  const getClassNameOfNode = (ele: any, events: any) => {
+    if (events.length > 0) {
+      if (ele.id === events[0].event.eventSource.id) {
+        return "source-node";
+      } else if (ele.id === events[0].event.eventDestination.id) {
+        return "dest-node";
+      } else {
+        return "";
+      }
+    }
+    return "";
+  };
+
+  const getClassNameOfNodeForBorder = (ele: any, events: any) => {
+    if (events.length > 0) {
+      if (ele.id === events[0].event.eventSource.id) {
+        return "source-node-border";
+      } else if (ele.id === events[0].event.eventDestination.id) {
+        return "dest-node-border";
+      } else {
+        return "";
+      }
+    }
+    return "";
+  };
 
   return (
     <>
@@ -92,9 +114,23 @@ const NodeComponent = (props: any) => {
 
         {mobilityCardArr.map((ele, ind) => {
           return (
-            <div id={ele.id} className={`${ele.name}s`} key={ind}>
-              <div className={`border${ele.name}`}>
-                <div className={ele.name} style={{ background: "#ACD1F0" }}>
+            <div id={ele.id} className={`${ele.name}s `} key={ind}>
+              {/* <div style={{}}> */}
+              <div
+                className={`border${ele.name} ${getClassNameOfNodeForBorder(
+                  ele,
+                  events
+                )}`}
+              >
+                <div
+                  className={`${ele.name} 
+                  ${getClassNameOfNode(
+                    ele,
+                    events
+                  )}
+                  `}
+                  style={{ background: "#ACD1F0" }}
+                >
                   {ele.img ? (
                     <img src={ele.img} alt="" />
                   ) : (
@@ -102,6 +138,7 @@ const NodeComponent = (props: any) => {
                   )}
                 </div>
               </div>
+              {/* </div> */}
             </div>
           );
         })}

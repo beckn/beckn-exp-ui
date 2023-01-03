@@ -134,7 +134,7 @@ const ScanQrForTravelBuddy = ({ expId }: Props) => {
           logo={
             <GenQRCode
               expId={expId}
-              url={`https://taxibap-staging.becknprotocol.io?${expId}`}
+              url={`https://taxibap.becknprotocol.io/?${expId}`}
             />
           }
         />
