@@ -60,7 +60,7 @@ const MobilityCard = () => {
           ...events.slice(
             events[events.length - 1].event.eventSource.id ===
               "gateway.becknprotocol.io"
-              ? 1
+              ? 3
               : 0,
             events[events.length - 1].event.eventSource.id ===
               "gateway.becknprotocol.io"
@@ -81,7 +81,7 @@ const MobilityCard = () => {
           ...events.slice(
             events[events.length - 1].event.eventDestination.id ===
               "gateway.becknprotocol.io"
-              ? 3
+              ? 5
               : 0,
             events[events.length - 1].event.eventDestination.id ===
               "gateway.becknprotocol.io"
@@ -102,7 +102,7 @@ const MobilityCard = () => {
           ...events.slice(
             events[events.length - 1].event.eventDestination.id ===
               "mobilityreferencebap.becknprotocol.io"
-              ? 5
+              ? 7
               : 0,
             events[events.length - 1].event.eventDestination.id ===
               "mobilityreferencebap.becknprotocol.io"
