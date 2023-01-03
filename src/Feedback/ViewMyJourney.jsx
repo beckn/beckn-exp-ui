@@ -33,83 +33,12 @@ const ViewMyJourney = () => {
     fetchEvent();
   }, 2000);
   const categories = ["Travel Buddy", "Gateway", "Taxi", "Luxe Cabs"];
-  // const mockData = [
-  //   {
-  //     from: 0,
-  //     to: 1,
-  //     edge: "search",
-  //   },
-  //   {
-  //     from: 1,
-  //     to: 2,
-  //     edge: "search",
-  //   },
-  //   {
-  //     from: 1,
-  //     to: 3,
-  //     edge: "search",
-  //   },
-  //   {
-  //     from: 3,
-  //     to: 1,
-  //     edge: "search",
-  //   },
-  //   {
-  //     from: 2,
-  //     to: 1,
-  //     edge: "select",
-  //   },
-  //   {
-  //     from: 0,
-  //     to: 2,
-  //     edge: "select",
-  //   },
-  //   {
-  //     from: 2,
-  //     to: 0,
-  //     edge: "select",
-  //   },
-  //   {
-  //     from: 0,
-  //     to: 2,
-  //     edge: "init",
-  //   },
-  //   {
-  //     from: 2,
-  //     to: 0,
-  //     edge: "init",
-  //   },
-  //   {
-  //     from: 0,
-  //     to: 2,
-  //     edge: "init",
-  //   },
-  //   {
-  //     from: 2,
-  //     to: 0,
-  //     edge: "init",
-  //   },
-  //   {
-  //     from: 0,
-  //     to: 2,
-  //     edge: "init",
-  //   },
-  //   {
-  //     from: 2,
-  //     to: 0,
-  //     edge: "init",
-  //   },
-  //   {
-  //     from: 0,
-  //     to: 2,
-  //     edge: "init",
-  //   },
-  //   {
-  //     from: 2,
-  //     to: 0,
-  //     edge: "init",
-  //   },
-  // ];
+  const imageCategories = [
+    TravelbuddyLogo,
+    "",
+    TravelbuddyLogo,
+    TravelbuddyLogo,
+  ];
 
   const data = events
     .sort((a, b) => a.eventId - b.eventId)
@@ -167,17 +96,19 @@ const ViewMyJourney = () => {
   console.log(data, "data");
 
   const options = {
-    boxWidth: 200,
-    boxHeight: 50,
-    gapEdge: 43,
-    gapStep: 370,
+    boxWidth: 140,
+    boxHeight: 40,
+    gapEdge: 50,
+    gapStep: 266,
     boxBorderColor: "#1E1E1E",
     stepLineWidth: 1,
     stepLineColor: "#fff",
-    position: "absolute",
-    top: "15%",
-    left: "15%",
+    // position: "absolute",
+    // top: "15%",
+    // left: "15%",
+    position: "relative",
     fontWeight: "300",
+    fontSize: "14px",
   };
 
   const customStyle = {
@@ -197,6 +128,10 @@ const ViewMyJourney = () => {
     edgePointColor: "#23DFDF",
   };
 
+  const elements = Array.from(document.getElementsByClassName("point-left"));
+  elements.map((element) => {
+    element.parentNode.classList.add("main-div");
+  });
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -207,7 +142,7 @@ const ViewMyJourney = () => {
         height: "100vh",
       }}
     >
-      <div className="sequence">sequential flow</div>
+      <div className="sequence">my journey </div>
       <Box
         style={{
           background: "black",
@@ -228,40 +163,48 @@ const ViewMyJourney = () => {
       >
         <img src={backArrw} alt="" /> go back
       </Box>
-      <SequenceDiagram
-        categories={categories}
-        data={data}
-        style={{ ...options, ...customStyle }}
-      />
-      <img
-        src={TravelbuddyLogo}
-        alt=""
-        style={{
-          position: "absolute",
-          top: "16.5%",
-
-          left: " 21.5%",
-        }}
-      />
-      <img
-        src={TaxiLogo}
-        alt=""
-        style={{
-          position: "absolute",
-          top: "16%",
-
-          left: " 62%",
-        }}
-      />
-      <img
-        src={LuxeCabsLogo}
-        alt=""
-        style={{
-          position: "absolute",
-          top: "16%",
-          left: " 79%",
-        }}
-      />
+      <Box
+        className="flow-wrap"
+        position={"relative"}
+        margin="0 auto"
+        width="1200px"
+      >
+        <SequenceDiagram
+          categories={categories}
+          data={data}
+          style={{ ...options, ...customStyle }}
+        />
+        <Box>
+          <img
+            src={TravelbuddyLogo}
+            alt=""
+            style={{
+              position: "absolute",
+              top: "9px",
+              left: " 10%",
+            }}
+          />
+          <img
+            src={TaxiLogo}
+            alt=""
+            style={{
+              position: "absolute",
+              top: "5px",
+              left: "55%",
+            }}
+          />
+          <img
+            src={LuxeCabsLogo}
+            alt=""
+            style={{
+              position: "absolute",
+              top: "9px",
+              left: " 76.3%",
+              width: "2.5%",
+            }}
+          />
+        </Box>
+      </Box>
     </motion.div>
   );
 };

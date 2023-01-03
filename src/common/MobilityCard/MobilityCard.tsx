@@ -204,20 +204,30 @@ const MobilityCard = () => {
                         : event.event.eventDestination.id
                     }
                     startAnchor={
-                      ( event.event.eventSource.id === "mobilityreferencebap-staging.becknprotocol.io" && 
-                        event.event.eventDestination.id === "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in")
-                      ? "top" 
-                      : ( event.event.eventSource.id === "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" && 
-                        event.event.eventDestination.id === "mobilityreferencebap.becknprotocol.io")?
-                        "top":"auto"
+                      event.event.eventSource.id ===
+                        "mobilityreferencebap-staging.becknprotocol.io" &&
+                      event.event.eventDestination.id ===
+                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in"
+                        ? "top"
+                        : event.event.eventSource.id ===
+                            "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" &&
+                          event.event.eventDestination.id ===
+                            "mobilityreferencebap.becknprotocol.io"
+                        ? "top"
+                        : "auto"
                     }
                     endAnchor={
-                      ( event.event.eventSource.id === "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" && 
-                        event.event.eventDestination.id === "mobilityreferencebap-staging.becknprotocol.io")
-                      ? "top" 
-                      : ( event.event.eventSource.id === "mobilityreferencebap.becknprotocol.io" && 
-                        event.event.eventDestination.id === "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp")?
-                        "top":"auto"
+                      event.event.eventSource.id ===
+                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" &&
+                      event.event.eventDestination.id ===
+                        "mobilityreferencebap-staging.becknprotocol.io"
+                        ? "top"
+                        : event.event.eventSource.id ===
+                            "mobilityreferencebap.becknprotocol.io" &&
+                          event.event.eventDestination.id ===
+                            "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp"
+                        ? "top"
+                        : "auto"
                     }
                     curveness={0.6}
                     lineColor={
@@ -256,23 +266,23 @@ const MobilityCard = () => {
                     headSize={7}
                     // path={"straight"}
                     path={
-                      ( event.event.eventSource.id ===
+                      (event.event.eventSource.id ===
                         "mobilityreferencebap-staging.becknprotocol.io" &&
                         event.event.eventDestination.id ===
-                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" )||
-                      ( event.event.eventSource.id ===
+                          "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in") ||
+                      (event.event.eventSource.id ===
                         "mobilityreferencebap.becknprotocol.io" &&
                         event.event.eventDestination.id ===
-                        "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" )
-                      ? "smooth"
-                      : ( event.event.eventSource.id ===
-                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" &&
-                        event.event.eventDestination.id ===
-                        "mobilityreferencebap-staging.becknprotocol.io" )||
-                      ( event.event.eventSource.id ===
-                        "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" &&
-                        event.event.eventDestination.id ===
-                        "mobilityreferencebap.becknprotocol.io" )
+                          "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp")
+                        ? "smooth"
+                        : (event.event.eventSource.id ===
+                            "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" &&
+                            event.event.eventDestination.id ===
+                              "mobilityreferencebap-staging.becknprotocol.io") ||
+                          (event.event.eventSource.id ===
+                            "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" &&
+                            event.event.eventDestination.id ===
+                              "mobilityreferencebap.becknprotocol.io")
                         ? "smooth"
                         : "straight"
                     }
@@ -291,9 +301,9 @@ const MobilityCard = () => {
                             event?.event.eventMessage.eventCode ===
                               "mbwa_drop_loc" ||
                             event?.event.eventMessage.eventCode ===
-                              "motb_pickup_loc" ||
+                              "mbtb_pickup_loc" ||
                             event?.event.eventMessage.eventCode ===
-                              "motb_drop_loc"
+                              "mbtb_drop_loc"
                               ? ""
                               : event?.event.eventMessage.actionMessage}
                           </h3>
@@ -305,9 +315,9 @@ const MobilityCard = () => {
                         event?.event.eventMessage.eventCode ===
                           "mbwa_drop_loc" ||
                         event?.event.eventMessage.eventCode ===
-                          "motb_pickup_loc" ||
+                          "mbtb_pickup_loc" ||
                         event?.event.eventMessage.eventCode ===
-                          "motb_drop_loc" ? (
+                          "mbtb_drop_loc" ? (
                           ""
                         ) : (
                           <div

@@ -98,13 +98,13 @@ const NodeComponent = (props: any) => {
         {events.length > 0 &&
         (sortedEvents[0].event.eventMessage.eventCode === "mbwa_pickup_loc" ||
           sortedEvents[0].event.eventMessage.eventCode === "mbwa_drop_loc" ||
-          sortedEvents[0].event.eventMessage.eventCode === "motb_pickup_loc" ||
-          sortedEvents[0].event.eventMessage.eventCode === "motb_drop_loc") ? (
+          sortedEvents[0].event.eventMessage.eventCode === "mbtb_pickup_loc" ||
+          sortedEvents[0].event.eventMessage.eventCode === "mbtb_drop_loc") ? (
           <h3
             style={{
               color: "white",
               position: "absolute",
-              top: "0.5%",
+              top: "-4.5%",
               left: "0%",
             }}
           >
@@ -115,7 +115,6 @@ const NodeComponent = (props: any) => {
         {mobilityCardArr.map((ele, ind) => {
           return (
             <div id={ele.id} className={`${ele.name}s `} key={ind}>
-              {/* <div style={{}}> */}
               <div
                 className={`border${ele.name} ${getClassNameOfNodeForBorder(
                   ele,
@@ -124,10 +123,7 @@ const NodeComponent = (props: any) => {
               >
                 <div
                   className={`${ele.name} 
-                  ${getClassNameOfNode(
-                    ele,
-                    events
-                  )}
+                  ${getClassNameOfNode(ele, events)}
                   `}
                   style={{ background: "#ACD1F0" }}
                 >

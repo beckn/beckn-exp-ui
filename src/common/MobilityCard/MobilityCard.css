@@ -252,7 +252,7 @@
   align-content: center;
   /* position: absolute; */
   position: relative;
-    left: 8px;
+  left: 8px;
   /* left: 10px; */
   /* top: 49px; */
 }
@@ -277,11 +277,11 @@
   display: grid;
   align-content: center;
   position: relative;
-    left: 8px;
+  left: 8px;
   /* margin: 40px 0px 40px 0px; */
 }
 
-.bordertaxi{
+.bordertaxi {
   width: 150px;
   height: 150px;
   display: grid;
@@ -327,13 +327,13 @@
   display: flex;
   align-items: center;
 }
-.yatri{
+.yatri {
   width: 130px;
   height: 130px;
   display: grid;
   align-content: center;
   position: relative;
-    left: 8px;
+  left: 8px;
   /* margin: 40px 0px 40px 0px; */
 }
 .borderyatri {
@@ -355,9 +355,9 @@
   display: grid;
   align-content: center;
   position: relative;
-    left: 8px;
+  left: 8px;
 }
-.borderwhatsappMobility{
+.borderwhatsappMobility {
   width: 150px;
   height: 150px;
   display: grid;
@@ -517,7 +517,7 @@
   padding-top: 40px !important;
   height: auto !important;
 }
-.Xarrow:not(:last-child) h3{
+.Xarrow:not(:last-child) h3 {
   padding-top: 60px !important;
   height: auto !important;
 }
@@ -590,52 +590,52 @@
     transform: rotate(-25deg);
   }
 }
-.event_Gateway_TravelBuddy{
+.event_Gateway_TravelBuddy {
   transform: rotate(34deg);
   margin-bottom: 120px;
 }
-.event_TravelBuddy_Gateway{
+.event_TravelBuddy_Gateway {
   transform: rotate(35deg);
   margin-top: 31px;
 }
-.event_TravelBuddy_TaxiHub{
-  margin-bottom: 20px
+.event_TravelBuddy_TaxiHub {
+  margin-bottom: 20px;
 }
-.event_Gateway_TaxiHub{
+.event_Gateway_TaxiHub {
   transform: rotate(328deg);
-  margin-bottom: 110px
+  margin-bottom: 110px;
 }
-.event_Gateway_LuxeCabs{
+.event_Gateway_LuxeCabs {
   transform: rotate(32deg);
-    margin-top: 48px;
-    margin-left: 15px
+  margin-top: 48px;
+  margin-left: 15px;
 }
-.event_TaxiHub_Gateway{
+.event_TaxiHub_Gateway {
   transform: rotate(-31deg);
-    margin-top: 30px;
+  margin-top: 30px;
 }
-.event_LuxeCabs_Gateway{
+.event_LuxeCabs_Gateway {
   transform: rotate(34deg);
-    margin-bottom: 109px;
+  margin-bottom: 109px;
 }
-.event_TaxiHub_TravelBuddy{
-  margin-bottom: 20px
+.event_TaxiHub_TravelBuddy {
+  margin-bottom: 20px;
 }
-.step_TaxiHub_Gateway{
+.step_TaxiHub_Gateway {
   transform: rotate(53deg);
 }
-.step_LuxeCabs_Gateway{
+.step_LuxeCabs_Gateway {
   transform: rotate(38deg);
 }
-.step_Gateway_TaxiHub{
+.step_Gateway_TaxiHub {
   transform: rotate(52deg);
 }
-.step_TravelBuddy_TaxiHub{
+.step_TravelBuddy_TaxiHub {
   transform: rotate(90deg);
 }
-.step_TaxiHub_TravelBuddy{
+.step_TaxiHub_TravelBuddy {
   transform: rotate(90deg);
 }
-.step_Gateway_LuxeCabs{
+.step_Gateway_LuxeCabs {
   transform: rotate(38deg);
 }

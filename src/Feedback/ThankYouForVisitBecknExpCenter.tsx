@@ -4,6 +4,7 @@ import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import feedbackQr from "../assets/feedbackQr.svg";
 import { motion } from "framer-motion";
 import homeIcon from "../assets/homeIcon.png";
+import GenQRCode from "../utility/GenQRCode";
 // import ErrorModal from "../common/ErrorModal";
 // import { useNavigate } from "react-router-dom";
 
@@ -89,7 +90,7 @@ const ThankYouForVisitBecknExpCenter = () => {
               join our collective
             </Typography>
             <Box style={{ marginTop: "30px", marginBottom: "40px" }}>
-              <img src={feedbackQr} alt={"BecknLogoIcon"} />
+              <GenQRCode url={"https://bit.ly/bocServerInvite"} />
             </Box>
           </Box>
         </Box>
