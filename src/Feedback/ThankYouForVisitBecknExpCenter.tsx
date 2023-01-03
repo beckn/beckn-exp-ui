@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Box, Modal, Typography } from "@mui/material";
+import React, { useEffect } from "react";
+import { Box, Typography } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import feedbackQr from "../assets/feedbackQr.svg";
 import { motion } from "framer-motion";
 import homeIcon from "../assets/homeIcon.png";
-import ErrorModal from "../common/ErrorModal";
-import { useNavigate } from "react-router-dom";
+// import ErrorModal from "../common/ErrorModal";
+// import { useNavigate } from "react-router-dom";
 
 const ThankYouForVisitBecknExpCenter = () => {
   // const navigate = useNavigate();

@@ -4,15 +4,12 @@ import Lady from "../assets/lady.svg";
 import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-
 import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
-
 import { Box, Modal } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import ErrorModal from "../common/ErrorModal";
-import { Link } from "react-router-dom";
 
 interface Props {
   expId: string;
