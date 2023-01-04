@@ -179,9 +179,33 @@
 .source-node-border {
   /* width: 200px !important;
   height: 200px !important; */
-  border: 2px solid #FFFF !important;
+  border: 2px solid #ffff !important;
   /* text-align: center !important; */
 }
-.dest-node-border{
+.dest-node-border {
   border: none !important;
+}
+
+.mobilitySource {
+  color: #fff;
+  position: absolute;
+  top: -4.5%;
+  left: 0;
+}
+.whatsappSource {
+  color: #fff;
+  position: absolute;
+  top: 71%;
+}
+.taxihubSource {
+  color: #fff;
+  position: absolute;
+  top: -4.5%;
+  right: 0;
+}
+.luxecabSource {
+  color: #fff;
+  position: absolute;
+  top: 73%;
+  right: 0;
 }
