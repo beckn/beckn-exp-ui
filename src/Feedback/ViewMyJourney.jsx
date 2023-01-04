@@ -14,6 +14,13 @@ const ViewMyJourney = () => {
   const expId = localStorage.getItem("expId");
 
   const navigate = useNavigate();
+  const ids = {
+    mobility: "mobilityreferencebap.becknprotocol.io",
+    taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
+    gateway: "gateway.becknprotocol.io",
+    whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
+    yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
+  };
   const fetchEvent = async () => {
     try {
       const res = await axios.get(
@@ -32,7 +39,23 @@ const ViewMyJourney = () => {
   useInterval(() => {
     fetchEvent();
   }, 2000);
-  const categories = ["Travel Buddy", "Gateway", "Taxi", "Luxe Cabs"];
+  const sourceId = events.map((event) => {
+    return event.event.eventSource.id;
+  });
+  const uniqueSourceId = [...new Set(sourceId)];
+  console.log(uniqueSourceId, "uniqueSourceId");
+  console.log(sourceId, "sourceId");
+  const categories = uniqueSourceId.map((id) => {
+    if (id === ids.mobility) {
+      return "Travelbuddy";
+    } else if (id === ids.gateway) {
+      return "gateway";
+    } else if (id === ids.taxi) {
+      return "taxi";
+    } else if (id === ids.yatri) {
+      return "LuxeCabs";
+    }
+  });
   const imageCategories = [
     TravelbuddyLogo,
     "",
@@ -44,56 +67,41 @@ const ViewMyJourney = () => {
     .sort((a, b) => a.eventId - b.eventId)
     .map((event) => {
       const sourceId = () => {
-        if (
-          event.event.eventSource.id === "mobilityreferencebap.becknprotocol.io"
-        ) {
+        if (event.event.eventSource.id === ids.mobility) {
           return 0;
-        } else if (event.event.eventSource.id === "gateway.becknprotocol.io") {
+        } else if (event.event.eventSource.id === ids.gateway) {
           return 1;
-        } else if (
-          event.event.eventSource.id ===
-          "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in"
-        ) {
+        } else if (event.event.eventSource.id === ids.taxi) {
           return 2;
-        } else if (
-          event.event.eventSource.id ===
-          "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in"
-        ) {
+        } else if (event.event.eventSource.id === ids.yatri) {
           return 3;
+        } else if (event.event.eventSource.id === ids.whatsappMobility) {
+          return 0;
         }
       };
 
       const destinationId = () => {
-        if (
-          event.event.eventDestination.id ===
-          "mobilityreferencebap.becknprotocol.io"
-        ) {
+        if (event.event.eventDestination.id === ids.mobility) {
           return 0;
-        } else if (
-          event.event.eventDestination.id === "gateway.becknprotocol.io"
-        ) {
+        } else if (event.event.eventDestination.id === ids.gateway) {
           return 1;
-        } else if (
-          event.event.eventDestination.id ===
-          "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in"
-        ) {
+        } else if (event.event.eventDestination.id === ids.taxi) {
           return 2;
-        } else if (
-          event.event.eventDestination.id ===
-          "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in"
-        ) {
+        } else if (event.event.eventDestination.id === ids.yatri) {
           return 3;
+        } else if (event.event.eventDestination.id === ids.whatsappMobility) {
+          return 0;
         }
       };
       const message = event.event.eventMessage.actionMessage;
-      // console.log(sourceId(), destinationId, message, "data");
+
       return {
         from: sourceId(),
         to: destinationId(),
         edge: message,
       };
     });
-  console.log(data, "data");
+  console.log(events, "events");
 
   const options = {
     boxWidth: 140,
