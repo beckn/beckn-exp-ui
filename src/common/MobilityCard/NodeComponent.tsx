@@ -65,12 +65,7 @@ const NodeComponent = (props: any) => {
   useInterval(() => {
     fetchEvent();
   }, 500);
-  console.log(
-    sortedEvents.length > 0 &&
-      sortedEvents[0].event.eventSource.id ===
-        sortedEvents[0].event.eventDestination.id,
-    "sr"
-  );
+  
   const getClassNameOfNode = (ele: any, events: any) => {
     if (events.length > 0) {
       if (ele.id === events[0].event.eventSource.id) {
