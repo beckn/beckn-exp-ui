@@ -11,31 +11,38 @@ import axios from "axios";
 import useInterval from "./useInterval";
 
 const NodeComponent = (props: any) => {
+  const ids = {
+    mobility: "mobilityreferencebap.becknprotocol.io",
+    taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
+    gateway: "gateway.becknprotocol.io",
+    whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
+    yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
+  };
   const mobilityCardArr = [
     {
       img: `${myMobility}`,
       name: "mobility",
-      id: "mobilityreferencebap.becknprotocol.io",
+      id: ids.mobility,
     },
     {
       img: `${RHP}`,
       name: "taxi",
-      id: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
+      id: ids.taxi,
     },
     {
       title: "Gateway",
       name: "gateway",
-      id: "gateway.becknprotocol.io",
+      id: ids.gateway,
     },
     {
       img: `${whatsappMobility}`,
       name: "whatsappMobility",
-      id: "mobilityreferencebap-staging.becknprotocol.io",
+      id: ids.whatsappMobility,
     },
     {
       img: `${LuxeCab}`,
       name: "yatri",
-      id: "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in",
+      id: ids.yatri,
     },
   ];
   const expId = localStorage.getItem("expId");
@@ -56,6 +63,7 @@ const NodeComponent = (props: any) => {
 
   useEffect(() => {
     fetchEvent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const sortedEvents = events
@@ -96,10 +104,6 @@ const NodeComponent = (props: any) => {
     <>
       <div className="mobility-row">
         {events.length > 0 &&
-        // (sortedEvents[0].event.eventMessage.eventCode === "mbwa_pickup_loc" ||
-        //   sortedEvents[0].event.eventMessage.eventCode === "mbwa_drop_loc" ||
-        //   sortedEvents[0].event.eventMessage.eventCode === "mbtb_pickup_loc" ||
-        //   sortedEvents[0].event.eventMessage.eventCode === "mbtb_drop_loc")
         sortedEvents[0].event.eventSource.id ===
           sortedEvents[0].event.eventDestination.id ? (
           <h3

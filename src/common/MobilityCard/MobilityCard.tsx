@@ -41,71 +41,65 @@ const MobilityCard = () => {
       navigate("/WhatWouldYouDoLikeToNext");
     }, 5000);
   }
-
+  const ids = {
+    mobility: "mobilityreferencebap.becknprotocol.io",
+    taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
+    gateway: "gateway.becknprotocol.io",
+    whatsappMobility: "mobilityreferencebap.becknprotocol.io",
+    luxeCabs: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
+  };
   const slicedArr: any[] = [];
   events
     .sort((a: any, b: any) => a.eventId - b.eventId)
     // eslint-disable-next-line array-callback-return
     .map((event: any) => {
       if (
-        (event.event.eventSource.id === "gateway.becknprotocol.io" &&
-          event.event.eventDestination.id ===
-            "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in") ||
-        (event.event.eventSource.id === "gateway.becknprotocol.io" &&
-          event.event.eventDestination.id ===
-            "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in")
+        (event.event.eventSource.id === ids.gateway &&
+          event.event.eventDestination.id === ids.taxi) ||
+        (event.event.eventSource.id === ids.gateway &&
+          event.event.eventDestination.id === ids.luxeCabs)
       ) {
         slicedArr.splice(0);
         return slicedArr.push(
           ...events.slice(
-            events[events.length - 1].event.eventSource.id ===
-              "gateway.becknprotocol.io"
+            events[events.length - 1].event.eventSource.id === ids.gateway
               ? 3
               : 0,
-            events[events.length - 1].event.eventSource.id ===
-              "gateway.becknprotocol.io"
+            events[events.length - 1].event.eventSource.id === ids.gateway
               ? events.length
               : 0
           )
         );
       } else if (
-        (event.event.eventSource.id ===
-          "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in" &&
-          event.event.eventDestination.id === "gateway.becknprotocol.io") ||
-        (event.event.eventSource.id ===
-          "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" &&
-          event.event.eventDestination.id === "gateway.becknprotocol.io")
+        (event.event.eventSource.id === ids.luxeCabs &&
+          event.event.eventDestination.id === ids.gateway) ||
+        (event.event.eventSource.id === ids.taxi &&
+          event.event.eventDestination.id === ids.gateway)
       ) {
         slicedArr.splice(0);
         return slicedArr.push(
           ...events.slice(
-            events[events.length - 1].event.eventDestination.id ===
-              "gateway.becknprotocol.io"
+            events[events.length - 1].event.eventDestination.id === ids.gateway
               ? 5
               : 0,
-            events[events.length - 1].event.eventDestination.id ===
-              "gateway.becknprotocol.io"
+            events[events.length - 1].event.eventDestination.id === ids.gateway
               ? events.length
               : 0
           )
         );
       } else if (
-        (event.event.eventSource.id === "gateway.becknprotocol.io" &&
-          event.event.eventDestination.id ===
-            "mobilityreferencebap.becknprotocol.io") ||
-        (event.event.eventSource.id === "gateway.becknprotocol.io" &&
-          event.event.eventDestination.id ===
-            "mobilityreferencebap-staging.becknprotocol.io")
+        (event.event.eventSource.id === ids.gateway &&
+          event.event.eventDestination.id === ids.mobility) ||
+        (event.event.eventSource.id === ids.gateway &&
+          event.event.eventDestination.id === ids.whatsappMobility)
       ) {
         slicedArr.splice(0);
         return slicedArr.push(
           ...events.slice(
-            events[events.length - 1].event.eventDestination.id ===
-              "mobilityreferencebap.becknprotocol.io"
+            events[events.length - 1].event.eventDestination.id === ids.mobility
               ? 7
               : 0,
-            events[events.length - 1].event.eventDestination.id ===
-              "mobilityreferencebap.becknprotocol.io"
+            events[events.length - 1].event.eventDestination.id === ids.mobility
               ? events.length
               : 0
           )
@@ -136,12 +130,6 @@ const MobilityCard = () => {
 
   return (
     <motion.div
-      // initial={{ width: "0%" }}
-      // animate={{ width: "100%" }}
-      // exit={{
-      //   x: window.innerWidth,
-      //   transition: { ease: "easeOut", duration: 0.2 },
-      // }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
@@ -204,61 +192,43 @@ const MobilityCard = () => {
                         : event.event.eventDestination.id
                     }
                     startAnchor={
-                      event.event.eventSource.id ===
-                        "mobilityreferencebap-staging.becknprotocol.io" &&
-                      event.event.eventDestination.id ===
-                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in"
+                      event.event.eventSource.id === ids.whatsappMobility &&
+                      event.event.eventDestination.id === ids.taxi
                         ? "top"
-                        : event.event.eventSource.id ===
-                            "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in" &&
-                          event.event.eventDestination.id ===
-                            "mobilityreferencebap.becknprotocol.io"
+                        : event.event.eventSource.id === ids.luxeCabs &&
+                          event.event.eventDestination.id === ids.mobility
                         ? "top"
                         : "auto"
                     }
                     endAnchor={
-                      event.event.eventSource.id ===
-                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" &&
-                      event.event.eventDestination.id ===
-                        "mobilityreferencebap-staging.becknprotocol.io"
+                      event.event.eventSource.id === ids.taxi &&
+                      event.event.eventDestination.id === ids.whatsappMobility
                         ? "top"
-                        : event.event.eventSource.id ===
-                            "mobilityreferencebap.becknprotocol.io" &&
-                          event.event.eventDestination.id ===
-                            "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in"
+                        : event.event.eventSource.id === ids.mobility &&
+                          event.event.eventDestination.id === ids.luxeCabs
                         ? "top"
                         : "auto"
                     }
                     curveness={0.6}
                     lineColor={
-                      event.event.eventSource.id ===
-                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" ||
-                      event.event.eventSource.id ===
-                        "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in" ||
-                      (event.event.eventSource.id ===
-                        "gateway.becknprotocol.io" &&
+                      event.event.eventSource.id === ids.taxi ||
+                      event.event.eventSource.id === ids.luxeCabs ||
+                      (event.event.eventSource.id === ids.gateway &&
+                        event.event.eventDestination.id === ids.mobility) ||
+                      (event.event.eventSource.id === ids.gateway &&
                         event.event.eventDestination.id ===
-                          "mobilityreferencebap.becknprotocol.io") ||
-                      (event.event.eventSource.id ===
-                        "gateway.becknprotocol.io" &&
-                        event.event.eventDestination.id ===
-                          "mobilityreferencebap-staging.becknprotocol.io")
+                          ids.whatsappMobility)
                         ? "#FB1E1E"
                         : "#23DFDF"
                     }
                     headColor={
-                      event.event.eventSource.id ===
-                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" ||
-                      event.event.eventSource.id ===
-                        "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in" ||
-                      (event.event.eventSource.id ===
-                        "gateway.becknprotocol.io" &&
+                      event.event.eventSource.id === ids.taxi ||
+                      event.event.eventSource.id === ids.luxeCabs ||
+                      (event.event.eventSource.id === ids.gateway &&
+                        event.event.eventDestination.id === ids.mobility) ||
+                      (event.event.eventSource.id === ids.gateway &&
                         event.event.eventDestination.id ===
-                          "mobilityreferencebap.becknprotocol.io") ||
-                      (event.event.eventSource.id ===
-                        "gateway.becknprotocol.io" &&
-                        event.event.eventDestination.id ===
-                          "mobilityreferencebap-staging.becknprotocol.io")
+                          ids.whatsappMobility)
                         ? "#FB1E1E"
                         : "#23DFDF"
                     }
@@ -266,23 +236,16 @@ const MobilityCard = () => {
                     headSize={7}
                     // path={"straight"}
                     path={
-                      (event.event.eventSource.id ===
-                        "mobilityreferencebap-staging.becknprotocol.io" &&
-                        event.event.eventDestination.id ===
-                          "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in") ||
-                      (event.event.eventSource.id ===
-                        "mobilityreferencebap.becknprotocol.io" &&
-                        event.event.eventDestination.id ===
-                          "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in")
+                      (event.event.eventSource.id === ids.whatsappMobility &&
+                        event.event.eventDestination.id === ids.taxi) ||
+                      (event.event.eventSource.id === ids.mobility &&
+                        event.event.eventDestination.id === ids.luxeCabs)
                         ? "smooth"
-                        : (event.event.eventSource.id ===
-                            "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" &&
+                        : (event.event.eventSource.id === ids.taxi &&
                             event.event.eventDestination.id ===
-                              "mobilityreferencebap-staging.becknprotocol.io") ||
-                          (event.event.eventSource.id ===
-                            "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in" &&
-                            event.event.eventDestination.id ===
-                              "mobilityreferencebap.becknprotocol.io")
+                              ids.whatsappMobility) ||
+                          (event.event.eventSource.id === ids.luxeCabs &&
+                            event.event.eventDestination.id === ids.mobility)
                         ? "smooth"
                         : "straight"
                     }

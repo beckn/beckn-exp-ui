@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import menWithCar from "../assets/car-with-a-man.png";
 import { Link } from "react-router-dom";
 import { Box, Modal } from "@mui/material";
@@ -8,9 +8,41 @@ import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal";
 const ImproveTheExp = () => {
   const [open, setOpen] = useState(false);
+  const [text, setText] = useState("");
   const handleOpen = () => {
     setOpen(true);
   };
+  const handleChanges = (e: any) => {
+    e.preventDefault();
+    setText(e.target.value);
+  };
+  const expId = localStorage.getItem("expId");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const updateExpId = async () => {
+    await fetch("https://api.experience.becknprotocol.io/v2/xc/experience", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify({
+        experienceId: expId,
+        end_ts: Date.now(),
+        experienceFeedback: {
+          user_review: "N",
+          user_comment: text,
+        },
+      }),
+    })
+      .then((response) => response)
+
+      .catch((error) => console.log("error", error));
+  };
+
+  useEffect(() => {
+    updateExpId();
+  }, [updateExpId]);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -97,6 +129,8 @@ const ImproveTheExp = () => {
               }}
               name="textarea"
               id="textarea"
+              value={text}
+              onChange={handleChanges}
             ></textarea>
             <div
               style={{
@@ -110,6 +144,7 @@ const ImproveTheExp = () => {
               <Link
                 to="/thankYouForVisitBecknExpCenter"
                 style={{ textDecoration: "none", color: "#000" }}
+                onClick={updateExpId}
               >
                 Submit
               </Link>
