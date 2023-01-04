@@ -204,14 +204,13 @@ const MobilityCard = () => {
                         : event.event.eventDestination.id
                     }
                     startAnchor={
-<<<<<<< Updated upstream
                       event.event.eventSource.id ===
                         "mobilityreferencebap-staging.becknprotocol.io" &&
                       event.event.eventDestination.id ===
                         "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in"
                         ? "top"
                         : event.event.eventSource.id ===
-                            "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp" &&
+                            "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in" &&
                           event.event.eventDestination.id ===
                             "mobilityreferencebap.becknprotocol.io"
                         ? "top"
@@ -226,25 +225,9 @@ const MobilityCard = () => {
                         : event.event.eventSource.id ===
                             "mobilityreferencebap.becknprotocol.io" &&
                           event.event.eventDestination.id ===
-                            "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp"
+                            "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in"
                         ? "top"
                         : "auto"
-=======
-                      ( event.event.eventSource.id === "mobilityreferencebap-staging.becknprotocol.io" && 
-                        event.event.eventDestination.id === "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in")
-                      ? "top" 
-                      : ( event.event.eventSource.id === "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in" && 
-                        event.event.eventDestination.id === "mobilityreferencebap.becknprotocol.io")?
-                        "top":"auto"
-                    }
-                    endAnchor={
-                      ( event.event.eventSource.id === "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" && 
-                        event.event.eventDestination.id === "mobilityreferencebap-staging.becknprotocol.io")
-                      ? "top" 
-                      : ( event.event.eventSource.id === "mobilityreferencebap.becknprotocol.io" && 
-                        event.event.eventDestination.id === "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in")?
-                        "top":"auto"
->>>>>>> Stashed changes
                     }
                     curveness={0.6}
                     lineColor={
@@ -290,16 +273,16 @@ const MobilityCard = () => {
                       (event.event.eventSource.id ===
                         "mobilityreferencebap.becknprotocol.io" &&
                         event.event.eventDestination.id ===
-                        "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in" )
-                      ? "smooth"
-                      : ( event.event.eventSource.id ===
-                        "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" &&
-                        event.event.eventDestination.id ===
-                        "mobilityreferencebap-staging.becknprotocol.io" )||
-                      ( event.event.eventSource.id ===
-                        "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in" &&
-                        event.event.eventDestination.id ===
-                        "mobilityreferencebap.becknprotocol.io" )
+                          "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in")
+                        ? "smooth"
+                        : (event.event.eventSource.id ===
+                            "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in" &&
+                            event.event.eventDestination.id ===
+                              "mobilityreferencebap-staging.becknprotocol.io") ||
+                          (event.event.eventSource.id ===
+                            "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in" &&
+                            event.event.eventDestination.id ===
+                              "mobilityreferencebap.becknprotocol.io")
                         ? "smooth"
                         : "straight"
                     }
