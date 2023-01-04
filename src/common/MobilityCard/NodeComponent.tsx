@@ -107,12 +107,31 @@ const NodeComponent = (props: any) => {
         sortedEvents[0].event.eventSource.id ===
           sortedEvents[0].event.eventDestination.id ? (
           <h3
-            style={{
-              color: "white",
-              position: "absolute",
-              top: "-4.5%",
-              left: "0%",
-            }}
+            className={
+              (sortedEvents[0].event.eventSource.id &&
+                sortedEvents[0].event.eventDestination.id) ===
+              "mobilityreferencebap.becknprotocol.io"
+                ? "mobilitySource"
+                : (sortedEvents[0].event.eventSource.id &&
+                    sortedEvents[0].event.eventDestination.id) ===
+                  "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in"
+                ? "taxihubSource"
+                : (sortedEvents[0].event.eventSource.id &&
+                    sortedEvents[0].event.eventDestination.id) ===
+                  "mobilityreferencebap-staging.becknprotocol.io"
+                ? "whatsappSource"
+                : (sortedEvents[0].event.eventSource.id &&
+                    sortedEvents[0].event.eventDestination.id) ===
+                  "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in"
+                ? "luxecabSource"
+                : ""
+            }
+            // style={{
+            //   color: "white",
+            //   position: "absolute",
+            //   top: "-4.5%",
+            //   left: "0%",
+            // }}
           >
             {events[0].event.eventMessage.actionMessage}
           </h3>
