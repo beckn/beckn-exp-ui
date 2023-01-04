@@ -592,31 +592,31 @@
   }
 }
 .event_Gateway_TravelBuddy {
-  transform: rotate(34deg);
-  margin-bottom: 120px;
+  transform: rotate(37deg);
+  margin-bottom: 104px;
 }
 .event_TravelBuddy_Gateway {
-  transform: rotate(35deg);
+  transform: rotate(36deg);
   margin-top: 31px;
 }
 .event_TravelBuddy_TaxiHub {
   margin-bottom: 20px;
 }
 .event_Gateway_TaxiHub {
-  transform: rotate(328deg);
-  margin-bottom: 110px;
+  transform: rotate(324deg);
+  margin-bottom: 91px;
 }
 .event_Gateway_LuxeCabs {
-  transform: rotate(32deg);
+  transform: rotate(35deg);
   margin-top: 48px;
   margin-left: 15px;
 }
 .event_TaxiHub_Gateway {
-  transform: rotate(-31deg);
+  transform: rotate(-36deg);
   margin-top: 30px;
 }
 .event_LuxeCabs_Gateway {
-  transform: rotate(34deg);
+  transform: rotate(36deg);
   margin-bottom: 109px;
 }
 .event_TaxiHub_TravelBuddy {
