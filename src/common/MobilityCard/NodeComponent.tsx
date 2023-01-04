@@ -65,7 +65,12 @@ const NodeComponent = (props: any) => {
   useInterval(() => {
     fetchEvent();
   }, 500);
-
+  console.log(
+    sortedEvents.length > 0 &&
+      sortedEvents[0].event.eventSource.id ===
+        sortedEvents[0].event.eventDestination.id,
+    "sr"
+  );
   const getClassNameOfNode = (ele: any, events: any) => {
     if (events.length > 0) {
       if (ele.id === events[0].event.eventSource.id) {
@@ -96,13 +101,15 @@ const NodeComponent = (props: any) => {
     <>
       <div className="mobility-row">
         {events.length > 0 &&
-        (sortedEvents[0].event.eventMessage.eventCode === "mbwa_pickup_loc" ||
-          sortedEvents[0].event.eventMessage.eventCode === "mbwa_drop_loc" ||
-          sortedEvents[0].event.eventMessage.eventCode === "mbtb_pickup_loc" ||
-          sortedEvents[0].event.eventMessage.eventCode === "mbtb_drop_loc") ? (
+        // (sortedEvents[0].event.eventMessage.eventCode === "mbwa_pickup_loc" ||
+        //   sortedEvents[0].event.eventMessage.eventCode === "mbwa_drop_loc" ||
+        //   sortedEvents[0].event.eventMessage.eventCode === "mbtb_pickup_loc" ||
+        //   sortedEvents[0].event.eventMessage.eventCode === "mbtb_drop_loc")
+        sortedEvents[0].event.eventSource.id ===
+          sortedEvents[0].event.eventDestination.id ? (
           <h3
             style={{
-              color: "red",
+              color: "white",
               position: "absolute",
               top: "-4.5%",
               left: "0%",

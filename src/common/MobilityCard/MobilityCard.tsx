@@ -296,28 +296,16 @@ const MobilityCard = () => {
                               event?.event.eventDestination.name
                             }`}
                           >
-                            {event?.event.eventMessage.eventCode ===
-                              "mbwa_pickup_loc" ||
-                            event?.event.eventMessage.eventCode ===
-                              "mbwa_drop_loc" ||
-                            event?.event.eventMessage.eventCode ===
-                              "mbtb_pickup_loc" ||
-                            event?.event.eventMessage.eventCode ===
-                              "mbtb_drop_loc"
+                            {event?.event.eventSource.id ===
+                            event?.event.eventDestination.id
                               ? ""
                               : event?.event.eventMessage.actionMessage}
                           </h3>
                         </div>
                       ),
                       middle:
-                        event?.event.eventMessage.eventCode ===
-                          "mbwa_pickup_loc" ||
-                        event?.event.eventMessage.eventCode ===
-                          "mbwa_drop_loc" ||
-                        event?.event.eventMessage.eventCode ===
-                          "mbtb_pickup_loc" ||
-                        event?.event.eventMessage.eventCode ===
-                          "mbtb_drop_loc" ? (
+                        event?.event.eventSource.id ===
+                        event?.event.eventDestination.id ? (
                           ""
                         ) : (
                           <div
