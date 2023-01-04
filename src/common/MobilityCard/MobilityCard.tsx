@@ -45,7 +45,7 @@ const MobilityCard = () => {
     mobility: "mobilityreferencebap.becknprotocol.io",
     taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
     gateway: "gateway.becknprotocol.io",
-    whatsappMobility: "mobilityreferencebap.becknprotocol.io",
+    whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
     luxeCabs: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
   };
   const slicedArr: any[] = [];
