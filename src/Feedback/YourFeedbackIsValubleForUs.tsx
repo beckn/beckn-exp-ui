@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import menWithCar from "../assets/car-with-a-man.png";
 import { Link } from "react-router-dom";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
@@ -8,9 +8,43 @@ import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal";
 const YourFeedbackIsValubleForUs = () => {
   const [open, setOpen] = useState(false);
+  const [text, setText] = useState("");
   const handleOpen = () => {
     setOpen(true);
   };
+  const handleChanges = (e: any) => {
+    e.preventDefault();
+    setText(e.target.value);
+  };
+  const expId = localStorage.getItem("expId");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const updateExpId = async () => {
+    await fetch("https://api.experience.becknprotocol.io/v2/xc/experience", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify({
+        experienceId: expId,
+        end_ts: Date.now(),
+        experienceFeedback: {
+          user_review: "Y",
+          user_comment: text,
+        },
+      }),
+    })
+      .then((response) => response)
+
+      .catch((error) => console.log("error", error));
+  };
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    updateExpId();
+    // localStorage.removeItem("expId");
+  }, [updateExpId, text]);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -97,6 +131,8 @@ const YourFeedbackIsValubleForUs = () => {
               }}
               name="textarea"
               id="textarea"
+              value={text}
+              onChange={handleChanges}
             ></textarea>
             <div
               style={{
@@ -110,6 +146,7 @@ const YourFeedbackIsValubleForUs = () => {
               <Link
                 to="/thankYouForVisitBecknExpCenter"
                 style={{ textDecoration: "none", color: "#000" }}
+                onClick={updateExpId}
               >
                 Submit
               </Link>
