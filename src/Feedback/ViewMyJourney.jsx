@@ -139,7 +139,8 @@ const ViewMyJourney = () => {
       transition={{ duration: 0.2, ease: "easeOut" }}
       style={{
         background: "#000",
-        height: "100vh",
+        minHeight: "100vh",
+        height: "fit-content",
       }}
     >
       <div className="sequence">my journey </div>
