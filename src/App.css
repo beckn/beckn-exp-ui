@@ -179,6 +179,9 @@
 .source-node-border {
   /* width: 200px !important;
   height: 200px !important; */
-  /* border: 2px solid #FFF; */
+  border: 2px solid #FFFF !important;
   /* text-align: center !important; */
+}
+.dest-node-border{
+  border: none !important;
 }

@@ -311,14 +311,15 @@
   margin: 10px;
 }
 .gateway > div {
-  height: 90px;
-  width: 90px;
+  height: 60px;
+  width: 60px;
   display: grid;
   background: #000 !important;
   max-width: 200px;
   color: #fff;
   border-radius: 50%;
   align-content: center;
+  font-size: 10px;
 }
 .yatris {
   position: absolute;
@@ -538,7 +539,7 @@
 // Travelbuddy	 	mobilityreferencebap.becknprotocol.io
 // TravelHub	 	becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in
 // Whatsapp	 	mobilityreferencebap-staging.becknprotocol.io
-// LuxeCabs	 	becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp
+// LuxeCabs	 	becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in
 // Yatri	 	api.sandbox.beckn.juspay.in/bpp/cab/v1/3041599b-2fcf-45e1-bfd5-115db5cd1353
 */
 .event_gateway.becknprotocol.io_mobilityreferencebap.becknprotocol.io {
