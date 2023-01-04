@@ -57,7 +57,7 @@ const ViewMyJourney = () => {
           return 2;
         } else if (
           event.event.eventSource.id ===
-          "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp"
+          "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in"
         ) {
           return 3;
         }
@@ -80,7 +80,7 @@ const ViewMyJourney = () => {
           return 2;
         } else if (
           event.event.eventDestination.id ===
-          "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp"
+          "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in"
         ) {
           return 3;
         }

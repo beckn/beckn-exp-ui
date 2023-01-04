@@ -32,7 +32,7 @@ const Luxecabe = ({ expId }: Props) => {
         experienceId: expId,
         experienceCenterId: "2",
         eventSourceAppId:
-          "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
+          "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in",
         start_ts: Date.now(),
       }), // body data type must match "Content-Type" header
     })

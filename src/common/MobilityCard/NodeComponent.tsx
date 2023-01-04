@@ -35,7 +35,7 @@ const NodeComponent = (props: any) => {
     {
       img: `${LuxeCab}`,
       name: "yatri",
-      id: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
+      id: "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in",
     },
   ];
   const expId = localStorage.getItem("expId");
@@ -102,7 +102,7 @@ const NodeComponent = (props: any) => {
           sortedEvents[0].event.eventMessage.eventCode === "mbtb_drop_loc") ? (
           <h3
             style={{
-              color: "white",
+              color: "red",
               position: "absolute",
               top: "-4.5%",
               left: "0%",
@@ -134,7 +134,6 @@ const NodeComponent = (props: any) => {
                   )}
                 </div>
               </div>
-              {/* </div> */}
             </div>
           );
         })}
