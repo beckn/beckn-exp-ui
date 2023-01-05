@@ -63,7 +63,17 @@ const MobilityCard = () => {
         return slicedArr.push(
           ...events.slice(
             events[events.length - 1].event.eventSource.id === ids.gateway
-              ? 3
+              ? events.length -
+                  ((events[events.length - 3].event.eventSource.id ===
+                    ids.whatsappMobility &&
+                    events[events.length - 3].event.eventDestination.id ===
+                      ids.whatsappMobility) ||
+                  (events[events.length - 3].event.eventSource.id ===
+                    ids.mobility &&
+                    events[events.length - 3].event.eventDestination.id ===
+                      ids.mobility)
+                    ? 1
+                    : 2)
               : 0,
             events[events.length - 1].event.eventSource.id === ids.gateway
               ? events.length
@@ -80,7 +90,11 @@ const MobilityCard = () => {
         return slicedArr.push(
           ...events.slice(
             events[events.length - 1].event.eventDestination.id === ids.gateway
-              ? 5
+              ? events.length -
+                  (events[events.length - 2].event.eventDestination.id ===
+                  ids.gateway
+                    ? 2
+                    : 1)
               : 0,
             events[events.length - 1].event.eventDestination.id === ids.gateway
               ? events.length
@@ -88,18 +102,41 @@ const MobilityCard = () => {
           )
         );
       } else if (
-        (event.event.eventSource.id === ids.gateway &&
-          event.event.eventDestination.id === ids.mobility) ||
-        (event.event.eventSource.id === ids.gateway &&
-          event.event.eventDestination.id === ids.whatsappMobility)
+        event.event.eventSource.id === ids.gateway &&
+        event.event.eventDestination.id === ids.mobility
       ) {
         slicedArr.splice(0);
         return slicedArr.push(
           ...events.slice(
             events[events.length - 1].event.eventDestination.id === ids.mobility
-              ? 7
+              ? events.length -
+                  (events[events.length - 2].event.eventDestination ===
+                  ids.mobility
+                    ? 2
+                    : 1)
               : 0,
             events[events.length - 1].event.eventDestination.id === ids.mobility
+              ? events.length
+              : 0
+          )
+        );
+      } else if (
+        event.event.eventSource.id === ids.gateway &&
+        event.event.eventDestination.id === ids.whatsappMobility
+      ) {
+        slicedArr.splice(0);
+        return slicedArr.push(
+          ...events.slice(
+            events[events.length - 1].event.eventDestination.id ===
+              ids.whatsappMobility
+              ? events.length -
+                  (events[events.length - 2].event.eventDestination.id ===
+                  ids.whatsappMobility
+                    ? 2
+                    : 1)
+              : 0,
+            events[events.length - 1].event.eventDestination.id ===
+              ids.whatsappMobility
               ? events.length
               : 0
           )
