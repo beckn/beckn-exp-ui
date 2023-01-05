@@ -151,14 +151,6 @@ const MobilityCard = () => {
     return self.indexOf(value) === index;
   }
   let unique = slicedArr.filter(onlyUnique);
-  console.log(
-    unique.map((e) => e),
-    "duplicate"
-  );
-  console.log(
-    events.map((e: any) => e).sort((a: any, b: any) => a.eventId - b.eventId),
-    "events"
-  );
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -201,6 +193,7 @@ const MobilityCard = () => {
         </Box>
         <Xwrapper>
           <NodeComponent
+            uniqueArray={unique}
             driverText={
               events.length > 0
                 ? events[events.length - 1].event.eventMessage.bppMessage

@@ -76,9 +76,11 @@ const NodeComponent = (props: any) => {
 
   const getClassNameOfNode = (ele: any, events: any) => {
     if (events.length > 0) {
-      if (ele.id === events[0].event.eventSource.id) {
+      if (events.some((ev: any) => ele.id === ev.event.eventSource.id)) {
         return "source-node";
-      } else if (ele.id === events[0].event.eventDestination.id) {
+      } else if (
+        events.some((ev: any) => ele.id === ev.event.eventDestination.id)
+      ) {
         return "dest-node";
       } else {
         return "";
@@ -89,9 +91,11 @@ const NodeComponent = (props: any) => {
 
   const getClassNameOfNodeForBorder = (ele: any, events: any) => {
     if (events.length > 0) {
-      if (ele.id === events[0].event.eventSource.id) {
+      if (events.some((ev: any) => ele.id === ev.event.eventSource.id)) {
         return "source-node-border";
-      } else if (ele.id === events[0].event.eventDestination.id) {
+      } else if (
+        events.some((ev: any) => ele.id === ev.event.eventDestination.id)
+      ) {
         return "dest-node-border";
       } else {
         return "";
@@ -134,12 +138,12 @@ const NodeComponent = (props: any) => {
               <div
                 className={`border${ele.name} ${getClassNameOfNodeForBorder(
                   ele,
-                  events
+                  props.uniqueArray
                 )}`}
               >
                 <div
                   className={`${ele.name} 
-                  ${getClassNameOfNode(ele, events)}
+                  ${getClassNameOfNode(ele, props.uniqueArray)}
                   `}
                   style={{ background: "#ACD1F0" }}
                 >

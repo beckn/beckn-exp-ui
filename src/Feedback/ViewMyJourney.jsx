@@ -65,7 +65,6 @@ const ViewMyJourney = () => {
       return "Whatsapp";
     }
   });
-  console.log(categories, "categories");
   const imageCategories = [
     TravelbuddyLogo,
     "",
@@ -75,7 +74,6 @@ const ViewMyJourney = () => {
   const updateEvents = events.filter((event) => {
     return event.event.eventSource.id !== event.event.eventDestination.id;
   });
-  console.log(updateEvents, "updateEvents");
   const data = updateEvents
     .sort((a, b) => a.eventId - b.eventId)
     .map((event) => {
@@ -114,7 +112,6 @@ const ViewMyJourney = () => {
         edge: message,
       };
     });
-  console.log(events, "events");
 
   const options = {
     boxWidth: 140,

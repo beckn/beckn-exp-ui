@@ -53,8 +53,6 @@ const Luxecabe = ({ expId }: Props) => {
       );
       const events = res.data.events;
 
-      console.log(`res.data ${JSON.stringify(res.data.events.length)}`);
-
       if (events.length > 0) {
         setTimeout(() => {
           navigate("/MobilityCard");

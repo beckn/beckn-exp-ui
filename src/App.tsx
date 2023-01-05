@@ -5,7 +5,7 @@ import AnimatedRoutes from "./utility/AnimatedRoutes";
 
 function App() {
   const expId = uuidv4();
-  console.log(`expId ${expId} app`);
+
   return (
     <div className="beckn-app">
       <Router>
