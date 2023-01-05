@@ -541,59 +541,12 @@
 // Whatsapp	 	mobilityreferencebap-staging.becknprotocol.io
 // LuxeCabs	 	becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in
 // Yatri	 	api.sandbox.beckn.juspay.in/bpp/cab/v1/3041599b-2fcf-45e1-bfd5-115db5cd1353
+ LuxeCabs	 	becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp
 */
-.event_gateway.becknprotocol.io_mobilityreferencebap.becknprotocol.io {
-  transform: rotate(36deg);
-  margin-top: 30px;
-}
-.event_mobilityreferencebap.becknprotocol.io_gateway.becknprotocol.io {
-  transform: rotate(35deg);
-  margin-bottom: 70px;
-}
-.event_becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp_gateway.becknprotocol.io {
-  transform: rotate(31deg);
-  margin-top: 25px;
-}
-.event_becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in_gateway.becknprotocol.io {
-  transform: rotate(-32deg);
-  margin-bottom: 142px;
-}
-.event_gateway.becknprotocol.io_becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in {
-  transform: rotate(-34deg);
-  margin-top: 21px;
-}
-.event_gateway.becknprotocol.io_becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp {
-  transform: rotate(34deg);
-  margin-bottom: 142px;
-}
-.event_mobilityreferencebap.becknprotocol.io_becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in {
-  margin-bottom: 37px;
-}
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .event_gateway.becknprotocol.io_mobilityreferencebap.becknprotocol.io {
-    transform: rotate(58deg);
-    margin-bottom: 93px;
-  }
-  .event_mobilityreferencebap.becknprotocol.io_gateway.becknprotocol.io {
-    transform: rotate(55deg);
-    margin-top: 77px;
-  }
-  .event_gateway.becknprotocol.io_becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in {
-    transform: rotate(-24deg);
-  }
-  .event_becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in_gateway.becknprotocol.io {
-    transform: rotate(24deg);
-  }
-  .event_gateway.becknprotocol.io_becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp {
-    transform: rotate(25deg);
-  }
-  .event_becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp_gateway.becknprotocol.io {
-    transform: rotate(-25deg);
-  }
-}
+
 .event_Gateway_TravelBuddy {
-  transform: rotate(37deg);
-  margin-bottom: 104px;
+  transform: rotate(35deg);
+  margin-bottom: 10px;
 }
 .event_TravelBuddy_Gateway {
   transform: rotate(36deg);
@@ -603,8 +556,8 @@
   margin-bottom: 20px;
 }
 .event_Gateway_TaxiHub {
-  transform: rotate(324deg);
-  margin-bottom: 91px;
+  transform: rotate(321deg);
+  margin-bottom: 180px;
 }
 .event_Gateway_LuxeCabs {
   transform: rotate(35deg);
@@ -617,11 +570,29 @@
 }
 .event_LuxeCabs_Gateway {
   transform: rotate(36deg);
-  margin-bottom: 109px;
+  margin-bottom: 137px;
 }
 .event_TaxiHub_TravelBuddy {
   margin-bottom: 20px;
 }
+.event_Gateway_WhatsApp {
+  transform: rotate(-34deg);
+  margin-top: 60px;
+}
+.event_WhatsApp_Gateway {
+  transform: rotate(-34deg);
+  margin-top: -18px;
+}
+.event_WhatsApp_TaxiHub {
+  transform: rotate(-48deg);
+  margin-bottom: 401px;
+}
+.event_TaxiHub_WhatsApp {
+  transform: rotate(-7deg);
+  margin-bottom: -19px;
+  margin-right: 292px;
+}
+
 .step_TaxiHub_Gateway {
   transform: rotate(53deg);
 }
@@ -639,4 +610,157 @@
 }
 .step_Gateway_LuxeCabs {
   transform: rotate(38deg);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .eventMessage {
+    width: 170px;
+  }
+  .event_Gateway_TravelBuddy {
+    transform: rotate(41deg);
+    margin-bottom: 62px;
+  }
+  .event_TravelBuddy_Gateway {
+    transform: rotate(41deg);
+    margin-top: 133px;
+  }
+  .event_Gateway_TaxiHub {
+    transform: rotate(323deg);
+    margin-bottom: 183px;
+  }
+  .event_TaxiHub_Gateway {
+    transform: rotate(-45deg);
+    margin-top: 115px;
+  }
+  .event_Gateway_LuxeCabs {
+    transform: rotate(48deg);
+    margin-top: 135px;
+    /* margin-left: 15px; */
+  }
+  .event_LuxeCabs_Gateway {
+    transform: rotate(41deg);
+    margin-bottom: 77px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .eventMessage {
+    width: 190px;
+  }
+  .event_Gateway_TravelBuddy {
+    transform: rotate(43deg);
+    margin-bottom: 112px;
+  }
+  .event_TravelBuddy_Gateway {
+    transform: rotate(48deg);
+    margin-top: 134px;
+  }
+  .event_Gateway_TaxiHub {
+    transform: rotate(318deg);
+    margin-bottom: 253px;
+  }
+  .event_TaxiHub_Gateway {
+    transform: rotate(-45deg);
+    margin-top: 115px;
+  }
+  .event_LuxeCabs_Gateway {
+    transform: rotate(46deg);
+    margin-bottom: 109px;
+  }
+  .event_Gateway_LuxeCabs {
+    transform: rotate(43deg);
+    margin-top: 142px;
+    /* margin-left: 15px; */
+  }
+  .event_TaxiHub_WhatsApp {
+    transform: rotate(-7deg);
+    margin-bottom: -19px;
+    margin-right: 150px;
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+  .eventMessage {
+    width: 200px;
+  }
+  .event_TaxiHub_Gateway {
+    transform: rotate(-43deg);
+    margin-top: 132px;
+  }
+  .event_TravelBuddy_Gateway {
+    transform: rotate(43deg);
+    margin-top: 129px;
+  }
+  .event_Gateway_TravelBuddy {
+    transform: rotate(45deg);
+    margin-bottom: 104px;
+  }
+  .event_Gateway_TaxiHub {
+    transform: rotate(315deg);
+    margin-bottom: 270px;
+  }
+  .event_Gateway_LuxeCabs {
+    transform: rotate(43deg);
+    margin-top: 132px;
+    /* margin-left: 15px; */
+  }
+  .event_LuxeCabs_Gateway {
+    transform: rotate(44deg);
+    margin-bottom: 103px;
+  }
+  .event_TaxiHub_WhatsApp {
+    transform: rotate(-7deg);
+    margin-bottom: -19px;
+    margin-right: 150px;
+  }
+}
+
+@media screen and (min-width: 1740px) and (max-width: 1920px) {
+  .event_Gateway_TaxiHub {
+    transform: rotate(325deg);
+    margin-bottom: 190px;
+  }
+  .event_Gateway_TravelBuddy {
+    transform: rotate(35deg);
+    margin-bottom: 139px;
+  }
+  .event_TravelBuddy_Gateway {
+    transform: rotate(35deg);
+    margin-top: 80px;
+  }
+  .event_TaxiHub_Gateway {
+    transform: rotate(-33deg);
+    margin-top: 75px;
+  }
+  .event_Gateway_LuxeCabs {
+    transform: rotate(34deg);
+    margin-top: 73px;
+    /* margin-left: 15px; */
+  }
+  .event_LuxeCabs_Gateway {
+    transform: rotate(35deg);
+    margin-bottom: 180px;
+  }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1740px) {
+  .event_Gateway_TaxiHub {
+    transform: rotate(314deg);
+    margin-bottom: 283px;
+  }
+  .event_Gateway_TravelBuddy {
+    transform: rotate(46deg);
+    margin-bottom: 126px;
+  }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 768px) {
+  .event_Gateway_TravelBuddy {
+    transform: rotate(43deg);
+    margin-bottom: 100px;
+  }
+  .event_WhatsApp_TaxiHub {
+    transform: rotate(-48deg);
+    margin-bottom: 299px;
+  }
 }
