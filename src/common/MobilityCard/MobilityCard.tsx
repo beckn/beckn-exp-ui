@@ -109,12 +109,13 @@ const MobilityCard = () => {
         return slicedArr.push(
           ...events.slice(
             events[events.length - 1].event.eventDestination.id === ids.mobility
-              ? events.length -
-                  (events[events.length - 2].event.eventDestination ===
-                  ids.mobility
-                    ? 2
-                    : 1)
-              : 0,
+              ? 7
+              : // events.length -
+                //     (events[events.length - 1].event.eventDestination ===
+                //     ids.mobility
+                //       ? 2
+                //       : 2)
+                0,
             events[events.length - 1].event.eventDestination.id === ids.mobility
               ? events.length
               : 0
@@ -156,6 +157,8 @@ const MobilityCard = () => {
   const handleOpen = () => {
     setOpen(true);
   };
+  console.log("unique", unique);
+  console.log("events", events);
 
   return (
     <motion.div
