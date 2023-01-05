@@ -39,57 +39,70 @@ const ViewMyJourney = () => {
   useInterval(() => {
     fetchEvent();
   }, 2000);
-  const sourceId = events.map((event) => {
-    return event.event.eventSource.id;
-  });
-  const uniqueSourceId = [...new Set(sourceId)];
-  console.log(uniqueSourceId, "uniqueSourceId");
-  console.log(sourceId, "sourceId");
+  const sourceId = events
+    .sort((a, b) => a.eventId - b.eventId)
+    .map((event) => {
+      return event.event.eventSource.id;
+    });
+  const destinationId = events
+    .sort((a, b) => a.eventId - b.eventId)
+    .map((event) => {
+      return event.event.eventDestination.id;
+    });
+  const mergedId = [...sourceId, ...destinationId];
+  const uniqueSourceId = [...new Set(mergedId)];
+
   const categories = uniqueSourceId.map((id) => {
     if (id === ids.mobility) {
-      return "Travelbuddy";
+      return "Travel buddy";
     } else if (id === ids.gateway) {
       return "gateway";
     } else if (id === ids.taxi) {
       return "taxi";
     } else if (id === ids.yatri) {
-      return "LuxeCabs";
+      return "Luxe Cabs";
+    } else if (id === ids.whatsappMobility) {
+      return "Whatsapp";
     }
   });
+  console.log(categories, "categories");
   const imageCategories = [
     TravelbuddyLogo,
     "",
     TravelbuddyLogo,
     TravelbuddyLogo,
   ];
-
-  const data = events
+  const updateEvents = events.filter((event) => {
+    return event.event.eventSource.id !== event.event.eventDestination.id;
+  });
+  console.log(updateEvents, "updateEvents");
+  const data = updateEvents
     .sort((a, b) => a.eventId - b.eventId)
     .map((event) => {
       const sourceId = () => {
-        if (event.event.eventSource.id === ids.mobility) {
+        if (event.event.eventSource.id === uniqueSourceId[0]) {
           return 0;
-        } else if (event.event.eventSource.id === ids.gateway) {
+        } else if (event.event.eventSource.id === uniqueSourceId[1]) {
           return 1;
-        } else if (event.event.eventSource.id === ids.taxi) {
+        } else if (event.event.eventSource.id === uniqueSourceId[2]) {
           return 2;
-        } else if (event.event.eventSource.id === ids.yatri) {
+        } else if (event.event.eventSource.id === uniqueSourceId[3]) {
           return 3;
-        } else if (event.event.eventSource.id === ids.whatsappMobility) {
+        } else if (event.event.eventSource.id === uniqueSourceId[0]) {
           return 0;
         }
       };
 
       const destinationId = () => {
-        if (event.event.eventDestination.id === ids.mobility) {
+        if (event.event.eventDestination.id === uniqueSourceId[0]) {
           return 0;
-        } else if (event.event.eventDestination.id === ids.gateway) {
+        } else if (event.event.eventDestination.id === uniqueSourceId[1]) {
           return 1;
-        } else if (event.event.eventDestination.id === ids.taxi) {
+        } else if (event.event.eventDestination.id === uniqueSourceId[2]) {
           return 2;
-        } else if (event.event.eventDestination.id === ids.yatri) {
+        } else if (event.event.eventDestination.id === uniqueSourceId[3]) {
           return 3;
-        } else if (event.event.eventDestination.id === ids.whatsappMobility) {
+        } else if (event.event.eventDestination.id === uniqueSourceId[0]) {
           return 0;
         }
       };
@@ -184,15 +197,17 @@ const ViewMyJourney = () => {
           style={{ ...options, ...customStyle }}
         />
         <Box>
-          <img
-            src={TravelbuddyLogo}
-            alt=""
-            style={{
-              position: "absolute",
-              top: "9px",
-              left: " 10%",
-            }}
-          />
+          {uniqueSourceId[0] === ids.mobility && (
+            <img
+              src={TravelbuddyLogo}
+              alt=""
+              style={{
+                position: "absolute",
+                top: "9px",
+                left: " 10%",
+              }}
+            />
+          )}
           <img
             src={TaxiLogo}
             alt=""
@@ -202,6 +217,7 @@ const ViewMyJourney = () => {
               left: "55%",
             }}
           />
+
           <img
             src={LuxeCabsLogo}
             alt=""
