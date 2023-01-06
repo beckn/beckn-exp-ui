@@ -54,7 +54,7 @@
   text-align: center;
   padding: 30px;
   font-size: 45px;
-  font-weight: 300;
+  font-weight: 400;
 }
 .main-div {
   border-bottom: 1px solid red !important;
@@ -209,11 +209,11 @@
   top: 73%;
   right: 0;
 }
-@media screen and (min-width: 1366px) and (max-width: 768px){
+@media screen and (min-width: 1366px) and (max-width: 768px) {
   .whatsappSource {
     top: 66%;
-}
-.luxecabSource {
-  top: 68%;
-}
+  }
+  .luxecabSource {
+    top: 68%;
+  }
 }

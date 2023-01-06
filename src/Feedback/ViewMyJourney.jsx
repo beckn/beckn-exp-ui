@@ -9,6 +9,7 @@ import useInterval from "../common/MobilityCard/useInterval";
 import TravelbuddyLogo from "../assets/TravelbuddyLogo.svg";
 import TaxiLogo from "../assets/TaxiLogo.svg";
 import LuxeCabsLogo from "../assets/LuxeCabsLogo.svg";
+import WhatsappLogo from "../assets/whatsappLogo.png";
 const ViewMyJourney = () => {
   const [events, setEvents] = React.useState([]);
   const expId = localStorage.getItem("expId");
@@ -114,19 +115,17 @@ const ViewMyJourney = () => {
     });
 
   const options = {
-    boxWidth: 140,
+    boxWidth: 160,
     boxHeight: 40,
     gapEdge: 50,
     gapStep: 266,
     boxBorderColor: "#1E1E1E",
     stepLineWidth: 1,
     stepLineColor: "#fff",
-    // position: "absolute",
-    // top: "15%",
-    // left: "15%",
+
     position: "relative",
-    fontWeight: "300",
-    fontSize: "14px",
+    fontWeight: "400",
+    fontSize: "16px",
   };
 
   const customStyle = {
@@ -205,13 +204,26 @@ const ViewMyJourney = () => {
               }}
             />
           )}
+          {uniqueSourceId[0] === ids.whatsappMobility && (
+            <img
+              src={WhatsappLogo}
+              alt=""
+              style={{
+                position: "absolute",
+                top: "9px",
+                left: "10.8%",
+                height: "18px",
+              }}
+            />
+          )}
+
           <img
             src={TaxiLogo}
             alt=""
             style={{
               position: "absolute",
               top: "5px",
-              left: "55%",
+              left: "56.5%",
             }}
           />
 
@@ -221,7 +233,7 @@ const ViewMyJourney = () => {
             style={{
               position: "absolute",
               top: "9px",
-              left: " 76.3%",
+              left: " 76.6%",
               width: "2.5%",
             }}
           />
