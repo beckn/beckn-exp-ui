@@ -3,44 +3,23 @@ import Man from "../assets/man.svg";
 import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
 import { Box, Modal } from "@mui/material";
 import ErrorModal from "../common/ErrorModal";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
+import EventApiContext from "../context/EventApiContext";
 
-interface Props {
-  expId: string;
-}
-
-const DriverATaxi = ({ expId }: Props) => {
+const DriverATaxi = () => {
   const [open, setOpen] = useState(false);
+  const { expId, postExpId } = useContext(EventApiContext);
   const handleOpen = () => {
     setOpen(true);
   };
   const navigate = useNavigate();
-  const postExpId = async () => {
-    await fetch("https://api.experience.becknprotocol.io/v2/xc/experience", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify({
-        experienceId: expId,
-        experienceCenterId: "2",
-        eventSourceAppId:
-          "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
-        start_ts: Date.now(),
-      }), // body data type must match "Content-Type" header
-    })
-      .then((response) => console.log(`Event Created with`, response))
 
-      .catch((error) => console.log("error", error));
-  };
   useEffect(() => {
     localStorage.setItem("expId", expId);
     postExpId();

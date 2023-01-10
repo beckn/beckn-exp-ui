@@ -16,6 +16,7 @@ const MobilityCard = () => {
 
   const [events, setEvents] = useState<any>([]);
   const expId = localStorage.getItem("expId");
+
   const fetchEvent = async () => {
     try {
       const res = await axios.get(

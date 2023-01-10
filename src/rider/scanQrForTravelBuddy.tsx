@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import QrScanner from "../common/qrScanner";
 import Lady from "../assets/lady.svg";
 import GenQRCode from "../utility/GenQRCode";
@@ -10,11 +10,10 @@ import { Box, Modal } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import ErrorModal from "../common/ErrorModal";
+import EventApiContext from "../context/EventApiContext";
 
-interface Props {
-  expId: string;
-}
-const ScanQrForTravelBuddy = ({ expId }: Props) => {
+const ScanQrForTravelBuddy = () => {
+  const { expId, postExpId } = useContext(EventApiContext);
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -23,25 +22,7 @@ const ScanQrForTravelBuddy = ({ expId }: Props) => {
   const handleClose = () => {
     setOpen(false);
   };
-  const postExpId = async () => {
-    await fetch("https://api.experience.becknprotocol.io/v2/xc/experience", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify({
-        experienceId: expId,
-        experienceCenterId: "1",
-        eventSourceAppId: "mobilityreferencebap.becknprotocol.io",
-        start_ts: Date.now(),
-      }), // body data type must match "Content-Type" header
-    })
-      .then((response) => console.log(`Event Created with`, response))
 
-      .catch((error) => console.log("error", error));
-  };
   useEffect(() => {
     localStorage.setItem("expId", expId);
     postExpId();
