@@ -6,9 +6,10 @@ import LuxeCab from "../../assets/luxe.svg";
 import GWP from "../../assets/girlWithPhone.svg";
 import MWP from "../../assets/menWithPhone.svg";
 import circle from "../../assets/circle.svg";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import useInterval from "./useInterval";
+import EventApiContext from "../../context/EventApiContext";
 
 const NodeComponent = (props: any) => {
   const ids = {
@@ -49,13 +50,14 @@ const NodeComponent = (props: any) => {
   const [experienceCenterId, setExperienceCenterId] = useState<any>("");
 
   const [events, setEvents] = useState<any>([]);
-  const fetchEvent = async () => {
+
+  const {getEvent} = useContext(EventApiContext);
+  
+  const fetchEvent = async() => {
     try {
-      const res = await axios.get(
-        `https://api.experience.becknprotocol.io/v2/event/${expId}`
-      );
-      setExperienceCenterId(res.data.experienceSession.experienceCenterId);
-      setEvents(res.data.events);
+      const res = await getEvent()
+      setExperienceCenterId(res?.experienceSession.experienceCenterId);
+      setEvents(res?.events);
     } catch (error) {
       console.log(`error ${error}`);
     }

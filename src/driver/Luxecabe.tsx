@@ -13,7 +13,7 @@ import GenQRCode from "../utility/GenQRCode";
 import EventApiContext from "../context/EventApiContext";
 
 const Luxecabe = () => {
-  const { expId, postExpId } = useContext(EventApiContext);
+  const { expId, postExpId, getEvent } = useContext(EventApiContext);
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -26,12 +26,10 @@ const Luxecabe = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchEvent = async () => {
+  const fetchEvent = async() => {
     try {
-      const res = await axios.get(
-        `https://api.experience.becknprotocol.io/v2/event/${expId}`
-      );
-      const events = res.data.events;
+      const res = await getEvent()
+      const events = res?.events;
 
       if (events.length > 0) {
         setTimeout(() => {

@@ -14,7 +14,8 @@ import EventApiContext from "../context/EventApiContext";
 
 const DriverATaxi = () => {
   const [open, setOpen] = useState(false);
-  const { expId, postExpId } = useContext(EventApiContext);
+  const { expId, postExpId, getEvent } = useContext(EventApiContext);
+
   const handleOpen = () => {
     setOpen(true);
   };
@@ -26,12 +27,10 @@ const DriverATaxi = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchEvent = async () => {
+  const fetchEvent = async() => {
     try {
-      const res = await axios.get(
-        `https://api.experience.becknprotocol.io/v2/event/${expId}`
-      );
-      const events = res.data.events;
+      const res = await getEvent();
+      const events = res?.events;
 
       console.log(`res.data ${JSON.stringify(res.data.events.length)}`);
 
