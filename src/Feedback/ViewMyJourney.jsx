@@ -1,6 +1,6 @@
+import React, { useEffect, useContext } from "react";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import React, { useEffect } from "react";
 import backArrw from "../assets/backArrw.png";
 import { motion } from "framer-motion";
 import { SequenceDiagram } from "react-sd";
@@ -10,9 +10,11 @@ import TravelbuddyLogo from "../assets/TravelbuddyLogo.svg";
 import TaxiLogo from "../assets/TaxiLogo.svg";
 import LuxeCabsLogo from "../assets/LuxeCabsLogo.svg";
 import WhatsappLogo from "../assets/whatsappLogo.png";
+import EventApiContext from "../context/EventApiContext";
+
 const ViewMyJourney = () => {
   const [events, setEvents] = React.useState([]);
-  const expId = localStorage.getItem("expId");
+  const { getEvent } = useContext(EventApiContext);
 
   const navigate = useNavigate();
   const ids = {
@@ -22,13 +24,11 @@ const ViewMyJourney = () => {
     whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
     yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
   };
-  const fetchEvent = async () => {
+  const fetchEvent = async() => {
     try {
-      const res = await axios.get(
-        `https://api.experience.becknprotocol.io/v2/event/${expId}`
-      );
+      const res = await getEvent();
 
-      setEvents(res.data.events);
+      setEvents(res?.events);
     } catch (error) {
       console.log(`error ${error}`);
     }

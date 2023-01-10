@@ -1,3 +1,4 @@
+import React, { useContext} from 'react'
 import "./MobilityCard.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
 import { useState } from "react";
@@ -10,20 +11,20 @@ import { motion } from "framer-motion";
 import { Box, Modal } from "@mui/material";
 import homeIcon from "../../assets/homeIcon.png";
 import ErrorModal from "../ErrorModal";
+import EventApiContext from "../../context/EventApiContext";
 
 const MobilityCard = () => {
   const navigate = useNavigate();
 
   const [events, setEvents] = useState<any>([]);
+  const {getEvent} = useContext(EventApiContext);
   const expId = localStorage.getItem("expId");
 
-  const fetchEvent = async () => {
+  const fetchEvent = async() => {
     try {
-      const res = await axios.get(
-        `https://api.experience.becknprotocol.io/v2/event/${expId}`
-      );
-
-      setEvents(res.data.events);
+      const res = await getEvent();
+      console.log("RESPONSE-DATA", res)
+      setEvents(res?.events);
     } catch (error) {
       console.log(`error ${error}`);
     }
