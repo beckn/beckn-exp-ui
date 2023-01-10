@@ -1,6 +1,6 @@
 import axios from "axios";
 import Man from "../assets/man.svg";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import useInterval from "../common/MobilityCard/useInterval";
 import { motion } from "framer-motion";
@@ -10,36 +10,16 @@ import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import QrScanner from "../common/qrScanner";
 import GenQRCode from "../utility/GenQRCode";
+import EventApiContext from "../context/EventApiContext";
 
-interface Props {
-  expId: string;
-}
-const Luxecabe = ({ expId }: Props) => {
+const Luxecabe = () => {
+  const { expId, postExpId } = useContext(EventApiContext);
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
   const navigate = useNavigate();
-  const postExpId = async () => {
-    await fetch("https://api.experience.becknprotocol.io/v2/xc/experience", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify({
-        experienceId: expId,
-        experienceCenterId: "2",
-        eventSourceAppId:
-          "becknify.humbhionline.in.mobility-staging.BPP/beckn_open/app1-succinct-in",
-        start_ts: Date.now(),
-      }), // body data type must match "Content-Type" header
-    })
-      .then((response) => console.log(`Event Created with`, response))
 
-      .catch((error) => console.log("error", error));
-  };
   useEffect(() => {
     localStorage.setItem("expId", expId);
     postExpId();

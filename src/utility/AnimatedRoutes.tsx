@@ -19,7 +19,7 @@ import IframeVideo from "../common/IframeVideo";
 import { AnimatePresence } from "framer-motion";
 import Luxecabe from "../driver/Luxecabe";
 
-const AnimatedRoutes = ({ expId }: any) => {
+const AnimatedRoutes = () => {
   const location = useLocation();
   return (
     <AnimatePresence initial={false}>
@@ -33,13 +33,13 @@ const AnimatedRoutes = ({ expId }: any) => {
         {/* Travel buddy */}
         <Route
           path="/scanQrForTravelBuddy"
-          element={<ScanQrForTravelBuddy expId={expId} />}
+          element={<ScanQrForTravelBuddy />}
         />
         {/* Drive a Taxi */}
-        <Route path="/DriverATaxi" element={<DriverATaxi expId={expId} />} />
+        <Route path="/DriverATaxi" element={<DriverATaxi />} />
 
         {/* WhatsApp */}
-        <Route path="/useWhatsapp" element={<UseWhatsapp expId={expId} />} />
+        <Route path="/useWhatsapp" element={<UseWhatsapp />} />
 
         {/* Node-communication */}
         <Route path="/MobilityCard" element={<MobilityCard />} />
@@ -75,7 +75,7 @@ const AnimatedRoutes = ({ expId }: any) => {
           }
         />
         <Route path="/viewMyJourney" element={<ViewMyJourney />} />
-        <Route path="/luxecabe" element={<Luxecabe expId={expId} />} />
+        <Route path="/luxecabe" element={<Luxecabe />} />
       </Routes>
     </AnimatePresence>
   );

@@ -53,6 +53,7 @@ const ViewMyJourney = () => {
   const mergedId = [...sourceId, ...destinationId];
   const uniqueSourceId = [...new Set(mergedId)];
 
+  // eslint-disable-next-line array-callback-return
   const categories = uniqueSourceId.map((id) => {
     if (id === ids.mobility) {
       return "Travel buddy";
@@ -66,12 +67,12 @@ const ViewMyJourney = () => {
       return "Whatsapp";
     }
   });
-  const imageCategories = [
-    TravelbuddyLogo,
-    "",
-    TravelbuddyLogo,
-    TravelbuddyLogo,
-  ];
+  // const imageCategories = [
+  //   TravelbuddyLogo,
+  //   "",
+  //   TravelbuddyLogo,
+  //   TravelbuddyLogo,
+  // ];
   const updateEvents = events.filter((event) => {
     return event.event.eventSource.id !== event.event.eventDestination.id;
   });
@@ -146,6 +147,7 @@ const ViewMyJourney = () => {
   };
 
   const elements = Array.from(document.getElementsByClassName("point-left"));
+  // eslint-disable-next-line array-callback-return
   elements.map((element) => {
     element.parentNode.classList.add("main-div");
   });
