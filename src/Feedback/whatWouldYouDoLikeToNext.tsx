@@ -1,41 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Box, Modal, Typography } from "@mui/material";
+import {Modal } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
-import { styled } from "@mui/material/styles";
-import Button, { ButtonProps } from "@mui/material/Button";
+import 'antd/dist/reset.css';
+import { Button, Typography, Card } from 'antd';
 import TiltArrowInBlack from "../assets/tiltArrowblack.svg";
 import TiltArrow from "../assets/tiltArrow.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import homeIcon from "../assets/homeIcon.png";
 import ErrorModal from "../common/ErrorModal";
-
-const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  width: "224px",
-  height: "46px",
-  border: "1px solid #ABD4FA",
-  backgroundColor: "#ABD4FA",
-  color: "#000000",
-  borderRadius: "25px",
-  textTransform: "lowercase",
-  padding: "10px",
-  "&:hover": {
-    backgroundColor: "#ABD4FA",
-  },
-}));
-
-const ColorButtonSec = styled(Button)<ButtonProps>(({ theme }) => ({
-  width: "184px",
-  height: "46px",
-  backgroundColor: "#000000",
-  color: "#FFFFFF",
-  borderRadius: "25px",
-  textTransform: "lowercase",
-  padding: "10px",
-  "&:hover": {
-    backgroundColor: "#000000",
-  },
-}));
+import "./Feedback.css";
 
 const WhatWouldYouDoLikeToNext = () => {
   const [open, setOpen] = useState(false);
@@ -56,29 +30,14 @@ const WhatWouldYouDoLikeToNext = () => {
       //   transition: { ease: "easeOut", duration: 0.2 },
       // }}
     >
-      <Box
-        className="main-container"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-          height: "100vh",
-          alignItems: "center",
-        }}
+      <Card
+        className="main-container mainCard bgBorder"
       >
-        <Box style={{ textAlign: "center" }}>
-          <Box style={{ marginBottom: "60px" }}>
+        <div className="textcenter bgBorder">
+          <Card className="becknIcon bgBorder">
             <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-          </Box>
-          <Box
-            style={{
-              cursor: "pointer",
-              position: "absolute",
-              right: "50px",
-              top: "30px",
-            }}
-            onClick={handleOpen}
-          >
+          </Card>
+          <Card className="bgBorder homeIcon" onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
             <Modal open={open}>
               <ErrorModal
@@ -90,54 +49,42 @@ const WhatWouldYouDoLikeToNext = () => {
                 buttonText={"Confirm"}
               />
             </Modal>
-          </Box>
-          <Box>
-            <Typography color={"#FFFF"}>
-              <Typography fontSize={"60px"}>congratulations!</Typography>
-              <Typography fontSize={"60px"}>
+          </Card>
+          <Card className="bgBorder cardText">
+            <Typography>
+              <Typography className="feedbacktext">congratulations!</Typography>
+              <Typography className="feedbacktext">
                 you just performed your first transaction on
               </Typography>
-              <Typography fontSize={"60px"}>
+              <Typography className="feedbacktext">
                 a beckn enabled open mobility network
               </Typography>
             </Typography>
-            <Typography mt={6} fontSize={"30px"} color={"#FFFF"}>
+            <Typography className="subTitle">
               What would you like to do next?
             </Typography>
-          </Box>
-          <Box style={{ marginTop: "40px" }}>
-            <Box>
-              <Link to={"/viewMyJourney"} style={{ textDecoration: "none" }}>
-                <ColorButton
-                  endIcon={
-                    <img
-                      width={"10px"}
-                      src={TiltArrowInBlack}
-                      alt={"BecknLogoIcon"}
-                    />
-                  }
-                >
-                  view my journey
-                </ColorButton>
+          </Card>
+          <Card className="bgBorder">
+            <Card className="bgBorder">
+              <Link to={"/viewMyJourney"} style={{ textDecoration: "none" }} >
+                <Button className="colorButton mt30">
+                  view my journey <img width={"10px"} src={TiltArrowInBlack} alt={"BecknLogoIcon"} />  
+                </Button>
               </Link>
-            </Box>
-            <Box marginTop={"42px"}>
+            </Card>
+            <Card className="bgBorder">
               <Link
                 to={"/didYouLikeBecknExp"}
                 style={{ textDecoration: "none", color: "#000" }}
               >
-                <ColorButtonSec
-                  endIcon={
-                    <img width={"10px"} src={TiltArrow} alt={"BecknLogoIcon"} />
-                  }
-                >
-                  no, i'm done
-                </ColorButtonSec>
+                <Button className="colorButtonSec mt20">
+                  no, i'm done <img width={"10px"} src={TiltArrow} alt={"BecknLogoIcon"} />   
+                </Button>
               </Link>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+            </Card>
+          </Card>
+        </div>
+      </Card>
     </motion.div>
   );
 };
