@@ -1,0 +1,180 @@
+.colorButton{
+    width: 224px;
+    height: 46px;
+    border: none;
+    background-color: #ABD4FA;
+    color: #000000;
+    border-radius: 25px;
+    text-transform: lowercase;
+    padding: 10px;
+}
+
+.colorButton:hover{
+    background-Color: #ABD4FA !important;
+    color: #000000 !important;
+}
+
+.colorButton img{
+    margin-left: 4px;
+}
+.colorButtonSec img{
+    margin-left: 4px;
+}
+
+.feedbacktext{
+    font-size:60px;
+    color:white;
+}
+
+.colorButtonSec{
+    width: 184px;
+    height: 46px;
+    background-Color: #000000;
+    color: #FFFFFF;
+    border-Radius: 25px;
+    text-Transform: lowercase;
+    border: none;
+    padding: 10px;
+}
+
+.colorButtonSec:hover{
+    background-Color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.becknIcon{
+    margin-Bottom: 50px; 
+}
+
+.homeIcon{
+    cursor: pointer;
+    position: absolute;
+    right: 50px;
+    top: 30px;
+}
+
+.bgBorder{
+    background: none;
+    border: none;
+}
+
+.textcenter{
+    text-align: center;
+}
+
+.mainCard{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+
+.subTitle{
+    font-size: 30px;
+    margin-top: 3%;
+    color: white;
+}
+
+.mt30{
+    margin-top: 30px;
+}
+
+.mt20{
+    margin-top: 20px;
+}
+
+.thanksCard{
+    text-align: center;
+    background-Color: #1E1E1E;
+    /* padding: 40px; */
+    border: none;
+}
+
+.thanksCardText{
+    font-size: 70px;
+    color: #FFFF;
+}
+
+.thanksCardSubText{
+    font-size: 45px;
+    color: #FFFF;
+}
+
+.qrCode{
+    margin-top: 10px;
+    margin-Bottom: 40px;
+}
+
+:where(.css-dev-only-do-not-override-sk7ap8).ant-card .ant-card-body {
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .colorButton{
+        width: 40%;
+        height: 5%;
+        border-radius: 23px;
+        padding: 2%;
+        font-size: 12px;
+    } 
+    .colorButtonSec{
+        width: 40%;
+        height: 5%;
+        border-Radius: 13px;
+        padding: 2%;
+        font-size: 12px;
+    }   
+    .subTitle{
+        font-size: 13px;
+        margin-top: 2%;
+        color: white;
+    }
+    .mt20{
+        margin-top: 10px;
+    }
+    .mt30{
+        margin-top: 15px;
+    }
+    .feedbacktext{
+        font-size:25px;
+    }  
+    .homeIcon{
+        right: 5%;
+        top: 0px;
+    }
+    .becknIcon{
+        margin-Bottom: 30px; 
+    }
+    .colorButton img{
+        width: 7px;
+        margin-left: 2px;
+    }
+    .colorButtonSec img{
+        width: 7px;
+        margin-left: 2px;
+    }
+    .becknIcon img{
+        width: 125px;
+    }
+   .main-container{
+        top: 5%;
+   }
+   .thanksCardText{
+        font-size: 35px;
+    }
+
+    .thanksCardSubText{
+        font-size: 23px;
+    }
+
+    .qrCode{
+        margin-top: 5px;
+        margin-Bottom: 20px;
+    }
+    .thanksCard{
+        width: 100%;
+    }
+}
+
