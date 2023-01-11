@@ -1,10 +1,9 @@
 import React from "react";
-import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import Title from "../common/title";
-import CardWithContent from "../common/cardWithContent";
+import CardWithContent from "../common/Cards/cardWithContent";
 import VisualiseIccon from "../assets/VisualizeIcon.svg";
 import BulbIcon from "../assets/bulbIcon.svg";
 import TiltArrow from "../assets/tiltArrow.svg";
@@ -22,69 +21,24 @@ const VisualizeAction = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
       style={{ overflow: "hidden" }}
-      // initial={{ width: "0%" }}
-      // animate={{ width: "100%" }}
-      // exit={{
-      //   x: window.innerWidth,
-      //   transition: { ease: "easeOut", duration: 0.1 },
-      // }}
     >
-      <Box
-        className="main-container"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-          minHeight: "100vh",
-          flexDirection: "column",
-        }}
-      >
-        <Box
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            width: "96%",
-            margin: "0 auto",
-            marginTop: "30px",
-          }}
-        >
-          <Box>
+      <div className="main-container page-content">
+        <div className="header">
+          <div>
             <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-          </Box>
+          </div>
           <Link style={{ cursor: "pointer" }} to={"/"}>
             <img src={homeIcon} alt={"HomeIcon"} />
           </Link>
-        </Box>
-        <Box
-          style={{
-            textAlign: "center",
-            height: "100vh",
-            width: "80%",
-            margin: "60px auto",
-          }}
-        >
-          <Box
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "70px",
-            }}
-          >
+        </div>
+        <div className="content-wrapper">
+          <div className="content-wrapper-innr">
             <Title
               titleText={"welcome to the beckn experience center"}
-              className="visualizationTitle"
+              className="page-content-title"
             />
-          </Box>
-          <Box
-            style={{
-              marginTop: "40px",
-              display: "flex",
-              width: "100%",
-              justifyContent: "space-between",
-            }}
-          >
+          </div>
+          <div className="card-wrapper">
             <Link
               to="/ChoiceToDo"
               style={{ textDecoration: "none", color: "#000", width: "100%" }}
@@ -113,26 +67,12 @@ const VisualizeAction = () => {
                 subTitle={"understanding what is beckn"}
               />
             </Link>
-          </Box>
-          <Box
-            style={{
-              background: "black",
-              color: "#AED3F0",
-              width: "104px",
-              margin: "40px auto",
-              padding: "6px",
-              borderRadius: "12px",
-              cursor: "pointer",
-              display: "flex",
-              justifyContent: "space-around",
-              fontSize: "14px",
-            }}
-            onClick={() => navigate(-1)}
-          >
+          </div>
+          <div className="back-btn" onClick={() => navigate(-1)}>
             <img src={backArrw} alt="" /> Go Back
-          </Box>
-        </Box>
-      </Box>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };

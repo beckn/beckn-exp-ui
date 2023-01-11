@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext } from "react";
 import "./MobilityCard.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
 import { useState } from "react";
@@ -10,20 +10,20 @@ import BecknLogoIcon from "../../assets/becklogoSmall.svg";
 import { motion } from "framer-motion";
 import { Box, Modal } from "@mui/material";
 import homeIcon from "../../assets/homeIcon.png";
-import ErrorModal from "../ErrorModal";
+import ErrorModal from "../ErrorModal/ErrorModal";
 import EventApiContext from "../../context/EventApiContext";
 
 const MobilityCard = () => {
   const navigate = useNavigate();
 
   const [events, setEvents] = useState<any>([]);
-  const {getEvent} = useContext(EventApiContext);
+  const { getEvent } = useContext(EventApiContext);
   const expId = localStorage.getItem("expId");
 
-  const fetchEvent = async() => {
+  const fetchEvent = async () => {
     try {
       const res = await getEvent();
-      console.log("RESPONSE-DATA", res)
+      console.log("RESPONSE-DATA", res);
       setEvents(res?.events);
     } catch (error) {
       console.log(`error ${error}`);

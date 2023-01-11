@@ -1,4 +1,4 @@
-import QrScanner from "../common/qrScanner";
+import QrScanner from "../common/QrScanner/qrScanner";
 import Man from "../assets/man.svg";
 import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
-import { Box, Modal } from "@mui/material";
-import ErrorModal from "../common/ErrorModal";
+import { Modal } from "@mui/material";
+import ErrorModal from "../common/ErrorModal/ErrorModal";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import EventApiContext from "../context/EventApiContext";
@@ -50,39 +50,16 @@ const DriverATaxi = () => {
 
   return (
     <motion.div
-      // initial={{ width: "0%" }}
-      // animate={{ width: "100%" }}
-      // exit={{
-      //   x: window.innerWidth,
-      //   transition: { ease: "easeOut", duration: 0.2 },
-      // }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >
-      <Box
-        className="main-container"
-        style={{
-          width: "100%",
-          minHeight: "100vh",
-          flexDirection: "column",
-          overflow: "hidden",
-        }}
-      >
-        <Box
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            width: "96%",
-            margin: "0 auto",
-            marginTop: "20px",
-          }}
-        >
-          <Box>
+      <div className="main-container page-content luxecab">
+        <div className="header">
+          <div>
             <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-          </Box>
-          <Box style={{ cursor: "pointer", zIndex: "99" }} onClick={handleOpen}>
+          </div>
+          <div style={{ cursor: "pointer", zIndex: "99" }} onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
             <Modal open={open}>
               <ErrorModal
@@ -94,8 +71,8 @@ const DriverATaxi = () => {
                 buttonText={"Confirm"}
               />
             </Modal>
-          </Box>
-        </Box>
+          </div>
+        </div>
         <QrScanner
           imageUrl={Man}
           desccription={
@@ -108,7 +85,7 @@ const DriverATaxi = () => {
             />
           }
         />
-      </Box>
+      </div>
     </motion.div>
   );
 };

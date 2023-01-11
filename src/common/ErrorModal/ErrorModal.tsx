@@ -1,8 +1,8 @@
 import React, { ReactComponentElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CrossIcon from "../assets/cross.svg";
-import Button, { buttonPropModal } from "./Button";
-import ColorButton, { colorButtonPropModal } from "./ColorButton";
+import CrossIcon from "../../assets/cross.svg";
+import Button, { buttonPropModal } from "../Buttons/Button";
+import ColorButton, { colorButtonPropModal } from "../Buttons/ColorButton";
 import "./ErrorModal.css";
 interface modalPropModal {
   titleText: string;
