@@ -168,7 +168,12 @@ const MobilityCard = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >
-      <Box className="main-container" style={{ height: "100vh" }}>
+      <Box
+        className=""
+        style={{
+          height: "96vh",
+        }}
+      >
         <Box
           style={{
             display: "flex",
@@ -176,7 +181,6 @@ const MobilityCard = () => {
             alignItems: "center",
             width: "96%",
             margin: "0 auto",
-            marginTop: "20px",
           }}
         >
           <Box>

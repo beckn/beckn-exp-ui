@@ -9,7 +9,6 @@ import homeIcon from "../assets/homeIcon.png";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import { Card, Col, Row } from "antd";
-import "./DidYouLikeBecknExp.css";
 
 const DidYouLikeBecknExp = () => {
   const [open, setOpen] = useState(false);
@@ -24,12 +23,12 @@ const DidYouLikeBecknExp = () => {
         transition={{ duration: 0.2, ease: "easeOut" }}
         style={{ overflow: "hidden" }}
       >
-        <Col className="main-container container">
-          <Row className="beck-logo-and-homeIcon">
-            <Col className="beckn-logo">
+        <div className="main-container page-content">
+          <div className="header">
+            <div>
               <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-            </Col>
-            <Col style={{ cursor: "pointer" }} onClick={handleOpen}>
+            </div>
+            <div style={{ cursor: "pointer" }} onClick={handleOpen}>
               <img src={homeIcon} alt={"HomeIcon"} />
               <Modal open={open}>
                 <ErrorModal
@@ -41,8 +40,8 @@ const DidYouLikeBecknExp = () => {
                   buttonText={"Confirm"}
                 />
               </Modal>
-            </Col>
-          </Row>
+            </div>
+          </div>
           <div className="box-container">
             <Card className="card-qr">
               <p className="card-text">did you like the beckn experience?</p>
@@ -75,7 +74,7 @@ const DidYouLikeBecknExp = () => {
               <img src={menWithCar} alt="" style={{ width: "100%" }} />
             </Col>
           </div>
-        </Col>
+        </div>
       </motion.div>
     </>
   );

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
 import { Card, Col, Row } from "antd";
-import "./YourFeedbackIsValubleForUs.css";
+import "./Feedback.css";
 
 const YourFeedbackIsValubleForUs = () => {
   const [open, setOpen] = useState(false);
@@ -56,19 +56,13 @@ const YourFeedbackIsValubleForUs = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
       style={{ overflow: "hidden" }}
-      // initial={{ width: "0%" }}
-      // animate={{ width: "100%" }}
-      // exit={{
-      //   x: window.innerWidth,
-      //   transition: { ease: "easeOut", duration: 0.2 },
-      // }}
     >
-      <Col className="main-container container">
-        <Row className="beck-logo-and-homeIcon">
-          <Col className="beckn-logo-icon">
+      <div className="main-container page-content">
+        <div className="header">
+          <div>
             <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-          </Col>
-          <Col style={{ cursor: "pointer" }} onClick={handleOpen}>
+          </div>
+          <div style={{ cursor: "pointer" }} onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
             <Modal open={open}>
               <ErrorModal
@@ -80,11 +74,11 @@ const YourFeedbackIsValubleForUs = () => {
                 buttonText={"Confirm"}
               />
             </Modal>
-          </Col>
-        </Row>
-        <div className="div-containers">
-          <Card className="card-containers">
-            <p className="card-para">your feedback is valuable to us</p>
+          </div>
+        </div>
+        <div className="box-container">
+          <Card className="card-qr cardFeddback">
+            <p className="card-text">your feedback is valuable to us</p>
             <textarea
               className="textarea-text"
               name="textarea"
@@ -106,7 +100,7 @@ const YourFeedbackIsValubleForUs = () => {
             <img src={menWithCar} alt="" style={{ width: "100%" }} />
           </Col>
         </div>
-      </Col>
+      </div>
     </motion.div>
   );
 };
