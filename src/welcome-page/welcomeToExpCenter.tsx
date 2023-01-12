@@ -1,24 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "antd";
 import BecknLogoIcon from "../assets/becknLogoIcon.svg";
 import Arrow from "../assets/arrow.svg";
 import Background from "../assets/Back.mp4";
-import { styled } from "@mui/material/styles";
-import Button, { ButtonProps } from "@mui/material/Button";
 import { motion } from "framer-motion";
-
-const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: "#ABD4FA",
-  border: "1px solid #ABD4FA",
-  backgroundColor: "#0E0E0F",
-  textTransform: "lowercase",
-  fontSize: "24px",
-  padding: "8px 30px 8px 15px",
-  "&:hover": {
-    backgroundColor: "#0E0E0E",
-  },
-}));
 
 const WelcomeToExpCenter = () => {
   useEffect(() => {
@@ -30,14 +16,8 @@ const WelcomeToExpCenter = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
       style={{ overflow: "hidden" }}
-      // initial={{ width: "0%" }}
-      // animate={{ width: "100%" }}
-      // exit={{
-      //   x: window.innerWidth,
-      //   transition: { ease: "easeOut", duration: 0.1 },
-      // }}
     >
-      <Box className="myvideo">
+      <div className="myvideo">
         <video
           src={Background}
           autoPlay
@@ -45,55 +25,36 @@ const WelcomeToExpCenter = () => {
           muted
           style={{ width: "100%", height: "100vh", objectFit: "cover" }}
         />
-        <Box
-          className="main-container"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-            position: "absolute",
-            top: "15%",
-            background: "unset",
-          }}
-        >
-          <Box style={{ textAlign: "center" }}>
-            <Box style={{ marginBottom: "40px" }}>
+        <div className="main-container">
+          <div style={{ textAlign: "center" }}>
+            <div style={{ marginBottom: "40px" }}>
               <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-            </Box>
-            <Box
+            </div>
+            <div
               style={{
                 width: "100%",
                 display: "flex",
                 justifyContent: "center",
               }}
             >
-              <Typography
-                style={{
-                  color: "#FFFFFF",
-                  fontSize: "80px",
-                  width: "80%",
-                  fontWeight: "275",
-                  marginBottom: "20px",
-                }}
-              >
+              <Typography className="welcomePage-content">
                 welcome to the beckn experience centre
               </Typography>
-            </Box>
-            <Box style={{ marginTop: "40px" }}>
+            </div>
+            <div style={{ marginTop: "40px" }}>
               <Link
                 to="/VisualizeAction"
                 style={{ textDecoration: "none", color: "#000" }}
               >
-                <ColorButton
-                  endIcon={<img src={Arrow} alt={"BecknLogoIcon"} />}
-                >
-                  begin your journey
-                </ColorButton>
+                <button className="begin-journey">
+                  <span> begin your journey</span>
+                  <img src={Arrow} alt={"BecknLogoIcon"} />
+                </button>
               </Link>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+            </div>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };

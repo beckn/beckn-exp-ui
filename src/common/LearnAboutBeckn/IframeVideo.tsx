@@ -1,9 +1,7 @@
 import { Box } from "@mui/material";
-import { height } from "@mui/system";
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import BecknFinalVideo from "../assets/Beckn-Final_27.12.mp4";
-import CrossIcon from "../assets/cross.svg";
+import BecknFinalVideo from "../../assets/Beckn-Final_27.12.mp4";
+import CrossIcon from "../../assets/cross.svg";
 
 function IframeVideo() {
   const navigate = useNavigate();
@@ -30,7 +28,7 @@ function IframeVideo() {
         <img width={"100%"} src={CrossIcon} alt="" />
       </Box>
       <iframe
-        style={{ height: "80%", width: "80%", margin: "0 auto" }}
+        className="iframeVideoBeck"
         src={BecknFinalVideo}
         frameBorder="0"
         allow="autoplay; encrypted-media"

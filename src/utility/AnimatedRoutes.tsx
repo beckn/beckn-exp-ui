@@ -15,7 +15,7 @@ import UseWhatsapp from "../whatsapp/useWhatsapp";
 import ScanQrForTravelBuddy from "../rider/scanQrForTravelBuddy";
 import MobilityCard from "../common/MobilityCard/MobilityCard";
 import ViewMyJourney from "../Feedback/ViewMyJourney";
-import IframeVideo from "../common/IframeVideo";
+import IframeVideo from "../common/LearnAboutBeckn/IframeVideo";
 import { AnimatePresence } from "framer-motion";
 import Luxecabe from "../driver/Luxecabe";
 
@@ -24,7 +24,7 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence initial={false}>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<WelcomeToExpCenter />} />
+        <Route path="/home" element={<WelcomeToExpCenter />} />
         <Route path="/VisualizeAction" element={<VisualizeAction />} />
         <Route path="/ChoiceToDo" element={<ChoiceToDo />} />
         <Route path="/TravelBuddy" element={<TravelBuddy />} />

@@ -5,7 +5,7 @@ import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import { Box, Modal } from "@mui/material";
 import { motion } from "framer-motion";
-import ErrorModal from "../common/ErrorModal";
+import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
 
 const YourFeedbackIsValubleForUs = () => {

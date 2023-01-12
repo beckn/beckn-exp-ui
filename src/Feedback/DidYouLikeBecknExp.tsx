@@ -7,7 +7,7 @@ import { Box, Modal } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import { motion } from "framer-motion";
-import ErrorModal from "../common/ErrorModal";
+import ErrorModal from "../common/ErrorModal/ErrorModal";
 const DidYouLikeBecknExp = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
