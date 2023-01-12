@@ -1,5 +1,7 @@
 .card-text {
-  font-size: 48px;
+  font-weight: 275;
+  font-size: 45px;
+  padding: 40px 20px;
   color: #fff;
   resize: none;
   padding: none !important;
@@ -22,11 +24,11 @@
   display: flex;
   justify-content: space-between;
 }
-.card {
+.card-qr {
   padding: none !important;
   border-radius: none !important;
   padding: none !important;
-  height: 600px;
+  height: 700px;
   width: 440px;
   background: #1e1e1e;
 }
@@ -64,16 +66,17 @@
   margin: 0 auto;
   margin-top: 20px;
 }
-.container{
+.container {
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: 100vh;
+  top:2%;
   flex-direction: column;
+  height: 100vh;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  .card {
+  .card-qr {
     margin-top: 80px;
     height: 270px;
     width: 220px;
@@ -104,23 +107,23 @@
   }
   .beckn-logo {
     margin-top: 40px;
+  }
 }
+@media screen and (min-width: 414px) and (max-width: 767px) {
+  .card-qr {
+    margin-top: 104px;
+    height: 312px;
+    width: 220px;
+    background: #1e1e1e;
+  }
+  .beckn-logo {
+    margin-top: 30px;
+  }
 }
-@media screen and (min-width: 414px) and (max-width: 767px){
-    .card {
-        margin-top: 104px;
-        height: 312px;
-        width: 220px;
-        background: #1e1e1e;
-    }
-    .beckn-logo {
-        margin-top: 30px;
-    }
-}
-@media screen and (min-width: 1024px) and (max-width: 1280px){
-    .card {
-        border-radius: none !important;
-        height: 457px;
-        width: 400px;
-    }
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .card-qr {
+    border-radius: none !important;
+    height: 457px;
+    width: 400px;
+  }
 }

@@ -1,0 +1,155 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  background: unset;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+  align-items: center;
+  margin: 0 auto;
+}
+.welcomePage-content {
+  color: #ffffff;
+  font-size: 80px;
+  width: 80%;
+  font-weight: 275;
+  margin-bottom: 20px;
+}
+.page-content {
+  display: unset;
+  top: 2%;
+}
+
+.page-content-title {
+  font-size: 60px;
+  line-height: 120px;
+}
+.begin-journey {
+  color: #abd4fa;
+  border: 1px solid #abd4fa;
+  background-color: #0e0e0f;
+  font-size: 24px;
+  padding: 8px 30px 8px 30px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.begin-journey img {
+  margin-left: 10px;
+  width: 10%;
+}
+.card-wrapper {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.content-wrapper {
+  text-align: center;
+  width: 80%;
+  margin: 30px auto;
+  max-width: 1200px;
+}
+.content-wrapper-innr {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  height: 200px;
+  align-items: center;
+}
+.back-btn {
+  background: black;
+  color: rgb(174, 211, 240);
+  width: 104px;
+  margin: 40px auto;
+  padding: 6px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+}
+.luxecab {
+  flex-direction: column;
+}
+.iframeVideoBeck {
+  height: 68%;
+  width: 80%;
+  margin: 0px auto;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .main-container img {
+    width: 50%;
+  }
+  .welcomePage-content {
+    font-size: 34px;
+  }
+  .begin-journey {
+    font-size: 16px;
+    padding: 8px 20px 8px 20px;
+  }
+  .begin-journey img {
+    width: 10%;
+  }
+  .page-content-title {
+    font-size: 30px;
+    line-height: unset;
+  }
+  .card-wrapper {
+    display: unset;
+    margin-top: 40px;
+  }
+  .content-wrapper {
+    width: 90%;
+    height: unset;
+  }
+  .content-wrapper-innr {
+    margin-top: unset;
+  }
+  .back-btn {
+    font-size: 12px;
+  }
+  .back-btn img {
+    width: 20%;
+  }
+  .iframeVideoBeck {
+    height: 31%;
+    width: 94%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .welcomePage-content {
+    font-size: 50px;
+  }
+  .page-content-title {
+    font-size: 50px;
+    line-height: unset;
+  }
+  .card-wrapper {
+    margin-top: 40px;
+  }
+  .content-wrapper {
+    width: 90%;
+    height: unset;
+  }
+  .content-wrapper-innr {
+    margin-top: unset;
+    margin-bottom: 54px;
+  }
+  .back-btn {
+    font-size: 12px;
+  }
+  .back-btn img {
+    width: 20%;
+  }
+  .iframeVideoBeck {
+    height: 40%;
+    width: 92%;
+  }
+}

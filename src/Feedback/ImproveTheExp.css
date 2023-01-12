@@ -7,7 +7,9 @@
   margin-top: 20px;
 }
 .card-p {
-  font-size: 48px;
+  font-size: 45px;
+  font-weight: 275;
+  padding:40px 20px;
   color: #fff;
   resize: none;
   padding: none !important;
@@ -51,7 +53,7 @@
   .card-container {
     margin-top: 25px;
     height: 380px;
-    width: 220px;
+    width: 100%;
     background: #1e1e1e;
   }
   .card-p {
@@ -61,12 +63,16 @@
   }
   .textarea {
     height: 77px;
-    width: 122px;
+    width: 80%;
     background: #1e1e1e;
     color: #fff;
+    margin-top: unset;
   }
   .submit-button {
     padding: 0;
+  }
+  .car-image {
+   display: none;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -91,7 +97,7 @@
     padding: 0;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1280px) {
+/* @media screen and (min-width: 1024px) and (max-width: 1280px) {
   .card-container {
     margin-top: 10px;
     border-radius: none !important;
@@ -122,4 +128,4 @@
   .beckn-Icon {
     margin-top: 60px;
   }
-}
+} */

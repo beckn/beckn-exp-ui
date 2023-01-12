@@ -15,7 +15,7 @@ import UseWhatsapp from "../whatsapp/useWhatsapp";
 import ScanQrForTravelBuddy from "../rider/scanQrForTravelBuddy";
 import MobilityCard from "../common/MobilityCard/MobilityCard";
 import ViewMyJourney from "../Feedback/ViewMyJourney";
-import IframeVideo from "../common/IframeVideo";
+import IframeVideo from "../common/LearnAboutBeckn/IframeVideo";
 import { AnimatePresence } from "framer-motion";
 import Luxecabe from "../driver/Luxecabe";
 

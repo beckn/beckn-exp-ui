@@ -5,7 +5,7 @@ import { Box, Modal } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import { motion } from "framer-motion";
-import ErrorModal from "../common/ErrorModal";
+import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
 import { Col, Row, Card } from "antd";
 import "./ImproveTheExp.css";

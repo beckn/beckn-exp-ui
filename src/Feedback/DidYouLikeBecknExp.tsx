@@ -7,7 +7,7 @@ import { Box, Modal } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import { motion } from "framer-motion";
-import ErrorModal from "../common/ErrorModal";
+import ErrorModal from "../common/ErrorModal/ErrorModal";
 import { Card, Col, Row } from "antd";
 import "./DidYouLikeBecknExp.css";
 
@@ -23,12 +23,6 @@ const DidYouLikeBecknExp = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.2, ease: "easeOut" }}
         style={{ overflow: "hidden" }}
-        // initial={{ width: "0%" }}
-        // animate={{ width: "100%" }}
-        // exit={{
-        //   x: window.innerWidth,
-        //   transition: { ease: "easeOut", duration: 0.2 },
-        // }}
       >
         <Col className="main-container container">
           <Row className="beck-logo-and-homeIcon">
@@ -50,7 +44,7 @@ const DidYouLikeBecknExp = () => {
             </Col>
           </Row>
           <div className="box-container">
-            <Card className="card">
+            <Card className="card-qr">
               <p className="card-text">did you like the beckn experience?</p>
 
               <div className="card-buttons">
