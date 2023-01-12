@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
 import { Col, Row, Card } from "antd";
-import "./ImproveTheExp.css";
+import "./Feedback.css";
 
 const ImproveTheExp = () => {
   const [open, setOpen] = useState(false);
@@ -54,18 +54,12 @@ const ImproveTheExp = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
       style={{ overflow: "hidden" }}
-      // initial={{ width: "0%" }}
-      // animate={{ width: "100%" }}
-      // exit={{
-      //   x: window.innerWidth,
-      //   transition: { ease: "easeOut", duration: 0.2 },
-      // }}
     >
-      <Col className="main-container container">
-        <Row className="beckn-logo-and-homeIcons">
-          <Col className="beckn-Icon">
+      <div className="main-container page-content">
+        <div className="header">
+          <div>
             <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-          </Col>
+          </div>
           <Col style={{ cursor: "pointer" }} onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
             <Modal open={open}>
@@ -79,20 +73,20 @@ const ImproveTheExp = () => {
               />
             </Modal>
           </Col>
-        </Row>
-        <div className="div-container">
-          <Card className="card-container">
-            <p className="card-p">
+        </div>
+        <div className="box-container">
+          <Card className="card-qr cardFeddback">
+            <p className="card-text foripad">
               Ohhh! Please let us know how we can help improve your experience.
             </p>
             <textarea
-              className="textarea"
+              className="textarea-text"
               name="textarea"
               id="textarea"
               value={text}
               onChange={handleChanges}
             ></textarea>
-            <div className="submit-button">
+            <div className="submit-btn">
               <Link
                 to="/thankYouForVisitBecknExpCenter"
                 style={{ textDecoration: "none", color: "#000" }}
@@ -106,7 +100,7 @@ const ImproveTheExp = () => {
             <img src={menWithCar} alt="" style={{ width: "100%" }} />
           </Col>
         </div>
-      </Col>
+      </div>
     </motion.div>
   );
 };
