@@ -8,6 +8,9 @@ import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal";
+import { Card, Col, Row } from "antd";
+import "./DidYouLikeBecknExp.css";
+
 const DidYouLikeBecknExp = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -27,30 +30,12 @@ const DidYouLikeBecknExp = () => {
         //   transition: { ease: "easeOut", duration: 0.2 },
         // }}
       >
-        <Box
-          className="main-container"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-            minHeight: "100vh",
-            flexDirection: "column",
-          }}
-        >
-          <Box
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: "96%",
-              margin: "0 auto",
-              marginTop: "20px",
-            }}
-          >
-            <Box>
+        <Col className="main-container container">
+          <Row className="beck-logo-and-homeIcon">
+            <Col className="beckn-logo">
               <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-            </Box>
-            <Box style={{ cursor: "pointer" }} onClick={handleOpen}>
+            </Col>
+            <Col style={{ cursor: "pointer" }} onClick={handleOpen}>
               <img src={homeIcon} alt={"HomeIcon"} />
               <Modal open={open}>
                 <ErrorModal
@@ -62,52 +47,14 @@ const DidYouLikeBecknExp = () => {
                   buttonText={"Confirm"}
                 />
               </Modal>
-            </Box>
-          </Box>
-          <Box
-            style={{
-              textAlign: "center",
-              height: "100vh",
-              width: "80%",
-              margin: "60px auto",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <div
-              style={{
-                height: "600px",
-                width: "440px",
-                background: "#1E1E1E",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "48px",
-                  color: "#fff",
-                  padding: "30px ",
-                  resize: "none",
-                }}
-              >
-                did you like the beckn experience?
-              </p>
+            </Col>
+          </Row>
+          <div className="box-container">
+            <Card className="card">
+              <p className="card-text">did you like the beckn experience?</p>
 
-              <div
-                style={{
-                  width: "100%",
-                  alignItems: "center",
-                  marginTop: "30px",
-                }}
-              >
-                <div
-                  style={{
-                    padding: "8px 20px",
-                    background: "#ACD1F0",
-                    borderRadius: "12px",
-                    width: "100px",
-                    margin: "0 auto",
-                  }}
-                >
+              <div className="card-buttons">
+                <div className="yes-button">
                   <Link
                     to="/yourFeedbackIsValubleForUs"
                     style={{ textDecoration: "none", color: "#000" }}
@@ -120,17 +67,7 @@ const DidYouLikeBecknExp = () => {
                     />
                   </Link>
                 </div>
-                <div
-                  style={{
-                    marginTop: "20px",
-                    padding: "8px 30px",
-                    background: "#000",
-                    color: "#fff",
-                    borderRadius: "12px",
-                    width: "100px",
-                    margin: "20px auto",
-                  }}
-                >
+                <div className="no-button">
                   <Link
                     to="/improveTheExp"
                     style={{ textDecoration: "none", color: "#fff" }}
@@ -139,18 +76,12 @@ const DidYouLikeBecknExp = () => {
                   </Link>
                 </div>
               </div>
-            </div>
-            <Box
-              style={{
-                maxWidth: "640px",
-                display: "grid",
-                alignContent: "center",
-              }}
-            >
+            </Card>
+            <Col className="car-image">
               <img src={menWithCar} alt="" style={{ width: "100%" }} />
-            </Box>
-          </Box>
-        </Box>
+            </Col>
+          </div>
+        </Col>
       </motion.div>
     </>
   );

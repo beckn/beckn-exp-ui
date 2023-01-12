@@ -1,0 +1,125 @@
+.submit-button {
+  padding: 8px 20px;
+  background: #acd1f0;
+  border-radius: 12px;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.card-p {
+  font-size: 48px;
+  color: #fff;
+  resize: none;
+  padding: none !important;
+}
+.card-container {
+  border-radius: none !important;
+  padding: none !important;
+  height: 698px;
+  width: 440px;
+}
+.beckn-logo-and-homeIcons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.div-container {
+  text-align: center;
+  height: 100vh;
+  width: 80%;
+  margin: 60px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.car-image {
+  max-width: 640px;
+  display: grid;
+  align-content: center;
+}
+.textarea {
+  height: 160px;
+  width: 360px;
+  margin-top: 30px;
+  background: #1e1e1e;
+  color: #fff;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .card-container {
+    margin-top: 25px;
+    height: 380px;
+    width: 220px;
+    background: #1e1e1e;
+  }
+  .card-p {
+    font-size: 18px;
+    color: #fff;
+    resize: none;
+  }
+  .textarea {
+    height: 77px;
+    width: 122px;
+    background: #1e1e1e;
+    color: #fff;
+  }
+  .submit-button {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .card-container {
+    margin-top: 123px;
+    height: 450px;
+    width: 270px;
+    background: #1e1e1e;
+  }
+  .card-p {
+    font-size: 24px;
+    color: #fff;
+    resize: none;
+  }
+  .textarea {
+    height: 90px;
+    width: 164px;
+    background: #1e1e1e;
+    color: #fff;
+  }
+  .submit-button {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .card-container {
+    margin-top: 10px;
+    border-radius: none !important;
+    height: 457px;
+    width: 400px;
+  }
+  .card-container {
+    margin-top: 10px;
+    border-radius: none !important;
+    height: 457px;
+    width: 400px;
+  }
+  .beckn-Icon {
+    margin-top: 60px;
+  }
+  .card-p {
+    font-size: 24px;
+    color: #fff;
+    resize: none;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1400px) {
+  .card-p {
+    font-size: 24px;
+    color: #fff;
+    resize: none;
+  }
+  .beckn-Icon {
+    margin-top: 60px;
+  }
+}
