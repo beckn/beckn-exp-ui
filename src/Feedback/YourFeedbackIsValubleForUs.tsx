@@ -7,6 +7,8 @@ import { Box, Modal } from "@mui/material";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
+import { Card, Col, Row } from "antd";
+import "./YourFeedbackIsValubleForUs.css";
 
 const YourFeedbackIsValubleForUs = () => {
   const [open, setOpen] = useState(false);
@@ -61,30 +63,12 @@ const YourFeedbackIsValubleForUs = () => {
       //   transition: { ease: "easeOut", duration: 0.2 },
       // }}
     >
-      <Box
-        className="main-container"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-          minHeight: "100vh",
-          flexDirection: "column",
-        }}
-      >
-        <Box
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            width: "96%",
-            margin: "0 auto",
-            marginTop: "20px",
-          }}
-        >
-          <Box>
+      <Col className="main-container container">
+        <Row className="beck-logo-and-homeIcon">
+          <Col className="beckn-logo-icon">
             <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
-          </Box>
-          <Box style={{ cursor: "pointer" }} onClick={handleOpen}>
+          </Col>
+          <Col style={{ cursor: "pointer" }} onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
             <Modal open={open}>
               <ErrorModal
@@ -96,56 +80,19 @@ const YourFeedbackIsValubleForUs = () => {
                 buttonText={"Confirm"}
               />
             </Modal>
-          </Box>
-        </Box>
-        <Box
-          style={{
-            textAlign: "center",
-            height: "100vh",
-            width: "80%",
-            margin: "60px auto",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div
-            style={{
-              width: "440px",
-              background: "#1E1E1E",
-            }}
-          >
-            <p
-              style={{
-                fontSize: "48px",
-                color: "#fff",
-                padding: "30px ",
-                resize: "none",
-              }}
-            >
-              your feedback is valuable to us
-            </p>
+          </Col>
+        </Row>
+        <div className="div-containers">
+          <Card className="card-containers">
+            <p className="card-para">your feedback is valuable to us</p>
             <textarea
-              style={{
-                height: "160px",
-                width: "360px",
-                marginTop: "20px",
-                background: "#1E1E1E",
-                color: "#fff",
-              }}
+              className="textarea-text"
               name="textarea"
               id="textarea"
               value={text}
               onChange={handleChanges}
             ></textarea>
-            <div
-              style={{
-                padding: "8px 20px",
-                background: "#ACD1F0",
-                borderRadius: "12px",
-                width: "100px",
-                margin: "5px auto",
-              }}
-            >
+            <div className="submit-btn">
               <Link
                 to="/thankYouForVisitBecknExpCenter"
                 style={{ textDecoration: "none", color: "#000" }}
@@ -154,25 +101,12 @@ const YourFeedbackIsValubleForUs = () => {
                 Submit
               </Link>
             </div>
-            <div
-              style={{
-                width: "100%",
-                alignItems: "center",
-                marginTop: "30px",
-              }}
-            ></div>
-          </div>
-          <Box
-            style={{
-              maxWidth: "640px",
-              display: "grid",
-              alignContent: "center",
-            }}
-          >
+          </Card>
+          <Col className="car-image">
             <img src={menWithCar} alt="" style={{ width: "100%" }} />
-          </Box>
-        </Box>
-      </Box>
+          </Col>
+        </div>
+      </Col>
     </motion.div>
   );
 };
