@@ -21,34 +21,10 @@ const YourFeedbackIsValubleForUs = () => {
     e.preventDefault();
     setText(e.target.value);
   };
-  // const expId = localStorage.getItem("expId");
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // const updateExpId = async () => {
-  //   await fetch("https://api.experience.becknprotocol.io/v2/xc/experience", {
-  //     method: "PUT",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     redirect: "follow",
-  //     referrerPolicy: "no-referrer",
-  //     body: JSON.stringify({
-  //       experienceId: expId,
-  //       end_ts: Date.now(),
-  //       experienceFeedback: {
-  //         user_review: "Y",
-  //         user_comment: text,
-  //       },
-  //     }),
-  //   })
-  //     .then((response) => response)
-
-  //     .catch((error) => console.log("error", error));
-  // };
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     updateExpId(text);
-    // localStorage.removeItem("expId");
   }, [updateExpId, text]);
   return (
     <motion.div

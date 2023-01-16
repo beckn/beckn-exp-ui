@@ -77,7 +77,6 @@ const Luxecabe = () => {
           }
           logo={
             <GenQRCode
-              expId={expId}
               url={`https://taxibpp.becknprotocol.io?${expId}`}
             />
           }
