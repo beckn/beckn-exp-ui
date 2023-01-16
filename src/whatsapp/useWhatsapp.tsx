@@ -4,7 +4,6 @@ import Lady from "../assets/lady.svg";
 import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
 import { Modal } from "@mui/material";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
@@ -77,7 +76,6 @@ const useWhatsapp = () => {
           }
           logo={
             <GenQRCode
-              expId={expId}
               url={`https://wa.me/+918217350525?text=hi`}
             />
           }
