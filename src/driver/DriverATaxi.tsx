@@ -31,9 +31,6 @@ const DriverATaxi = () => {
     try {
       const res = await getEvent();
       const events = res?.events;
-
-      console.log(`res.data ${JSON.stringify(res.data.events.length)}`);
-
       if (events.length > 0) {
         setTimeout(() => {
           navigate("/MobilityCard");
@@ -80,7 +77,6 @@ const DriverATaxi = () => {
           }
           logo={
             <GenQRCode
-              expId={expId}
               url={`https://taxibpp.becknprotocol.io?${expId}`}
             />
           }

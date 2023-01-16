@@ -1,61 +1,25 @@
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import myMobility from "../../assets/myMobility.svg";
-import RHP from "../../assets/RHP.svg";
-import whatsappMobility from "../../assets/whatsappMobility.svg";
-import LuxeCab from "../../assets/luxe.svg";
 import GWP from "../../assets/girlWithPhone.svg";
 import MWP from "../../assets/menWithPhone.svg";
 import circle from "../../assets/circle.svg";
-import { useContext, useEffect, useState } from "react";
-import axios from "axios";
 import useInterval from "./useInterval";
 import EventApiContext from "../../context/EventApiContext";
+import {
+  mobilityCardArr,
+  ids,
+  getClassNameOfNode,
+  getClassNameOfNodeForBorder,
+} from "../../utility/utils";
 
 const NodeComponent = (props: any) => {
-  const ids = {
-    mobility: "mobilityreferencebap.becknprotocol.io",
-    taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
-    gateway: "gateway.becknprotocol.io",
-    whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
-    yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
-  };
-  const mobilityCardArr = [
-    {
-      img: `${myMobility}`,
-      name: "mobility",
-      id: ids.mobility,
-    },
-    {
-      img: `${RHP}`,
-      name: "taxi",
-      id: ids.taxi,
-    },
-    {
-      title: "Gateway",
-      name: "gateway",
-      id: ids.gateway,
-    },
-    {
-      img: `${whatsappMobility}`,
-      name: "whatsappMobility",
-      id: ids.whatsappMobility,
-    },
-    {
-      img: `${LuxeCab}`,
-      name: "yatri",
-      id: ids.yatri,
-    },
-  ];
-  const expId = localStorage.getItem("expId");
   const [experienceCenterId, setExperienceCenterId] = useState<any>("");
-
   const [events, setEvents] = useState<any>([]);
+  const { getEvent } = useContext(EventApiContext);
 
-  const {getEvent} = useContext(EventApiContext);
-  
-  const fetchEvent = async() => {
+  const fetchEvent = async () => {
     try {
-      const res = await getEvent()
+      const res = await getEvent();
       setExperienceCenterId(res?.experienceSession.experienceCenterId);
       setEvents(res?.events);
     } catch (error) {
@@ -76,35 +40,35 @@ const NodeComponent = (props: any) => {
     fetchEvent();
   }, 500);
 
-  const getClassNameOfNode = (ele: any, events: any) => {
-    if (events.length > 0) {
-      if (events.some((ev: any) => ele.id === ev.event.eventSource.id)) {
-        return "source-node";
-      } else if (
-        events.some((ev: any) => ele.id === ev.event.eventDestination.id)
-      ) {
-        return "dest-node";
-      } else {
-        return "";
-      }
-    }
-    return "";
-  };
+  // const getClassNameOfNode = (ele: any, events: any) => {
+  //   if (events.length > 0) {
+  //     if (events.some((ev: any) => ele.id === ev.event.eventSource.id)) {
+  //       return "source-node";
+  //     } else if (
+  //       events.some((ev: any) => ele.id === ev.event.eventDestination.id)
+  //     ) {
+  //       return "dest-node";
+  //     } else {
+  //       return "";
+  //     }
+  //   }
+  //   return "";
+  // };
 
-  const getClassNameOfNodeForBorder = (ele: any, events: any) => {
-    if (events.length > 0) {
-      if (events.some((ev: any) => ele.id === ev.event.eventSource.id)) {
-        return "source-node-border";
-      } else if (
-        events.some((ev: any) => ele.id === ev.event.eventDestination.id)
-      ) {
-        return "dest-node-border";
-      } else {
-        return "";
-      }
-    }
-    return "";
-  };
+  // const getClassNameOfNodeForBorder = (ele: any, events: any) => {
+  //   if (events.length > 0) {
+  //     if (events.some((ev: any) => ele.id === ev.event.eventSource.id)) {
+  //       return "source-node-border";
+  //     } else if (
+  //       events.some((ev: any) => ele.id === ev.event.eventDestination.id)
+  //     ) {
+  //       return "dest-node-border";
+  //     } else {
+  //       return "";
+  //     }
+  //   }
+  //   return "";
+  // };
 
   return (
     <>

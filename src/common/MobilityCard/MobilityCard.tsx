@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "./MobilityCard.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
 import { useState } from "react";
-import axios from "axios";
 import NodeComponent from "./NodeComponent";
 import useInterval from "./useInterval";
 import { useNavigate } from "react-router-dom";
@@ -12,18 +11,17 @@ import { Box, Modal } from "@mui/material";
 import homeIcon from "../../assets/homeIcon.png";
 import ErrorModal from "../ErrorModal/ErrorModal";
 import EventApiContext from "../../context/EventApiContext";
+import { ids } from '../../utility/utils';
 
 const MobilityCard = () => {
   const navigate = useNavigate();
 
   const [events, setEvents] = useState<any>([]);
-  const { getEvent } = useContext(EventApiContext);
-  const expId = localStorage.getItem("expId");
+  const {getEvent} = useContext(EventApiContext);
 
   const fetchEvent = async () => {
     try {
       const res = await getEvent();
-      console.log("RESPONSE-DATA", res);
       setEvents(res?.events);
     } catch (error) {
       console.log(`error ${error}`);
@@ -43,13 +41,6 @@ const MobilityCard = () => {
       navigate("/WhatWouldYouDoLikeToNext");
     }, 5000);
   }
-  const ids = {
-    mobility: "mobilityreferencebap.becknprotocol.io",
-    taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
-    gateway: "gateway.becknprotocol.io",
-    whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
-    luxeCabs: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
-  };
   const slicedArr: any[] = [];
   events
     .sort((a: any, b: any) => a.eventId - b.eventId)
@@ -112,11 +103,7 @@ const MobilityCard = () => {
           ...events.slice(
             events[events.length - 1].event.eventDestination.id === ids.mobility
               ? 7
-              : // events.length -
-                //     (events[events.length - 1].event.eventDestination ===
-                //     ids.mobility
-                //       ? 2
-                //       : 2)
+              :
                 0,
             events[events.length - 1].event.eventDestination.id === ids.mobility
               ? events.length
@@ -159,8 +146,6 @@ const MobilityCard = () => {
   const handleOpen = () => {
     setOpen(true);
   };
-  console.log("unique", unique);
-  console.log("events", events);
 
   return (
     <motion.div
