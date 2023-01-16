@@ -1,10 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import myMobility from "../../assets/myMobility.svg";
-import RHP from "../../assets/RHP.svg";
-import whatsappMobility from "../../assets/whatsappMobility.svg";
-import LuxeCab from "../../assets/luxe.svg";
-import axios from "axios";
 import useInterval from "./useInterval";
 import EventApiContext from "../../context/EventApiContext";
 import {
