@@ -3,11 +3,10 @@ import menWithCar from "../assets/car-with-a-man.png";
 import { Link } from "react-router-dom";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
-import { Box, Modal } from "@mui/material";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
-import { Card, Col, Row } from "antd";
+import { Card, Col, Modal } from "antd";
 import "./Feedback.css";
 
 const YourFeedbackIsValubleForUs = () => {
@@ -40,7 +39,7 @@ const YourFeedbackIsValubleForUs = () => {
           </div>
           <div style={{ cursor: "pointer" }} onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
-            <Modal open={open}>
+            <Modal open={open} footer={null}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={

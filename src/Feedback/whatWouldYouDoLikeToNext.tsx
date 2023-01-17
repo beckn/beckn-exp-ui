@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Modal } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import "antd/dist/reset.css";
 import { Button, Typography } from "antd";
@@ -10,6 +9,7 @@ import { motion } from "framer-motion";
 import homeIcon from "../assets/homeIcon.png";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import "./Feedback.css";
+import { Modal } from "antd";
 
 const WhatWouldYouDoLikeToNext = () => {
   const [open, setOpen] = useState(false);
@@ -31,7 +31,7 @@ const WhatWouldYouDoLikeToNext = () => {
           </div>
           <div className=" homeIcon" onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
-            <Modal open={open}>
+            <Modal open={open} footer={null}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={

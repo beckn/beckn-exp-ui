@@ -7,17 +7,18 @@ import useInterval from "./useInterval";
 import { useNavigate } from "react-router-dom";
 import BecknLogoIcon from "../../assets/becklogoSmall.svg";
 import { motion } from "framer-motion";
-import { Box, Modal } from "@mui/material";
+import { Box } from "@mui/material";
 import homeIcon from "../../assets/homeIcon.png";
 import ErrorModal from "../ErrorModal/ErrorModal";
 import EventApiContext from "../../context/EventApiContext";
-import { ids } from '../../utility/utils';
+import { ids } from "../../utility/utils";
+import { Modal } from "antd";
 
 const MobilityCard = () => {
   const navigate = useNavigate();
 
   const [events, setEvents] = useState<any>([]);
-  const {getEvent} = useContext(EventApiContext);
+  const { getEvent } = useContext(EventApiContext);
 
   const fetchEvent = async () => {
     try {
@@ -103,8 +104,7 @@ const MobilityCard = () => {
           ...events.slice(
             events[events.length - 1].event.eventDestination.id === ids.mobility
               ? 7
-              :
-                0,
+              : 0,
             events[events.length - 1].event.eventDestination.id === ids.mobility
               ? events.length
               : 0
@@ -173,7 +173,7 @@ const MobilityCard = () => {
           </Box>
           <Box style={{ cursor: "pointer" }} onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
-            <Modal open={open}>
+            <Modal open={open} footer={null}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={

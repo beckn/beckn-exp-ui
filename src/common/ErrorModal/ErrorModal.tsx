@@ -22,7 +22,7 @@ const ErrorModal: React.FC<modalPropModal> = ({
   const navigate = useNavigate();
   return (
     <div className="modal-container">
-      <div style={{ padding: "20px" }}>
+      <div style={{ padding: "30px" }}>
         <div className="title-text">
           <span>{titleText} </span>
           <img
