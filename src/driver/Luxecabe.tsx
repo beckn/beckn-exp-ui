@@ -1,13 +1,10 @@
 import axios from "axios";
-import Man from "../assets/man.svg";
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import useInterval from "../common/MobilityCard/useInterval";
 import { motion } from "framer-motion";
-import { Modal } from "@mui/material";
+import { Modal } from "antd";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
-import homeIcon from "../assets/homeIcon.png";
 import QrScanner from "../common/QrScanner/qrScanner";
 import GenQRCode from "../utility/GenQRCode";
 import EventApiContext from "../context/EventApiContext";
@@ -54,11 +51,11 @@ const Luxecabe = () => {
       <div className="main-container page-content luxecab">
         <div className="header">
           <div>
-            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
           <div style={{ cursor: "pointer", zIndex: "99" }} onClick={handleOpen}>
-            <img src={homeIcon} alt={"HomeIcon"} />
-            <Modal open={open}>
+            <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
+            <Modal open={open} footer={null}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={
@@ -71,7 +68,7 @@ const Luxecabe = () => {
           </div>
         </div>
         <QrScanner
-          imageUrl={Man}
+          imageUrl="/assets/man.svg"
           desccription={
             "Please pick up the device on your right and scan the QR code"
           }

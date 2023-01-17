@@ -1,13 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import QrScanner from "../common/QrScanner/qrScanner";
-import Lady from "../assets/lady.svg";
 import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
-import homeIcon from "../assets/homeIcon.png";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
 import { Modal } from "antd";
@@ -57,10 +54,10 @@ const ScanQrForTravelBuddy = () => {
       <div className="main-container page-content luxecab">
         <div className="header">
           <div>
-            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
           <div style={{ cursor: "pointer", zIndex: "99" }} onClick={handleOpen}>
-            <img src={homeIcon} alt={"HomeIcon"} />
+            <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
             <Modal open={open} footer={null}>
               <ErrorModal
                 titleText={"Are you sure?"}
@@ -78,7 +75,7 @@ const ScanQrForTravelBuddy = () => {
           style={{ textDecoration: "none", color: "#000" }}
         > */}
         <QrScanner
-          imageUrl={Lady}
+          imageUrl="/assets/lady.svg"
           desccription={
             "Please pick up the device on your right and scan the QR code"
           }

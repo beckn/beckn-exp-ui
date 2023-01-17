@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import menWithCar from "../assets/car-with-a-man.png";
-import tiltArrowBlack from "../assets/tiltArrowblack.svg";
-import tiltArrow from "../assets/tiltArrow.svg";
 import { Link } from "react-router-dom";
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
-import homeIcon from "../assets/homeIcon.png";
+import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import { Card, Col, Row, Modal } from "antd";
@@ -25,10 +21,10 @@ const DidYouLikeBecknExp = () => {
         <div className="main-container page-content">
           <div className="header">
             <div>
-              <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+              <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
             </div>
             <div style={{ cursor: "pointer" }} onClick={handleOpen}>
-              <img src={homeIcon} alt={"HomeIcon"} />
+              <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
               <Modal open={open} footer={null}>
                 <ErrorModal
                   titleText={"Are you sure?"}
@@ -53,7 +49,7 @@ const DidYouLikeBecknExp = () => {
                   >
                     yes
                     <img
-                      src={tiltArrowBlack}
+                      src="/assets/tiltArrowblack.svg"
                       width={"10px"}
                       alt="tiltArrowBlack"
                     />
@@ -64,13 +60,13 @@ const DidYouLikeBecknExp = () => {
                     to="/improveTheExp"
                     style={{ textDecoration: "none", color: "#fff" }}
                   >
-                    no <img src={tiltArrow} width={"10px"} alt="tiltArrow" />
+                    no <img src="/assets/tiltArrow.svg" width={"10px"} alt="tiltArrow" />
                   </Link>
                 </div>
               </div>
             </Card>
             <Col className="car-image">
-              <img src={menWithCar} alt="" style={{ width: "100%" }} />
+              <img src="/assets/car-with-a-man.png" alt="" style={{ width: "100%" }} />
             </Col>
           </div>
         </div>

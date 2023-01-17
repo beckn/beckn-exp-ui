@@ -1,8 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import GWP from "../../assets/girlWithPhone.svg";
-import MWP from "../../assets/menWithPhone.svg";
-import circle from "../../assets/circle.svg";
+import myMobility from "../../assets/myMobility.svg";
+import RHP from "../../assets/RHP.svg";
+import whatsappMobility from "../../assets/whatsappMobility.svg";
+import LuxeCab from "../../assets/luxe.svg";
+import axios from "axios";
 import useInterval from "./useInterval";
 import EventApiContext from "../../context/EventApiContext";
 import {
@@ -128,12 +130,12 @@ const NodeComponent = (props: any) => {
         <div className="GWP">
           <div className="GWP-text">{props.riderText}</div>
 
-          <img src={GWP} alt="" />
+          <img src="/assets/girlWithPhone.svg" alt="" />
         </div>
         <div className="MWP">
           <div className="MWP-text">{props.driverText}</div>
           <Link to="/WhatWouldYouDoLikeToNext">
-            <img src={MWP} alt="" />
+            <img src="/assets/menWithPhone.svg" alt="" />
           </Link>
         </div>
         <img
@@ -142,7 +144,7 @@ const NodeComponent = (props: any) => {
               ? "circle-driver-active"
               : "circle-driver"
           }`}
-          src={circle}
+          src="/assets/circle.svg"
           alt=""
         />
       </div>

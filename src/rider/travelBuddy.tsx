@@ -1,16 +1,7 @@
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import Title from "../common/title";
 import CardWithContent from "../common/Cards/cardWithContent";
-import TiltArrow from "../assets/tiltArrow.svg";
-import WhatsappLogoBlack from "../assets/whatsappLogoBlack.png";
-import Car from "../assets/car.svg";
 import { Link, useNavigate } from "react-router-dom";
-import WhatsappLogo from "../assets/whatsappLogo.png";
-import tiltArrowblack from "../assets/tiltArrowblack.svg";
-import carBlack from "../assets/carBlack.svg";
 import { motion } from "framer-motion";
-import homeIcon from "../assets/homeIcon.png";
-import backArrw from "../assets/backArrw.png";
 
 const TravelBuddy = () => {
   const navigate = useNavigate();
@@ -24,10 +15,10 @@ const TravelBuddy = () => {
       <div className="main-container page-content">
         <div className="header">
           <div>
-            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
           <Link style={{ cursor: "pointer" }} to={"/"}>
-            <img src={homeIcon} alt={"HomeIcon"} />
+            <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
           </Link>
         </div>
         <div className="content-wrapper">
@@ -44,11 +35,11 @@ const TravelBuddy = () => {
               style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
-                mainIconUrlInBlack={carBlack}
-                arrowIconInBlackColor={tiltArrowblack}
+                mainIconUrlInBlack="/assets/carBlack.svg"
+                arrowIconInBlackColor="/assets/tiltArrowblack.svg"
                 className="hover_card"
-                mainIconUrl={Car}
-                arrowIconUrl={TiltArrow}
+                mainIconUrl="/assets/car.svg"
+                arrowIconUrl="/assets/tiltArrow.svg"
                 MainTitle={"travel buddy"}
                 subTitle={"book via travel app "}
               />
@@ -58,11 +49,11 @@ const TravelBuddy = () => {
               style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
-                mainIconUrlInBlack={WhatsappLogoBlack}
-                arrowIconInBlackColor={tiltArrowblack}
+                mainIconUrlInBlack="/assets/whatsappLogoBlack.png"
+                arrowIconInBlackColor="/assets/tiltArrowblack.svg"
                 className="hover_card"
-                mainIconUrl={WhatsappLogo}
-                arrowIconUrl={TiltArrow}
+                mainIconUrl="/assets/whatsappLogo.png"
+                arrowIconUrl="/assets/tiltArrow.svg"
                 MainTitle={"whatsapp"}
                 subTitle={"book a ride via  chat "}
               />
@@ -70,7 +61,7 @@ const TravelBuddy = () => {
           </div>
         </div>
         <div className="back-btn" onClick={() => navigate(-1)}>
-          <img src={backArrw} alt="" /> Go Back
+          <img src="/assets/backArrw.png" alt="" /> Go Back
         </div>
       </div>
     </motion.div>

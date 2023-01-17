@@ -1,15 +1,10 @@
 import React, { useEffect, useContext } from "react";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import backArrw from "../assets/backArrw.png";
 import { motion } from "framer-motion";
 import { SequenceDiagram } from "react-sd";
 import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
-import TravelbuddyLogo from "../assets/TravelbuddyLogo.svg";
-import TaxiLogo from "../assets/TaxiLogo.svg";
-import LuxeCabsLogo from "../assets/LuxeCabsLogo.svg";
-import WhatsappLogo from "../assets/whatsappLogo.png";
 import EventApiContext from "../context/EventApiContext";
 
 const ViewMyJourney = () => {
@@ -181,7 +176,7 @@ const ViewMyJourney = () => {
         }}
         onClick={() => navigate(-1)}
       >
-        <img src={backArrw} alt="" /> go back
+        <img src="/assets/backArrw.png" alt="" /> go back
       </Box>
       <Box
         className="flow-wrap"
@@ -197,7 +192,7 @@ const ViewMyJourney = () => {
         <Box>
           {uniqueSourceId[0] === ids.mobility && (
             <img
-              src={TravelbuddyLogo}
+              src="/assets/TravelbuddyLogo.svg"
               alt=""
               style={{
                 position: "absolute",
@@ -208,7 +203,7 @@ const ViewMyJourney = () => {
           )}
           {uniqueSourceId[0] === ids.whatsappMobility && (
             <img
-              src={WhatsappLogo}
+              src="/assets/whatsappLogo.png"
               alt=""
               style={{
                 position: "absolute",
@@ -220,7 +215,7 @@ const ViewMyJourney = () => {
           )}
 
           <img
-            src={TaxiLogo}
+            src="/assets/TaxiLogo.svg"
             alt=""
             style={{
               position: "absolute",
@@ -230,7 +225,7 @@ const ViewMyJourney = () => {
           />
 
           <img
-            src={LuxeCabsLogo}
+            src="/assets/LuxeCabsLogo.svg"
             alt=""
             style={{
               position: "absolute",

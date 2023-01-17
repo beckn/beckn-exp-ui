@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Arrow from "../../assets/arrow.svg";
 import { Link } from "react-router-dom";
 import "./QrScanner.css";
 
@@ -29,7 +28,7 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
                   style={{ textDecoration: "none", color: "#AED3F0" }}
                 >
                   <div className="next-btn">
-                    <img src={Arrow} alt={"BecknLogoIcon"} />
+                    <img src="/assets/arrow.svg" alt={"BecknLogoIcon"} />
                   </div>
                 </Link>
               </div>
