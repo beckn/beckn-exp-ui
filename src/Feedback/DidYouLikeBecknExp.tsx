@@ -3,12 +3,11 @@ import menWithCar from "../assets/car-with-a-man.png";
 import tiltArrowBlack from "../assets/tiltArrowblack.svg";
 import tiltArrow from "../assets/tiltArrow.svg";
 import { Link } from "react-router-dom";
-import { Box, Modal } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
-import { Card, Col, Row } from "antd";
+import { Card, Col, Row, Modal } from "antd";
 
 const DidYouLikeBecknExp = () => {
   const [open, setOpen] = useState(false);
@@ -30,7 +29,7 @@ const DidYouLikeBecknExp = () => {
             </div>
             <div style={{ cursor: "pointer" }} onClick={handleOpen}>
               <img src={homeIcon} alt={"HomeIcon"} />
-              <Modal open={open}>
+              <Modal open={open} footer={null}>
                 <ErrorModal
                   titleText={"Are you sure?"}
                   subTitle={

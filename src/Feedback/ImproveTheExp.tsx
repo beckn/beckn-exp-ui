@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import menWithCar from "../assets/car-with-a-man.png";
 import { Link } from "react-router-dom";
-import { Box, Modal } from "@mui/material";
 import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import homeIcon from "../assets/homeIcon.png";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
-import { Col, Row, Card } from "antd";
+import { Col, Row, Card, Modal } from "antd";
 import "./Feedback.css";
 
 const ImproveTheExp = () => {
@@ -62,7 +61,7 @@ const ImproveTheExp = () => {
           </div>
           <Col style={{ cursor: "pointer" }} onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
-            <Modal open={open}>
+            <Modal open={open} footer={null}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={

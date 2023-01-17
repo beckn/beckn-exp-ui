@@ -8,10 +8,11 @@ import useInterval from "./useInterval";
 import { useNavigate } from "react-router-dom";
 import BecknLogoIcon from "../../assets/becklogoSmall.svg";
 import { motion } from "framer-motion";
-import { Box, Modal } from "@mui/material";
+import { Box } from "@mui/material";
 import homeIcon from "../../assets/homeIcon.png";
 import ErrorModal from "../ErrorModal/ErrorModal";
 import EventApiContext from "../../context/EventApiContext";
+import { Modal } from "antd";
 
 const MobilityCard = () => {
   const navigate = useNavigate();
@@ -188,7 +189,7 @@ const MobilityCard = () => {
           </Box>
           <Box style={{ cursor: "pointer" }} onClick={handleOpen}>
             <img src={homeIcon} alt={"HomeIcon"} />
-            <Modal open={open}>
+            <Modal open={open} footer={null}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={
