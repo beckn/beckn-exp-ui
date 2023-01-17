@@ -41,7 +41,7 @@ const AcceptRideForTaxiHub = () => {
           <div className="card-wrapper">
             <Link
               to="/DriverATaxi"
-              style={{ textDecoration: "none", color: "#000" }}
+              style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
                 mainIconUrlInBlack={taxiIcon}
@@ -55,7 +55,7 @@ const AcceptRideForTaxiHub = () => {
             </Link>
             <Link
               to="/luxecabe"
-              style={{ textDecoration: "none", color: "#000" }}
+              style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
                 mainIconUrlInBlack={LuxeCabHover}
