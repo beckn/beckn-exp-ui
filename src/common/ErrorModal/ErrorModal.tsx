@@ -1,9 +1,9 @@
 import React, { ReactComponentElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CrossIcon from "../../assets/cross.svg";
 import Button, { buttonPropModal } from "../Buttons/Button";
 import ColorButton, { colorButtonPropModal } from "../Buttons/ColorButton";
 import "./ErrorModal.css";
+
 interface modalPropModal {
   titleText: string;
   className?: string;
@@ -28,7 +28,7 @@ const ErrorModal: React.FC<modalPropModal> = ({
           <img
             onClick={() => navigate(0)}
             style={{ height: "25px", width: "25px", cursor: "pointer" }}
-            src={CrossIcon}
+            src="/assets/cross.svg"
           />
         </div>
         <h5 className="subtitle-text">{subTitle}</h5>

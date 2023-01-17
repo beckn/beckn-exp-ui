@@ -1,17 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
-import homeIcon from "../assets/homeIcon.png";
 import Title from "../common/title";
 import CardWithContent from "../common/Cards/cardWithContent";
-import VisualiseIccon from "../assets/VisualizeIcon.svg";
-import BulbIcon from "../assets/bulbIcon.svg";
-import TiltArrow from "../assets/tiltArrow.svg";
-import VisuliseIconinBlack from "../../src/assets/VisuliseIconinBlack.svg";
-import tiltArrowblack from "../assets/tiltArrowblack.svg";
-import BulbIconBlack from "../assets/bulbIconBlack.svg";
 import { motion } from "framer-motion";
-import backArrw from "../assets/backArrw.png";
 
 const VisualizeAction = () => {
   const navigate = useNavigate();
@@ -25,10 +16,10 @@ const VisualizeAction = () => {
       <div className="main-container page-content">
         <div className="header">
           <div>
-            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
           <Link style={{ cursor: "pointer" }} to={"/"}>
-            <img src={homeIcon} alt={"HomeIcon"} />
+            <img src="/assets/homeIcon.png"alt={"HomeIcon"} />
           </Link>
         </div>
         <div className="content-wrapper">
@@ -44,11 +35,11 @@ const VisualizeAction = () => {
               style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
-                mainIconUrlInBlack={VisuliseIconinBlack}
-                arrowIconInBlackColor={tiltArrowblack}
+                mainIconUrlInBlack="/assets/VisuliseIconinBlack.svg"
+                arrowIconInBlackColor="/assets/tiltArrowblack.svg"
                 className="hover_card"
-                mainIconUrl={VisualiseIccon}
-                arrowIconUrl={TiltArrow}
+                mainIconUrl="/assets/VisualizeIcon.svg"
+                arrowIconUrl="/assets/tiltArrow.svg"
                 MainTitle={"visualise beckn in action "}
                 subTitle={"experience beckn enabled live"}
               />
@@ -58,18 +49,18 @@ const VisualizeAction = () => {
               style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
-                mainIconUrlInBlack={BulbIconBlack}
-                arrowIconInBlackColor={tiltArrowblack}
+                mainIconUrlInBlack="/assets/bulbIconBlack.svg"
+                arrowIconInBlackColor="/assets/tiltArrowblack.svg"
                 className="hover_card"
-                mainIconUrl={BulbIcon}
-                arrowIconUrl={TiltArrow}
+                mainIconUrl="/assets/bulbIcon.svg"
+                arrowIconUrl="/assets/tiltArrow.svg"
                 MainTitle={"learn about beckn"}
                 subTitle={"understanding what is beckn"}
               />
             </Link>
           </div>
           <div className="back-btn" onClick={() => navigate(-1)}>
-            <img src={backArrw} alt="" /> Go Back
+            <img src="/assets/backArrw.png" alt="" /> Go Back
           </div>
         </div>
       </div>

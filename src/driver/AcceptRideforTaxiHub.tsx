@@ -1,16 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import Title from "../common/title";
 import CardWithContent from "../common/Cards/cardWithContent";
-import TiltArrow from "../assets/tiltArrow.svg";
-import taxiIcon from "../assets/taxiIcon.svg";
-import LuxeCabSequentialflow from "../assets/luxecab.svg";
-import LuxeCabHover from "../assets/luxecabBackground.svg";
-import tiltArrowblack from "../assets/tiltArrowblack.svg";
 import { motion } from "framer-motion";
-import homeIcon from "../assets/homeIcon.png";
-import backArrw from "../assets/backArrw.png";
 
 const AcceptRideForTaxiHub = () => {
   const navigate = useNavigate();
@@ -24,10 +16,10 @@ const AcceptRideForTaxiHub = () => {
       <div className="main-container page-content">
         <div className="header">
           <div>
-            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
           <Link style={{ cursor: "pointer" }} to={"/"}>
-            <img src={homeIcon} alt={"HomeIcon"} />
+            <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
           </Link>
         </div>
         <div className="content-wrapper">
@@ -44,10 +36,10 @@ const AcceptRideForTaxiHub = () => {
               style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
-                mainIconUrlInBlack={taxiIcon}
-                arrowIconInBlackColor={tiltArrowblack}
-                mainIconUrl={taxiIcon}
-                arrowIconUrl={TiltArrow}
+                mainIconUrlInBlack="/assets/taxiIcon.svg"
+                arrowIconInBlackColor="/assets/tiltArrowblack.svg"
+                mainIconUrl="/assets/taxiIcon.svg"
+                arrowIconUrl="/assets/tiltArrow.svg"
                 className="hover_card"
                 MainTitle={"taxi hub"}
                 subTitle={"local taxi application"}
@@ -58,10 +50,10 @@ const AcceptRideForTaxiHub = () => {
               style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
-                mainIconUrlInBlack={LuxeCabHover}
-                arrowIconInBlackColor={tiltArrowblack}
-                mainIconUrl={LuxeCabSequentialflow}
-                arrowIconUrl={TiltArrow}
+                mainIconUrlInBlack="/assets/luxecabBackground.svg"
+                arrowIconInBlackColor="/assets/tiltArrowblack.svg"
+                mainIconUrl="/assets/luxecab.svg"
+                arrowIconUrl="/assets/tiltArrow.svg"
                 className="hover_card"
                 MainTitle={"Luxe Cabs"}
                 subTitle={"recieve a ride request"}
@@ -70,7 +62,7 @@ const AcceptRideForTaxiHub = () => {
           </div>
         </div>
         <div className="back-btn" onClick={() => navigate(-1)}>
-          <img src={backArrw} alt="" /> Go Back
+          <img src="/assets/backArrw.png" alt="" /> Go Back
         </div>
       </div>
     </motion.div>

@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
-// import feedbackQr from "../assets/feedbackQr.svg";
 import { motion } from "framer-motion";
-import homeIcon from "../assets/homeIcon.png";
 import GenQRCode from "../utility/GenQRCode";
 // import ErrorModal from "../common/ErrorModal";
 // import { useNavigate } from "react-router-dom";
@@ -24,14 +21,14 @@ const ThankYouForVisitBecknExpCenter = () => {
       <div className="main-container page-content">
         <div className="header textcenter">
           <div className="becknIcon">
-            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
           <div
             className=" homeIcon"
             // onClick={() => navigate("/")}
           >
             <a href="/">
-              <img src={homeIcon} alt={"HomeIcon"} />
+              <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
             </a>
           </div>
         </div>

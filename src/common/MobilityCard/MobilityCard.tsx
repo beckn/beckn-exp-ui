@@ -5,10 +5,8 @@ import { useState } from "react";
 import NodeComponent from "./NodeComponent";
 import useInterval from "./useInterval";
 import { useNavigate } from "react-router-dom";
-import BecknLogoIcon from "../../assets/becklogoSmall.svg";
 import { motion } from "framer-motion";
 import { Box } from "@mui/material";
-import homeIcon from "../../assets/homeIcon.png";
 import ErrorModal from "../ErrorModal/ErrorModal";
 import EventApiContext from "../../context/EventApiContext";
 import { ids } from "../../utility/utils";
@@ -169,10 +167,10 @@ const MobilityCard = () => {
           }}
         >
           <Box>
-            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </Box>
           <Box style={{ cursor: "pointer" }} onClick={handleOpen}>
-            <img src={homeIcon} alt={"HomeIcon"} />
+            <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
             <Modal open={open} footer={null}>
               <ErrorModal
                 titleText={"Are you sure?"}

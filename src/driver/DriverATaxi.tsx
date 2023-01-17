@@ -1,15 +1,12 @@
 import QrScanner from "../common/QrScanner/qrScanner";
-import Man from "../assets/man.svg";
 import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
-import { Modal } from "@mui/material";
+import { Modal } from "antd";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
-import homeIcon from "../assets/homeIcon.png";
 import EventApiContext from "../context/EventApiContext";
 
 const DriverATaxi = () => {
@@ -54,11 +51,11 @@ const DriverATaxi = () => {
       <div className="main-container page-content luxecab">
         <div className="header">
           <div>
-            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
           <div style={{ cursor: "pointer", zIndex: "99" }} onClick={handleOpen}>
-            <img src={homeIcon} alt={"HomeIcon"} />
-            <Modal open={open}>
+            <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
+            <Modal open={open} footer={null}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={
@@ -71,7 +68,7 @@ const DriverATaxi = () => {
           </div>
         </div>
         <QrScanner
-          imageUrl={Man}
+          imageUrl="/assets/man.svg"
           desccription={
             "Please pick up the device on your right and scan the QR code"
           }

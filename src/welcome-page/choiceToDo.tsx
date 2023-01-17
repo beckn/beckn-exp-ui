@@ -1,17 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import Title from "../common/title";
 import CardWithContent from "../common/Cards/cardWithContent";
-import TiltArrow from "../assets/tiltArrow.svg";
-import driveTaxi from "../assets/driveTaxi.svg";
-import bookRideLogo from "../assets/bookRideLogo.svg";
-import bookRideLogoBlack from "../assets/bookRideLogoBlack.svg";
-import tiltArrowblack from "../assets/tiltArrowblack.svg";
-import driveTaxiBlack from "../assets/driveTaxiBlack.svg";
 import { motion } from "framer-motion";
-import homeIcon from "../assets/homeIcon.png";
-import backArrw from "../assets/backArrw.png";
 
 const ChoiceToDo = () => {
   const navigate = useNavigate();
@@ -26,10 +17,10 @@ const ChoiceToDo = () => {
       <div className="main-container page-content">
         <div className="header">
           <div>
-            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
           <Link style={{ cursor: "pointer" }} to={"/"}>
-            <img src={homeIcon} alt={"HomeIcon"} />
+            <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
           </Link>
         </div>
         <div className="content-wrapper">
@@ -46,11 +37,11 @@ const ChoiceToDo = () => {
               style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
-                mainIconUrlInBlack={bookRideLogoBlack}
-                arrowIconInBlackColor={tiltArrowblack}
+                mainIconUrlInBlack="/assets/bookRideLogoBlack.svg"
+                arrowIconInBlackColor="/assets/tiltArrowblack.svg"
                 className="hover_card"
-                mainIconUrl={bookRideLogo}
-                arrowIconUrl={TiltArrow}
+                mainIconUrl="/assets/bookRideLogo.svg"
+                arrowIconUrl="/assets/tiltArrow.svg"
                 MainTitle={"book a ride"}
                 subTitle={"be a passenger"}
               />
@@ -60,11 +51,11 @@ const ChoiceToDo = () => {
               style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
-                mainIconUrlInBlack={driveTaxiBlack}
-                arrowIconInBlackColor={tiltArrowblack}
+                mainIconUrlInBlack="/assets/driveTaxiBlack.svg"
+                arrowIconInBlackColor="/assets/tiltArrowblack.svg"
                 className="hover_card"
-                mainIconUrl={driveTaxi}
-                arrowIconUrl={TiltArrow}
+                mainIconUrl="/assets/driveTaxi.svg"
+                arrowIconUrl="/assets/tiltArrow.svg"
                 MainTitle={"drive a taxi"}
                 subTitle={"recieve a ride request"}
               />
@@ -72,7 +63,7 @@ const ChoiceToDo = () => {
           </div>
         </div>
         <div className="back-btn" onClick={() => navigate(-1)}>
-          <img src={backArrw} alt="" /> Go Back
+          <img src="/assets/backArrw.png" alt="" /> Go Back
         </div>
       </div>
     </motion.div>

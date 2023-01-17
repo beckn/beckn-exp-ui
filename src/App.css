@@ -185,8 +185,8 @@
   }
 }
 
-:where(.css-dev-only-do-not-override-sk7ap8).ant-modal .ant-modal-content {
-  background-color:transparent;
+.ant-modal-content {
+  background-color:transparent !important;
 }
 .ant-modal{
 width:800px !important;

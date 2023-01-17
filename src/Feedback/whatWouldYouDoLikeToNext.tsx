@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
-import BecknLogoIcon from "../assets/becklogoSmall.svg";
 import "antd/dist/reset.css";
 import { Button, Typography } from "antd";
-import TiltArrowInBlack from "../assets/tiltArrowblack.svg";
-import TiltArrow from "../assets/tiltArrow.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import homeIcon from "../assets/homeIcon.png";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import "./Feedback.css";
 import { Modal } from "antd";
@@ -27,10 +23,10 @@ const WhatWouldYouDoLikeToNext = () => {
       <div className="main-container page-content">
         <div className="header textcenter">
           <div className="becknIcon">
-            <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
           <div className=" homeIcon" onClick={handleOpen}>
-            <img src={homeIcon} alt={"HomeIcon"} />
+            <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
             <Modal open={open} footer={null}>
               <ErrorModal
                 titleText={"Are you sure?"}
@@ -66,7 +62,7 @@ const WhatWouldYouDoLikeToNext = () => {
               view my journey{" "}
               <img
                 width={"10px"}
-                src={TiltArrowInBlack}
+                src="/assets/tiltArrowblack.svg"
                 alt={"BecknLogoIcon"}
               />
             </button>
@@ -78,7 +74,7 @@ const WhatWouldYouDoLikeToNext = () => {
           >
             <button className="colorButtonSec">
               no, i'm done
-              <img width={"10px"} src={TiltArrow} alt={"BecknLogoIcon"} />
+              <img width={"10px"} src="/assets/tiltArrow.svg" alt={"BecknLogoIcon"} />
             </button>
           </Link>
         </div>

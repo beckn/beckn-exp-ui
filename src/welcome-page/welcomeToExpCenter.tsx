@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Typography } from "antd";
-import BecknLogoIcon from "../assets/becknLogoIcon.svg";
-import Arrow from "../assets/arrow.svg";
-import Background from "../assets/Back.mp4";
 import { motion } from "framer-motion";
 
 const WelcomeToExpCenter = () => {
@@ -19,7 +16,7 @@ const WelcomeToExpCenter = () => {
     >
       <div className="myvideo">
         <video
-          src={Background}
+          src="/assets/Back.mp4"
           autoPlay
           loop
           muted
@@ -28,7 +25,7 @@ const WelcomeToExpCenter = () => {
         <div className="main-container">
           <div style={{ textAlign: "center" }}>
             <div style={{ marginBottom: "40px" }}>
-              <img src={BecknLogoIcon} alt={"BecknLogoIcon"} />
+              <img src="/assets/becknLogoIcon.svg" alt={"BecknLogoIcon"} />
             </div>
             <div
               style={{
@@ -48,7 +45,7 @@ const WelcomeToExpCenter = () => {
               >
                 <button className="begin-journey">
                   <span> begin your journey</span>
-                  <img src={Arrow} alt={"BecknLogoIcon"} />
+                  <img src="/assets/arrow.svg" alt={"BecknLogoIcon"} />
                 </button>
               </Link>
             </div>

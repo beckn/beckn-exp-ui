@@ -1,7 +1,5 @@
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import BecknFinalVideo from "../../assets/Beckn-Final_27.12.mp4";
-import CrossIcon from "../../assets/cross.svg";
 
 function IframeVideo() {
   const navigate = useNavigate();
@@ -25,11 +23,11 @@ function IframeVideo() {
           cursor: "pointer",
         }}
       >
-        <img width={"100%"} src={CrossIcon} alt="" />
+        <img width={"100%"} src="/assets/cross.svg" alt="" />
       </Box>
       <iframe
         className="iframeVideoBeck"
-        src={BecknFinalVideo}
+        src="/assets/Beckn-Final_27.12.mp4"
         frameBorder="0"
         allow="autoplay; encrypted-media"
         allowFullScreen
