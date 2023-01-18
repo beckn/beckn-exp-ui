@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
-import { Col, Row, Card, Modal } from "antd";
+import { Col, Card, Modal } from "antd";
 import "./Feedback.css";
 
 const ImproveTheExp = () => {
@@ -21,7 +20,7 @@ const ImproveTheExp = () => {
 
   useEffect(() => {
     updateExpId(text);
-  }, [updateExpId]);
+  }, [text, updateExpId]);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -71,7 +70,11 @@ const ImproveTheExp = () => {
             </div>
           </Card>
           <Col className="car-image">
-            <img src="/assets/car-with-a-man.png" alt="" style={{ width: "100%" }} />
+            <img
+              src="/assets/car-with-a-man.png"
+              alt=""
+              style={{ width: "100%" }}
+            />
           </Col>
         </div>
       </div>

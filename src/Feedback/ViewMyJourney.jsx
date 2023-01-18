@@ -3,7 +3,6 @@ import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SequenceDiagram } from "react-sd";
-import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
 import EventApiContext from "../context/EventApiContext";
 
@@ -19,7 +18,7 @@ const ViewMyJourney = () => {
     whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
     yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
   };
-  const fetchEvent = async() => {
+  const fetchEvent = async () => {
     try {
       const res = await getEvent();
 

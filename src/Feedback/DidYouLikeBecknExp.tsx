@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Box } from "@mui/material";
+
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
-import { Card, Col, Row, Modal } from "antd";
+import { Card, Col, Modal } from "antd";
 
 const DidYouLikeBecknExp = () => {
   const [open, setOpen] = useState(false);
@@ -60,13 +60,22 @@ const DidYouLikeBecknExp = () => {
                     to="/improveTheExp"
                     style={{ textDecoration: "none", color: "#fff" }}
                   >
-                    no <img src="/assets/tiltArrow.svg" width={"10px"} alt="tiltArrow" />
+                    no{" "}
+                    <img
+                      src="/assets/tiltArrow.svg"
+                      width={"10px"}
+                      alt="tiltArrow"
+                    />
                   </Link>
                 </div>
               </div>
             </Card>
             <Col className="car-image">
-              <img src="/assets/car-with-a-man.png" alt="" style={{ width: "100%" }} />
+              <img
+                src="/assets/car-with-a-man.png"
+                alt=""
+                style={{ width: "100%" }}
+              />
             </Col>
           </div>
         </div>

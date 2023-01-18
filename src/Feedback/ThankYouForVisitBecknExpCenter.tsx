@@ -4,7 +4,7 @@ import GenQRCode from "../utility/GenQRCode";
 // import ErrorModal from "../common/ErrorModal";
 // import { useNavigate } from "react-router-dom";
 import "antd/dist/reset.css";
-import { Button, Typography, Card } from "antd";
+import { Typography } from "antd";
 import "./Feedback.css";
 
 const ThankYouForVisitBecknExpCenter = () => {

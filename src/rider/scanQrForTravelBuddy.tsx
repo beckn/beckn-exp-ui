@@ -3,7 +3,6 @@ import QrScanner from "../common/QrScanner/qrScanner";
 import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
@@ -16,9 +15,9 @@ const ScanQrForTravelBuddy = () => {
   const handleOpen = () => {
     setOpen(true);
   };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
   useEffect(() => {
     localStorage.setItem("expId", expId);
@@ -80,9 +79,7 @@ const ScanQrForTravelBuddy = () => {
             "Please pick up the device on your right and scan the QR code"
           }
           logo={
-            <GenQRCode
-              url={`https://taxibap.becknprotocol.io/?${expId}`}
-            />
+            <GenQRCode url={`https://taxibap.becknprotocol.io/?${expId}`} />
           }
         />
         {/* </Link> */}

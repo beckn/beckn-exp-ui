@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import QRcode from "react-qr-code";
 interface Props {
   expId?: string;

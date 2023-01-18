@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
@@ -70,7 +69,11 @@ const YourFeedbackIsValubleForUs = () => {
             </div>
           </Card>
           <Col className="car-image">
-            <img src="/assets/car-with-a-man.png" alt="" style={{ width: "100%" }} />
+            <img
+              src="/assets/car-with-a-man.png"
+              alt=""
+              style={{ width: "100%" }}
+            />
           </Col>
         </div>
       </div>

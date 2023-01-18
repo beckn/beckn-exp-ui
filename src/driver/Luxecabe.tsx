@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import useInterval from "../common/MobilityCard/useInterval";
@@ -23,9 +22,9 @@ const Luxecabe = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchEvent = async() => {
+  const fetchEvent = async () => {
     try {
-      const res = await getEvent()
+      const res = await getEvent();
       const events = res?.events;
 
       if (events.length > 0) {
@@ -72,11 +71,7 @@ const Luxecabe = () => {
           desccription={
             "Please pick up the device on your right and scan the QR code"
           }
-          logo={
-            <GenQRCode
-              url={`https://taxibpp.becknprotocol.io?${expId}`}
-            />
-          }
+          logo={<GenQRCode url={`https://taxibpp.becknprotocol.io?${expId}`} />}
         />
       </div>
     </motion.div>

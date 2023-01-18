@@ -3,7 +3,6 @@ import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState, useContext } from "react";
-import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
 import { Modal } from "antd";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
@@ -24,7 +23,7 @@ const DriverATaxi = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchEvent = async() => {
+  const fetchEvent = async () => {
     try {
       const res = await getEvent();
       const events = res?.events;
@@ -72,11 +71,7 @@ const DriverATaxi = () => {
           desccription={
             "Please pick up the device on your right and scan the QR code"
           }
-          logo={
-            <GenQRCode
-              url={`https://taxibpp.becknprotocol.io?${expId}`}
-            />
-          }
+          logo={<GenQRCode url={`https://taxibpp.becknprotocol.io?${expId}`} />}
         />
       </div>
     </motion.div>
