@@ -11,7 +11,7 @@
   position: relative;
   height: 100vh;
   display: grid;
-  align-content: center;
+  /* align-content: center; */
   text-align: center;
 }
 
@@ -183,4 +183,63 @@
   .luxecabSource {
     top: 68%;
   }
+}
+.react-flow{
+  overflow: unset !important;
+}
+.XYZ{
+  background: seagreen;
+}
+.react-flow__node.whatsapp {
+  background: url('../src/assets/whatsapp.svg');
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFF;
+  background-size: 100% 100%;
+}
+.react-flow__node.mobility {
+  background: url('../src/assets/myMobility.svg');
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFF;
+  background-size: 100% 100%;
+}
+.react-flow__node.Luxecub {
+  background: url('../src/assets/luxe.svg');
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFF;
+  background-size: 100% 100%;
+}
+.react-flow__node.RHP {
+  background: url('../src/assets/TravelbuddyLogo.svg');
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFF;
+  background-size: 100% 100%;
+}
+.react-flow__node.gateway {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(34, 4, 4);
+  color: #FFF;
+  font-weight: 700;
+  font-size: 5px;
+  background-size: 100% 100%;
 }
