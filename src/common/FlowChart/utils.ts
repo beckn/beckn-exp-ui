@@ -137,7 +137,9 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       id: `edge-rahul`,
       source: data1?.eventSource?.id,
       target: data1?.eventDestination?.id,
-      label: data1?.eventMessage?.actionMessage,
+      data: {
+        text: data1?.eventMessage?.actionMessage,
+      },
       type: "floating",
       markerEnd: {
         type: MarkerType.ArrowClosed,

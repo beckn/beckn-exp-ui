@@ -16,7 +16,6 @@ import "./index.css";
 import EventApiContext from "../../context/EventApiContext";
 import useInterval from "../MobilityCard/useInterval";
 
-
 const edgeTypes: any = {
   floating: FloatingEdge,
 };
@@ -33,9 +32,12 @@ const NodeAsHandleFlow: React.FC = () => {
   const [events, setEvents] = useState<any>([]);
   const [events1, setEvents1] = useState<any>([]);
 
-  const { nodes: initialNodes, edges: initialEdge } = createNodesAndEdges(events, events1);
+  const { nodes: initialNodes, edges: initialEdge } = createNodesAndEdges(
+    events,
+    events1
+  );
 
-  const [nodes,setNodes , onNodesChange] = useNodesState(initialNodes);
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   // const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   // console.log("XXXX", edges);
@@ -44,12 +46,28 @@ const NodeAsHandleFlow: React.FC = () => {
   const fetchEvent = async () => {
     try {
       const res = await getEvent();
-      console.log("VVVV---->", res)
+      console.log("events", res);
       setEvents(res?.events[0].event);
-      if(res?.events.length>0){
-        setEvents1(res?.events[1].event)
+
+      if (
+        (res?.events[1].event.eventMessage.eventCode === "mbgw_srch_brdcst" &&
+          res?.events[0].event.eventMessage.eventCode === "mbgw_srch_brdcst") ||
+        (res?.events[1].event.eventMessage.eventCode === "mbth_snt_catalogue" &&
+          res?.events[0].event.eventMessage.eventCode ===
+            "mblc_snt_catalogue") ||
+        (res?.events[1].event.eventMessage.eventCode === "mblc_snt_catalogue" &&
+          res?.events[0].event.eventMessage.eventCode ===
+            "mbth_snt_catalogue") ||
+        (res?.events[1].event.eventMessage.eventCode === "mbgw_sent_ctlg_bap" &&
+          res?.events[0].event.eventMessage.eventCode ===
+            "mbgw_sent_ctlg_bap") ||
+        (res?.events[1].event.eventMessage.eventCode === "mbgw_sent_ctlg_bap" &&
+          res?.events[0].event.eventMessage.eventCode === "mbgw_sent_ctlg_bap")
+      ) {
+        setEvents1(res?.events[1].event);
+      } else {
+        setEvents1([]);
       }
-      console.log("first", res?.events[0].event);
     } catch (error) {
       console.log(`error ${error}`);
     }
@@ -80,10 +98,9 @@ const NodeAsHandleFlow: React.FC = () => {
   //   []
   // );
 
-  return (  
+  return (
     <div className="floatingedges">
       <ReactFlow
-   
         nodes={nodes}
         edges={initialEdge}
         onNodesChange={onNodesChange}
@@ -93,8 +110,7 @@ const NodeAsHandleFlow: React.FC = () => {
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
         // connectionLineComponent={connectionLineComponent}
-      >
-      </ReactFlow>
+      ></ReactFlow>
     </div>
   );
 };
