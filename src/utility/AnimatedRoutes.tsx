@@ -18,6 +18,7 @@ import ViewMyJourney from "../Feedback/ViewMyJourney";
 import IframeVideo from "../common/LearnAboutBeckn/IframeVideo";
 import { AnimatePresence } from "framer-motion";
 import Luxecabe from "../driver/Luxecabe";
+import CustomNodeFlow from "../common/FlowChart/node";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -76,6 +77,7 @@ const AnimatedRoutes = () => {
         />
         <Route path="/viewMyJourney" element={<ViewMyJourney />} />
         <Route path="/luxecabe" element={<Luxecabe />} />
+        <Route path="/node" element={<CustomNodeFlow />} />
       </Routes>
     </AnimatePresence>
   );
