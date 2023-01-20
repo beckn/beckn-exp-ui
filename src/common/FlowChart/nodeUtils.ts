@@ -1,12 +1,16 @@
 import { Position, MarkerType } from "reactflow";
-
-const ids = {
+import "./index.css";
+export const ids = {
   mobility: "mobilityreferencebap.becknprotocol.io",
   taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
   gateway: "gateway.becknprotocol.io",
   whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
   yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
-  luxeCabs: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp"
+  luxeCabs: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
+  searchBroadCast: "mbgw_srch_brdcst",
+  mbthSentCatalogue: "mbth_snt_catalogue",
+  mblcSentCatalogue: "mblc_snt_catalogue",
+  mbgwSentCatalogueBap: "mbgw_sent_ctlg_bap",
 };
 
 const getNodeIntersection = (intersectionNode: any, targetNode: any) => {
@@ -55,7 +59,6 @@ const getEdgePosition = (node: any, intersectionPoint: any) => {
   if (py >= n.y + n.height - 1) {
     return Position.Bottom;
   }
-
   return Position.Top;
 };
 
@@ -126,28 +129,31 @@ export const createNodesAndEdges = (data: any, data1: any) => {
         type: MarkerType.ArrowClosed,
         width: 20,
         height: 20,
-        color: data?.eventSource?.id === ids.taxi ||
-        data?.eventSource?.id === ids.luxeCabs ||
-        (data?.eventSource?.id === ids.gateway &&
-          data?.eventDestination?.id === ids.mobility) ||
-        (data?.eventSource?.id === ids.gateway &&
-          data?.eventDestination?.id ===
-            ids.whatsappMobility)
-          ? "#FB1E1E"
-          : "#23DFDF",
+        color:
+          data?.eventSource?.id === ids.taxi ||
+          data?.eventSource?.id === ids.luxeCabs ||
+          (data?.eventSource?.id === ids.gateway &&
+            data?.eventDestination?.id === ids.mobility) ||
+          (data?.eventSource?.id === ids.gateway &&
+            data?.eventDestination?.id === ids.whatsappMobility)
+            ? "#FB1E1E"
+            : "#23DFDF",
       },
       style: {
-        transform: data?.eventMessage?.eventCode === "mbgw_sent_ctlg_bap" ? "translate(10px, -10px)" : " ",
+        transform:
+          data?.eventMessage?.eventCode === ids.mbgwSentCatalogueBap
+            ? "translate(10px, -10px)"
+            : " ",
         strokeWidth: 2,
-        stroke: data?.eventSource?.id === ids.taxi ||
-        data?.eventSource?.id === ids.luxeCabs ||
-        (data?.eventSource?.id === ids.gateway &&
-          data?.eventDestination?.id === ids.mobility) ||
-        (data?.eventSource?.id === ids.gateway &&
-          data?.eventDestination?.id ===
-            ids.whatsappMobility)
-          ? "#FB1E1E"
-          : "#23DFDF",
+        stroke:
+          data?.eventSource?.id === ids.taxi ||
+          data?.eventSource?.id === ids.luxeCabs ||
+          (data?.eventSource?.id === ids.gateway &&
+            data?.eventDestination?.id === ids.mobility) ||
+          (data?.eventSource?.id === ids.gateway &&
+            data?.eventDestination?.id === ids.whatsappMobility)
+            ? "#FB1E1E"
+            : "#23DFDF",
       },
     },
     {
@@ -157,37 +163,39 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       data: {
         eventCode: data1?.eventMessage?.eventCode,
         text: data1?.eventMessage?.actionMessage,
-      },      
+      },
       type: "floating",
       markerEnd: {
         type: MarkerType.ArrowClosed,
         width: 20,
         height: 20,
-        color: data1?.eventSource?.id === ids.taxi ||
-        data1?.eventSource?.id === ids.luxeCabs ||
-        (data1?.eventSource?.id === ids.gateway &&
-          data1?.eventDestination?.id === ids.mobility) ||
-        (data1?.eventSource?.id === ids.gateway &&
-          data1?.eventDestination?.id ===
-            ids.whatsappMobility)
-          ? "#FB1E1E"
-          : "#23DFDF",
+        color:
+          data1?.eventSource?.id === ids.taxi ||
+          data1?.eventSource?.id === ids.luxeCabs ||
+          (data1?.eventSource?.id === ids.gateway &&
+            data1?.eventDestination?.id === ids.mobility) ||
+          (data1?.eventSource?.id === ids.gateway &&
+            data1?.eventDestination?.id === ids.whatsappMobility)
+            ? "#FB1E1E"
+            : "#23DFDF",
       },
       style: {
-        transform: data1?.eventMessage?.eventCode === "mbgw_sent_ctlg_bap" ? "translate(10px, 7px)" : " ", 
+        transform:
+          data1?.eventMessage?.eventCode === ids.mbgwSentCatalogueBap
+            ? "translate(10px, 7px)"
+            : " ",
         strokeWidth: 2,
-        stroke: data1?.eventSource?.id === ids.taxi ||
-        data1?.eventSource?.id === ids.luxeCabs ||
-        (data1?.eventSource?.id === ids.gateway &&
-          data1?.eventDestination?.id === ids.mobility) ||
-        (data1?.eventSource?.id === ids.gateway &&
-          data1?.eventDestination?.id ===
-            ids.whatsappMobility)
-          ? "#FB1E1E"
-          : "#23DFDF",
+        stroke:
+          data1?.eventSource?.id === ids.taxi ||
+          data1?.eventSource?.id === ids.luxeCabs ||
+          (data1?.eventSource?.id === ids.gateway &&
+            data1?.eventDestination?.id === ids.mobility) ||
+          (data1?.eventSource?.id === ids.gateway &&
+            data1?.eventDestination?.id === ids.whatsappMobility)
+            ? "#FB1E1E"
+            : "#23DFDF",
       },
     }
   );
-
   return { nodes, edges };
 };

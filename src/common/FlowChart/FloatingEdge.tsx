@@ -1,6 +1,8 @@
 import { useCallback } from "react";
 import { useStore, getBezierPath, EdgeLabelRenderer } from "reactflow";
-import { getEdgeParams } from "./utils";
+import { getEdgeParams } from "./nodeUtils";
+import { ids } from "./nodeUtils";
+import "./index.css";
 
 interface floatingEdgeDataModal {
   id: any | undefined;
@@ -56,7 +58,7 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
       <EdgeLabelRenderer>
         <div
           style={{
-            top: data.eventCode === "mbgw_sent_ctlg_bap"? "-30px": "",
+            top: data.eventCode === ids.mbgwSentCatalogueBap? "-30px": "",
             position: "absolute",
             transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
             background: "#ffcc00",
