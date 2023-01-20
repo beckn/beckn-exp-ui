@@ -1,6 +1,13 @@
-import { useEffect } from "react";
 import { Position, MarkerType } from "reactflow";
-import { ids } from "../../utility/utils";
+
+const ids = {
+  mobility: "mobilityreferencebap.becknprotocol.io",
+  taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
+  gateway: "gateway.becknprotocol.io",
+  whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
+  yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
+  luxeCabs: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp"
+};
 
 const getNodeIntersection = (intersectionNode: any, targetNode: any) => {
   const {
@@ -52,7 +59,6 @@ const getEdgePosition = (node: any, intersectionPoint: any) => {
   return Position.Top;
 };
 
-// returns the parameters (sx, sy, tx, ty, sourcePos, targetPos) you need to create an edge
 export const getEdgeParams = (source: any, target: any) => {
   const sourceIntersectionPoint = getNodeIntersection(source, target);
   const targetIntersectionPoint = getNodeIntersection(target, source);
@@ -79,25 +85,25 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       id: ids.gateway,
       data: { label: "Gateway" },
       className: "gateway",
-      position: { x: 526, y: 200 },
+      position: { x: 430, y: 190 },
     },
     {
       id: ids.mobility,
       data: { label: "" },
       className: "mobility",
-      position: { x: 400, y: 100 },
+      position: { x: 200, y: 60 },
     },
     {
       id: ids.taxi,
       className: "RHP",
       data: { label: "" },
-      position: { x: 650, y: 100 },
+      position: { x: 650, y: 60 },
     },
     {
       id: ids.whatsappMobility,
       data: { label: "" },
       className: "whatsapp",
-      position: { x: 400, y: 300 },
+      position: { x: 200, y: 300 },
     },
     {
       id: ids.luxeCabs,
@@ -109,50 +115,76 @@ export const createNodesAndEdges = (data: any, data1: any) => {
 
   edges.push(
     {
-      id: `edge-rahul`,
+      id: data.eventId,
       source: data?.eventSource?.id,
       target: data?.eventDestination?.id,
       data: {
         text: data?.eventMessage?.actionMessage,
       },
       type: "floating",
-      markerStart: {
-        type: MarkerType.Arrow,
-        orient: "auto-start-reverse",
-        color: "#FF0072",
-      },
       markerEnd: {
         type: MarkerType.ArrowClosed,
         width: 20,
         height: 20,
-        color: "#FF0072",
+        color: data?.eventSource?.id === ids.taxi ||
+        data?.eventSource?.id === ids.luxeCabs ||
+        (data?.eventSource?.id === ids.gateway &&
+          data?.eventDestination?.id === ids.mobility) ||
+        (data?.eventSource?.id === ids.gateway &&
+          data?.eventDestination?.id ===
+            ids.whatsappMobility)
+          ? "#FB1E1E"
+          : "#23DFDF",
       },
       style: {
+        transform: data?.eventMessage?.eventCode === "mbgw_sent_ctlg_bap" ? "translate(10px, -10px)" : " ",
         strokeWidth: 2,
-        stroke: "#FF0072",
-        color: "red",
+        stroke: data?.eventSource?.id === ids.taxi ||
+        data?.eventSource?.id === ids.luxeCabs ||
+        (data?.eventSource?.id === ids.gateway &&
+          data?.eventDestination?.id === ids.mobility) ||
+        (data?.eventSource?.id === ids.gateway &&
+          data?.eventDestination?.id ===
+            ids.whatsappMobility)
+          ? "#FB1E1E"
+          : "#23DFDF",
       },
     },
     {
-      id: `edge-rahul`,
+      id: data1.eventId,
       source: data1?.eventSource?.id,
       target: data1?.eventDestination?.id,
-      label: data1?.eventMessage?.actionMessage,
+      data: {
+        eventCode: data1?.eventMessage?.eventCode,
+        text: data1?.eventMessage?.actionMessage,
+      },      
       type: "floating",
       markerEnd: {
         type: MarkerType.ArrowClosed,
         width: 20,
         height: 20,
-        color: "#FF0072",
-      },
-      markerStart: {
-        type: MarkerType.Arrow,
-        orient: "auto-start-reverse",
-        color: "#FF0072",
+        color: data1?.eventSource?.id === ids.taxi ||
+        data1?.eventSource?.id === ids.luxeCabs ||
+        (data1?.eventSource?.id === ids.gateway &&
+          data1?.eventDestination?.id === ids.mobility) ||
+        (data1?.eventSource?.id === ids.gateway &&
+          data1?.eventDestination?.id ===
+            ids.whatsappMobility)
+          ? "#FB1E1E"
+          : "#23DFDF",
       },
       style: {
+        transform: data1?.eventMessage?.eventCode === "mbgw_sent_ctlg_bap" ? "translate(10px, 7px)" : " ", 
         strokeWidth: 2,
-        stroke: "#FF0072",
+        stroke: data1?.eventSource?.id === ids.taxi ||
+        data1?.eventSource?.id === ids.luxeCabs ||
+        (data1?.eventSource?.id === ids.gateway &&
+          data1?.eventDestination?.id === ids.mobility) ||
+        (data1?.eventSource?.id === ids.gateway &&
+          data1?.eventDestination?.id ===
+            ids.whatsappMobility)
+          ? "#FB1E1E"
+          : "#23DFDF",
       },
     }
   );
