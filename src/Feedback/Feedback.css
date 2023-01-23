@@ -160,8 +160,52 @@
   width: 100px;
   margin: 5px auto;
 }
-
+.vmj-back-btn{
+  background: black;
+  color: #AED3F0;
+  width: 104px;
+  margin: 40px auto;
+  padding: 6px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  font-size: 14px;
+}
+.travelbuddylogo{
+  position: absolute;
+  top: 9px;
+  left: 10%;
+}
+.whatsapplogo{
+  position: absolute;
+  top: 9px;
+  left: 10.8%;
+  height: 18px;
+}
+.taxilogo{
+  position: absolute;
+  top: 5px;
+  left: 56.5%;
+}
+.luxecabslogo{
+  position: absolute;
+  top: 9px;
+  left: 76.6%;
+  width: 2.5%;
+}
+.flow-wrap{
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
+}
 @media screen and (min-width: 320px) and (max-width: 767px) {
+  /* .flow-wrap{
+    width: 650px;
+  } */
   .subTitle {
     font-size: 13px;
     margin-top: 30px;

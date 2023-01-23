@@ -22,12 +22,11 @@ const ErrorModal: React.FC<modalPropModal> = ({
   const navigate = useNavigate();
   return (
     <div className="modal-container">
-      <div style={{ padding: "30px" }}>
+      <div className="padding30">
         <div className="title-text">
           <span>{titleText} </span>
           <img
             onClick={() => navigate(0)}
-            style={{ height: "25px", width: "25px", cursor: "pointer" }}
             src="/assets/cross.svg"
           />
         </div>

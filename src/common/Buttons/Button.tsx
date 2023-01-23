@@ -9,7 +9,7 @@ const Button: React.FC<buttonPropModal> = ({ buttonText }: buttonPropModal) => {
   const navigate = useNavigate();
   return (
     <div className="btn">
-      <a href="/" style={{ textDecoration: "none", color: "#000" }}>
+      <a href="/">
         <span>{buttonText}</span>
       </a>
     </div>
