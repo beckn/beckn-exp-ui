@@ -13,7 +13,7 @@ import TravelBuddy from "../rider/travelBuddy";
 import DriverATaxi from "../driver/DriverATaxi";
 import UseWhatsapp from "../whatsapp/useWhatsapp";
 import ScanQrForTravelBuddy from "../rider/scanQrForTravelBuddy";
-import MobilityCard from "../common/MobilityCard/MobilityCard";
+// import MobilityCard from "../common/node-visualization/node-visualization";
 import ViewMyJourney from "../Feedback/ViewMyJourney";
 import IframeVideo from "../common/LearnAboutBeckn/IframeVideo";
 import { AnimatePresence } from "framer-motion";
@@ -43,7 +43,7 @@ const AnimatedRoutes = () => {
         <Route path="/useWhatsapp" element={<UseWhatsapp />} />
 
         {/* Node-communication */}
-        <Route path="/MobilityCard" element={<MobilityCard />} />
+        <Route path="/node-visualization" element={<CustomNodeFlow />} />
         <Route
           path="/acceptRideForTaxiHub"
           element={<AcceptRideForTaxiHub />}
@@ -77,7 +77,7 @@ const AnimatedRoutes = () => {
         />
         <Route path="/viewMyJourney" element={<ViewMyJourney />} />
         <Route path="/luxecabe" element={<Luxecabe />} />
-        <Route path="/node" element={<CustomNodeFlow />} />
+        {/* <Route path="/node" element={<CustomNodeFlow />} /> */}
       </Routes>
     </AnimatePresence>
   );
