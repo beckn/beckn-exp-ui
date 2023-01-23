@@ -20,25 +20,18 @@ const WelcomeToExpCenter = () => {
           autoPlay
           loop
           muted
-          style={{ width: "100%", height: "100vh", objectFit: "cover" }}
         />
         <div className="main-container">
-          <div style={{ textAlign: "center" }}>
-            <div style={{ marginBottom: "40px" }}>
+          <div className="txtcenter">
+            <div className="marginbottom40">
               <img src="/assets/becknLogoIcon.svg" alt={"BecknLogoIcon"} />
             </div>
-            <div
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
+            <div className="weltext">
               <Typography className="welcomePage-content">
                 welcome to the beckn experience centre
               </Typography>
             </div>
-            <div style={{ marginTop: "40px" }}>
+            <div className="margintop40">
               <Link
                 to="/VisualizeAction"
                 style={{ textDecoration: "none", color: "#000" }}

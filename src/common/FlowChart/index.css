@@ -9,7 +9,7 @@
   opacity: 0;
 }
 .react-flow__node.whatsapp {
-  background: url("../../../src/assets/whatsapp.svg");
+  background: url("../../../public/assets/whatsapp.svg");
  
   width: 60px;
   height: 60px;
@@ -22,7 +22,7 @@
   background-repeat: no-repeat;
 }
 .react-flow__node.mobility {
-  background: url("../../../src/assets/myMobility.svg");
+  background: url("../../../public/assets/myMobility.svg");
   width: 60px;
   height: 60px;
   display: flex;
@@ -34,7 +34,7 @@
   background-repeat: no-repeat;
 }
 .react-flow__node.Luxecub {
-  background: url("../../../src/assets/luxe.svg");
+  background: url("../../../public/assets/luxe.svg");
   width: 60px;
   height: 60px;
   display: flex;
@@ -46,7 +46,7 @@
   background-repeat: no-repeat;
 }
 .react-flow__node.RHP {
-  background: url("../../../src/assets/taxiIcon.svg");
+  background: url("../../../public/assets/taxiIcon.svg");
   width: 60px;
   height: 60px;
   display: flex;

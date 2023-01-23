@@ -52,7 +52,7 @@ const useWhatsapp = () => {
           <div>
             <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
-          <div style={{ cursor: "pointer", zIndex: "99" }} onClick={handleOpen}>
+          <div className="home-container" onClick={handleOpen}>
             <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
             <Modal open={open} footer={null}>
               <ErrorModal

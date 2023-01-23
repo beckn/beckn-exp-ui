@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
@@ -34,7 +33,7 @@ const ImproveTheExp = () => {
           <div>
             <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
-          <Col style={{ cursor: "pointer" }} onClick={handleOpen}>
+          <Col className="cur-pointer" onClick={handleOpen}>
             <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
             <Modal open={open} footer={null}>
               <ErrorModal

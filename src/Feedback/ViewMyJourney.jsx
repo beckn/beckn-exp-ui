@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from "react";
-import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SequenceDiagram } from "react-sd";
 import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
 import EventApiContext from "../context/EventApiContext";
+import "./Feedback.css";
 
 const ViewMyJourney = () => {
   const [events, setEvents] = React.useState([]);
@@ -157,85 +157,51 @@ const ViewMyJourney = () => {
         height: "fit-content",
       }}
     >
+      <div>
       <div className="sequence">my journey </div>
-      <Box
-        style={{
-          background: "black",
-          color: "#AED3F0",
-          width: "104px",
-          margin: "40px auto",
-          padding: "6px",
-          borderRadius: "12px",
-          cursor: "pointer",
-          display: "flex",
-          justifyContent: "space-around",
-          position: "absolute",
-          top: "0px",
-          left: "10px",
-          fontSize: "14px",
-        }}
+      <div className="vmj-back-btn"
         onClick={() => navigate(-1)}
       >
         <img src="/assets/backArrw.png" alt="" /> go back
-      </Box>
-      <Box
+      </div>
+      </div>
+      <div
         className="flow-wrap"
-        position={"relative"}
-        margin="0 auto"
-        width="1200px"
       >
         <SequenceDiagram
           categories={categories}
           data={data}
           style={{ ...options, ...customStyle }}
         />
-        <Box>
+        <div>
           {uniqueSourceId[0] === ids.mobility && (
             <img
+              className="travelbuddylogo"
               src="/assets/TravelbuddyLogo.svg"
               alt=""
-              style={{
-                position: "absolute",
-                top: "9px",
-                left: " 10%",
-              }}
             />
           )}
           {uniqueSourceId[0] === ids.whatsappMobility && (
             <img
+              className="whatsapplogo"
               src="/assets/whatsappLogo.png"
               alt=""
-              style={{
-                position: "absolute",
-                top: "9px",
-                left: "10.8%",
-                height: "18px",
-              }}
             />
           )}
 
           <img
+            className="taxilogo"
             src="/assets/TaxiLogo.svg"
             alt=""
-            style={{
-              position: "absolute",
-              top: "5px",
-              left: "56.5%",
-            }}
           />
 
           <img
+            className="luxecabslogo"
             src="/assets/LuxeCabsLogo.svg"
             alt=""
-            style={{
-              position: "absolute",
-              top: "9px",
-              left: " 76.6%",
-              width: "2.5%",
-            }}
           />
-        </Box>
-      </Box>
+        </div>
+      </div>
     </motion.div>
   );
 };

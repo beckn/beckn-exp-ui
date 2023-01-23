@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import { Card, Col, Row, Modal } from "antd";
@@ -23,7 +22,7 @@ const DidYouLikeBecknExp = () => {
             <div>
               <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
             </div>
-            <div style={{ cursor: "pointer" }} onClick={handleOpen}>
+            <div className="cur-pointer" onClick={handleOpen}>
               <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
               <Modal open={open} footer={null}>
                 <ErrorModal
