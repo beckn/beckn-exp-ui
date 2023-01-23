@@ -10,16 +10,46 @@
 }
 .react-flow__node.whatsapp {
   background: url("../../../public/assets/whatsapp.svg");
- 
+
   width: 60px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ACD1F0;
+  background-color: #acd1f0;
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
+}
+.react-flow__node.destWhatsappMobility {
+  background: url("../../../public/assets/whatsapp.svg");
+
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.react-flow__node.activeWhatsappMobility {
+  background: url("../../../public/assets/whatsapp.svg");
+
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acd1f0;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  outline: solid;
+  outline-color: #fff;
+  outline-offset: 4px;
+  border-radius: unset !important;
 }
 .react-flow__node.mobility {
   background: url("../../../public/assets/myMobility.svg");
@@ -28,10 +58,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ACD1F0;
+  background-color: #acd1f0;
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
+}
+.react-flow__node.destMobility {
+  background: url("../../../public/assets/myMobility.svg");
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.react-flow__node.activeMobility {
+  background: url("../../../public/assets/myMobility.svg");
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acd1f0;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  outline: solid;
+  outline-color: #fff;
+  outline-offset: 4px;
+  border-radius: unset !important;
 }
 .react-flow__node.Luxecub {
   background: url("../../../public/assets/luxe.svg");
@@ -40,7 +98,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ACD1F0;
+  background-color: #acd1f0;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.react-flow__node.activeLuxeCabs {
+  background: url("../../../public/assets/luxe.svg");
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acd1f0;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  outline: solid;
+  outline-color: #fff;
+  outline-offset: 4px;
+  border-radius: unset !important;
+}
+.react-flow__node.destLuxeCabs {
+  background: url("../../../public/assets/luxe.svg");
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,7 +138,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ACD1F0;
+  background-color: #acd1f0;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.react-flow__node.activeTaxi {
+  background: url("../../../public/assets/taxiIcon.svg");
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acd1f0;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  outline: solid;
+  outline-color: #fff;
+  outline-offset: 4px;
+  border-radius: unset !important;
+}
+.react-flow__node.destTaxi {
+  background: url("../../../public/assets/taxiIcon.svg");
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -72,14 +186,26 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.react-flow__node.activeGateway {
+  border-radius: 50% !important;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black !important;
+  color: #fff;
+  font-weight: 700;
+  font-size: 5px;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  outline: solid;
+  outline-color: #acd1f0;
+  border-radius: 20px !important;
+}
 .floatingedges .react-flow__handle {
   display: none;
-}
-.react-flow__node-default {
-  outline: solid;
-  outline-color: #fff;
-  outline-offset: 4px;
-  border-radius: unset !important;
 }
 .react-flow__node.selectable:focus,
 .react-flow__node.selectable:focus-visible {
