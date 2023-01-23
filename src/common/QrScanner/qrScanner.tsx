@@ -24,7 +24,7 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
               {logo}
               <div className="btn-wrapper">
                 <Link
-                  to="/MobilityCard"
+                  to="/node-visualization"
                   style={{ textDecoration: "none", color: "#AED3F0" }}
                 >
                   <div className="next-btn">
