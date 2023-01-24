@@ -29,7 +29,7 @@ const useWhatsapp = () => {
 
       if (events.length > 0) {
         setTimeout(() => {
-          navigate("/MobilityCard");
+          navigate("/node-visualization");
         }, 1000);
       }
     } catch (error) {
@@ -71,11 +71,7 @@ const useWhatsapp = () => {
           desccription={
             "Please pick up the device on your right and scan the QR code"
           }
-          logo={
-            <GenQRCode
-              url={`https://wa.me/+918217350525?text=hi`}
-            />
-          }
+          logo={<GenQRCode url={`https://wa.me/+918217350525?text=hi`} />}
         />
       </div>
     </motion.div>

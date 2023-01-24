@@ -6,6 +6,9 @@ import { createNodesAndEdges, ids } from "./nodeUtils";
 import "./index.css";
 import EventApiContext from "../../context/EventApiContext";
 import useInterval from "../MobilityCard/useInterval";
+import { Link } from "react-router-dom";
+import { Modal } from "antd";
+import ErrorModal from "../ErrorModal/ErrorModal";
 
 const edgeTypes: any = {
   floating: FloatingEdge,
@@ -13,6 +16,7 @@ const edgeTypes: any = {
 
 const NodeAsHandleFlow: React.FC = () => {
   const [events, setEvents] = useState<any>([]);
+  const [eventsRes, setEventsRes] = useState<any>([]);
   const [events1, setEvents1] = useState<any>([]);
   const { nodes: initialNodes, edges: initialEdge } = createNodesAndEdges(
     events,
@@ -20,15 +24,22 @@ const NodeAsHandleFlow: React.FC = () => {
   );
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const { getEvent } = useContext(EventApiContext);
-
+  const [experienceCenterId, setExperienceCenterId] = useState<any>("");
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
   const fetchEvent = async () => {
     try {
       const res = await getEvent();
+      setEventsRes(res?.events);
       await setEvents(res?.events[0].event);
+      setExperienceCenterId(res?.experienceSession.experienceCenterId);
       const firstResponseOfAPI = await res?.events[1].event.eventMessage
         .eventCode;
       const secondResponseOfAPI = await res?.events[0].event.eventMessage
         .eventCode;
+      console.log(events);
 
       if (
         (firstResponseOfAPI === ids.searchBroadCast &&
@@ -46,10 +57,11 @@ const NodeAsHandleFlow: React.FC = () => {
       } else {
         await setEvents1([]);
       }
-    } catch (error) {
-      console.log(`error ${error}`);
-    }
+    } catch (error) {}
   };
+  const sortedEvents = eventsRes
+    .map((e: any) => e)
+    .sort((a: any, b: any) => b.eventId - a.eventId);
 
   useInterval(() => {
     fetchEvent();
@@ -160,14 +172,90 @@ const NodeAsHandleFlow: React.FC = () => {
   console.log(`updateNodes`, updateNodes);
   // setNodes(updateNodes);
   return (
-    <div className="floatingedges">
+    <div className="floatingedges main-container page-content">
+      <div className="header">
+        <div>
+          <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
+        </div>
+        <div className="home-container" onClick={handleOpen}>
+          <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
+          <Modal open={open} footer={null}>
+            <ErrorModal
+              titleText={"Are you sure?"}
+              subTitle={
+                "You are about to exit this experience. Click ‘confirm’ to continue."
+              }
+              colorbuttonText={"Cancel"}
+              buttonText={"Confirm"}
+            />
+          </Modal>
+        </div>
+      </div>
+
       <ReactFlow
         nodes={updateNodes}
         edges={initialEdge}
         onNodesChange={onNodesChange}
         fitView
         edgeTypes={edgeTypes}
-      ></ReactFlow>
+      >
+        <div className="mobility-row">
+          {eventsRes.length > 0 &&
+          sortedEvents[0].event.eventSource.id ===
+            sortedEvents[0].event.eventDestination.id ? (
+            <h3
+              className={
+                (sortedEvents[0].event.eventSource.id &&
+                  sortedEvents[0].event.eventDestination.id) === ids.mobility
+                  ? "mobilitySource"
+                  : (sortedEvents[0].event.eventSource.id &&
+                      sortedEvents[0].event.eventDestination.id) === ids.taxi
+                  ? "taxihubSource"
+                  : (sortedEvents[0].event.eventSource.id &&
+                      sortedEvents[0].event.eventDestination.id) ===
+                    ids.whatsappMobility
+                  ? "whatsappSource"
+                  : (sortedEvents[0].event.eventSource.id &&
+                      sortedEvents[0].event.eventDestination.id) === ids.yatri
+                  ? "luxecabSource"
+                  : ""
+              }
+            >
+              {eventsRes[0].event.eventMessage.actionMessage}
+            </h3>
+          ) : null}
+        </div>
+      </ReactFlow>
+      <div className="mobilityFooter">
+        <div className="GWP">
+          <div className="GWP-text">
+            {events.length > 0
+              ? events[events.length - 1].event.eventMessage.bapMessage
+              : "rider"}
+          </div>
+
+          <img src="/assets/girlWithPhone.svg" alt="" />
+        </div>
+        <div className="MWP">
+          <div className="MWP-text">
+            {events.length > 0
+              ? events[events.length - 1].event.eventMessage.bppMessage
+              : "driver"}
+          </div>
+          <Link to="/WhatWouldYouDoLikeToNext">
+            <img src="/assets/menWithPhone.svg" alt="" />
+          </Link>
+        </div>
+        <img
+          className={`circle ${
+            experienceCenterId === "2"
+              ? "circle-driver-active"
+              : "circle-driver"
+          }`}
+          src="/assets/circle.svg"
+          alt=""
+        />
+      </div>
     </div>
   );
 };

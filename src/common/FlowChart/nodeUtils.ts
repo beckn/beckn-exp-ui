@@ -1,3 +1,4 @@
+import React from "react";
 import { Position, MarkerType } from "reactflow";
 import "./index.css";
 export const ids = {
@@ -81,6 +82,39 @@ export const getEdgeParams = (source: any, target: any) => {
 
 export const createNodesAndEdges = (data: any, data1: any) => {
   const edges = [];
+  const nodes = [];
+  nodes.push(
+    {
+      id: ids.gateway,
+      data: { label: "Gateway" },
+      className: "gateway",
+      position: { x: 430, y: 190 },
+    },
+    {
+      id: ids.mobility,
+      data: { label: "" },
+      className: "mobility",
+      position: { x: 200, y: 60 },
+    },
+    {
+      id: ids.taxi,
+      className: "RHP",
+      data: { label: "" },
+      position: { x: 650, y: 60 },
+    },
+    {
+      id: ids.whatsappMobility,
+      data: { label: "" },
+      className: "whatsapp",
+      position: { x: 200, y: 300 },
+    },
+    {
+      id: ids.luxeCabs,
+      className: "Luxecub",
+      data: { label: "" },
+      position: { x: 650, y: 300 },
+    }
+  );
 
   edges.push(
     {
@@ -163,38 +197,5 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       },
     }
   );
-  const nodes = [
-    {
-      id: ids.gateway,
-      data: { label: "Gateway" },
-      className: "gateway",
-      position: { x: 430, y: 190 },
-    },
-    {
-      id: ids.mobility,
-      data: { label: "" },
-      className: "mobility",
-      position: { x: 200, y: 60 },
-    },
-    {
-      id: ids.taxi,
-      className: "RHP",
-      data: { label: "" },
-      position: { x: 650, y: 60 },
-    },
-    {
-      id: ids.whatsappMobility,
-      data: { label: "" },
-      className: "whatsapp",
-      position: { x: 200, y: 300 },
-    },
-    {
-      id: ids.luxeCabs,
-      className: "Luxecub",
-      data: { label: "" },
-      position: { x: 650, y: 300 },
-    },
-  ];
-
   return { nodes, edges };
 };
