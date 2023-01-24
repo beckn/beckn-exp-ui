@@ -1,10 +1,14 @@
 .floatingedges {
-  flex-direction: column;
-  display: flex;
-  flex-grow: 1;
-  height: 100%;
+  height: 98vh !important;
 }
-
+.react-flow {
+  width: 80% !important;
+  height: 80% !important;
+  margin: 0 auto;
+}
+.react-flow__panel {
+  display: none !important;
+}
 .floatingedges .react-flow__handle {
   opacity: 0;
 }
@@ -212,4 +216,212 @@
   outline: solid !important;
   outline-color: #fff !important;
   outline-offset: 4px;
+}
+.mobilityFooter {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.mobilityFooter .GWP {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.mobilityFooter .GWP > img {
+  width: 250px;
+  z-index: 99;
+  position: relative;
+}
+.mobilityFooter .MWP {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+.mobilityFooter .MWP > img {
+  width: 130px;
+  z-index: 99;
+  position: relative;
+}
+.mobilityFooter .circle {
+  position: absolute !important;
+  width: 130px !important;
+  z-index: 0 !important;
+}
+.circle-driver-active {
+  position: absolute !important;
+  right: 139px;
+  bottom: 67px;
+  width: 130px !important;
+  z-index: 0 !important;
+}
+.circle-driver {
+  position: absolute !important;
+  left: 111px;
+  bottom: 106px;
+  width: 130px !important;
+  z-index: 0 !important;
+}
+.GWP-text {
+  padding: 10px;
+  background: #d5ffce;
+  width: 190px;
+  margin: 0 0 0 auto;
+  margin-bottom: 60px;
+  border-radius: 12px;
+  position: relative;
+  font-size: 14px;
+}
+.GWP-text:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.GWP-text:after {
+  border-left: solid transparent 4px;
+  border-right: solid transparent 4px;
+  border-top: solid #d5ffce 60px;
+  bottom: -60px;
+  content: " ";
+  height: 0;
+  left: 25%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+.MWP-text {
+  padding: 10px;
+  background: #fff;
+  width: 170px;
+  margin: 0 auto;
+  border-radius: 12px;
+  position: relative;
+  font-size: 14px;
+  top: 0px;
+  left: -70px;
+}
+.MWP-text:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.MWP-text:after {
+  border-left: solid transparent 4px;
+  border-right: solid transparent 4px;
+  border-top: solid #fff 40px;
+  bottom: -35px;
+  content: " ";
+  height: 0;
+  left: 24%;
+  margin-left: 60px;
+  position: absolute;
+  width: 0;
+  transform: rotate(328deg);
+}
+.mobilitySource {
+  color: #fff;
+  position: absolute;
+  top: -4.5%;
+  left: 0;
+}
+.whatsappSource {
+  color: #fff;
+  position: absolute;
+  top: 70%;
+  left: 12.2%;
+}
+.taxihubSource {
+  color: #fff;
+  position: absolute;
+  top: -4.5%;
+  right: 0;
+}
+.luxecabSource {
+  color: #fff;
+  position: absolute;
+  top: 73%;
+  right: 0;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .react-flow {
+    width: 100% !important;
+  }
+
+  .react-flow__renderer {
+    height: 80% !important;
+  }
+  .mobilityFooter .GWP > img {
+    width: 40%;
+  }
+  .mobilityFooter .MWP img {
+    width: 50%;
+    position: relative;
+    left: 48%;
+  }
+  .circle-driver {
+    left: 40px;
+    bottom: 40px;
+  }
+  .GWP-text {
+    margin: 0px 100px 60px auto;
+    right: 50px;
+    width: 140px;
+    padding: 6px;
+  }
+  .MWP-text {
+    margin: 30px auto;
+    width: 140px;
+    padding: 6px;
+    left: 0;
+  }
+  .mobilityFooter .circle {
+    width: 100px !important;
+  }
+  .whatsappSource {
+    color: #fff;
+    position: absolute;
+    top: 48%;
+    left: 3.2%;
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .react-flow {
+    width: 90% !important;
+  }
+
+  .react-flow__renderer {
+    height: 80% !important;
+  }
+  .mobilityFooter .GWP > img {
+    width: 60%;
+  }
+  .mobilityFooter .MWP img {
+    width: 70%;
+  }
+  .circle-driver {
+    left: 70px;
+    bottom: 70px;
+  }
+  .GWP-text {
+    margin: 0px 100px 60px auto;
+  }
+  .MWP-text {
+    margin: 30px auto;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  .react-flow {
+    width: 60% !important;
+  }
 }

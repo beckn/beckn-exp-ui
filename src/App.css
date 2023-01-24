@@ -140,29 +140,6 @@
   border: none !important;
 }
 
-.mobilitySource {
-  color: #fff;
-  position: absolute;
-  top: -4.5%;
-  left: 0;
-}
-.whatsappSource {
-  color: #fff;
-  position: absolute;
-  top: 71%;
-}
-.taxihubSource {
-  color: #fff;
-  position: absolute;
-  top: -4.5%;
-  right: 0;
-}
-.luxecabSource {
-  color: #fff;
-  position: absolute;
-  top: 73%;
-  right: 0;
-}
 .image-url-container img:nth-child(2) {
   display: none;
 }
@@ -186,8 +163,8 @@
 }
 
 .ant-modal-content {
-  background-color:transparent !important;
+  background-color: transparent !important;
 }
-.ant-modal{
-width:800px !important;
+.ant-modal {
+  width: 800px !important;
 }

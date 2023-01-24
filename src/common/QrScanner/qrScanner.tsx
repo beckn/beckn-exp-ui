@@ -23,14 +23,14 @@ const QrScanner: React.FC<qrScannerPropsModal> = ({
               <div className="qrcard-text">{desccription}</div>
               {logo}
               <div className="btn-wrapper">
-                <Link
-                  to="/node-visualization"
+                <a
+                  href="/node-visualization"
                   style={{ textDecoration: "none", color: "#AED3F0" }}
                 >
                   <div className="next-btn">
                     <img src="/assets/arrow.svg" alt={"BecknLogoIcon"} />
                   </div>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

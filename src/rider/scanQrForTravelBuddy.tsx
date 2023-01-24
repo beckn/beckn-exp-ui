@@ -33,7 +33,7 @@ const ScanQrForTravelBuddy = () => {
 
       if (events.length > 0) {
         setTimeout(() => {
-          navigate("/MobilityCard");
+          navigate("/node-visualization");
         }, 1000);
       }
     } catch (error) {
@@ -80,9 +80,7 @@ const ScanQrForTravelBuddy = () => {
             "Please pick up the device on your right and scan the QR code"
           }
           logo={
-            <GenQRCode
-              url={`https://taxibap.becknprotocol.io/?${expId}`}
-            />
+            <GenQRCode url={`https://taxibap.becknprotocol.io/?${expId}`} />
           }
         />
         {/* </Link> */}

@@ -58,7 +58,7 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
       <EdgeLabelRenderer>
         <div
           style={{
-            top: data.eventCode === ids.mbgwSentCatalogueBap? "-30px": "",
+            top: data.eventCode === ids.mbgwSentCatalogueBap ? "-30px" : "",
             position: "absolute",
             transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
             background: "#ffcc00",
