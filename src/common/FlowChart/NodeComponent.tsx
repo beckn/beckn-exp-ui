@@ -33,13 +33,12 @@ const NodeAsHandleFlow: React.FC = () => {
     try {
       const res = await getEvent();
       setEventsRes(res?.events);
-      await setEvents(res?.events[0].event);
+      setEvents(res?.events[0].event);
       setExperienceCenterId(res?.experienceSession.experienceCenterId);
       const firstResponseOfAPI = await res?.events[1].event.eventMessage
         .eventCode;
       const secondResponseOfAPI = await res?.events[0].event.eventMessage
         .eventCode;
-      console.log(events);
 
       if (
         (firstResponseOfAPI === ids.searchBroadCast &&
@@ -53,9 +52,9 @@ const NodeAsHandleFlow: React.FC = () => {
         (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
           secondResponseOfAPI === ids.mbgwSentCatalogueBap)
       ) {
-        await setEvents1(res?.events[1].event);
+        setEvents1(res?.events[1].event);
       } else {
-        await setEvents1([]);
+        setEvents1([]);
       }
     } catch (error) {}
   };
@@ -66,7 +65,8 @@ const NodeAsHandleFlow: React.FC = () => {
   useInterval(() => {
     fetchEvent();
   }, 1000);
-  console.log(`events`, events, "lol", events1);
+  console.log("events", events);
+  console.log("events1", events1);
   const updateNodes = nodes
     .map((node) => {
       if (
@@ -168,9 +168,6 @@ const NodeAsHandleFlow: React.FC = () => {
       return node;
     })
     .filter(Boolean);
-
-  console.log(`updateNodes`, updateNodes);
-  // setNodes(updateNodes);
   return (
     <div className="floatingedges main-container page-content">
       <div className="header">
@@ -229,8 +226,8 @@ const NodeAsHandleFlow: React.FC = () => {
       <div className="mobilityFooter">
         <div className="GWP">
           <div className="GWP-text">
-            {events.length > 0
-              ? events[events.length - 1].event.eventMessage.bapMessage
+            {eventsRes.length > 0
+              ? eventsRes[0].event.eventMessage.bapMessage
               : "rider"}
           </div>
 
@@ -238,8 +235,8 @@ const NodeAsHandleFlow: React.FC = () => {
         </div>
         <div className="MWP">
           <div className="MWP-text">
-            {events.length > 0
-              ? events[events.length - 1].event.eventMessage.bppMessage
+            {eventsRes.length > 0
+              ? eventsRes[0].event.eventMessage.bppMessage
               : "driver"}
           </div>
           <Link to="/WhatWouldYouDoLikeToNext">
