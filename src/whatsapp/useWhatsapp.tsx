@@ -54,7 +54,7 @@ const useWhatsapp = () => {
           </div>
           <div className="home-container" onClick={handleOpen}>
             <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
-            <Modal open={open} footer={null}>
+            <Modal open={open} footer={null} closable={false}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={

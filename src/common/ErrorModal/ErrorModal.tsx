@@ -25,15 +25,12 @@ const ErrorModal: React.FC<modalPropModal> = ({
       <div className="padding30">
         <div className="title-text">
           <span>{titleText} </span>
-          <img
-            onClick={() => navigate(0)}
-            src="/assets/cross.svg"
-          />
+          <img onClick={() => navigate(0)} src="/assets/cross.svg" />
         </div>
         <h5 className="subtitle-text">{subTitle}</h5>
         <div className="button">
-          <Button buttonText={buttonText} />
           <ColorButton colorbuttonText={colorbuttonText} />
+          <Button buttonText={buttonText} />
         </div>
       </div>
     </div>

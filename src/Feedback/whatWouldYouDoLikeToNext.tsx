@@ -27,7 +27,7 @@ const WhatWouldYouDoLikeToNext = () => {
           </div>
           <div className=" homeIcon" onClick={handleOpen}>
             <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
-            <Modal open={open} footer={null}>
+            <Modal open={open} footer={null} closable={false}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={
@@ -74,7 +74,11 @@ const WhatWouldYouDoLikeToNext = () => {
           >
             <button className="colorButtonSec">
               no, i'm done
-              <img width={"10px"} src="/assets/tiltArrow.svg" alt={"BecknLogoIcon"} />
+              <img
+                width={"10px"}
+                src="/assets/tiltArrow.svg"
+                alt={"BecknLogoIcon"}
+              />
             </button>
           </Link>
         </div>
