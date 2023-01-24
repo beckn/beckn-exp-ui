@@ -61,10 +61,11 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
             top: data.eventCode === ids.mbgwSentCatalogueBap ? "-30px" : "",
             position: "absolute",
             transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
-            background: "#ffcc00",
+            color: "#ffff",
+            // background: "#ffcc00",
             padding: 4,
             borderRadius: 5,
-            fontSize: 6,
+            fontSize: 8,
             fontWeight: 700,
           }}
           className="nodrag nopan"
