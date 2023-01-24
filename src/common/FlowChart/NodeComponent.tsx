@@ -29,6 +29,7 @@ const NodeAsHandleFlow: React.FC = () => {
   const handleOpen = () => {
     setOpen(true);
   };
+  console.log("address", eventsRes);
   const fetchEvent = async () => {
     try {
       const res = await getEvent();

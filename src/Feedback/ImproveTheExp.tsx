@@ -35,7 +35,7 @@ const ImproveTheExp = () => {
           </div>
           <Col className="cur-pointer" onClick={handleOpen}>
             <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
-            <Modal open={open} footer={null}>
+            <Modal open={open} footer={null} closable={false}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={
@@ -70,7 +70,11 @@ const ImproveTheExp = () => {
             </div>
           </Card>
           <Col className="car-image">
-            <img src="/assets/car-with-a-man.png" alt="" style={{ width: "100%" }} />
+            <img
+              src="/assets/car-with-a-man.png"
+              alt=""
+              style={{ width: "100%" }}
+            />
           </Col>
         </div>
       </div>

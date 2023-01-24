@@ -36,6 +36,7 @@
   display: flex;
   margin-top: 45px;
   justify-content: end;
+  gap: 10px;
 }
 .beckn-app {
   text-align: left !important;
