@@ -331,26 +331,26 @@
 .mobilitySource {
   color: #fff;
   position: absolute;
-  top: -4.5%;
-  left: 0;
+  top: 2%;
+  left: 14%;
 }
 .whatsappSource {
   color: #fff;
   position: absolute;
-  top: 70%;
-  left: 12.2%;
+  top: 68%;
+  left: 16%;
 }
 .taxihubSource {
   color: #fff;
   position: absolute;
-  top: -4.5%;
-  right: 0;
+  top: 1.5%;
+  right: 16%;
 }
 .luxecabSource {
   color: #fff;
   position: absolute;
-  top: 73%;
-  right: 0;
+  top: 68%;
+  right: 16%;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .react-flow {
