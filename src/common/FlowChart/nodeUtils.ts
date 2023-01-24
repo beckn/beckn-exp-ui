@@ -126,7 +126,7 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       },
       type: "floating",
       markerEnd: {
-        type: MarkerType.ArrowClosed,
+        type: MarkerType.Arrow,
         width: 20,
         height: 20,
         color:
@@ -144,7 +144,7 @@ export const createNodesAndEdges = (data: any, data1: any) => {
           data?.eventMessage?.eventCode === ids.mbgwSentCatalogueBap
             ? "translate(10px, -10px)"
             : " ",
-        strokeWidth: 2,
+        strokeWidth: 3,
         stroke:
           data?.eventSource?.id === ids.taxi ||
           data?.eventSource?.id === ids.luxeCabs ||
@@ -166,7 +166,7 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       },
       type: "floating",
       markerEnd: {
-        type: MarkerType.ArrowClosed,
+        type: MarkerType.Arrow,
         width: 20,
         height: 20,
         color:
@@ -184,7 +184,7 @@ export const createNodesAndEdges = (data: any, data1: any) => {
           data1?.eventMessage?.eventCode === ids.mbgwSentCatalogueBap
             ? "translate(10px, 7px)"
             : " ",
-        strokeWidth: 2,
+        strokeWidth: 3,
         stroke:
           data1?.eventSource?.id === ids.taxi ||
           data1?.eventSource?.id === ids.luxeCabs ||
