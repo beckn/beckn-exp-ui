@@ -34,7 +34,7 @@ const WelcomeToExpCenter = () => {
             <div className="margintop40">
               <Link
                 to="/VisualizeAction"
-                style={{ textDecoration: "none", color: "#000" }}
+                style={{ textDecoration: "none", color: "#000", cursor: "default" }}
               >
                 <button className="begin-journey">
                   <span> begin your journey</span>
