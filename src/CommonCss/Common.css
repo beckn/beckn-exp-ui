@@ -38,6 +38,7 @@
   display: flex;
   align-items: center;
   margin: 0 auto;
+  cursor: pointer;
 }
 .begin-journey img {
   margin-left: 10px;
