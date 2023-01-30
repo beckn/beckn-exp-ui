@@ -98,6 +98,16 @@
   border-radius: unset !important;
   margin-left: -7px;
 }
+.nodeMobility {
+  color: #fff;
+  width: max-content;
+  height: 100%;
+  position: absolute;
+  top: -50%;
+  font-size: 10px;
+  left: -10px;
+}
+
 .react-flow__node.Luxecub {
   background: url("../../../public/assets/luxe.svg");
   margin-left: 7px;

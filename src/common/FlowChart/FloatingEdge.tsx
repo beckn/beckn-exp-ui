@@ -41,7 +41,6 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
     sourceNode,
     targetNode
   );
-  console.log(source, target, "source, target");
 
   if (
     (source === ids.whatsappMobility && target === ids.taxi) ||
@@ -88,6 +87,13 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
         </EdgeLabelRenderer>
       </>
     );
+  } else if (
+    (source === ids.mobility && target === ids.mobility) ||
+    (source === ids.whatsappMobility && target === ids.whatsappMobility) ||
+    (source === ids.luxeCabs && target === ids.luxeCabs) ||
+    (source === ids.taxi && target === ids.taxi)
+  ) {
+    return null;
   } else {
     const [edgePath, labelX, labelY] = getBezierPath({
       sourceX: sx,
