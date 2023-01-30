@@ -59,17 +59,96 @@ const NodeAsHandleFlow: React.FC = () => {
       }
     } catch (error) {}
   };
-  const sortedEvents = eventsRes
-    .map((e: any) => e)
-    .sort((a: any, b: any) => b.eventId - a.eventId);
 
   useInterval(() => {
     fetchEvent();
   }, 1000);
   console.log("events", events);
   console.log("events1", events1);
+
   const updateNodes = nodes
     .map((node) => {
+      if (
+        node.id === ids.mobility &&
+        events?.eventSource?.id === ids.mobility &&
+        events?.eventDestination?.id === ids.mobility
+      ) {
+        console.log("node", node);
+        return {
+          ...node,
+          data: {
+            ...node.data,
+            label: (
+              <div className="nodeMobility">
+                {eventsRes[0]?.event.eventMessage.actionMessage}
+              </div>
+            ),
+          },
+
+          className: "activeMobility",
+        };
+      }
+      if (
+        node.id === ids.whatsappMobility &&
+        events?.eventSource?.id === ids.whatsappMobility &&
+        events?.eventDestination?.id === ids.whatsappMobility
+      ) {
+        console.log("node", node);
+        return {
+          ...node,
+          data: {
+            ...node.data,
+            label: (
+              <div className="nodeMobility">
+                {eventsRes[0]?.event.eventMessage.actionMessage}
+              </div>
+            ),
+          },
+
+          className: "activeWhatsappMobility",
+        };
+      }
+      if (
+        node.id === ids.luxeCabs &&
+        events?.eventSource?.id === ids.luxeCabs &&
+        events?.eventDestination?.id === ids.luxeCabs
+      ) {
+        console.log("node", node);
+        return {
+          ...node,
+          data: {
+            ...node.data,
+            label: (
+              <div className="nodeMobility">
+                {eventsRes[0]?.event.eventMessage.actionMessage}
+              </div>
+            ),
+          },
+
+          className: "activeLuxeCabs",
+        };
+      }
+      if (
+        node.id === ids.taxi &&
+        events?.eventSource?.id === ids.taxi &&
+        events?.eventDestination?.id === ids.taxi
+      ) {
+        console.log("node", node);
+        return {
+          ...node,
+          data: {
+            ...node.data,
+            label: (
+              <div className="nodeMobility">
+                {eventsRes[0]?.event.eventMessage.actionMessage}
+              </div>
+            ),
+          },
+
+          className: "activeTaxi",
+        };
+      }
+
       if (
         (node.id === ids.mobility &&
           events?.eventSource?.id === ids.mobility) ||
@@ -77,6 +156,7 @@ const NodeAsHandleFlow: React.FC = () => {
       ) {
         return {
           ...node,
+
           className: "activeMobility",
         };
       }
@@ -166,9 +246,11 @@ const NodeAsHandleFlow: React.FC = () => {
           className: "destWhatsappMobility",
         };
       }
+
       return node;
     })
     .filter(Boolean);
+
   return (
     <div className="floatingedges main-container page-content">
       <div className="header">
@@ -181,7 +263,7 @@ const NodeAsHandleFlow: React.FC = () => {
             <ErrorModal
               titleText={"Are you sure?"}
               subTitle={
-                "You are about to exit this experience. Click ‘confirm’ to continue."
+                "You are about to exit this experience. Click 'confirm' to continue."
               }
               colorbuttonText={"Cancel"}
               buttonText={"Confirm"}
@@ -196,34 +278,7 @@ const NodeAsHandleFlow: React.FC = () => {
         onNodesChange={onNodesChange}
         fitView
         edgeTypes={edgeTypes}
-      >
-        <div className="mobility-row">
-          {eventsRes.length > 0 &&
-          sortedEvents[0].event.eventSource.id ===
-            sortedEvents[0].event.eventDestination.id ? (
-            <h3
-              className={
-                (sortedEvents[0].event.eventSource.id &&
-                  sortedEvents[0].event.eventDestination.id) === ids.mobility
-                  ? "mobilitySource"
-                  : (sortedEvents[0].event.eventSource.id &&
-                      sortedEvents[0].event.eventDestination.id) === ids.taxi
-                  ? "taxihubSource"
-                  : (sortedEvents[0].event.eventSource.id &&
-                      sortedEvents[0].event.eventDestination.id) ===
-                    ids.whatsappMobility
-                  ? "whatsappSource"
-                  : (sortedEvents[0].event.eventSource.id &&
-                      sortedEvents[0].event.eventDestination.id) === ids.yatri
-                  ? "luxecabSource"
-                  : ""
-              }
-            >
-              {eventsRes[0].event.eventMessage.actionMessage}
-            </h3>
-          ) : null}
-        </div>
-      </ReactFlow>
+      ></ReactFlow>
       <div className="mobilityFooter">
         <div className="GWP">
           <div className="GWP-text">

@@ -92,7 +92,10 @@ export const createNodesAndEdges = (data: any, data1: any) => {
     },
     {
       id: ids.mobility,
-      data: { label: "" },
+      data: {
+        label: "",
+      },
+
       className: "mobility",
       position: { x: 200, y: 60 },
     },
