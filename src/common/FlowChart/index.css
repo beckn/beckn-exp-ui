@@ -101,11 +101,15 @@
 .nodeMobility {
   color: #fff;
   width: max-content;
-  height: 100%;
   position: absolute;
-  top: -50%;
+  top: -23px;
   font-size: 10px;
-  left: -10px;
+  left: -8px;
+  animation-name: moveInleft;
+  animation-duration: 3s;
+}
+.react-flow__node {
+  border-radius: unset !important;
 }
 
 .react-flow__node.Luxecub {
@@ -347,29 +351,17 @@
   width: 0;
   transform: rotate(328deg);
 }
-.mobilitySource {
-  color: #fff;
-  position: absolute;
-  top: 2%;
-  left: 14%;
+.react-flow__edge:last-child {
+  transform: translate(-4px, 12px);
 }
-.whatsappSource {
-  color: #fff;
-  position: absolute;
-  top: 68%;
-  left: 16%;
+.react-flow__edge:first-child {
+  transform: translate(2px, -4px) !important;
 }
-.taxihubSource {
-  color: #fff;
-  position: absolute;
-  top: 1.5%;
-  right: 16%;
+.nodrag.nopan:last-child {
+  margin-top: 20px;
 }
-.luxecabSource {
-  color: #fff;
-  position: absolute;
-  top: 68%;
-  right: 16%;
+.nodrag.nopan:first-child {
+  margin-top: unset !important;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .react-flow {
@@ -442,5 +434,35 @@
 @media screen and (min-width: 1025px) and (max-width: 1600px) {
   .react-flow {
     width: 60% !important;
+  }
+}
+@keyframes moveInleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }
