@@ -160,9 +160,9 @@
   width: 100px;
   margin: 5px auto;
 }
-.vmj-back-btn{
+.vmj-back-btn {
   background: black;
-  color: #AED3F0;
+  color: #aed3f0;
   width: 104px;
   margin: 40px auto;
   padding: 6px;
@@ -175,29 +175,29 @@
   left: 10px;
   font-size: 14px;
 }
-.travelbuddylogo{
+.travelbuddylogo {
   position: absolute;
   top: 9px;
   left: 10%;
 }
-.whatsapplogo{
+.whatsapplogo {
   position: absolute;
   top: 9px;
   left: 10.8%;
   height: 18px;
 }
-.taxilogo{
+.taxilogo {
   position: absolute;
   top: 5px;
-  left: 56.5%;
+  left: 55%;
 }
-.luxecabslogo{
+.luxecabslogo {
   position: absolute;
   top: 9px;
   left: 76.6%;
   width: 2.5%;
 }
-.flow-wrap{
+.flow-wrap {
   position: relative;
   margin: 0 auto;
   width: 1200px;

@@ -130,8 +130,8 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       type: "floating",
       markerEnd: {
         type: MarkerType.Arrow,
-        width: 20,
-        height: 20,
+        width: 16,
+        height: 16,
         color:
           data?.eventSource?.id === ids.taxi ||
           data?.eventSource?.id === ids.luxeCabs ||
@@ -145,9 +145,9 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       style: {
         transform:
           data?.eventMessage?.eventCode === ids.mbgwSentCatalogueBap
-            ? "translate(10px, -10px)"
+            ? "translate(10px, 15px)"
             : " ",
-        strokeWidth: 3,
+        strokeWidth: 2,
         stroke:
           data?.eventSource?.id === ids.taxi ||
           data?.eventSource?.id === ids.luxeCabs ||
@@ -170,8 +170,8 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       type: "floating",
       markerEnd: {
         type: MarkerType.Arrow,
-        width: 20,
-        height: 20,
+        width: 16,
+        height: 16,
         color:
           data1?.eventSource?.id === ids.taxi ||
           data1?.eventSource?.id === ids.luxeCabs ||
@@ -185,9 +185,9 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       style: {
         transform:
           data1?.eventMessage?.eventCode === ids.mbgwSentCatalogueBap
-            ? "translate(10px, 7px)"
+            ? "translate(10px, 15px)"
             : " ",
-        strokeWidth: 3,
+        strokeWidth: 2,
         stroke:
           data1?.eventSource?.id === ids.taxi ||
           data1?.eventSource?.id === ids.luxeCabs ||

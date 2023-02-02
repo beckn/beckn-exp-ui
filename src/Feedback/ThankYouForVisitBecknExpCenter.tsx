@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import GenQRCode from "../utility/GenQRCode";
-// import ErrorModal from "../common/ErrorModal";
-// import { useNavigate } from "react-router-dom";
 import "antd/dist/reset.css";
 import { Button, Typography, Card } from "antd";
 import "./Feedback.css";
