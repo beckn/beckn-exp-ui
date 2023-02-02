@@ -28,7 +28,6 @@ export const EventApiProvider = ({ children }) => {
   };
 
   const updateExpId = async (text) => {
-    console.log("Feedback Text", text);
     await fetch("https://api.experience.becknprotocol.io/v2/xc/experience", {
       method: "PUT",
       headers: {

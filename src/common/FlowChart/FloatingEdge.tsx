@@ -6,7 +6,7 @@ import {
   getSmoothStepPath,
 } from "reactflow";
 import { getEdgeParams } from "./nodeUtils";
-import { ids } from "./nodeUtils";
+import { ids } from "../../utility/utils";
 import "./index.css";
 
 interface floatingEdgeDataModal {
