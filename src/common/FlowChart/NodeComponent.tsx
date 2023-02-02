@@ -2,7 +2,8 @@ import React, { useContext, useState } from "react";
 import ReactFlow, { useNodesState } from "reactflow";
 import "reactflow/dist/style.css";
 import FloatingEdge from "./FloatingEdge";
-import { createNodesAndEdges, ids } from "./nodeUtils";
+import { createNodesAndEdges } from "./nodeUtils";
+import { ids } from "../../utility/utils";
 import "./index.css";
 import EventApiContext from "../../context/EventApiContext";
 import useInterval from "../MobilityCard/useInterval";
@@ -29,7 +30,6 @@ const NodeAsHandleFlow: React.FC = () => {
   const handleOpen = () => {
     setOpen(true);
   };
-  console.log("address", eventsRes);
   const fetchEvent = async () => {
     try {
       const res = await getEvent();
@@ -63,8 +63,6 @@ const NodeAsHandleFlow: React.FC = () => {
   useInterval(() => {
     fetchEvent();
   }, 1000);
-  console.log("events", events);
-  console.log("events1", events1);
 
   const updateNodes = nodes
     .map((node) => {
@@ -73,7 +71,6 @@ const NodeAsHandleFlow: React.FC = () => {
         events?.eventSource?.id === ids.mobility &&
         events?.eventDestination?.id === ids.mobility
       ) {
-        console.log("node", node);
         return {
           ...node,
           data: {
@@ -93,7 +90,6 @@ const NodeAsHandleFlow: React.FC = () => {
         events?.eventSource?.id === ids.whatsappMobility &&
         events?.eventDestination?.id === ids.whatsappMobility
       ) {
-        console.log("node", node);
         return {
           ...node,
           data: {
@@ -113,7 +109,6 @@ const NodeAsHandleFlow: React.FC = () => {
         events?.eventSource?.id === ids.luxeCabs &&
         events?.eventDestination?.id === ids.luxeCabs
       ) {
-        console.log("node", node);
         return {
           ...node,
           data: {
@@ -133,7 +128,6 @@ const NodeAsHandleFlow: React.FC = () => {
         events?.eventSource?.id === ids.taxi &&
         events?.eventDestination?.id === ids.taxi
       ) {
-        console.log("node", node);
         return {
           ...node,
           data: {

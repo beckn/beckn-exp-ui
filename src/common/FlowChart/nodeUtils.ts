@@ -1,18 +1,6 @@
 import { Position, MarkerType } from "reactflow";
 import "./index.css";
-export const ids = {
-  mobility: "mobilityreferencebap.becknprotocol.io",
-  taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
-  gateway: "gateway.becknprotocol.io",
-  whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
-  yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
-  luxeCabs: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
-  searchBroadCast: "mbgw_srch_brdcst",
-  mbthSentCatalogue: "mbth_snt_catalogue",
-  mblcSentCatalogue: "mblc_snt_catalogue",
-  mbgwSentCatalogueBap: "mbgw_sent_ctlg_bap",
-};
-
+import { ids } from "../../utility/utils";
 const getNodeIntersection = (intersectionNode: any, targetNode: any) => {
   const {
     width: intersectionNodeWidth,

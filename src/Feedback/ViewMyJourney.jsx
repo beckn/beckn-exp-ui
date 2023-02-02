@@ -5,19 +5,14 @@ import { SequenceDiagram } from "react-sd";
 import useInterval from "../common/MobilityCard/useInterval";
 import EventApiContext from "../context/EventApiContext";
 import "./Feedback.css";
+import { ids } from "../utility/utils";
 
 const ViewMyJourney = () => {
   const [events, setEvents] = React.useState([]);
   const { getEvent } = useContext(EventApiContext);
 
   const navigate = useNavigate();
-  const ids = {
-    mobility: "mobilityreferencebap.becknprotocol.io",
-    taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
-    gateway: "gateway.becknprotocol.io",
-    whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
-    yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
-  };
+
   const fetchEvent = async () => {
     try {
       const res = await getEvent();
