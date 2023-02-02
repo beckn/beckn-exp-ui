@@ -1,7 +1,7 @@
-import React, { ReactComponentElement, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import Button, { buttonPropModal } from "../Buttons/Button";
-import ColorButton, { colorButtonPropModal } from "../Buttons/ColorButton";
+import Button from "../Buttons/Button";
+import ColorButton from "../Buttons/ColorButton";
 import "./ErrorModal.css";
 
 interface modalPropModal {
@@ -25,7 +25,11 @@ const ErrorModal: React.FC<modalPropModal> = ({
       <div className="padding30">
         <div className="title-text">
           <span>{titleText} </span>
-          <img onClick={() => navigate(0)} src="/assets/cross.svg" />
+          <img
+            onClick={() => navigate(0)}
+            src="/assets/cross.svg"
+            alt="cross"
+          />
         </div>
         <h5 className="subtitle-text">{subTitle}</h5>
         <div className="button">

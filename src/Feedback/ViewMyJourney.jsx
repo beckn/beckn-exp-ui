@@ -2,7 +2,6 @@ import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SequenceDiagram } from "react-sd";
-import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
 import EventApiContext from "../context/EventApiContext";
 import "./Feedback.css";
@@ -19,7 +18,7 @@ const ViewMyJourney = () => {
     whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
     yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
   };
-  const fetchEvent = async() => {
+  const fetchEvent = async () => {
     try {
       const res = await getEvent();
 
@@ -158,16 +157,12 @@ const ViewMyJourney = () => {
       }}
     >
       <div>
-      <div className="sequence">my journey </div>
-      <div className="vmj-back-btn"
-        onClick={() => navigate(-1)}
-      >
-        <img src="/assets/backArrw.png" alt="" /> go back
+        <div className="sequence">my journey </div>
+        <div className="vmj-back-btn" onClick={() => navigate(-1)}>
+          <img src="/assets/backArrw.png" alt="" /> go back
+        </div>
       </div>
-      </div>
-      <div
-        className="flow-wrap"
-      >
+      <div className="flow-wrap">
         <SequenceDiagram
           categories={categories}
           data={data}
@@ -189,17 +184,9 @@ const ViewMyJourney = () => {
             />
           )}
 
-          <img
-            className="taxilogo"
-            src="/assets/TaxiLogo.svg"
-            alt=""
-          />
+          <img className="taxilogo" src="/assets/TaxiLogo.svg" alt="" />
 
-          <img
-            className="luxecabslogo"
-            src="/assets/LuxeCabsLogo.svg"
-            alt=""
-          />
+          <img className="luxecabslogo" src="/assets/LuxeCabsLogo.svg" alt="" />
         </div>
       </div>
     </motion.div>

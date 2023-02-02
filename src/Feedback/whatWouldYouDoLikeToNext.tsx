@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import "antd/dist/reset.css";
-import { Button, Typography } from "antd";
+import { Typography } from "antd";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";

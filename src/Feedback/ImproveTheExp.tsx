@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
-import { Col, Row, Card, Modal } from "antd";
+import { Col, Card, Modal } from "antd";
 import "./Feedback.css";
 
 const ImproveTheExp = () => {
@@ -20,7 +20,7 @@ const ImproveTheExp = () => {
 
   useEffect(() => {
     updateExpId(text);
-  }, [updateExpId]);
+  }, [text, updateExpId]);
   return (
     <motion.div
       initial={{ opacity: 0 }}

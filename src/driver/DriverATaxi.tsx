@@ -3,7 +3,7 @@ import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState, useContext } from "react";
-import axios from "axios";
+
 import useInterval from "../common/MobilityCard/useInterval";
 import { Modal } from "antd";
 import ErrorModal from "../common/ErrorModal/ErrorModal";

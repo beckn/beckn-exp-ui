@@ -35,30 +35,30 @@
 .button {
   display: flex;
   margin-top: 45px;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 10px;
 }
 .beckn-app {
   text-align: left !important;
 }
-.padding30{
+.padding30 {
   padding: 30px;
 }
-.title-text img{
-  height: 25px; 
+.title-text img {
+  height: 25px;
   width: 25px;
   cursor: pointer;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
-.button{
-  margin-top: 24px;
-}
-.modal-container {
-  height: 280px;
-}
+  .button {
+    margin-top: 24px;
+  }
+  .modal-container {
+    height: 280px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .button{
+  .button {
     margin-top: 18px;
   }
 }

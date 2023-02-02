@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Title from "../common/title";
 import CardWithContent from "../common/Cards/cardWithContent";
