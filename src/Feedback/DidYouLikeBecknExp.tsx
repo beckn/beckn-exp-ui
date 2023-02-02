@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
-import { Card, Col, Row, Modal } from "antd";
+import { Card, Col, Modal } from "antd";
 
 const DidYouLikeBecknExp = () => {
   const [open, setOpen] = useState(false);

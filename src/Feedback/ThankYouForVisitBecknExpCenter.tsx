@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import GenQRCode from "../utility/GenQRCode";
 import "antd/dist/reset.css";
-import { Button, Typography, Card } from "antd";
+import { Typography } from "antd";
 import "./Feedback.css";
 
 const ThankYouForVisitBecknExpCenter = () => {

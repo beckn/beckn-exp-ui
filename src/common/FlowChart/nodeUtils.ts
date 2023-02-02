@@ -1,4 +1,3 @@
-import React from "react";
 import { Position, MarkerType } from "reactflow";
 import "./index.css";
 export const ids = {

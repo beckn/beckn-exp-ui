@@ -3,7 +3,7 @@ import QrScanner from "../common/QrScanner/qrScanner";
 import GenQRCode from "../utility/GenQRCode";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import axios from "axios";
+// import axios from "axios";
 import useInterval from "../common/MobilityCard/useInterval";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import EventApiContext from "../context/EventApiContext";
@@ -15,9 +15,6 @@ const ScanQrForTravelBuddy = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
   };
 
   useEffect(() => {

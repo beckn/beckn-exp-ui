@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import ReactFlow, { useNodesState } from "reactflow";
 import "reactflow/dist/style.css";
 import FloatingEdge from "./FloatingEdge";
@@ -22,7 +22,7 @@ const NodeAsHandleFlow: React.FC = () => {
     events,
     events1
   );
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const { getEvent } = useContext(EventApiContext);
   const [experienceCenterId, setExperienceCenterId] = useState<any>("");
   const [open, setOpen] = useState(false);
