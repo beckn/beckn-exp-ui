@@ -44,10 +44,10 @@ const DidYouLikeBecknExp = () => {
                 <div className="yes-button">
                   <Link
                     to="/yourFeedbackIsValubleForUs"
-                    style={{ textDecoration: "none", color: "#000" }}
+                    style={{ textDecoration: "none", color: "#000"}}
                   >
                     yes
-                    <img
+                    <img style={{ marginLeft:"5px" }}
                       src="/assets/tiltArrowblack.svg"
                       width={"10px"}
                       alt="tiltArrowBlack"
@@ -57,11 +57,11 @@ const DidYouLikeBecknExp = () => {
                 <div className="no-button">
                   <Link
                     to="/improveTheExp"
-                    style={{ textDecoration: "none", color: "#fff" }}
+                    style={{ textDecoration: "none", color: "#fff", marginLeft:"5px" }}
                   >
-                    no{" "}
-                    <img
-                      src="/assets/tiltArrow.svg"
+                    no
+                    <img style={{ marginLeft:"5px" }}
+                      src="/assets/tiltArrowWithWhite.svg"
                       width={"10px"}
                       alt="tiltArrow"
                     />

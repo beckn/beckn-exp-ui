@@ -1,3 +1,6 @@
+.react-flow__pane{
+top: 15px !important;
+}
 .floatingedges {
   height: 98vh !important;
 }
@@ -15,8 +18,8 @@
 .react-flow__node.whatsapp {
   background: url("../../../public/assets/whatsapp.svg");
   margin-left: -7px;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,8 +30,8 @@
 }
 .react-flow__node.destWhatsappMobility {
   background: url("../../../public/assets/whatsapp.svg");
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,8 +44,8 @@
 .react-flow__node.activeWhatsappMobility {
   background: url("../../../public/assets/whatsapp.svg");
   margin-left: -7px;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,8 +61,8 @@
 .react-flow__node.mobility {
   background: url("../../../public/assets/myMobility.svg");
   margin-left: -7px;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,8 +74,8 @@
 .react-flow__node.destMobility {
   background: url("../../../public/assets/myMobility.svg");
   margin-left: -7px;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,8 +86,8 @@
 }
 .react-flow__node.activeMobility {
   background: url("../../../public/assets/myMobility.svg");
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,8 +118,8 @@
 .react-flow__node.Luxecub {
   background: url("../../../public/assets/luxe.svg");
   margin-left: 7px;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,9 +130,9 @@
 }
 .react-flow__node.activeLuxeCabs {
   background: url("../../../public/assets/luxe.svg");
-  width: 60px;
+  width: 80px;
   margin-left: 7px;
-  height: 60px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,8 +147,8 @@
 }
 .react-flow__node.destLuxeCabs {
   background: url("../../../public/assets/luxe.svg");
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,8 +161,8 @@
 .react-flow__node.RHP {
   background: url("../../../public/assets/taxiIcon.svg");
   margin-left: 7px;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,8 +173,8 @@
 }
 .react-flow__node.activeTaxi {
   background: url("../../../public/assets/taxiIcon.svg");
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,8 +190,8 @@
 }
 .react-flow__node.destTaxi {
   background: url("../../../public/assets/taxiIcon.svg");
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
