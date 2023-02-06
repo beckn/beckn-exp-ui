@@ -116,13 +116,14 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
         <EdgeLabelRenderer>
           <div
             style={{
-              top: data.eventCode === ids.mbgwSentCatalogueBap ? "-30px" : "",
+              top: data.eventCode === ids.mbgwSentCatalogueBap ? "-30px" : "-15px",
               position: "absolute",
               transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
-              background: "#ffcc00",
-              padding: 4,
-              borderRadius: 5,
-              fontSize: 6,
+              // background: "#ffcc00",
+              color:"#FFFF",
+              // padding: 4,
+              // borderRadius: 5,
+              fontSize: 10,
               fontWeight: 700,
             }}
             className="nodrag nopan"

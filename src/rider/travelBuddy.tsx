@@ -35,10 +35,10 @@ const TravelBuddy = () => {
               style={{ textDecoration: "none", color: "#000", width: "100%" }}
             >
               <CardWithContent
-                mainIconUrlInBlack="/assets/carBlack.svg"
+                mainIconUrlInBlack="/assets/travelBuddyNevIconInBlack.svg"
                 arrowIconInBlackColor="/assets/tiltArrowblack.svg"
                 className="hover_card"
-                mainIconUrl="/assets/car.svg"
+                mainIconUrl="/assets/travelBuddyNevIcon.svg"
                 arrowIconUrl="/assets/tiltArrow.svg"
                 MainTitle={"travel buddy"}
                 subTitle={"book via travel app "}
