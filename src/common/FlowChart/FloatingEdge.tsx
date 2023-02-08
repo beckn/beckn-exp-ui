@@ -220,7 +220,6 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                 : `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
 
               color: "#FFFF",
-
               fontSize: 10,
               fontWeight: 700,
             }}

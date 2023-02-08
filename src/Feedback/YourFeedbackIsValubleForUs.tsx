@@ -31,10 +31,22 @@ const YourFeedbackIsValubleForUs = () => {
     >
       <div className="main-container page-content">
         <div className="header">
-          <div>
-            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
+          <div className="beckn-logo-img">
+            <img style={{height:"50px"}} src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
-          <div className="cur-pointer" onClick={handleOpen}>
+          <div style={{ 
+            cursor: "pointer",
+            background: "black",
+            width:"40px",
+            height: "40px",
+            borderRadius: "26px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            position:"relative",
+            right: "100px",
+            }}
+           onClick={handleOpen}>
             <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
             <Modal open={open} footer={null} closable={false}>
               <ErrorModal
@@ -64,7 +76,13 @@ const YourFeedbackIsValubleForUs = () => {
                 style={{ textDecoration: "none", color: "#000" }}
                 onClick={updateExpId}
               >
-                Submit
+                submit
+                <img
+                  style={{ marginLeft: "5px" }}
+                  src="/assets/tiltArrowblack.svg"
+                  width={"10px"}
+                  alt="tiltArrowBlack"
+                />
               </Link>
             </div>
           </Card>

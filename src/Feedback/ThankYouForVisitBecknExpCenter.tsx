@@ -21,9 +21,20 @@ const ThankYouForVisitBecknExpCenter = () => {
           <div className="becknIcon">
             <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
-          <div
+          <div 
+          style={{ 
+            cursor: "pointer",
+            background: "black",
+            width:"40px",
+            height: "40px",
+            borderRadius: "26px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            right: "100px",
+            marginTop:"30px"
+            }}
             className=" homeIcon"
-            // onClick={() => navigate("/")}
           >
             <a href="/">
               <img src="/assets/homeIcon.png" alt={"HomeIcon"} />

@@ -19,10 +19,22 @@ const DidYouLikeBecknExp = () => {
       >
         <div className="main-container page-content">
           <div className="header">
-            <div>
-              <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
+            <div className="beckn-logo-img">
+              <img style={{height:"52px", cursor: "pointer"}} src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
             </div>
-            <div className="cur-pointer" onClick={handleOpen}>
+            <div style={{ 
+            cursor: "pointer",
+            background: "black",
+            width:"40px",
+            height: "40px",
+            borderRadius: "26px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "relative",
+            right: "100px"
+            }}
+             className="cur-pointer" onClick={handleOpen}>
               <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
               <Modal open={open} footer={null} closable={false}>
                 <ErrorModal
@@ -43,7 +55,7 @@ const DidYouLikeBecknExp = () => {
               <div className="card-buttons">
                 <div className="yes-button">
                   <Link
-                    to="/yourFeedbackIsValubleForUs"
+                    to="/thankYouForVisitBecknExpCenter"
                     style={{ textDecoration: "none", color: "#000"}}
                   >
                     yes
@@ -56,7 +68,7 @@ const DidYouLikeBecknExp = () => {
                 </div>
                 <div className="no-button">
                   <Link
-                    to="/improveTheExp"
+                    to="/yourFeedbackIsValubleForUs"
                     style={{ textDecoration: "none", color: "#fff", marginLeft:"5px" }}
                   >
                     no
