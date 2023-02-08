@@ -27,20 +27,23 @@ const WhatWouldYouDoLikeToNext = () => {
           <div className="becknIcon">
             <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
-          <div style={{ 
-            cursor: "pointer",
-            background: "black",
-            width:"40px",
-            height: "40px",
-            borderRadius: "26px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            right: "100px",
+          <div
+            style={{
+              cursor: "pointer",
+              background: "black",
+              width: "40px",
+              height: "40px",
+              borderRadius: "26px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              right: "100px",
             }}
-           className=" homeIcon" onClick={()=>setOpen(true)}>
+            className=" homeIcon"
+            onClick={() => setOpen(true)}
+          >
             <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
-            <Modal open={open} footer={null} closable={false}>
+            <Modal open={open} footer={null} closable={false} width={800}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={
@@ -67,16 +70,15 @@ const WhatWouldYouDoLikeToNext = () => {
           </Typography>
         </div>
         <div className="btn-feedback">
-            <button className="colorButton mt30"
-            onClick={()=>setFlag(true)}
-             >
-              view my journey
-              <img
-                width={"10px"}
-                src="/assets/tiltArrowblack.svg"
-                alt={"BecknLogoIcon"}
-              />
-            </button>
+          <button className="colorButton mt30" onClick={() => setFlag(true)}>
+            view my journey
+            <img
+              width={"10px"}
+              src="/assets/tiltArrowblack.svg"
+              alt={"BecknLogoIcon"}
+            />
+          </button>
+
           <Link
             to={"/didYouLikeBecknExp"}
             style={{ textDecoration: "none", color: "#000" }}
@@ -92,7 +94,7 @@ const WhatWouldYouDoLikeToNext = () => {
           </Link>
         </div>
       </div>
-      <ViewMyJourney flag={flag}/>
+      <ViewMyJourney flag={flag} />
     </motion.div>
   );
 };

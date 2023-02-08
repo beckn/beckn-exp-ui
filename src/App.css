@@ -53,18 +53,21 @@
   font-size: 45px;
   font-weight: 400;
 }
-.crossIcon{
+.crossIcon {
   width: 40%;
   text-align: right;
   margin-top: 50px;
   position: relative;
-  right:50px;
+  right: 50px;
 }
 .main-div {
   border-bottom: 1px solid red !important;
 }
 .main-div > .point-left {
   border-right: 10px solid red !important;
+}
+.edge {
+  text-align: left !important;
 }
 .edge::before {
   content: "";
@@ -89,7 +92,6 @@
   content: "";
   height: 26px;
   width: 20px;
-
   position: absolute;
   right: -10px;
   top: 10px;
@@ -161,6 +163,9 @@
 .hover_card:hover .image-url-container img:nth-child(2) {
   display: block;
 }
+.edge span {
+  margin-left: 25px;
+}
 @media screen and (min-width: 1366px) and (max-width: 768px) {
   .whatsappSource {
     top: 66%;
@@ -172,7 +177,4 @@
 
 .ant-modal-content {
   background-color: transparent !important;
-}
-.ant-modal {
-  width: 800px !important;
 }
