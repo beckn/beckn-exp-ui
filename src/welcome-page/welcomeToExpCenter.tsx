@@ -15,17 +15,13 @@ const WelcomeToExpCenter = () => {
       style={{ overflow: "hidden" }}
     >
       <div className="myvideo">
-        <video
-          src="/assets/Back.mp4"
-          autoPlay
-          loop
-          muted
-        />
+        <video src="/assets/Back.mp4" autoPlay loop muted />
         <div className="main-container">
           <div className="txtcenter">
             <div className="marginbottom40">
               <img src="/assets/becknLogoIcon.svg" alt={"BecknLogoIcon"} />
             </div>
+
             <div className="weltext">
               <Typography className="welcomePage-content">
                 welcome to the beckn experience centre
@@ -34,7 +30,11 @@ const WelcomeToExpCenter = () => {
             <div className="margintop40">
               <Link
                 to="/VisualizeAction"
-                style={{ textDecoration: "none", color: "#000", cursor: "default" }}
+                style={{
+                  textDecoration: "none",
+                  color: "#000",
+                  cursor: "default",
+                }}
               >
                 <button className="begin-journey">
                   <span> begin your journey</span>

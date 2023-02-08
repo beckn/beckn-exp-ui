@@ -192,23 +192,23 @@
 }
 .travelbuddylogo {
   position: absolute;
-  top: 9px;
+  top: 129px;
   left: 10%;
 }
 .whatsapplogo {
   position: absolute;
-  top: 9px;
+  top: 129px;
   left: 10.8%;
   height: 18px;
 }
 .taxilogo {
   position: absolute;
-  top: 5px;
+  top: 125px;
   left: 55%;
 }
 .luxecabslogo {
   position: absolute;
-  top: 9px;
+  top: 129px;
   left: 76.6%;
   width: 2.5%;
 }
@@ -221,6 +221,16 @@
   height: 25px;
   width: 25px;
   cursor: pointer;
+}
+.sequencial-flow {
+  position: fixed;
+  width: 100%;
+  height: 120px;
+  z-index: 9999;
+  background: black;
+}
+.cuvAob {
+  padding-top: 120px;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .homeIcon {
