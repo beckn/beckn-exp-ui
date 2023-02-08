@@ -131,8 +131,12 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       },
       style: {
         transform:
-          data?.eventMessage?.eventCode === ids.mbgwSentCatalogueBap
-            ? "translate(10px, 15px)"
+          data1?.eventSource?.id === ids.gateway &&
+          data1?.eventDestination?.id === ids.mobility
+            ? "translate(20px, -7px)"
+            : data1?.eventSource?.id === ids.gateway &&
+              data1?.eventDestination?.id === ids.whatsappMobility
+            ? "translate(41px, 19px)"
             : " ",
         strokeWidth: 2,
         stroke:
@@ -171,8 +175,12 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       },
       style: {
         transform:
-          data1?.eventMessage?.eventCode === ids.mbgwSentCatalogueBap
-            ? "translate(10px, 15px)"
+          data1?.eventSource?.id === ids.gateway &&
+          data1?.eventDestination?.id === ids.mobility
+            ? "translate(4px, 16px)"
+            : data1?.eventSource?.id === ids.gateway &&
+              data1?.eventDestination?.id === ids.whatsappMobility
+            ? "translate(20px, -4px)"
             : " ",
         strokeWidth: 2,
         stroke:

@@ -4,6 +4,7 @@ import {
   getBezierPath,
   EdgeLabelRenderer,
   getSmoothStepPath,
+  getStraightPath,
 } from "reactflow";
 import { getEdgeParams } from "./nodeUtils";
 import { ids } from "../../utility/utils";
@@ -41,7 +42,26 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
     sourceNode,
     targetNode
   );
-
+  const isSourceMobilityandDestinationGateway =
+    source === ids.mobility && target === ids.gateway;
+  const isSourceGatewayandDestinationTaxi =
+    source === ids.gateway && target === ids.taxi;
+  const isSourceGatewayandDestinationLuxeCabs =
+    source === ids.gateway && target === ids.luxeCabs;
+  const isSourceTaxiandDestinationGateway =
+    source === ids.taxi && target === ids.gateway;
+  const isSourceLuxeCabsandDestinationGateway =
+    source === ids.luxeCabs && target === ids.gateway;
+  const isSourceGatewayandDestinationMobility =
+    source === ids.gateway && target === ids.mobility;
+  const isSourceMobilityandDestinationTaxi =
+    source === ids.mobility && target === ids.taxi;
+  const isSourceTaxiandDestinationMobility =
+    source === ids.taxi && ids.mobility;
+  const isSourceWhatsappandDestinationGateway =
+    source === ids.whatsappMobility && target === ids.gateway;
+  const isSourceGatewayandDestinationWhatsapp =
+    source === ids.gateway && target === ids.whatsappMobility;
   if (
     (source === ids.whatsappMobility && target === ids.taxi) ||
     (source === ids.taxi && target === ids.whatsappMobility) ||
@@ -58,6 +78,7 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
       centerX: (sx + tx) / 2.5,
       centerY: (sy + ty) / 2.5,
     });
+
     return (
       <>
         <path
@@ -74,10 +95,8 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
               top: data.eventCode === ids.mbgwSentCatalogueBap ? "-30px" : "",
               position: "absolute",
               transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
-              background: "#ffcc00",
-              padding: 4,
-              borderRadius: 5,
-              fontSize: 6,
+              color: "#fff",
+              fontSize: 10,
               fontWeight: 700,
             }}
             className="nodrag nopan"
@@ -95,11 +114,11 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
   ) {
     return null;
   } else {
-    const [edgePath, labelX, labelY] = getBezierPath({
+    const [edgePath, labelX, labelY] = getStraightPath({
       sourceX: sx,
       sourceY: sy,
-      sourcePosition: sourcePos,
-      targetPosition: targetPos,
+      // sourcePosition: sourcePos,
+      // targetPosition: targetPos,
       targetX: tx,
       targetY: ty,
     });
@@ -108,7 +127,29 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
         <path
           id={id}
           className="react-flow__edge-path"
-          d={edgePath}
+          d={
+            isSourceGatewayandDestinationLuxeCabs
+              ? "M  480 230 L 647 340"
+              : isSourceGatewayandDestinationTaxi
+              ? "M 480 190 L 651 110"
+              : isSourceMobilityandDestinationGateway
+              ? "M 290 122.609 L 410 198.696"
+              : isSourceTaxiandDestinationGateway
+              ? "M 630 110 L 490 190"
+              : isSourceLuxeCabsandDestinationGateway
+              ? "M 630 330 L 480 240"
+              : isSourceGatewayandDestinationMobility
+              ? "M 400 210 L 280 120"
+              : isSourceMobilityandDestinationTaxi
+              ? "M 295 100 L 640 100"
+              : isSourceTaxiandDestinationMobility
+              ? "M 630 100 L 300 100"
+              : isSourceWhatsappandDestinationGateway
+              ? "M 290 340 L 430 240"
+              : isSourceGatewayandDestinationWhatsapp
+              ? "M 400 225 L 270 330"
+              : edgePath
+          }
           markerEnd={markerEnd}
           style={style}
         />
@@ -116,18 +157,85 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
         <EdgeLabelRenderer>
           <div
             style={{
-              top: data.eventCode === ids.mbgwSentCatalogueBap ? "-30px" : "-15px",
+              top:
+                data.eventCode === ids.mbgwSentCatalogueBap
+                  ? "29px"
+                  : isSourceGatewayandDestinationTaxi
+                  ? "-10px"
+                  : isSourceGatewayandDestinationLuxeCabs
+                  ? "-25px"
+                  : isSourceTaxiandDestinationGateway
+                  ? "-44px"
+                  : isSourceLuxeCabsandDestinationGateway
+                  ? "23px"
+                  : isSourceMobilityandDestinationTaxi
+                  ? "-13px"
+                  : isSourceTaxiandDestinationMobility
+                  ? "-13px"
+                  : isSourceWhatsappandDestinationGateway
+                  ? "28px"
+                  : isSourceGatewayandDestinationWhatsapp
+                  ? "-15px"
+                  : isSourceMobilityandDestinationGateway
+                  ? "-23px"
+                  : "-3px",
+              left: isSourceMobilityandDestinationGateway
+                ? "-18px"
+                : isSourceGatewayandDestinationTaxi
+                ? "-35px"
+                : isSourceGatewayandDestinationLuxeCabs
+                ? "-28px"
+                : isSourceTaxiandDestinationGateway
+                ? "27px"
+                : isSourceLuxeCabsandDestinationGateway
+                ? "40px"
+                : isSourceGatewayandDestinationMobility
+                ? "24px"
+                : isSourceMobilityandDestinationTaxi
+                ? "-132px"
+                : isSourceTaxiandDestinationMobility
+                ? "132px"
+                : isSourceWhatsappandDestinationGateway
+                ? "-33px"
+                : isSourceGatewayandDestinationWhatsapp
+                ? "2px"
+                : "",
               position: "absolute",
-              transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
-              // background: "#ffcc00",
-              color:"#FFFF",
-              // padding: 4,
-              // borderRadius: 5,
+              transform: isSourceMobilityandDestinationGateway
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(33deg)`
+                : isSourceGatewayandDestinationTaxi
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px)rotate(-25deg)`
+                : isSourceGatewayandDestinationLuxeCabs
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(33deg)`
+                : isSourceTaxiandDestinationGateway
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(-29deg)`
+                : isSourceLuxeCabsandDestinationGateway
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(32deg)`
+                : isSourceGatewayandDestinationMobility
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(38deg)`
+                : isSourceWhatsappandDestinationGateway
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(-35deg)`
+                : isSourceGatewayandDestinationWhatsapp
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(-39deg)`
+                : `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
+
+              color: "#FFFF",
+
               fontSize: 10,
               fontWeight: 700,
             }}
             className="nodrag nopan"
           >
+            {/* <div
+              style={{
+                width: "10px",
+                height: "10px",
+                backgroundColor: "#fff",
+                position: "absolute",
+                top: "14px",
+                left: "4px",
+              }}
+            ></div> */}
             {data.text}
           </div>
         </EdgeLabelRenderer>
