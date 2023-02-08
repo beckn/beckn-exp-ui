@@ -15,9 +15,20 @@ const TravelBuddy = () => {
       <div className="main-container page-content">
         <div className="header">
           <div>
-            <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
+            <img style={{height:"52px", width:"200px", marginTop:"20px", cursor: "pointer"}} src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
-          <Link style={{ cursor: "pointer" }} to={"/"}>
+          <Link style={{ 
+            cursor: "pointer",
+            background: "black",
+            width:"40px",
+            height: "40px",
+            borderRadius: "26px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            position:"relative",
+            right: "100px",
+            }} to={"/"}>
             <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
           </Link>
         </div>

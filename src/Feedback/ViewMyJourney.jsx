@@ -6,8 +6,10 @@ import useInterval from "../common/MobilityCard/useInterval";
 import EventApiContext from "../context/EventApiContext";
 import "./Feedback.css";
 import { ids } from "../utility/utils";
+import { Modal } from "antd";
 
-const ViewMyJourney = () => {
+const ViewMyJourney = (props) => {
+  console.log("FLAG", props)
   const [events, setEvents] = React.useState([]);
   const { getEvent } = useContext(EventApiContext);
 
@@ -56,12 +58,7 @@ const ViewMyJourney = () => {
       return "Whatsapp";
     }
   });
-  // const imageCategories = [
-  //   TravelbuddyLogo,
-  //   "",
-  //   TravelbuddyLogo,
-  //   TravelbuddyLogo,
-  // ];
+
   const updateEvents = events.filter((event) => {
     return event.event.eventSource.id !== event.event.eventDestination.id;
   });
@@ -140,21 +137,35 @@ const ViewMyJourney = () => {
   elements.map((element) => {
     element.parentNode.classList.add("main-div");
   });
+  
   return (
+    <Modal 
+          style={{height:"50em", maxHeight:"auto", width:"1000px"}}
+        centered
+        open={props.flag}
+        // onOk={() => setOpen(false)}
+        // onCancel={() => setFlag(false)}
+        width={1000}
+        footer={null} closable={false}
+        
+      >
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
+     
       style={{
         background: "#000",
         minHeight: "100vh",
         height: "fit-content",
+        with:"fit-content",
+        minWidth:"1100px"
       }}
     >
-      <div>
+      <div style={{display:"flex", justifyContent:"space-around"}}>
         <div className="sequence">my journey </div>
-        <div className="vmj-back-btn" onClick={() => navigate(-1)}>
-          <img src="/assets/backArrw.png" alt="" /> go back
+        <div className="crossIcon">
+          <img src="/assets/crossIcon.svg" alt="" />
         </div>
       </div>
       <div className="flow-wrap">
@@ -185,6 +196,7 @@ const ViewMyJourney = () => {
         </div>
       </div>
     </motion.div>
+    </Modal>
   );
 };
 

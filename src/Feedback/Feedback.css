@@ -31,11 +31,11 @@
   margin-left: 4px;
 }
 .colorButtonSec img {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .card-text {
   font-weight: 275;
-  font-size: 28px;
+  font-size: 36px;
   padding: 47px 45px;
   color: #fff;
   resize: none;
@@ -44,7 +44,6 @@
 .card-buttons {
   width: 100%;
   align-items: center;
-  margin-top: 30px;
 }
 .yes-button {
   padding: 8px 20px;
@@ -59,12 +58,12 @@
   background: #000;
   color: #fff;
   border-radius: 22px;
-  width: 100px;
+  width: 100px; 
   margin: 20px auto;
 }
 .feedbacktext {
   font-size: 60px;
-  color: white;
+  color: #FFFF;
 }
 
 .colorButtonSec {
@@ -79,8 +78,20 @@
 }
 
 .becknIcon {
-  margin-bottom: 70px;
-  margin-top: 70px;
+  width: 300px;
+  height: 112px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.becknIcon img{
+  background-color: black;
+  padding:12px;
+}
+.beckn-logo-img{
+  margin-left: 156.500px;
+  background-color: black;
+  margin-top: 10px;
+  padding: 15px;
 }
 
 .homeIcon {
@@ -155,11 +166,12 @@
   color: #fff;
 }
 .submit-btn {
-  padding: 8px 20px;
-  background: #acd1f0;
-  border-radius: 12px;
-  width: 100px;
-  margin: 5px auto;
+  padding: 8px 18px;
+    background: #ACD1F0;
+    border-radius: 30px;
+    width: 100px;
+    margin: 22px auto;
+    font-size: 14px;
 }
 .vmj-back-btn {
   background: black;
@@ -274,7 +286,7 @@
     width: 20%;
   }
   .card-text {
-    font-size: 18px;
+    font-size: 22px;
     color: #fff;
     resize: none;
   }
@@ -296,6 +308,10 @@
   }
   .submit-btn {
     margin-bottom: 25px;
+    font-size: 13px;
+  }
+  .beckn-logo-img{
+    margin-left: 37.500px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -337,6 +353,10 @@
   }
   .submit-btn {
     margin-bottom: 25px;
+    font-size: 13px;
+  }
+  .beckn-logo-img{
+    margin-left: 38.406px;
   }
   .foripad {
     font-size: 35px;
@@ -345,6 +365,7 @@
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .feedbacktext {
     line-height: 80px;
+    font-size: 50px;
   }
   .thanksCardText {
     font-size: 45px;
@@ -366,4 +387,10 @@
   .box-container {
     width: 80%;
   }
+}
+
+/* ................................View-my-journey.......................... */
+.ant-modal-content{
+  box-shadow: none !important;
+  padding: 0 !important;
 }

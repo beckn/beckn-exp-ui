@@ -1,18 +1,20 @@
-import { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "antd/dist/reset.css";
 import { Typography } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import ErrorModal from "../common/ErrorModal/ErrorModal";
 import "./Feedback.css";
 import { Modal } from "antd";
+import { SequenceDiagram } from "react-sd";
+import useInterval from "../common/MobilityCard/useInterval";
+import EventApiContext from "../context/EventApiContext";
+import { ids } from "../utility/utils";
+import ViewMyJourney from "./ViewMyJourney";
 
 const WhatWouldYouDoLikeToNext = () => {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
+  const [flag, setFlag] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -25,7 +27,18 @@ const WhatWouldYouDoLikeToNext = () => {
           <div className="becknIcon">
             <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
-          <div className=" homeIcon" onClick={handleOpen}>
+          <div style={{ 
+            cursor: "pointer",
+            background: "black",
+            width:"40px",
+            height: "40px",
+            borderRadius: "26px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            right: "100px",
+            }}
+           className=" homeIcon" onClick={()=>setOpen(true)}>
             <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
             <Modal open={open} footer={null} closable={false}>
               <ErrorModal
@@ -55,11 +68,11 @@ const WhatWouldYouDoLikeToNext = () => {
         </div>
         <div className="btn-feedback">
           <Link
-            to={"/viewMyJourney"}
+            // to={"/viewMyJourney"}
             style={{ textDecoration: "none", color: "#000" }}
           >
-            <button className="colorButton mt30">
-              view my journey{" "}
+            <button className="colorButton mt30"onClick={()=>setFlag(true)} >
+              view my journey
               <img
                 width={"10px"}
                 src="/assets/tiltArrowblack.svg"
@@ -76,13 +89,14 @@ const WhatWouldYouDoLikeToNext = () => {
               no, i'm done
               <img
                 width={"10px"}
-                src="/assets/tiltArrow.svg"
+                src="/assets/tiltArrowWithWhite.svg"
                 alt={"BecknLogoIcon"}
               />
             </button>
           </Link>
         </div>
       </div>
+      <ViewMyJourney flag={flag}/>
     </motion.div>
   );
 };
