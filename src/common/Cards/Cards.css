@@ -12,12 +12,12 @@
 }
 .card-img {
   margin: 0 auto;
-  width: 80%;
+  width: 85%;
   display: flex;
   align-items: center;
 }
 .card-title {
-  padding-left: 40px;
+  padding-left: 20px;
   text-align: left;
 }
 .main-title {
