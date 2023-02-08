@@ -67,11 +67,9 @@ const WhatWouldYouDoLikeToNext = () => {
           </Typography>
         </div>
         <div className="btn-feedback">
-          <Link
-            // to={"/viewMyJourney"}
-            style={{ textDecoration: "none", color: "#000" }}
-          >
-            <button className="colorButton mt30"onClick={()=>setFlag(true)} >
+            <button className="colorButton mt30"
+            onClick={()=>setFlag(true)}
+             >
               view my journey
               <img
                 width={"10px"}
@@ -79,8 +77,6 @@ const WhatWouldYouDoLikeToNext = () => {
                 alt={"BecknLogoIcon"}
               />
             </button>
-          </Link>
-
           <Link
             to={"/didYouLikeBecknExp"}
             style={{ textDecoration: "none", color: "#000" }}
