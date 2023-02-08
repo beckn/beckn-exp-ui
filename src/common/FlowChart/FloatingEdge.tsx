@@ -62,21 +62,32 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
     source === ids.whatsappMobility && target === ids.gateway;
   const isSourceGatewayandDestinationWhatsapp =
     source === ids.gateway && target === ids.whatsappMobility;
+  const isSourceMobilityandDestinationLuxecabs =
+    source === ids.mobility && target === ids.luxeCabs;
+  const isSourceLuxeCabsandDestinationMobility =
+    source === ids.luxeCabs && target === ids.mobility;
+  const isSourceWhatsappandDestinationLuxecabs =
+    source === ids.whatsappMobility && target === ids.luxeCabs;
+  const isSourceLuxecabsandDestinationWhatsapp =
+    source === ids.luxeCabs && target === ids.whatsappMobility;
+  const isSourceWhatsappandDestinationTaxi =
+    source === ids.whatsappMobility && target === ids.taxi;
+  const isSourceTaxiandDestinationWhatsapp =
+    source === ids.taxi && target === ids.whatsappMobility;
+
   if (
     (source === ids.whatsappMobility && target === ids.taxi) ||
     (source === ids.taxi && target === ids.whatsappMobility) ||
     (source === ids.mobility && target === ids.luxeCabs) ||
     (source === ids.luxeCabs && target === ids.mobility)
   ) {
-    const [edgePath, labelX, labelY] = getSmoothStepPath({
+    const [edgePath, labelX, labelY] = getBezierPath({
       sourceX: sx,
       sourceY: sy,
       sourcePosition: sourcePos,
       targetPosition: targetPos,
       targetX: tx,
       targetY: ty,
-      centerX: (sx + tx) / 2.5,
-      centerY: (sy + ty) / 2.5,
     });
 
     return (
@@ -84,7 +95,17 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
         <path
           id={id}
           className="react-flow__edge-path"
-          d={edgePath}
+          d={
+            isSourceMobilityandDestinationLuxecabs
+              ? "M 300 110 C 555 90 655 260 670 290"
+              : isSourceLuxeCabsandDestinationMobility
+              ? "M 640 320 C 645 370 655 150 270 130"
+              : isSourceWhatsappandDestinationTaxi
+              ? "M 300 290 C 300 310 295 120 670 90"
+              : isSourceTaxiandDestinationWhatsapp
+              ? "M 680 90 C 420 90 310 200 310 290"
+              : edgePath
+          }
           markerEnd={markerEnd}
           style={style}
         />
@@ -92,9 +113,35 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
         <EdgeLabelRenderer>
           <div
             style={{
-              top: data.eventCode === ids.mbgwSentCatalogueBap ? "-30px" : "",
+              top:
+                data.eventCode === ids.mbgwSentCatalogueBap
+                  ? "-30px"
+                  : isSourceMobilityandDestinationLuxecabs
+                  ? "-130px"
+                  : isSourceLuxeCabsandDestinationMobility
+                  ? "-34px"
+                  : isSourceWhatsappandDestinationTaxi
+                  ? "-74px"
+                  : isSourceTaxiandDestinationWhatsapp
+                  ? "-97px"
+                  : "",
+              left: isSourceMobilityandDestinationLuxecabs
+                ? "-113px"
+                : isSourceLuxeCabsandDestinationMobility
+                ? "151px"
+                : isSourceWhatsappandDestinationTaxi
+                ? "-91px"
+                : isSourceTaxiandDestinationWhatsapp
+                ? "-71px"
+                : "",
               position: "absolute",
-              transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
+              transform: isSourceLuxeCabsandDestinationMobility
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(45deg)`
+                : isSourceWhatsappandDestinationTaxi
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(-30deg)`
+                : isSourceTaxiandDestinationWhatsapp
+                ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(-25deg)`
+                : `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
               color: "#fff",
               fontSize: 10,
               fontWeight: 700,
@@ -148,6 +195,10 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
               ? "M 290 340 L 430 240"
               : isSourceGatewayandDestinationWhatsapp
               ? "M 400 225 L 270 330"
+              : isSourceWhatsappandDestinationLuxecabs
+              ? "M 300 340 L 640 340"
+              : isSourceLuxecabsandDestinationWhatsapp
+              ? "M 630 340 L 300 340"
               : edgePath
           }
           markerEnd={markerEnd}
@@ -178,6 +229,10 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                   ? "-15px"
                   : isSourceMobilityandDestinationGateway
                   ? "-23px"
+                  : isSourceWhatsappandDestinationLuxecabs
+                  ? "-13px"
+                  : isSourceLuxecabsandDestinationWhatsapp
+                  ? "-13px"
                   : "-3px",
               left: isSourceMobilityandDestinationGateway
                 ? "-18px"
@@ -199,6 +254,10 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                 ? "-33px"
                 : isSourceGatewayandDestinationWhatsapp
                 ? "2px"
+                : isSourceWhatsappandDestinationLuxecabs
+                ? "-100px"
+                : isSourceLuxecabsandDestinationWhatsapp
+                ? "100px"
                 : "",
               position: "absolute",
               transform: isSourceMobilityandDestinationGateway
