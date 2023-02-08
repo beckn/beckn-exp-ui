@@ -18,25 +18,31 @@ const DidYouLikeBecknExp = () => {
         style={{ overflow: "hidden" }}
       >
         <div className="main-container page-content">
-          <div className="header">
+          <div className="header feedbackHeader">
             <div className="beckn-logo-img">
-              <img style={{height:"52px", cursor: "pointer"}} src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
+              <img
+                style={{ height: "52px", cursor: "pointer" }}
+                src="/assets/becklogoSmall.svg"
+                alt={"BecknLogoIcon"}
+              />
             </div>
-            <div style={{ 
-            cursor: "pointer",
-            background: "black",
-            width:"40px",
-            height: "40px",
-            borderRadius: "26px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative",
-            right: "100px"
-            }}
-             className="cur-pointer" onClick={handleOpen}>
+            <div
+              style={{
+                cursor: "pointer",
+                background: "black",
+                width: "40px",
+                height: "40px",
+                borderRadius: "26px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "relative",
+              }}
+              className="cur-pointer"
+              onClick={handleOpen}
+            >
               <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
-              <Modal open={open} footer={null} closable={false}>
+              <Modal open={open} footer={null} closable={false} width={800}>
                 <ErrorModal
                   titleText={"Are you sure?"}
                   subTitle={
@@ -56,10 +62,11 @@ const DidYouLikeBecknExp = () => {
                 <div className="yes-button">
                   <Link
                     to="/thankYouForVisitBecknExpCenter"
-                    style={{ textDecoration: "none", color: "#000"}}
+                    style={{ textDecoration: "none", color: "#000" }}
                   >
                     yes
-                    <img style={{ marginLeft:"5px" }}
+                    <img
+                      style={{ marginLeft: "5px" }}
                       src="/assets/tiltArrowblack.svg"
                       width={"10px"}
                       alt="tiltArrowBlack"
@@ -69,10 +76,15 @@ const DidYouLikeBecknExp = () => {
                 <div className="no-button">
                   <Link
                     to="/yourFeedbackIsValubleForUs"
-                    style={{ textDecoration: "none", color: "#fff", marginLeft:"5px" }}
+                    style={{
+                      textDecoration: "none",
+                      color: "#fff",
+                      marginLeft: "5px",
+                    }}
                   >
                     no
-                    <img style={{ marginLeft:"5px" }}
+                    <img
+                      style={{ marginLeft: "5px" }}
                       src="/assets/tiltArrowWithWhite.svg"
                       width={"10px"}
                       alt="tiltArrow"

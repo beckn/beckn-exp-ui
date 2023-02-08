@@ -21,23 +21,23 @@ const ThankYouForVisitBecknExpCenter = () => {
           <div className="becknIcon">
             <img src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
           </div>
-          <div 
-          style={{ 
-            cursor: "pointer",
-            background: "black",
-            width:"40px",
-            height: "40px",
-            borderRadius: "26px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            right: "100px",
-            marginTop:"30px"
+          <div
+            style={{
+              cursor: "pointer",
+              borderRadius: "26px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              right: "100px",
             }}
             className=" homeIcon"
           >
             <a href="/">
-              <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
+              <img
+                id="lastFeedback"
+                src="/assets/homeIcon.png"
+                alt={"HomeIcon"}
+              />
             </a>
           </div>
         </div>

@@ -50,22 +50,35 @@ const useWhatsapp = () => {
       <div className="main-container page-content luxecab">
         <div className="header">
           <div>
-            <img style={{height:"52px", width:"200px", marginTop:"20px", cursor: "pointer"}} src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
+            <img
+              style={{
+                height: "52px",
+                width: "200px",
+                marginTop: "20px",
+                cursor: "pointer",
+              }}
+              src="/assets/becklogoSmall.svg"
+              alt={"BecknLogoIcon"}
+            />
           </div>
-          <div style={{ 
-            cursor: "pointer",
-            background: "black",
-            width:"40px",
-            height: "40px",
-            borderRadius: "26px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position:"relative",
-            right: "100px",
-            }} className="home-container" onClick={handleOpen}>
-            <img  src="/assets/homeIcon.png" alt={"HomeIcon"} />
-            <Modal open={open} footer={null} closable={false}>
+          <div
+            style={{
+              cursor: "pointer",
+              background: "black",
+              width: "40px",
+              height: "40px",
+              borderRadius: "26px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+              right: "100px",
+            }}
+            className="home-container"
+            onClick={handleOpen}
+          >
+            <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
+            <Modal open={open} footer={null} closable={false} width={800}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={

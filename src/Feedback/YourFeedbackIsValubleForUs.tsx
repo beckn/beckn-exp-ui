@@ -30,25 +30,32 @@ const YourFeedbackIsValubleForUs = () => {
       style={{ overflow: "hidden" }}
     >
       <div className="main-container page-content">
-        <div className="header">
+        <div className="header feedbackHeader">
           <div className="beckn-logo-img">
-            <img style={{height:"50px"}} src="/assets/becklogoSmall.svg" alt={"BecknLogoIcon"} />
+            <img
+              style={{ height: "50px" }}
+              src="/assets/becklogoSmall.svg"
+              alt={"BecknLogoIcon"}
+            />
           </div>
-          <div style={{ 
-            cursor: "pointer",
-            background: "black",
-            width:"40px",
-            height: "40px",
-            borderRadius: "26px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position:"relative",
-            right: "100px",
+          <div
+            className="feedbCKBTn"
+            style={{
+              cursor: "pointer",
+              background: "black",
+              width: "40px",
+              height: "40px",
+              borderRadius: "26px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+              right: "100px",
             }}
-           onClick={handleOpen}>
+            onClick={handleOpen}
+          >
             <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
-            <Modal open={open} footer={null} closable={false}>
+            <Modal open={open} footer={null} closable={false} width={800}>
               <ErrorModal
                 titleText={"Are you sure?"}
                 subTitle={

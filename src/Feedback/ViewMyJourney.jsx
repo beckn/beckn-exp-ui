@@ -9,7 +9,6 @@ import { ids } from "../utility/utils";
 import { Modal } from "antd";
 
 const ViewMyJourney = (props) => {
-  console.log("FLAG", props)
   const [events, setEvents] = React.useState([]);
   const { getEvent } = useContext(EventApiContext);
 
@@ -63,7 +62,7 @@ const ViewMyJourney = (props) => {
     return event.event.eventSource.id !== event.event.eventDestination.id;
   });
   const data = updateEvents
-    .sort((a, b) => a.eventId - b.eventId)
+    ?.sort((a, b) => a.eventId - b.eventId)
     .map((event) => {
       const sourceId = () => {
         if (event.event.eventSource.id === uniqueSourceId[0]) {
@@ -137,65 +136,68 @@ const ViewMyJourney = (props) => {
   elements.map((element) => {
     element.parentNode.classList.add("main-div");
   });
-  
+
   return (
-    <Modal 
-          style={{height:"50em", maxHeight:"auto", width:"1000px"}}
-        centered
-        open={props.flag}
-        // onOk={() => setOpen(false)}
-        // onCancel={() => setFlag(false)}
-        width={1000}
-        footer={null} closable={false}
-        
-      >
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
-     
-      style={{
-        background: "#000",
-        minHeight: "100vh",
-        height: "fit-content",
-        with:"fit-content",
-        minWidth:"1100px"
-      }}
+    <Modal
+      style={{ maxHeight: "auto" }}
+      centered
+      open={props.flag}
+      width={"100%"}
+      footer={null}
+      closable={false}
     >
-      <div style={{display:"flex", justifyContent:"space-around"}}>
-        <div className="sequence">my journey </div>
-        <div className="crossIcon">
-          <img src="/assets/crossIcon.svg" alt="" />
-        </div>
-      </div>
-      <div className="flow-wrap">
-        <SequenceDiagram
-          categories={categories}
-          data={data}
-          style={{ ...options, ...customStyle }}
-        />
-        <div>
-          {uniqueSourceId[0] === ids.mobility && (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        style={{
+          background: "#000",
+          minHeight: "100vh",
+          height: "fit-content",
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-around" }}>
+          <div className="sequence">sequential flow </div>
+          <div className="crossIcon">
             <img
-              className="travelbuddylogo"
-              src="/assets/TravelbuddyLogo.svg"
+              onClick={() => navigate(0)}
+              src="/assets/crossIcon.svg"
               alt=""
             />
-          )}
-          {uniqueSourceId[0] === ids.whatsappMobility && (
+          </div>
+        </div>
+        <div className="flow-wrap">
+          <SequenceDiagram
+            categories={categories}
+            data={data}
+            style={{ ...options, ...customStyle }}
+          />
+          <div>
+            {uniqueSourceId[0] === ids.mobility && (
+              <img
+                className="travelbuddylogo"
+                src="/assets/TravelbuddyLogo.svg"
+                alt=""
+              />
+            )}
+            {uniqueSourceId[0] === ids.whatsappMobility && (
+              <img
+                className="whatsapplogo"
+                src="/assets/whatsappLogo.png"
+                alt=""
+              />
+            )}
+
+            <img className="taxilogo" src="/assets/TaxiLogo.svg" alt="" />
+
             <img
-              className="whatsapplogo"
-              src="/assets/whatsappLogo.png"
+              className="luxecabslogo"
+              src="/assets/LuxeCabsLogo.svg"
               alt=""
             />
-          )}
-
-          <img className="taxilogo" src="/assets/TaxiLogo.svg" alt="" />
-
-          <img className="luxecabslogo" src="/assets/LuxeCabsLogo.svg" alt="" />
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
     </Modal>
   );
 };

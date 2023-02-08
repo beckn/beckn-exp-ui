@@ -39,7 +39,7 @@
   align-items: center;
   margin: 0 auto;
   cursor: pointer;
-  height: 76px;
+  height: 68px;
   font-weight: 400;
   width: 330px;
 }
@@ -123,18 +123,33 @@
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .main-container img {
-    width: 50%;
+    width: 60% !important;
+  }
+  .main-container .marginbottom40 img {
+    width: unset !important;
+  }
+  .becknIcon > img {
+    margin: 0 auto;
+    display: flex;
+  }
+  .main-container a img {
+    width: 50% !important;
   }
   .welcomePage-content {
     font-size: 34px;
   }
   .begin-journey {
     font-size: 16px;
-    padding: 8px 20px 8px 20px;
+    padding: 18px 20px 18px 20px;
     width: 220px;
+    height: unset;
   }
-  .begin-journey img {
-    width: 10%;
+  .header a {
+    right: unset !important;
+  }
+
+  .main-container .begin-journey img {
+    width: 10% !important;
   }
   .page-content-title {
     font-size: 30px;
@@ -161,8 +176,15 @@
     height: 31%;
     width: 94%;
   }
+  .home-container {
+    right: unset !important;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header a {
+    right: unset !important;
+  }
+
   .welcomePage-content {
     font-size: 50px;
   }
@@ -190,5 +212,14 @@
   .iframeVideoBeck {
     height: 40%;
     width: 92%;
+  }
+  .home-container {
+    right: unset !important;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1400px) {
+  .page-content-title {
+    font-size: 50px;
+    line-height: unset;
   }
 }
