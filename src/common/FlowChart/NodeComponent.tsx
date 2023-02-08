@@ -63,7 +63,7 @@ const NodeAsHandleFlow: React.FC = () => {
 
   useInterval(() => {
     fetchEvent();
-  }, 1000);
+  }, 4000);
   console.log(events, "events");
   console.log(events1, "events1");
   console.log(eventsRes, "eventsRes");
