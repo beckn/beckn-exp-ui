@@ -131,12 +131,21 @@ export const createNodesAndEdges = (data: any, data1: any) => {
       },
       style: {
         transform:
-          data1?.eventSource?.id === ids.gateway &&
-          data1?.eventDestination?.id === ids.mobility
+          data?.eventSource?.id === ids.gateway &&
+          data?.eventDestination?.id === ids.mobility
             ? "translate(20px, -7px)"
-            : data1?.eventSource?.id === ids.gateway &&
-              data1?.eventDestination?.id === ids.whatsappMobility
+            : data?.eventSource?.id === ids.gateway &&
+              data?.eventDestination?.id === ids.whatsappMobility
             ? "translate(41px, 19px)"
+            : data?.eventSource?.id === ids.luxeCabs &&
+              data?.eventDestination?.id === ids.mobility
+            ? "translate(26px, -39px)"
+            : data?.eventSource?.id === ids.whatsappMobility &&
+              data?.eventDestination?.id === ids.taxi
+            ? "translate(-29px, -4px)"
+            : data?.eventSource?.id === ids.taxi &&
+              data?.eventDestination?.id === ids.whatsappMobility
+            ? "translate(-45px, 4px)"
             : " ",
         strokeWidth: 2,
         stroke:
