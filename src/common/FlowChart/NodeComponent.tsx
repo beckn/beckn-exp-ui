@@ -42,17 +42,16 @@ const NodeAsHandleFlow: React.FC = () => {
         .eventCode;
 
       if (
-        firstResponseOfAPI === ids.searchBroadCast &&
-        secondResponseOfAPI === ids.searchBroadCast
-        // ||
-        // (firstResponseOfAPI === "mbth_snt_catalogue" &&
-        //   secondResponseOfAPI === "mblc_snt_catalogue") ||
-        // (firstResponseOfAPI === "mblc_snt_catalogue" &&
-        //   secondResponseOfAPI === "mbth_snt_catalogue") ||
-        // (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
-        //   secondResponseOfAPI === ids.mbgwSentCatalogueBap) ||
-        // (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
-        //   secondResponseOfAPI === ids.mbgwSentCatalogueBap)
+        (firstResponseOfAPI === ids.searchBroadCast &&
+          secondResponseOfAPI === ids.searchBroadCast) ||
+        (firstResponseOfAPI === "mbth_snt_catalogue" &&
+          secondResponseOfAPI === "mblc_snt_catalogue") ||
+        (firstResponseOfAPI === "mblc_snt_catalogue" &&
+          secondResponseOfAPI === "mbth_snt_catalogue") ||
+        (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
+          secondResponseOfAPI === ids.mbgwSentCatalogueBap) ||
+        (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
+          secondResponseOfAPI === ids.mbgwSentCatalogueBap)
       ) {
         setEvents1(res?.events[1].event);
       } else {
