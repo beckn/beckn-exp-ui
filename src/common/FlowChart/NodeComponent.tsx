@@ -63,7 +63,7 @@ const NodeAsHandleFlow: React.FC = () => {
 
   useInterval(() => {
     fetchEvent();
-  }, 4000);
+  }, 1000);
   console.log(events, "events");
   console.log(events1, "events1");
   console.log(eventsRes, "eventsRes");
@@ -317,7 +317,7 @@ const NodeAsHandleFlow: React.FC = () => {
               : "driver"}
           </div>
           <Link to="/WhatWouldYouDoLikeToNext">
-            <img src="/assets/menWithPhone.svg" alt="" />
+            <img src="/assets/driverMen.svg" alt="" />
           </Link>
         </div>
         <img

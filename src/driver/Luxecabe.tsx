@@ -45,7 +45,7 @@ const Luxecabe = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="main-container page-content luxecab">
         <div className="header">

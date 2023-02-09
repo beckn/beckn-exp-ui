@@ -156,7 +156,10 @@ const ViewMyJourney = (props) => {
           height: "fit-content",
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <div
+          className="sequencial-flow"
+          style={{ display: "flex", justifyContent: "space-around" }}
+        >
           <div className="sequence">sequential flow </div>
           <div className="crossIcon">
             <img
