@@ -19,7 +19,7 @@ const ScanQrForTravelBuddy = () => {
 
   useEffect(() => {
     localStorage.setItem("expId", expId);
-    postExpId();
+    postExpId("1");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

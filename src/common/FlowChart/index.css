@@ -278,7 +278,7 @@
 }
 .circle-driver-active {
   position: absolute !important;
-  right: 139px;
+  right: 116px;
   bottom: 67px;
   width: 130px !important;
   z-index: 0 !important;
@@ -354,18 +354,23 @@
   width: 0;
   transform: rotate(328deg);
 }
-/* .react-flow__edge:last-child {
-  transform: translate(-4px, 12px);
+.truecatalogue:nth-child(2) {
+  left: 29px !important;
+  top: -37px !important;
 }
-.react-flow__edge:first-child {
-  transform: translate(2px, -4px) !important;
+/* .arrow-indicator-left{
+  position: absolute;
+    top: -68px;
+    color: white;
+    left: 297px;
+    font-size: 20px;
+}
+.arrow-left{
+  position: absolute;
+    left: 206px;
+    top: -74px;
 } */
-/* .nodrag.nopan:last-child {
-  margin-top: 20px;
-}*/
-/* .nodrag.nopan:first-child {
-  margin-top: unset !important;
-} */
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .react-flow {
     width: 100% !important;
@@ -375,7 +380,7 @@
     height: 80% !important;
   }
   .mobilityFooter .GWP > img {
-    width: 40%;
+    width: 40% !important;
   }
   .mobilityFooter .MWP img {
     width: 50%;
@@ -387,6 +392,7 @@
     bottom: 40px;
   }
   .GWP-text {
+    font-size: 12px;
     margin: 0px 100px 60px auto;
     right: 50px;
     width: 140px;

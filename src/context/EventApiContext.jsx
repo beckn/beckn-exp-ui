@@ -7,7 +7,7 @@ export const EventApiContext = createContext();
 export const EventApiProvider = ({ children }) => {
   const expId = uuidv4();
 
-  const postExpId = async () => {
+  const postExpId = async (expCenterId) => {
     await fetch("https://api.experience.becknprotocol.io/v2/xc/experience", {
       method: "POST",
       headers: {
@@ -17,7 +17,7 @@ export const EventApiProvider = ({ children }) => {
       referrerPolicy: "no-referrer",
       body: JSON.stringify({
         experienceId: expId,
-        experienceCenterId: "1",
+        experienceCenterId: expCenterId,
         eventSourceAppId: "mobilityreferencebap-staging.becknprotocol.io",
         start_ts: Date.now(),
       }), // body data type must match "Content-Type" header

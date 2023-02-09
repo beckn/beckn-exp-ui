@@ -147,7 +147,7 @@ export const createNodesAndEdges = (data: any, data1: any) => {
               data?.eventDestination?.id === ids.whatsappMobility
             ? "translate(-45px, 4px)"
             : " ",
-        strokeWidth: 2,
+        strokeWidth: 3,
         stroke:
           data?.eventSource?.id === ids.taxi ||
           data?.eventSource?.id === ids.luxeCabs ||
@@ -191,7 +191,7 @@ export const createNodesAndEdges = (data: any, data1: any) => {
               data1?.eventDestination?.id === ids.whatsappMobility
             ? "translate(20px, -4px)"
             : " ",
-        strokeWidth: 2,
+        strokeWidth: 3,
         stroke:
           data1?.eventSource?.id === ids.taxi ||
           data1?.eventSource?.id === ids.luxeCabs ||

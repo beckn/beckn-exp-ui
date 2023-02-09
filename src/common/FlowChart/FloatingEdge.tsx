@@ -74,7 +74,6 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
     source === ids.whatsappMobility && target === ids.taxi;
   const isSourceTaxiandDestinationWhatsapp =
     source === ids.taxi && target === ids.whatsappMobility;
-
   if (
     (source === ids.whatsappMobility && target === ids.taxi) ||
     (source === ids.taxi && target === ids.whatsappMobility) ||
@@ -148,6 +147,35 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
             }}
             className="nodrag nopan"
           >
+            <div
+              style={{
+                width: "10px",
+                height: "10px",
+                backgroundColor: "#fff",
+                position: "absolute",
+                top:
+                  data.eventCode === ids.mbgwSentCatalogueBap
+                    ? "24px"
+                    : isSourceMobilityandDestinationLuxecabs
+                    ? "19px"
+                    : isSourceLuxeCabsandDestinationMobility
+                    ? "13px"
+                    : isSourceWhatsappandDestinationTaxi
+                    ? "15px"
+                    : isSourceTaxiandDestinationWhatsapp
+                    ? "17px"
+                    : "",
+                left: isSourceMobilityandDestinationLuxecabs
+                  ? "9px"
+                  : isSourceLuxeCabsandDestinationMobility
+                  ? "75px"
+                  : isSourceWhatsappandDestinationTaxi
+                  ? "-20px"
+                  : isSourceTaxiandDestinationWhatsapp
+                  ? "76px"
+                  : "",
+              }}
+            ></div>
             {data.text}
           </div>
         </EdgeLabelRenderer>
@@ -195,7 +223,7 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
               ? "M 290 340 L 430 240"
               : isSourceGatewayandDestinationWhatsapp
               ? "M 400 225 L 270 330"
-              : isSourceWhatsappandDestinationLuxecabs
+              : isSourceMobilityandDestinationLuxecabs
               ? "M 300 340 L 640 340"
               : isSourceLuxecabsandDestinationWhatsapp
               ? "M 630 340 L 300 340"
@@ -226,14 +254,20 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                   : isSourceWhatsappandDestinationGateway
                   ? "28px"
                   : isSourceGatewayandDestinationWhatsapp
-                  ? "-15px"
+                  ? "10px"
                   : isSourceMobilityandDestinationGateway
                   ? "-23px"
+                  : isSourceMobilityandDestinationLuxecabs
+                  ? "23px"
                   : isSourceWhatsappandDestinationLuxecabs
-                  ? "-13px"
+                  ? "-17px"
                   : isSourceLuxecabsandDestinationWhatsapp
-                  ? "-13px"
-                  : "-3px",
+                  ? "-17px"
+                  : isSourceGatewayandDestinationWhatsapp
+                  ? "40px"
+                  : isSourceGatewayandDestinationMobility
+                  ? "-6px"
+                  : "15px",
               left: isSourceMobilityandDestinationGateway
                 ? "-18px"
                 : isSourceGatewayandDestinationTaxi
@@ -249,16 +283,20 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                 : isSourceMobilityandDestinationTaxi
                 ? "-132px"
                 : isSourceTaxiandDestinationMobility
-                ? "132px"
+                ? "123px"
                 : isSourceWhatsappandDestinationGateway
                 ? "-33px"
-                : isSourceGatewayandDestinationWhatsapp
-                ? "2px"
+                : // : isSourceGatewayandDestinationWhatsapp
+                // ? "65px"
+                isSourceGatewayandDestinationWhatsapp
+                ? "17px"
+                : isSourceMobilityandDestinationLuxecabs
+                ? "23px"
                 : isSourceWhatsappandDestinationLuxecabs
-                ? "-100px"
+                ? "-131px"
                 : isSourceLuxecabsandDestinationWhatsapp
-                ? "100px"
-                : "",
+                ? "125px"
+                : "22px",
               position: "absolute",
               transform: isSourceMobilityandDestinationGateway
                 ? `translate(-50%, -50%) translate(${labelX}px,${labelY}px) rotate(33deg)`
@@ -282,18 +320,71 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
               fontSize: 10,
               fontWeight: 700,
             }}
-            className="nodrag nopan"
+            className={`nodrag nopan ${isSourceGatewayandDestinationWhatsapp}${data.text}`}
           >
-            {/* <div
+            <div
               style={{
                 width: "10px",
                 height: "10px",
                 backgroundColor: "#fff",
                 position: "absolute",
-                top: "14px",
-                left: "4px",
+                top:
+                  data.eventCode === ids.mbgwSentCatalogueBap
+                    ? "14px"
+                    : isSourceGatewayandDestinationTaxi
+                    ? "17px"
+                    : isSourceGatewayandDestinationLuxeCabs
+                    ? "17px"
+                    : isSourceTaxiandDestinationGateway
+                    ? "16px"
+                    : isSourceLuxeCabsandDestinationGateway
+                    ? "17px"
+                    : isSourceMobilityandDestinationTaxi
+                    ? "13px"
+                    : isSourceTaxiandDestinationMobility
+                    ? "13px"
+                    : isSourceWhatsappandDestinationGateway
+                    ? "16px"
+                    : isSourceGatewayandDestinationWhatsapp
+                    ? "16px"
+                    : isSourceMobilityandDestinationGateway
+                    ? "13px"
+                    : isSourceMobilityandDestinationLuxecabs
+                    ? "23px"
+                    : isSourceWhatsappandDestinationLuxecabs
+                    ? "17px"
+                    : isSourceLuxecabsandDestinationWhatsapp
+                    ? "17px"
+                    : "15px",
+                left: isSourceMobilityandDestinationGateway
+                  ? "1px"
+                  : isSourceGatewayandDestinationTaxi
+                  ? "8px"
+                  : isSourceGatewayandDestinationLuxeCabs
+                  ? "12px"
+                  : isSourceTaxiandDestinationGateway
+                  ? "53px"
+                  : isSourceLuxeCabsandDestinationGateway
+                  ? "56px"
+                  : isSourceGatewayandDestinationMobility
+                  ? "54px"
+                  : isSourceMobilityandDestinationTaxi
+                  ? "11px"
+                  : isSourceTaxiandDestinationMobility
+                  ? "50px"
+                  : isSourceWhatsappandDestinationGateway
+                  ? "5px"
+                  : isSourceGatewayandDestinationWhatsapp
+                  ? "54px"
+                  : isSourceMobilityandDestinationLuxecabs
+                  ? "23px"
+                  : isSourceWhatsappandDestinationLuxecabs
+                  ? "15px"
+                  : isSourceLuxecabsandDestinationWhatsapp
+                  ? "54px"
+                  : "",
               }}
-            ></div> */}
+            ></div>
             {data.text}
           </div>
         </EdgeLabelRenderer>

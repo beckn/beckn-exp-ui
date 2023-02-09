@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ReactFlow, { useNodesState } from "reactflow";
 import "reactflow/dist/style.css";
 import FloatingEdge from "./FloatingEdge";
@@ -27,32 +28,38 @@ const NodeAsHandleFlow: React.FC = () => {
   const { getEvent } = useContext(EventApiContext);
   const [experienceCenterId, setExperienceCenterId] = useState<any>("");
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   const handleOpen = () => {
     setOpen(true);
   };
+
+  useEffect(() => {
+    if (eventsRes[0]?.action === "ending ride") {
+      navigate("/WhatWouldYouDoLikeToNext");
+    }
+  }, [eventsRes]);
   const fetchEvent = async () => {
+    const res = await getEvent();
+    setExperienceCenterId(res?.experienceSession.experienceCenterId);
     try {
-      const res = await getEvent();
       setEventsRes(res?.events);
       setEvents(res?.events[0].event);
-      setExperienceCenterId(res?.experienceSession.experienceCenterId);
       const firstResponseOfAPI = await res?.events[1].event.eventMessage
         .eventCode;
       const secondResponseOfAPI = await res?.events[0].event.eventMessage
         .eventCode;
 
       if (
-        firstResponseOfAPI === ids.searchBroadCast &&
-        secondResponseOfAPI === ids.searchBroadCast
-        // ||
-        // (firstResponseOfAPI === "mbth_snt_catalogue" &&
-        //   secondResponseOfAPI === "mblc_snt_catalogue") ||
-        // (firstResponseOfAPI === "mblc_snt_catalogue" &&
-        //   secondResponseOfAPI === "mbth_snt_catalogue") ||
-        // (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
-        //   secondResponseOfAPI === ids.mbgwSentCatalogueBap) ||
-        // (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
-        //   secondResponseOfAPI === ids.mbgwSentCatalogueBap)
+        (firstResponseOfAPI === ids.searchBroadCast &&
+          secondResponseOfAPI === ids.searchBroadCast) ||
+        (firstResponseOfAPI === "mbth_snt_catalogue" &&
+          secondResponseOfAPI === "mblc_snt_catalogue") ||
+        (firstResponseOfAPI === "mblc_snt_catalogue" &&
+          secondResponseOfAPI === "mbth_snt_catalogue") ||
+        (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
+          secondResponseOfAPI === ids.mbgwSentCatalogueBap) ||
+        (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
+          secondResponseOfAPI === ids.mbgwSentCatalogueBap)
       ) {
         setEvents1(res?.events[1].event);
       } else {
@@ -322,13 +329,15 @@ const NodeAsHandleFlow: React.FC = () => {
         </div>
         <img
           className={`circle ${
-            experienceCenterId === "2"
+            experienceCenterId === "2" || experienceCenterId === "3"
               ? "circle-driver-active"
               : "circle-driver"
           }`}
           src="/assets/circle.svg"
           alt=""
         />
+        {/* <img className="arrow-left" src="/assets/arrowLeft.svg" alt="" />
+        <span className="arrow-indicator-left">this is you</span> */}
       </div>
     </div>
   );
