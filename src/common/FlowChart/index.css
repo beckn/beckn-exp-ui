@@ -354,18 +354,7 @@
   width: 0;
   transform: rotate(328deg);
 }
-/* .react-flow__edge:last-child {
-  transform: translate(-4px, 12px);
-}
-.react-flow__edge:first-child {
-  transform: translate(2px, -4px) !important;
-} */
-/* .nodrag.nopan:last-child {
-  margin-top: 20px;
-}*/
-/* .nodrag.nopan:first-child {
-  margin-top: unset !important;
-} */
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .react-flow {
     width: 100% !important;
