@@ -254,7 +254,7 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                   : isSourceWhatsappandDestinationGateway
                   ? "28px"
                   : isSourceGatewayandDestinationWhatsapp
-                  ? "-15px"
+                  ? "10px"
                   : isSourceMobilityandDestinationGateway
                   ? "-23px"
                   : isSourceMobilityandDestinationLuxecabs
@@ -263,6 +263,8 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                   ? "-17px"
                   : isSourceLuxecabsandDestinationWhatsapp
                   ? "-17px"
+                  : isSourceGatewayandDestinationWhatsapp
+                  ? "40px"
                   : isSourceGatewayandDestinationMobility
                   ? "-6px"
                   : "15px",
@@ -284,8 +286,10 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                 ? "123px"
                 : isSourceWhatsappandDestinationGateway
                 ? "-33px"
-                : isSourceGatewayandDestinationWhatsapp
-                ? "2px"
+                : // : isSourceGatewayandDestinationWhatsapp
+                // ? "65px"
+                isSourceGatewayandDestinationWhatsapp
+                ? "17px"
                 : isSourceMobilityandDestinationLuxecabs
                 ? "23px"
                 : isSourceWhatsappandDestinationLuxecabs
@@ -316,7 +320,7 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
               fontSize: 10,
               fontWeight: 700,
             }}
-            className="nodrag nopan"
+            className={`nodrag nopan ${isSourceGatewayandDestinationWhatsapp}${data.text}`}
           >
             <div
               style={{
@@ -340,9 +344,9 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                     : isSourceTaxiandDestinationMobility
                     ? "13px"
                     : isSourceWhatsappandDestinationGateway
-                    ? "28px"
+                    ? "16px"
                     : isSourceGatewayandDestinationWhatsapp
-                    ? "-15px"
+                    ? "16px"
                     : isSourceMobilityandDestinationGateway
                     ? "13px"
                     : isSourceMobilityandDestinationLuxecabs
@@ -369,9 +373,9 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                   : isSourceTaxiandDestinationMobility
                   ? "50px"
                   : isSourceWhatsappandDestinationGateway
-                  ? "-33px"
+                  ? "5px"
                   : isSourceGatewayandDestinationWhatsapp
-                  ? "2px"
+                  ? "54px"
                   : isSourceMobilityandDestinationLuxecabs
                   ? "23px"
                   : isSourceWhatsappandDestinationLuxecabs

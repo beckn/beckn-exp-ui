@@ -20,7 +20,7 @@ const DriverATaxi = () => {
 
   useEffect(() => {
     localStorage.setItem("expId", expId);
-    postExpId();
+    postExpId("2");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
