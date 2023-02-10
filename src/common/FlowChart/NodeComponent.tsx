@@ -336,8 +336,27 @@ const NodeAsHandleFlow: React.FC = () => {
           src="/assets/circle.svg"
           alt=""
         />
-        {/* <img className="arrow-left" src="/assets/arrowLeft.svg" alt="" />
-        <span className="arrow-indicator-left">this is you</span> */}
+       <div
+          className={`arrow ${
+            experienceCenterId === "2" || experienceCenterId === "3"
+              ? "arrow-driver-active"
+              : "arrow-driver"
+          }`}
+        >
+          <span className={`arrowSpan ${
+            experienceCenterId === "2" || experienceCenterId === "3"
+              ? "arrowL"
+              : "arrowR"
+          }`}>
+            <img src="/assets/arrowLeft.svg" alt="" />
+          </span>
+          <span className={`arrowSpan ${
+            experienceCenterId === "2" || experienceCenterId === "3"
+              ? "arrow-indicator-right"
+              : "arrow-indicator-left"
+          }`}
+          >this is you</span>
+        </div>
       </div>
     </div>
   );
