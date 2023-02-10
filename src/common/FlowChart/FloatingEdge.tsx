@@ -147,7 +147,7 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
             }}
             className="nodrag nopan"
           >
-            <div
+            {/* <div
               style={{
                 width: "10px",
                 height: "10px",
@@ -175,7 +175,7 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                   ? "76px"
                   : "",
               }}
-            ></div>
+            ></div> */}
             {data.text}
           </div>
         </EdgeLabelRenderer>
@@ -322,7 +322,7 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
             }}
             className={`nodrag nopan ${isSourceGatewayandDestinationWhatsapp}${data.text}`}
           >
-            <div
+            {/* <div
               style={{
                 width: "10px",
                 height: "10px",
@@ -384,7 +384,7 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
                   ? "54px"
                   : "",
               }}
-            ></div>
+            ></div> */}
             {data.text}
           </div>
         </EdgeLabelRenderer>

@@ -193,11 +193,11 @@ const ViewMyJourney = (props) => {
 
             <img className="taxilogo" src="/assets/TaxiLogo.svg" alt="" />
 
-            <img
+            {/* <img
               className="luxecabslogo"
               src="/assets/LuxeCabsLogo.svg"
               alt=""
-            />
+            /> */}
           </div>
         </div>
       </motion.div>
