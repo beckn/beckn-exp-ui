@@ -324,7 +324,7 @@ const NodeAsHandleFlow: React.FC = () => {
               : "driver"}
           </div>
           <Link to="/WhatWouldYouDoLikeToNext">
-            <img src="/assets/driverMen.svg" alt="" />
+            <img src="/assets/driverMen.svg" alt="driver" />
           </Link>
         </div>
         <img
