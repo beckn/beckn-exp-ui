@@ -3,6 +3,7 @@
 }
 .floatingedges {
   height: 98vh !important;
+  overflow: hidden;
 }
 .react-flow {
   width: 80% !important;
