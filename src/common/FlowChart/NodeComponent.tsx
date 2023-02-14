@@ -308,7 +308,11 @@ const NodeAsHandleFlow: React.FC = () => {
         edgeTypes={edgeTypes}
       ></ReactFlow>
       <div className="mobilityFooter">
-        <div className="GWP">
+        <div
+          className={`GWP ${
+            experienceCenterId === "1" ? "girl-active" : "girl"
+          }`}
+        >
           <div className="GWP-text">
             {eventsRes.length > 0
               ? eventsRes[0].event.eventMessage.bapMessage
@@ -317,7 +321,13 @@ const NodeAsHandleFlow: React.FC = () => {
 
           <img src="/assets/girlWithPhone.svg" alt="" />
         </div>
-        <div className="MWP">
+        <div
+          className={`MWP ${
+            experienceCenterId === "2" || experienceCenterId === "3"
+              ? "man-active"
+              : "man"
+          }`}
+        >
           <div className="MWP-text">
             {eventsRes.length > 0
               ? eventsRes[0].event.eventMessage.bppMessage
@@ -336,26 +346,31 @@ const NodeAsHandleFlow: React.FC = () => {
           src="/assets/circle.svg"
           alt=""
         />
-       <div
+        <div
           className={`arrow ${
             experienceCenterId === "2" || experienceCenterId === "3"
               ? "arrow-driver-active"
               : "arrow-driver"
           }`}
         >
-          <span className={`arrowSpan ${
-            experienceCenterId === "2" || experienceCenterId === "3"
-              ? "arrowL"
-              : "arrowR"
-          }`}>
+          <span
+            className={`arrowSpan ${
+              experienceCenterId === "2" || experienceCenterId === "3"
+                ? "arrowL"
+                : "arrowR"
+            }`}
+          >
             <img src="/assets/arrowLeft.svg" alt="" />
           </span>
-          <span className={`arrowSpan ${
-            experienceCenterId === "2" || experienceCenterId === "3"
-              ? "arrow-indicator-right"
-              : "arrow-indicator-left"
-          }`}
-          >this is you</span>
+          <span
+            className={`arrowSpan ${
+              experienceCenterId === "2" || experienceCenterId === "3"
+                ? "arrow-indicator-right"
+                : "arrow-indicator-left"
+            }`}
+          >
+            this is you
+          </span>
         </div>
       </div>
     </div>
