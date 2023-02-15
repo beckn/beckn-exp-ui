@@ -3,6 +3,7 @@
 }
 .floatingedges {
   height: 98vh !important;
+  overflow: hidden;
 }
 .react-flow {
   width: 80% !important;
@@ -256,7 +257,7 @@
   left: 0;
 }
 .mobilityFooter .GWP > img {
-  width: 250px;
+  width: 180px;
   z-index: 99;
   position: relative;
 }
@@ -266,14 +267,15 @@
   right: 0;
   z-index: 2;
 }
-.mobilityFooter .MWP > img {
-  width: 130px;
+.mobilityFooter .MWP  img {
+  width: 180px;
   z-index: 99;
   position: relative;
+  bottom: -36px;
 }
 .mobilityFooter .circle {
   position: absolute !important;
-  width: 130px !important;
+  width: 90px !important;
   z-index: 0 !important;
 }
 .circle-driver-active {
@@ -296,6 +298,7 @@
   width: 190px;
   margin: 0 0 0 auto;
   margin-bottom: 60px;
+  margin-left:40px;
   border-radius: 12px;
   position: relative;
   font-size: 14px;
@@ -332,6 +335,30 @@
   top: 0px;
   left: -70px;
 }
+.mobilityFooter .man-active{
+  transform: scale(1.2);
+  bottom: 37px;
+  right: 22px;
+    z-index: 3;
+    transition-delay: 1sec;
+    transition: all;
+}
+.mobilityFooter .man-active ~ .circle-driver-active{
+  transform: scale(1.2);
+  bottom: 94px;
+    right: 166px;
+}
+.mobilityFooter .girl-active, .mobilityFooter .girl-active{
+  transform: scale(1.3);
+  bottom: 45px;
+  left: 42px;
+  z-index: 3;
+}
+.mobilityFooter .girl-active ~ .circle-driver{
+  transform: scale(1.2);
+  bottom: 122px;
+  left: 124px;
+}
 .MWP-text:before {
   bottom: -20px;
   content: " ";
@@ -358,18 +385,50 @@
   left: 29px !important;
   top: -37px !important;
 }
-/* .arrow-indicator-left{
-  position: absolute;
-    top: -68px;
-    color: white;
-    left: 297px;
-    font-size: 20px;
+.mobilityFooter .arrow {
+  display: flex;
+  position: absolute !important;
+  width: 200px !important;
+  z-index: 0 !important;
+  align-items: center;
 }
-.arrow-left{
-  position: absolute;
-    left: 206px;
-    top: -74px;
-} */
+.arrow-driver {
+  position: absolute !important;
+  left: 205px;
+  bottom: 32px;
+  width: 130px !important;
+  z-index: 0 !important;
+}
+.arrow-indicator-left{
+  color: white;
+  font-size: 24px;
+  position: relative;
+  left: 7px;
+  font-weight: 700;
+}
+.arrowL{
+  order: 2;
+  transform: rotate(180deg);
+}
+.arrowR img,.arrowL img{
+  width:80px;
+  padding-right: 10px;
+}
+.arrow-driver-active{
+  position: absolute !important;
+  right: 276px;
+  bottom: 40px;
+  width: 130px !important;
+  z-index: 0 !important;
+}
+.arrow-indicator-right{
+  color: white;
+    font-size: 24px;
+    position: relative;
+    right: 7px;
+    font-weight: 700;
+}
+
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .react-flow {
@@ -383,30 +442,37 @@
     width: 40% !important;
   }
   .mobilityFooter .MWP img {
-    width: 50%;
+    width: 55% !important;
     position: relative;
     left: 48%;
   }
   .circle-driver {
-    left: 40px;
-    bottom: 40px;
+    left: 49px;
+    bottom: 51px;
   }
   .GWP-text {
     font-size: 12px;
     margin: 0px 100px 60px auto;
-    right: 50px;
+    right: 61px;
     width: 140px;
     padding: 6px;
+    top: 33px;
   }
   .MWP-text {
     margin: 30px auto;
     width: 140px;
     padding: 6px;
-    left: 0;
+    left: 4px;
+    top: 48px;
+    font-size: 12px;
   }
   .mobilityFooter .circle {
-    width: 100px !important;
+    width: 55px !important;
   }
+  .circle-driver-active {
+    right: 55px;
+    bottom: 35px;
+}
   .whatsappSource {
     color: #fff;
     position: absolute;
@@ -414,6 +480,42 @@
     left: 3.2%;
     font-size: 10px;
   }
+  .arrow.arrow-driver-active{
+    right: 99px;
+    bottom: 20px;
+    width: 140px !important;
+  }
+  .arrow.arrow-driver{
+    left: 100px;
+    width: 140px !important;
+  }
+  .arrowL img, .arrowR img{
+    width: 40px !important;
+  }
+  .arrow-indicator-right,.arrow-indicator-left{
+    font-size: 12px;
+    right: 0;
+  }
+  .mobilityFooter .man-active {
+    transform: scale(1.2);
+    bottom: 35px;
+    right: 28px;
+}
+  .mobilityFooter .man-active ~ .circle-driver-active {
+    transform: scale(1.1);
+    bottom: 40px;
+    right: 94px;
+}
+.mobilityFooter .girl-active {
+  transform: scale(1.1);
+  bottom: 13px;
+  left: 15px;
+}
+.mobilityFooter .girl-active ~ .circle-driver {
+  transform: scale(1.1);
+  bottom: 73px;
+  left: 67px;
+}
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .react-flow {
@@ -427,7 +529,7 @@
     width: 60%;
   }
   .mobilityFooter .MWP img {
-    width: 70%;
+    width: 80%;
   }
   .circle-driver {
     left: 70px;
@@ -435,15 +537,90 @@
   }
   .GWP-text {
     margin: 0px 100px 60px auto;
+    right: -17px;
+    top: 26px;
+    font-size: 12px;
   }
   .MWP-text {
     margin: 30px auto;
+    top: 36px;
+    padding: 8px;
+    width: 159px;
+    margin: 0 auto;
+    font-size: 13px;
+    left: -70px;
   }
+  .arrow.arrow-driver-active{
+    right: 160px;
+    width: 140px !important;
+  }
+  .arrow.arrow-driver{
+    left: 172px;
+    width: 140px !important;
+  }
+  .arrowL img, .arrowR img{
+    width: 60px !important;
+  }
+  .arrow-indicator-right,.arrow-indicator-left{
+    font-size: 16px;
+    right: 0;
+  }
+  .circle-driver-active {
+    right: 74px;
+    bottom: 39px;
+}
+.mobilityFooter .man-active ~ .circle-driver-active {
+  transform: scale(1.1);
+  bottom: 70px;
+  right: 130px;
+}
+.mobilityFooter .girl-active ~ .circle-driver {
+  transform: scale(1.1);
+  bottom: 108px;
+    left: 100px;
+}
+.MWP a{
+  display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.mobilityFooter .girl-active, .mobilityFooter .girl-active {
+  transform: scale(1.1);
+  bottom: 17px;
+  left: 14px;
+  z-index: 3;
+}
 }
 @media screen and (min-width: 1025px) and (max-width: 1600px) {
   .react-flow {
     width: 60% !important;
   }
+  .GWP-text {
+    width: 160px;
+    font-size: 13px;
+    top: 17px;
+    padding: 8px;
+    right: -13px
+}
+.mobilityFooter .girl-active ~ .circle-driver {
+  transform: scale(1.1);
+  bottom: 108px;
+    left: 101px;
+}
+.mobilityFooter .girl-active, .mobilityFooter .girl-active {
+  transform: scale(1.2);
+  bottom: 29px;
+  left: 15px;
+  z-index: 3;
+}
+.MWP-text {
+  padding: 8px;
+  width: 160px;
+  margin: 0 auto;
+  font-size: 13px;
+  top: 26px;
+  left: -58px;
+}
 }
 @keyframes moveInleft {
   0% {
@@ -475,42 +652,5 @@
     transform: translate(0);
   }
 }
-.arrow-indicator-left{
-    color: white;
-    font-size: 24px;
-    position: relative;
-    left: 7px;
-    font-weight: 700;
-}
 
-.mobilityFooter .arrow {
-  display: flex;
-  position: absolute !important;
-  width: 200px !important;
-  z-index: 0 !important;
-}
-.arrow-driver {
-  position: absolute !important;
-  left: 205px;
-  bottom: 32px;
-  width: 130px !important;
-  z-index: 0 !important;
-}
-.arrowL{
-  order: 2;
-  transform: rotate(180deg);
-}
-.arrow-driver-active{
-  position: absolute !important;
-  right: 276px;
-  bottom: 40px;
-  width: 130px !important;
-  z-index: 0 !important;
-}
-.arrow-indicator-right{
-  color: white;
-    font-size: 24px;
-    position: relative;
-    right: 7px;
-    font-weight: 700;
-}
+

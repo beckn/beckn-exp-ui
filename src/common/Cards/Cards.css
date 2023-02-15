@@ -74,6 +74,7 @@
 
   .main-title {
     font-size: 18px;
+    line-height: unset;
   }
   .sub-title {
     font-size: 14px;
