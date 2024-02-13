@@ -1,13 +1,13 @@
 .react-flow__pane {
   top: 15px !important;
 }
-.floatingedges {
+/* .floatingedges {
   height: 98vh !important;
   overflow: hidden;
-}
+} */
 .react-flow {
   width: 80% !important;
-  height: 80% !important;
+  /* height: 80% !important; */
   margin: 0 auto;
 }
 .react-flow__panel {
@@ -16,15 +16,15 @@
 .floatingedges .react-flow__handle {
   opacity: 0;
 }
-.react-flow__node.whatsapp {
-  background: url("../../../public/assets/whtasappWithName.svg");
+.react-flow__node.sheru_bap {
+  background: url("../../../public/assets/sheru.svg");
   margin-left: -7px;
   width: 80px;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #acd1f0;
+  /* background-color: #acd1f0; */
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,17 +57,17 @@
   outline: solid;
   outline-color: #fff;
   outline-offset: 4px;
-  border-radius: unset !important;
+  /* border-radius: unset !important; */
 }
-.react-flow__node.mobility {
-  background: url("../../../public/assets/travelBuddyWithName.svg");
+.react-flow__node.pulse_energy_whatsapp {
+  background: url("../../../public/assets/pulse-energy-whatsapp-bot.svg");
   margin-left: -7px;
   width: 80px;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #acd1f0;
+  /* background-color: #acd1f0; */
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -99,7 +99,7 @@
   outline: solid;
   outline-color: #fff;
   outline-offset: 4px;
-  border-radius: unset !important;
+  /* border-radius: unset !important; */
   margin-left: -7px;
 }
 .nodeMobility {
@@ -113,22 +113,38 @@
   animation-duration: 3s;
 }
 .react-flow__node {
-  border-radius: unset !important;
+  border: unset !important;
+  /* border-radius: unset !important; */
 }
 
-.react-flow__node.Luxecub {
-  background: url("../../../public/assets/luxeCabeWithName.svg");
+.react-flow__node.kazam {
+  background: url("../../../public/assets/kazamBpp.svg");
   margin-left: 7px;
   width: 80px;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #acd1f0;
+  /* background-color: #acd1f0; */
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.react-flow__node.turno_bpp {
+  background: url("../../../public/assets/turnoBpp.svg");
+  margin-left: 7px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #acd1f0; */
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .react-flow__node.activeLuxeCabs {
   background: url("../../../public/assets/luxeCabeWithName.svg");
   width: 80px;
@@ -144,7 +160,7 @@
   outline: solid;
   outline-color: #fff;
   outline-offset: 4px;
-  border-radius: unset !important;
+  /* border-radius: unset !important; */
 }
 .react-flow__node.destLuxeCabs {
   background: url("../../../public/assets/luxeCabeWithName.svg");
@@ -159,15 +175,15 @@
   background-repeat: no-repeat;
   margin-left: 7px;
 }
-.react-flow__node.RHP {
-  background: url("../../../public/assets/taxHubWithName.svg");
+.react-flow__node.pulse_energy_bpp {
+  background: url("../../../public/assets/pulse-energy-bpp.svg");
   margin-left: 7px;
   width: 80px;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #acd1f0;
+  /* background-color: #acd1f0; */
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -186,7 +202,7 @@
   outline: solid;
   outline-color: #fff;
   outline-offset: 4px;
-  border-radius: unset !important;
+  /* border-radius: unset !important; */
   margin-left: 7px;
 }
 .react-flow__node.destTaxi {
@@ -204,8 +220,8 @@
 }
 .react-flow__node.gateway {
   border-radius: 50% !important;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -258,39 +274,39 @@
 }
 .mobilityFooter .GWP > img {
   width: 180px;
-  z-index: 99;
+  /* z-index: 99; */
   position: relative;
 }
 .mobilityFooter .MWP {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: 2;
+  /* z-index: 2; */
 }
-.mobilityFooter .MWP  img {
+.mobilityFooter .MWP img {
   width: 180px;
-  z-index: 99;
+  /* z-index: 99; */
   position: relative;
   bottom: -36px;
 }
 .mobilityFooter .circle {
   position: absolute !important;
   width: 90px !important;
-  z-index: 0 !important;
+  /* z-index: 0 !important; */
 }
 .circle-driver-active {
   position: absolute !important;
   right: 116px;
   bottom: 67px;
   width: 130px !important;
-  z-index: 0 !important;
+  /* z-index: 0 !important; */
 }
 .circle-driver {
   position: absolute !important;
   left: 111px;
   bottom: 106px;
   width: 130px !important;
-  z-index: 0 !important;
+  /* z-index: 0 !important; */
 }
 .GWP-text {
   padding: 10px;
@@ -298,7 +314,7 @@
   width: 190px;
   margin: 0 0 0 auto;
   margin-bottom: 60px;
-  margin-left:40px;
+  margin-left: 40px;
   border-radius: 12px;
   position: relative;
   font-size: 14px;
@@ -335,26 +351,27 @@
   top: 0px;
   left: -70px;
 }
-.mobilityFooter .man-active{
+.mobilityFooter .man-active {
   transform: scale(1.2);
   bottom: 37px;
   right: 22px;
-    z-index: 3;
-    transition-delay: 1sec;
-    transition: all;
+  /* z-index: 3; */
+  transition-delay: 1sec;
+  transition: all;
 }
-.mobilityFooter .man-active ~ .circle-driver-active{
+.mobilityFooter .man-active ~ .circle-driver-active {
   transform: scale(1.2);
   bottom: 94px;
-    right: 166px;
+  right: 166px;
 }
-.mobilityFooter .girl-active, .mobilityFooter .girl-active{
+.mobilityFooter .girl-active,
+.mobilityFooter .girl-active {
   transform: scale(1.3);
   bottom: 45px;
   left: 42px;
-  z-index: 3;
+  /* z-index: 3; */
 }
-.mobilityFooter .girl-active ~ .circle-driver{
+.mobilityFooter .girl-active ~ .circle-driver {
   transform: scale(1.2);
   bottom: 122px;
   left: 124px;
@@ -389,7 +406,7 @@
   display: flex;
   position: absolute !important;
   width: 200px !important;
-  z-index: 0 !important;
+  /* z-index: 0 !important; */
   align-items: center;
 }
 .arrow-driver {
@@ -397,38 +414,38 @@
   left: 205px;
   bottom: 32px;
   width: 130px !important;
-  z-index: 0 !important;
+  /* z-index: 0 !important; */
 }
-.arrow-indicator-left{
+.arrow-indicator-left {
   color: white;
   font-size: 24px;
   position: relative;
   left: 7px;
   font-weight: 700;
 }
-.arrowL{
+.arrowL {
   order: 2;
   transform: rotate(180deg);
 }
-.arrowR img,.arrowL img{
-  width:80px;
+.arrowR img,
+.arrowL img {
+  width: 80px;
   padding-right: 10px;
 }
-.arrow-driver-active{
+.arrow-driver-active {
   position: absolute !important;
   right: 276px;
   bottom: 40px;
   width: 130px !important;
-  z-index: 0 !important;
+  /* z-index: 0 !important; */
 }
-.arrow-indicator-right{
+.arrow-indicator-right {
   color: white;
-    font-size: 24px;
-    position: relative;
-    right: 7px;
-    font-weight: 700;
+  font-size: 24px;
+  position: relative;
+  right: 7px;
+  font-weight: 700;
 }
-
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .react-flow {
@@ -472,7 +489,7 @@
   .circle-driver-active {
     right: 55px;
     bottom: 35px;
-}
+  }
   .whatsappSource {
     color: #fff;
     position: absolute;
@@ -480,19 +497,21 @@
     left: 3.2%;
     font-size: 10px;
   }
-  .arrow.arrow-driver-active{
+  .arrow.arrow-driver-active {
     right: 99px;
     bottom: 20px;
     width: 140px !important;
   }
-  .arrow.arrow-driver{
+  .arrow.arrow-driver {
     left: 100px;
     width: 140px !important;
   }
-  .arrowL img, .arrowR img{
+  .arrowL img,
+  .arrowR img {
     width: 40px !important;
   }
-  .arrow-indicator-right,.arrow-indicator-left{
+  .arrow-indicator-right,
+  .arrow-indicator-left {
     font-size: 12px;
     right: 0;
   }
@@ -500,22 +519,22 @@
     transform: scale(1.2);
     bottom: 35px;
     right: 28px;
-}
+  }
   .mobilityFooter .man-active ~ .circle-driver-active {
     transform: scale(1.1);
     bottom: 40px;
     right: 94px;
-}
-.mobilityFooter .girl-active {
-  transform: scale(1.1);
-  bottom: 13px;
-  left: 15px;
-}
-.mobilityFooter .girl-active ~ .circle-driver {
-  transform: scale(1.1);
-  bottom: 73px;
-  left: 67px;
-}
+  }
+  .mobilityFooter .girl-active {
+    transform: scale(1.1);
+    bottom: 13px;
+    left: 15px;
+  }
+  .mobilityFooter .girl-active ~ .circle-driver {
+    transform: scale(1.1);
+    bottom: 73px;
+    left: 67px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .react-flow {
@@ -550,46 +569,49 @@
     font-size: 13px;
     left: -70px;
   }
-  .arrow.arrow-driver-active{
+  .arrow.arrow-driver-active {
     right: 160px;
     width: 140px !important;
   }
-  .arrow.arrow-driver{
+  .arrow.arrow-driver {
     left: 172px;
     width: 140px !important;
   }
-  .arrowL img, .arrowR img{
+  .arrowL img,
+  .arrowR img {
     width: 60px !important;
   }
-  .arrow-indicator-right,.arrow-indicator-left{
+  .arrow-indicator-right,
+  .arrow-indicator-left {
     font-size: 16px;
     right: 0;
   }
   .circle-driver-active {
     right: 74px;
     bottom: 39px;
-}
-.mobilityFooter .man-active ~ .circle-driver-active {
-  transform: scale(1.1);
-  bottom: 70px;
-  right: 130px;
-}
-.mobilityFooter .girl-active ~ .circle-driver {
-  transform: scale(1.1);
-  bottom: 108px;
+  }
+  .mobilityFooter .man-active ~ .circle-driver-active {
+    transform: scale(1.1);
+    bottom: 70px;
+    right: 130px;
+  }
+  .mobilityFooter .girl-active ~ .circle-driver {
+    transform: scale(1.1);
+    bottom: 108px;
     left: 100px;
-}
-.MWP a{
-  display: flex;
+  }
+  .MWP a {
+    display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-}
-.mobilityFooter .girl-active, .mobilityFooter .girl-active {
-  transform: scale(1.1);
-  bottom: 17px;
-  left: 14px;
-  z-index: 3;
-}
+  }
+  .mobilityFooter .girl-active,
+  .mobilityFooter .girl-active {
+    transform: scale(1.1);
+    bottom: 17px;
+    left: 14px;
+    /* z-index: 3; */
+  }
 }
 @media screen and (min-width: 1025px) and (max-width: 1600px) {
   .react-flow {
@@ -600,28 +622,56 @@
     font-size: 13px;
     top: 17px;
     padding: 8px;
-    right: -13px
-}
-.mobilityFooter .girl-active ~ .circle-driver {
-  transform: scale(1.1);
-  bottom: 108px;
+    right: -13px;
+  }
+  .mobilityFooter .girl-active ~ .circle-driver {
+    transform: scale(1.1);
+    bottom: 108px;
     left: 101px;
+  }
+  .mobilityFooter .girl-active,
+  .mobilityFooter .girl-active {
+    transform: scale(1.2);
+    bottom: 29px;
+    left: 15px;
+    /* z-index: 3; */
+  }
+  .MWP-text {
+    padding: 8px;
+    width: 160px;
+    margin: 0 auto;
+    font-size: 13px;
+    top: 26px;
+    left: -58px;
+  }
 }
-.mobilityFooter .girl-active, .mobilityFooter .girl-active {
-  transform: scale(1.2);
-  bottom: 29px;
-  left: 15px;
-  z-index: 3;
+
+.flowFooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background: linear-gradient(
+      291.86deg,
+      rgba(239, 239, 239, 0.08) 16.69%,
+      rgba(229, 229, 229, 0.6) 105.85%
+    ),
+    linear-gradient(
+      111.65deg,
+      rgba(239, 239, 239, 0.6) -2.56%,
+      rgba(239, 239, 239, 0.08) 84.99%
+    );
+
+  border-image-source: linear-gradient(
+    291.86deg,
+    rgba(239, 239, 239, 0.08) 16.69%,
+    rgba(229, 229, 229, 0.6) 105.85%
+  );
 }
-.MWP-text {
-  padding: 8px;
-  width: 160px;
-  margin: 0 auto;
-  font-size: 13px;
-  top: 26px;
-  left: -58px;
-}
-}
+
 @keyframes moveInleft {
   0% {
     opacity: 0;
@@ -652,5 +702,3 @@
     transform: translate(0);
   }
 }
-
-

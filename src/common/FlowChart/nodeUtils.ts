@@ -72,37 +72,44 @@ export const createNodesAndEdges = (data: any, data1: any) => {
   const nodes = [];
   nodes.push(
     {
-      id: ids.gateway,
-      data: { label: "Gateway" },
-      className: "gateway",
-      position: { x: 430, y: 190 },
-    },
-    {
       id: ids.mobility,
       data: {
         label: "",
       },
 
-      className: "mobility",
-      position: { x: 200, y: 60 },
+      className: "pulse_energy_whatsapp",
+      position: { x: 200, y: 90 },
     },
     {
-      id: ids.taxi,
-      className: "RHP",
-      data: { label: "" },
-      position: { x: 650, y: 60 },
+      id: ids.gateway,
+      data: { label: "Gateway" },
+      className: "gateway",
+      position: { x: 360, y: 170 },
     },
+
     {
       id: ids.whatsappMobility,
       data: { label: "" },
-      className: "whatsapp",
-      position: { x: 200, y: 300 },
+      className: "sheru_bap",
+      position: { x: 200, y: 200 },
+    },
+    {
+      id: ids.taxi,
+      className: "pulse_energy_bpp",
+      data: { label: "" },
+      position: { x: 500, y: 60 },
+    },
+    {
+      id: "separid",
+      className: "kazam",
+      data: { label: "" },
+      position: { x: 500, y: 150 },
     },
     {
       id: ids.luxeCabs,
-      className: "Luxecub",
+      className: "turno_bpp",
       data: { label: "" },
-      position: { x: 650, y: 300 },
+      position: { x: 500, y: 240 },
     }
   );
 

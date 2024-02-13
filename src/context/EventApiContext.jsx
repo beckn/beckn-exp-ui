@@ -51,6 +51,7 @@ export const EventApiProvider = ({ children }) => {
 
   const getEvent = async () => {
     try {
+    
       const res = await axios.get(
         `https://api.experience.becknprotocol.io/v2/event/${localStorage.getItem(
           "expId"

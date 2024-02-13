@@ -181,39 +181,39 @@
 }
 .mobilityFooter .GWP > img {
   width: 250px;
-  z-index: 99;
+  /* z-index: 99; */
   position: relative;
 }
 .mobilityFooter .MWP {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: 2;
+  /* z-index: 2; */
 }
 .mobilityFooter .MWP > img {
   width: 130px;
-  z-index: 99;
+  /* z-index: 99; */
   position: relative;
 }
 .mobilityFooter .circle {
   position: absolute !important;
   /* left: 90px; */
   width: 130px !important;
-  z-index: 0 !important;
+  /* z-index: 0 !important; */
 }
 .circle-driver-active {
   position: absolute !important;
   right: 139px;
   bottom: 67px;
   width: 130px !important;
-  z-index: 0 !important;
+  /* z-index: 0 !important; */
 }
 .circle-driver {
   position: absolute !important;
   left: 111px;
   bottom: 106px;
   width: 130px !important;
-  z-index: 0 !important;
+  /* z-index: 0 !important; */
 }
 .GWP-text {
   padding: 10px;

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import ReactFlow, { useNodesState } from "reactflow";
 import "reactflow/dist/style.css";
@@ -11,6 +11,12 @@ import useInterval from "../MobilityCard/useInterval";
 import { Link } from "react-router-dom";
 import { Modal } from "antd";
 import ErrorModal from "../ErrorModal/ErrorModal";
+
+import io from "socket.io-client";
+import socket from "../../socket";
+// const socket = io(
+//   "https://observer-server-dev.becknprotocol.io/socket"
+// ).connect();
 
 const edgeTypes: any = {
   floating: FloatingEdge,
@@ -32,50 +38,65 @@ const NodeAsHandleFlow: React.FC = () => {
   const handleOpen = () => {
     setOpen(true);
   };
+  const [telemetryData, setTelemetryData] = useState([]);
+
+  useEffect(() => {
+    socket.on("telemetry_data", (data) => {
+      console.log(data);
+      setTelemetryData(data.data);
+      setEvents(data.data);
+    });
+
+    return () => {
+      if (socket) {
+        socket.off("telemetry_data");
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (eventsRes[0]?.action === "ending ride") {
       navigate("/WhatWouldYouDoLikeToNext");
     }
   }, [eventsRes]);
-  const fetchEvent = async () => {
-    const res = await getEvent();
-    setExperienceCenterId(res?.experienceSession.experienceCenterId);
-    try {
-      setEventsRes(res?.events);
-      setEvents(res?.events[0].event);
-      const firstResponseOfAPI = await res?.events[1].event.eventMessage
-        .eventCode;
-      const secondResponseOfAPI = await res?.events[0].event.eventMessage
-        .eventCode;
 
-      if (
-        (firstResponseOfAPI === ids.searchBroadCast &&
-          secondResponseOfAPI === ids.searchBroadCast) ||
-        (firstResponseOfAPI === "mbth_snt_catalogue" &&
-          secondResponseOfAPI === "mblc_snt_catalogue") ||
-        (firstResponseOfAPI === "mblc_snt_catalogue" &&
-          secondResponseOfAPI === "mbth_snt_catalogue") ||
-        (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
-          secondResponseOfAPI === ids.mbgwSentCatalogueBap) ||
-        (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
-          secondResponseOfAPI === ids.mbgwSentCatalogueBap)
-      ) {
-        setEvents1(res?.events[1].event);
-      } else {
-        setEvents1([]);
-      }
-    } catch (error) {}
-  };
+  // const fetchEvent = async () => {
+  //   const res = await getEvent();
+  //   setExperienceCenterId(res?.experienceSession.experienceCenterId);
+  //   try {
+  //     setEventsRes(res?.events);
+  //     setEvents(res?.events[0].event);
+  //     const firstResponseOfAPI = await res?.events[1].event.eventMessage
+  //       .eventCode;
+  //     const secondResponseOfAPI = await res?.events[0].event.eventMessage
+  //       .eventCode;
 
-  useInterval(() => {
-    fetchEvent();
-  }, 1000);
-  console.log(events, "events");
-  console.log(events1, "events1");
-  console.log(eventsRes, "eventsRes");
+  //     if (
+  //       (firstResponseOfAPI === ids.searchBroadCast &&
+  //         secondResponseOfAPI === ids.searchBroadCast) ||
+  //       (firstResponseOfAPI === "mbth_snt_catalogue" &&
+  //         secondResponseOfAPI === "mblc_snt_catalogue") ||
+  //       (firstResponseOfAPI === "mblc_snt_catalogue" &&
+  //         secondResponseOfAPI === "mbth_snt_catalogue") ||
+  //       (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
+  //         secondResponseOfAPI === ids.mbgwSentCatalogueBap) ||
+  //       (firstResponseOfAPI === ids.mbgwSentCatalogueBap &&
+  //         secondResponseOfAPI === ids.mbgwSentCatalogueBap)
+  //     ) {
+  //       setEvents1(res?.events[1].event);
+  //     } else {
+  //       setEvents1([]);
+  //     }
+  //   } catch (error) {}
+  // };
+
+  // useInterval(() => {
+  //   fetchEvent();
+  // }, 1000);
+
   const updateNodes = nodes
     .map((node) => {
+      console.log("node here", node);
       if (
         node.id === ids.mobility &&
         events?.eventSource?.id === ids.mobility &&
@@ -257,49 +278,6 @@ const NodeAsHandleFlow: React.FC = () => {
 
   return (
     <div className="floatingedges main-container page-content">
-      <div className="header">
-        <div>
-          <img
-            style={{
-              height: "52px",
-              width: "200px",
-              marginTop: "20px",
-              cursor: "pointer",
-            }}
-            src="/assets/becklogoSmall.svg"
-            alt={"BecknLogoIcon"}
-          />
-        </div>
-        <div
-          style={{
-            cursor: "pointer",
-            background: "black",
-            width: "40px",
-            height: "40px",
-            borderRadius: "26px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative",
-            right: "100px",
-          }}
-          className="home-container"
-          onClick={handleOpen}
-        >
-          <img src="/assets/homeIcon.png" alt={"HomeIcon"} />
-          <Modal open={open} footer={null} closable={false} width={800}>
-            <ErrorModal
-              titleText={"Are you sure?"}
-              subTitle={
-                "You are about to exit this experience. Click 'confirm' to continue."
-              }
-              colorbuttonText={"Cancel"}
-              buttonText={"Confirm"}
-            />
-          </Modal>
-        </div>
-      </div>
-
       <ReactFlow
         nodes={updateNodes}
         edges={initialEdge}
@@ -307,7 +285,10 @@ const NodeAsHandleFlow: React.FC = () => {
         fitView
         edgeTypes={edgeTypes}
       ></ReactFlow>
-      <div className="mobilityFooter">
+
+      <div className="flowFooter">Serch brodcasted</div>
+
+      {/* <div className="mobilityFooter">
         <div
           className={`GWP ${
             experienceCenterId === "1" ? "girl-active" : "girl"
@@ -372,7 +353,7 @@ const NodeAsHandleFlow: React.FC = () => {
             this is you
           </span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

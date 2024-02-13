@@ -1,10 +1,10 @@
 .main-container {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   width: 100%;
-  position: absolute;
+  /* position: absolute;
   top: 15%;
-  background: unset;
+  background: unset; */
 }
 .header {
   display: flex;
@@ -21,8 +21,10 @@
   margin-bottom: 20px;
 }
 .page-content {
-  display: unset;
-  top: 2%;
+  /* display: unset;
+  top: 2%; */
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .page-content-title {
@@ -89,7 +91,7 @@
 }
 .home-container {
   cursor: pointer;
-  z-index: 99;
+  /* z-index: 99; */
 }
 .cur-pointer {
   cursor: pointer;
