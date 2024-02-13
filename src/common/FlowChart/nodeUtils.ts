@@ -70,146 +70,157 @@ export const getEdgeParams = (source: any, target: any) => {
 export const createNodesAndEdges = (data: any, data1: any) => {
   const edges = [];
   const nodes = [];
+  // console.log({ data, data1 });
   nodes.push(
     {
-      id: ids.mobility,
+      id: ids.pulseEnergyWhatsapp,
       data: {
         label: "",
       },
 
       className: "pulse_energy_whatsapp",
       position: { x: 200, y: 90 },
+      draggable: false,
+      focusable: false,
     },
     {
       id: ids.gateway,
       data: { label: "Gateway" },
       className: "gateway",
       position: { x: 360, y: 170 },
+      draggable: false,
+      focusable: false,
     },
 
     {
-      id: ids.whatsappMobility,
+      id: ids.sheruBap,
       data: { label: "" },
       className: "sheru_bap",
       position: { x: 200, y: 200 },
+      draggable: false,
+      focusable: false,
     },
     {
-      id: ids.taxi,
+      id: ids.pulseEnergyBpp,
       className: "pulse_energy_bpp",
       data: { label: "" },
       position: { x: 500, y: 60 },
+      draggable: false,
+      focusable: false,
     },
     {
-      id: "separid",
+      id: ids.kazam,
       className: "kazam",
       data: { label: "" },
       position: { x: 500, y: 150 },
+      draggable: false,
+      focusable: false,
     },
     {
-      id: ids.luxeCabs,
+      id: ids.turnoBpp,
       className: "turno_bpp",
       data: { label: "" },
       position: { x: 500, y: 240 },
+      draggable: false,
+      focusable: false,
     }
   );
 
-  edges.push(
-    {
-      id: data.eventId,
-      source: data?.eventSource?.id,
-      target: data?.eventDestination?.id,
-      data: {
-        text: data?.eventMessage?.actionMessage,
-      },
-      type: "floating",
-      markerEnd: {
-        type: MarkerType.Arrow,
-        width: 16,
-        height: 16,
-        color:
-          data?.eventSource?.id === ids.taxi ||
-          data?.eventSource?.id === ids.luxeCabs ||
-          (data?.eventSource?.id === ids.gateway &&
-            data?.eventDestination?.id === ids.mobility) ||
-          (data?.eventSource?.id === ids.gateway &&
-            data?.eventDestination?.id === ids.whatsappMobility)
-            ? "#FB1E1E"
-            : "#23DFDF",
-      },
-      style: {
-        transform:
-          data?.eventSource?.id === ids.gateway &&
-          data?.eventDestination?.id === ids.mobility
-            ? "translate(20px, -7px)"
-            : data?.eventSource?.id === ids.gateway &&
-              data?.eventDestination?.id === ids.whatsappMobility
-            ? "translate(41px, 19px)"
-            : data?.eventSource?.id === ids.luxeCabs &&
-              data?.eventDestination?.id === ids.mobility
-            ? "translate(26px, -39px)"
-            : data?.eventSource?.id === ids.whatsappMobility &&
-              data?.eventDestination?.id === ids.taxi
-            ? "translate(-29px, -4px)"
-            : data?.eventSource?.id === ids.taxi &&
-              data?.eventDestination?.id === ids.whatsappMobility
-            ? "translate(-45px, 4px)"
-            : " ",
-        strokeWidth: 3,
-        stroke:
-          data?.eventSource?.id === ids.taxi ||
-          data?.eventSource?.id === ids.luxeCabs ||
-          (data?.eventSource?.id === ids.gateway &&
-            data?.eventDestination?.id === ids.mobility) ||
-          (data?.eventSource?.id === ids.gateway &&
-            data?.eventDestination?.id === ids.whatsappMobility)
-            ? "#FB1E1E"
-            : "#23DFDF",
-      },
-    },
-    {
-      id: data1.eventId,
-      source: data1?.eventSource?.id,
-      target: data1?.eventDestination?.id,
-      data: {
-        eventCode: data1?.eventMessage?.eventCode,
-        text: data1?.eventMessage?.actionMessage,
-      },
-      type: "floating",
-      markerEnd: {
-        type: MarkerType.Arrow,
-        width: 16,
-        height: 16,
-        color:
-          data1?.eventSource?.id === ids.taxi ||
-          data1?.eventSource?.id === ids.luxeCabs ||
-          (data1?.eventSource?.id === ids.gateway &&
-            data1?.eventDestination?.id === ids.mobility) ||
-          (data1?.eventSource?.id === ids.gateway &&
-            data1?.eventDestination?.id === ids.whatsappMobility)
-            ? "#FB1E1E"
-            : "#23DFDF",
-      },
-      style: {
-        transform:
-          data1?.eventSource?.id === ids.gateway &&
-          data1?.eventDestination?.id === ids.mobility
-            ? "translate(4px, 16px)"
-            : data1?.eventSource?.id === ids.gateway &&
-              data1?.eventDestination?.id === ids.whatsappMobility
-            ? "translate(20px, -4px)"
-            : " ",
-        strokeWidth: 3,
-        stroke:
-          data1?.eventSource?.id === ids.taxi ||
-          data1?.eventSource?.id === ids.luxeCabs ||
-          (data1?.eventSource?.id === ids.gateway &&
-            data1?.eventDestination?.id === ids.mobility) ||
-          (data1?.eventSource?.id === ids.gateway &&
-            data1?.eventDestination?.id === ids.whatsappMobility)
-            ? "#FB1E1E"
-            : "#23DFDF",
-      },
-    }
-  );
+  if (data.length > 0) {
+    const dataId = data[data.length - 1].data.id;
+
+    const dataOfEvent = data[data.length - 1].data.events[0].context;
+
+    console.log("dataEvent", dataOfEvent);
+
+    edges.push(
+      {
+        id: dataId,
+        source: dataOfEvent?.source?.id || dataOfEvent?.source?.type,
+        target: dataOfEvent?.target?.id || dataOfEvent?.target?.type,
+        data: {
+          text: "",
+        },
+        type: "floating",
+        markerEnd: {
+          type: MarkerType.Arrow,
+          width: 16,
+          height: 16,
+          color: "#4498E8",
+        },
+        style: {
+          // TODO :- To check this tansform after having the correct logic of arrow and transform of below object also
+
+          // transform:
+          //   dataOfEvent?.source?.type === ids.gateway &&
+          //   dataOfEvent?.target?.id === ids.pulseEnergyWhatsapp
+          //     ? "translate(20px, -7px)"
+          //     : dataOfEvent?.source?.type === ids.gateway &&
+          //       dataOfEvent?.target?.id === ids.pulseEnergyWhatsapp
+          //     ? "translate(41px, 19px)"
+          //     : dataOfEvent?.source?.id === ids.turnoBpp &&
+          //       dataOfEvent?.target?.id === ids.pulseEnergyWhatsapp
+          //     ? "translate(26px, -39px)"
+          //     : dataOfEvent?.source?.id === ids.sheruBap &&
+          //       dataOfEvent?.target?.id === ids.pulseEnergyBpp
+          //     ? "translate(-29px, -4px)"
+          //     : dataOfEvent?.source?.id === ids.pulseEnergyBpp &&
+          //       dataOfEvent?.target?.id === ids.sheruBap
+          //     ? "translate(-45px, 4px)"
+          //     : " ",
+          strokeWidth: 2,
+          stroke: "#4498E8",
+        },
+      }
+
+      // TODO :- check this later
+
+      // {
+      //   id: data1.eventId,
+      //   source: data1?.eventSource?.id,
+      //   target: data1?.eventDestination?.id,
+      //   data: {
+      //     eventCode: data1?.eventMessage?.eventCode,
+      //     text: data1?.eventMessage?.actionMessage,
+      //   },
+      //   type: "floating",
+      //   markerEnd: {
+      //     type: MarkerType.Arrow,
+      //     width: 16,
+      //     height: 16,
+      //     color:
+      //       data1?.eventSource?.id === ids.pulseEnergyBpp ||
+      //       data1?.eventSource?.id === ids.turnoBpp ||
+      //       (data1?.eventSource?.id === ids.gateway &&
+      //         data1?.eventDestination?.id === ids.pulseEnergyWhatsapp) ||
+      //       (data1?.eventSource?.id === ids.gateway &&
+      //         data1?.eventDestination?.id === ids.sheruBap)
+      //         ? "#FB1E1E"
+      //         : "#23DFDF",
+      //   },
+      //   style: {
+      //     // transform:
+      //     //   data1?.eventSource?.id === ids.gateway &&
+      //     //   data1?.eventDestination?.id === ids.pulseEnergyWhatsapp
+      //     //     ? "translate(4px, 16px)"
+      //     //     : data1?.eventSource?.id === ids.gateway &&
+      //     //       data1?.eventDestination?.id === ids.sheruBap
+      //     //     ? "translate(20px, -4px)"
+      //     //     : " ",
+      //     strokeWidth: 3,
+      //     stroke:
+      //       data1?.eventSource?.id === ids.pulseEnergyBpp ||
+      //       data1?.eventSource?.id === ids.turnoBpp ||
+      //       (data1?.eventSource?.id === ids.gateway &&
+      //         data1?.eventDestination?.id === ids.pulseEnergyWhatsapp) ||
+      //       (data1?.eventSource?.id === ids.gateway &&
+      //         data1?.eventDestination?.id === ids.sheruBap)
+      //         ? "#FB1E1E"
+      //         : "#23DFDF",
+      //   },
+      // }
+    );
+  }
+
   return { nodes, edges };
 };

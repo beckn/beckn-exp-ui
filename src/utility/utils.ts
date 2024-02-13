@@ -4,28 +4,29 @@ import whatsappMobility from "../assets/whatsappMobility.svg";
 import LuxeCab from "../assets/luxe.svg";
 
 const ids = {
-  mobility: "mobilityreferencebap.becknprotocol.io",
-  taxi: "becknify.humbhionline.in.mobility.BPP/beckn_open/app1-succinct-in",
-  gateway: "gateway.becknprotocol.io",
-  whatsappMobility: "mobilityreferencebap-staging.becknprotocol.io",
+  pulseEnergyWhatsapp: "ps-bap-network.becknprotocol.io",
+  pulseEnergyBpp: "industry4-bpp",
+  gateway: "provider",
+  sheruBap: "mobilityreferencebap-staging.becknprotocol.io",
   yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
-  luxeCabs: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
+  turnoBpp: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
   searchBroadCast: "mbgw_srch_brdcst",
   mbthSentCatalogue: "mbth_snt_catalogue",
   mblcSentCatalogue: "mblc_snt_catalogue",
   mbgwSentCatalogueBap: "mbgw_sent_ctlg_bap",
+  kazam: "kazam",
 };
 
 const mobilityCardArr = [
   {
     img: `${myMobility}`,
     name: "mobility",
-    id: ids.mobility,
+    id: ids.pulseEnergyWhatsapp,
   },
   {
     img: `${RHP}`,
     name: "taxi",
-    id: ids.taxi,
+    id: ids.pulseEnergyBpp,
   },
   {
     title: "Gateway",
@@ -35,7 +36,7 @@ const mobilityCardArr = [
   {
     img: `${whatsappMobility}`,
     name: "whatsappMobility",
-    id: ids.whatsappMobility,
+    id: ids.sheruBap,
   },
   {
     img: `${LuxeCab}`,

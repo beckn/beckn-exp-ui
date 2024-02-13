@@ -76,14 +76,15 @@ const NodeComponent = (props: any) => {
           <h3
             className={
               (sortedEvents[0].event.eventSource.id &&
-                sortedEvents[0].event.eventDestination.id) === ids.mobility
+                sortedEvents[0].event.eventDestination.id) ===
+              ids.pulseEnergyWhatsapp
                 ? "mobilitySource"
                 : (sortedEvents[0].event.eventSource.id &&
-                    sortedEvents[0].event.eventDestination.id) === ids.taxi
+                    sortedEvents[0].event.eventDestination.id) ===
+                  ids.pulseEnergyBpp
                 ? "taxihubSource"
                 : (sortedEvents[0].event.eventSource.id &&
-                    sortedEvents[0].event.eventDestination.id) ===
-                  ids.whatsappMobility
+                    sortedEvents[0].event.eventDestination.id) === ids.sheruBap
                 ? "whatsappSource"
                 : (sortedEvents[0].event.eventSource.id &&
                     sortedEvents[0].event.eventDestination.id) === ids.yatri

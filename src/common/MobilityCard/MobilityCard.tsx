@@ -43,9 +43,9 @@ const MobilityCard = () => {
   //     .map((event: any) => {
   //       if (
   //         (event.event.eventSource.id === ids.gateway &&
-  //           event.event.eventDestination.id === ids.taxi) ||
+  //           event.event.eventDestination.id === ids.pulseEnergyBpp) ||
   //         (event.event.eventSource.id === ids.gateway &&
-  //           event.event.eventDestination.id === ids.luxeCabs)
+  //           event.event.eventDestination.id === ids.turnoBpp)
   //       ) {
   //         slicedArr.splice(0);
   //         return slicedArr.push(
@@ -53,9 +53,9 @@ const MobilityCard = () => {
   //             events[events.length - 1].event.eventSource.id === ids.gateway
   //               ? events.length -
   //                   ((events[events.length - 3].event.eventSource.id ===
-  //                     ids.whatsappMobility &&
+  //                     ids.sheruBap &&
   //                     events[events.length - 3].event.eventDestination.id ===
-  //                       ids.whatsappMobility) ||
+  //                       ids.sheruBap) ||
   //                   (events[events.length - 3].event.eventSource.id ===
   //                     ids.mobility &&
   //                     events[events.length - 3].event.eventDestination.id ===
@@ -69,9 +69,9 @@ const MobilityCard = () => {
   //           )
   //         );
   //       } else if (
-  //         (event.event.eventSource.id === ids.luxeCabs &&
+  //         (event.event.eventSource.id === ids.turnoBpp &&
   //           event.event.eventDestination.id === ids.gateway) ||
-  //         (event.event.eventSource.id === ids.taxi &&
+  //         (event.event.eventSource.id === ids.pulseEnergyBpp &&
   //           event.event.eventDestination.id === ids.gateway)
   //       ) {
   //         slicedArr.splice(0);
@@ -106,21 +106,21 @@ const MobilityCard = () => {
   //         );
   //       } else if (
   //         event.event.eventSource.id === ids.gateway &&
-  //         event.event.eventDestination.id === ids.whatsappMobility
+  //         event.event.eventDestination.id === ids.sheruBap
   //       ) {
   //         slicedArr.splice(0);
   //         return slicedArr.push(
   //           ...events.slice(
   //             events[events.length - 1].event.eventDestination.id ===
-  //               ids.whatsappMobility
+  //               ids.sheruBap
   //               ? events.length -
   //                   (events[events.length - 2].event.eventDestination.id ===
-  //                   ids.whatsappMobility
+  //                   ids.sheruBap
   //                     ? 2
   //                     : 1)
   //               : 0,
   //             events[events.length - 1].event.eventDestination.id ===
-  //               ids.whatsappMobility
+  //               ids.sheruBap
   //               ? events.length
   //               : 0
   //           )
@@ -207,43 +207,43 @@ const MobilityCard = () => {
   //                         : event.event.eventDestination.id
   //                     }
   //                     startAnchor={
-  //                       event.event.eventSource.id === ids.whatsappMobility &&
-  //                       event.event.eventDestination.id === ids.taxi
+  //                       event.event.eventSource.id === ids.sheruBap &&
+  //                       event.event.eventDestination.id === ids.pulseEnergyBpp
   //                         ? "top"
-  //                         : event.event.eventSource.id === ids.luxeCabs &&
+  //                         : event.event.eventSource.id === ids.turnoBpp &&
   //                           event.event.eventDestination.id === ids.mobility
   //                         ? "top"
   //                         : "auto"
   //                     }
   //                     endAnchor={
-  //                       event.event.eventSource.id === ids.taxi &&
-  //                       event.event.eventDestination.id === ids.whatsappMobility
+  //                       event.event.eventSource.id === ids.pulseEnergyBpp &&
+  //                       event.event.eventDestination.id === ids.sheruBap
   //                         ? "top"
   //                         : event.event.eventSource.id === ids.mobility &&
-  //                           event.event.eventDestination.id === ids.luxeCabs
+  //                           event.event.eventDestination.id === ids.turnoBpp
   //                         ? "top"
   //                         : "auto"
   //                     }
   //                     curveness={0.6}
   //                     lineColor={
-  //                       event.event.eventSource.id === ids.taxi ||
-  //                       event.event.eventSource.id === ids.luxeCabs ||
+  //                       event.event.eventSource.id === ids.pulseEnergyBpp ||
+  //                       event.event.eventSource.id === ids.turnoBpp ||
   //                       (event.event.eventSource.id === ids.gateway &&
   //                         event.event.eventDestination.id === ids.mobility) ||
   //                       (event.event.eventSource.id === ids.gateway &&
   //                         event.event.eventDestination.id ===
-  //                           ids.whatsappMobility)
+  //                           ids.sheruBap)
   //                         ? "#FB1E1E"
   //                         : "#23DFDF"
   //                     }
   //                     headColor={
-  //                       event.event.eventSource.id === ids.taxi ||
-  //                       event.event.eventSource.id === ids.luxeCabs ||
+  //                       event.event.eventSource.id === ids.pulseEnergyBpp ||
+  //                       event.event.eventSource.id === ids.turnoBpp ||
   //                       (event.event.eventSource.id === ids.gateway &&
   //                         event.event.eventDestination.id === ids.mobility) ||
   //                       (event.event.eventSource.id === ids.gateway &&
   //                         event.event.eventDestination.id ===
-  //                           ids.whatsappMobility)
+  //                           ids.sheruBap)
   //                         ? "#FB1E1E"
   //                         : "#23DFDF"
   //                     }
@@ -251,15 +251,15 @@ const MobilityCard = () => {
   //                     headSize={7}
   //                     // path={"straight"}
   //                     path={
-  //                       (event.event.eventSource.id === ids.whatsappMobility &&
-  //                         event.event.eventDestination.id === ids.taxi) ||
+  //                       (event.event.eventSource.id === ids.sheruBap &&
+  //                         event.event.eventDestination.id === ids.pulseEnergyBpp) ||
   //                       (event.event.eventSource.id === ids.mobility &&
-  //                         event.event.eventDestination.id === ids.luxeCabs)
+  //                         event.event.eventDestination.id === ids.turnoBpp)
   //                         ? "smooth"
-  //                         : (event.event.eventSource.id === ids.taxi &&
+  //                         : (event.event.eventSource.id === ids.pulseEnergyBpp &&
   //                             event.event.eventDestination.id ===
-  //                               ids.whatsappMobility) ||
-  //                           (event.event.eventSource.id === ids.luxeCabs &&
+  //                               ids.sheruBap) ||
+  //                           (event.event.eventSource.id === ids.turnoBpp &&
   //                             event.event.eventDestination.id === ids.mobility)
   //                         ? "smooth"
   //                         : "straight"

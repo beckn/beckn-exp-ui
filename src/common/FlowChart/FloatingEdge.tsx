@@ -43,42 +43,42 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
     targetNode
   );
   const isSourceMobilityandDestinationGateway =
-    source === ids.mobility && target === ids.gateway;
+    source === ids.pulseEnergyWhatsapp && target === ids.gateway;
   const isSourceGatewayandDestinationTaxi =
-    source === ids.gateway && target === ids.taxi;
+    source === ids.gateway && target === ids.pulseEnergyBpp;
   const isSourceGatewayandDestinationLuxeCabs =
-    source === ids.gateway && target === ids.luxeCabs;
+    source === ids.gateway && target === ids.turnoBpp;
   const isSourceTaxiandDestinationGateway =
-    source === ids.taxi && target === ids.gateway;
+    source === ids.pulseEnergyBpp && target === ids.gateway;
   const isSourceLuxeCabsandDestinationGateway =
-    source === ids.luxeCabs && target === ids.gateway;
+    source === ids.turnoBpp && target === ids.gateway;
   const isSourceGatewayandDestinationMobility =
-    source === ids.gateway && target === ids.mobility;
+    source === ids.gateway && target === ids.pulseEnergyWhatsapp;
   const isSourceMobilityandDestinationTaxi =
-    source === ids.mobility && target === ids.taxi;
+    source === ids.pulseEnergyWhatsapp && target === ids.pulseEnergyBpp;
   const isSourceTaxiandDestinationMobility =
-    source === ids.taxi && ids.mobility;
+    source === ids.pulseEnergyBpp && ids.pulseEnergyWhatsapp;
   const isSourceWhatsappandDestinationGateway =
-    source === ids.whatsappMobility && target === ids.gateway;
+    source === ids.sheruBap && target === ids.gateway;
   const isSourceGatewayandDestinationWhatsapp =
-    source === ids.gateway && target === ids.whatsappMobility;
+    source === ids.gateway && target === ids.sheruBap;
   const isSourceMobilityandDestinationLuxecabs =
-    source === ids.mobility && target === ids.luxeCabs;
+    source === ids.pulseEnergyWhatsapp && target === ids.turnoBpp;
   const isSourceLuxeCabsandDestinationMobility =
-    source === ids.luxeCabs && target === ids.mobility;
+    source === ids.turnoBpp && target === ids.pulseEnergyWhatsapp;
   const isSourceWhatsappandDestinationLuxecabs =
-    source === ids.whatsappMobility && target === ids.luxeCabs;
+    source === ids.sheruBap && target === ids.turnoBpp;
   const isSourceLuxecabsandDestinationWhatsapp =
-    source === ids.luxeCabs && target === ids.whatsappMobility;
+    source === ids.turnoBpp && target === ids.sheruBap;
   const isSourceWhatsappandDestinationTaxi =
-    source === ids.whatsappMobility && target === ids.taxi;
+    source === ids.sheruBap && target === ids.pulseEnergyBpp;
   const isSourceTaxiandDestinationWhatsapp =
-    source === ids.taxi && target === ids.whatsappMobility;
+    source === ids.pulseEnergyBpp && target === ids.sheruBap;
   if (
-    (source === ids.whatsappMobility && target === ids.taxi) ||
-    (source === ids.taxi && target === ids.whatsappMobility) ||
-    (source === ids.mobility && target === ids.luxeCabs) ||
-    (source === ids.luxeCabs && target === ids.mobility)
+    (source === ids.sheruBap && target === ids.pulseEnergyBpp) ||
+    (source === ids.pulseEnergyBpp && target === ids.sheruBap) ||
+    (source === ids.pulseEnergyWhatsapp && target === ids.turnoBpp) ||
+    (source === ids.turnoBpp && target === ids.pulseEnergyWhatsapp)
   ) {
     const [edgePath, labelX, labelY] = getBezierPath({
       sourceX: sx,
@@ -182,13 +182,15 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
       </>
     );
   } else if (
-    (source === ids.mobility && target === ids.mobility) ||
-    (source === ids.whatsappMobility && target === ids.whatsappMobility) ||
-    (source === ids.luxeCabs && target === ids.luxeCabs) ||
-    (source === ids.taxi && target === ids.taxi)
+    (source === ids.pulseEnergyWhatsapp &&
+      target === ids.pulseEnergyWhatsapp) ||
+    (source === ids.sheruBap && target === ids.sheruBap) ||
+    (source === ids.turnoBpp && target === ids.turnoBpp) ||
+    (source === ids.pulseEnergyBpp && target === ids.pulseEnergyBpp)
   ) {
     return null;
   } else {
+    console.log("coming in the edge case");
     const [edgePath, labelX, labelY] = getStraightPath({
       sourceX: sx,
       sourceY: sy,
@@ -203,37 +205,42 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
           id={id}
           className="react-flow__edge-path"
           d={
-            isSourceGatewayandDestinationLuxeCabs
-              ? "M  480 230 L 647 340"
-              : isSourceGatewayandDestinationTaxi
-              ? "M 480 190 L 651 110"
-              : isSourceMobilityandDestinationGateway
-              ? "M 290 122.609 L 410 198.696"
-              : isSourceTaxiandDestinationGateway
-              ? "M 630 110 L 490 190"
-              : isSourceLuxeCabsandDestinationGateway
-              ? "M 630 330 L 480 240"
-              : isSourceGatewayandDestinationMobility
-              ? "M 400 210 L 280 120"
-              : isSourceMobilityandDestinationTaxi
-              ? "M 295 100 L 640 100"
-              : isSourceTaxiandDestinationMobility
-              ? "M 630 100 L 300 100"
-              : isSourceWhatsappandDestinationGateway
-              ? "M 290 340 L 430 240"
-              : isSourceGatewayandDestinationWhatsapp
-              ? "M 400 225 L 270 330"
-              : isSourceMobilityandDestinationLuxecabs
-              ? "M 300 340 L 640 340"
-              : isSourceLuxecabsandDestinationWhatsapp
-              ? "M 630 340 L 300 340"
-              : edgePath
+            // TODO :- below are for exact coordinates. Will enable them if needed
+
+            // isSourceGatewayandDestinationLuxeCabs
+            //   ? "M  480 230 L 647 340"
+            //   : isSourceGatewayandDestinationTaxi
+            //   ? "M 480 190 L 651 110"
+            //   : isSourceMobilityandDestinationGateway
+            //   ? "M 261 140 L 360 170"
+            //   : isSourceTaxiandDestinationGateway
+            //   ? "M 630 110 L 490 190"
+            //   : isSourceLuxeCabsandDestinationGateway
+            //   ? "M 630 330 L 480 240"
+            //   : isSourceGatewayandDestinationMobility
+            //   ? "M 400 210 L 280 120"
+            //   : isSourceMobilityandDestinationTaxi
+            //   ? "M 295 100 L 640 100"
+            //   : isSourceTaxiandDestinationMobility
+            //   ? "M 630 100 L 300 100"
+            //   : isSourceWhatsappandDestinationGateway
+            //   ? "M 290 340 L 430 240"
+            //   : isSourceGatewayandDestinationWhatsapp
+            //   ? "M 400 225 L 270 330"
+            //   : isSourceMobilityandDestinationLuxecabs
+            //   ? "M 300 340 L 640 340"
+            //   : isSourceLuxecabsandDestinationWhatsapp
+            //   ? "M 630 340 L 300 340"
+            //   : edgePath
+            edgePath
           }
           markerEnd={markerEnd}
           style={style}
         />
 
-        <EdgeLabelRenderer>
+        {/* TODO :- commenting it out as we do not need label right now */}
+
+        {/* <EdgeLabelRenderer>
           <div
             style={{
               top:
@@ -322,72 +329,9 @@ const FloatingEdge: React.FC<floatingEdgeDataModal> = ({
             }}
             className={`nodrag nopan ${isSourceGatewayandDestinationWhatsapp}${data.text}`}
           >
-            {/* <div
-              style={{
-                width: "10px",
-                height: "10px",
-                backgroundColor: "#fff",
-                position: "absolute",
-                top:
-                  data.eventCode === ids.mbgwSentCatalogueBap
-                    ? "14px"
-                    : isSourceGatewayandDestinationTaxi
-                    ? "17px"
-                    : isSourceGatewayandDestinationLuxeCabs
-                    ? "17px"
-                    : isSourceTaxiandDestinationGateway
-                    ? "16px"
-                    : isSourceLuxeCabsandDestinationGateway
-                    ? "17px"
-                    : isSourceMobilityandDestinationTaxi
-                    ? "13px"
-                    : isSourceTaxiandDestinationMobility
-                    ? "13px"
-                    : isSourceWhatsappandDestinationGateway
-                    ? "16px"
-                    : isSourceGatewayandDestinationWhatsapp
-                    ? "16px"
-                    : isSourceMobilityandDestinationGateway
-                    ? "13px"
-                    : isSourceMobilityandDestinationLuxecabs
-                    ? "23px"
-                    : isSourceWhatsappandDestinationLuxecabs
-                    ? "17px"
-                    : isSourceLuxecabsandDestinationWhatsapp
-                    ? "17px"
-                    : "15px",
-                left: isSourceMobilityandDestinationGateway
-                  ? "1px"
-                  : isSourceGatewayandDestinationTaxi
-                  ? "8px"
-                  : isSourceGatewayandDestinationLuxeCabs
-                  ? "12px"
-                  : isSourceTaxiandDestinationGateway
-                  ? "53px"
-                  : isSourceLuxeCabsandDestinationGateway
-                  ? "56px"
-                  : isSourceGatewayandDestinationMobility
-                  ? "54px"
-                  : isSourceMobilityandDestinationTaxi
-                  ? "11px"
-                  : isSourceTaxiandDestinationMobility
-                  ? "50px"
-                  : isSourceWhatsappandDestinationGateway
-                  ? "5px"
-                  : isSourceGatewayandDestinationWhatsapp
-                  ? "54px"
-                  : isSourceMobilityandDestinationLuxecabs
-                  ? "23px"
-                  : isSourceWhatsappandDestinationLuxecabs
-                  ? "15px"
-                  : isSourceLuxecabsandDestinationWhatsapp
-                  ? "54px"
-                  : "",
-              }}
-            ></div> */}
             {data.text}
           </div>
-        </EdgeLabelRenderer>
+        </EdgeLabelRenderer> */}
       </>
     );
   }

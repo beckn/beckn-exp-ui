@@ -49,11 +49,11 @@ const ViewMyJourney = (props) => {
       return "Travel buddy";
     } else if (id === ids.gateway) {
       return "gateway";
-    } else if (id === ids.taxi) {
+    } else if (id === ids.pulseEnergyBpp) {
       return "taxi";
     } else if (id === ids.yatri) {
       return "Luxe Cabs";
-    } else if (id === ids.whatsappMobility) {
+    } else if (id === ids.sheruBap) {
       return "Whatsapp";
     }
   });
@@ -183,7 +183,7 @@ const ViewMyJourney = (props) => {
                 alt=""
               />
             )}
-            {uniqueSourceId[0] === ids.whatsappMobility && (
+            {uniqueSourceId[0] === ids.sheruBap && (
               <img
                 className="whatsapplogo"
                 src="/assets/whatsappLogo.png"

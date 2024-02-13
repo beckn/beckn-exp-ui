@@ -42,7 +42,7 @@ const NodeAsHandleFlow: React.FC = () => {
 
   useEffect(() => {
     socket.on("telemetry_data", (data) => {
-      console.log(data);
+      console.log("telemetry data", data);
       setTelemetryData(data.data);
       setEvents(data.data);
     });
@@ -94,192 +94,199 @@ const NodeAsHandleFlow: React.FC = () => {
   //   fetchEvent();
   // }, 1000);
 
-  const updateNodes = nodes
-    .map((node) => {
-      console.log("node here", node);
-      if (
-        node.id === ids.mobility &&
-        events?.eventSource?.id === ids.mobility &&
-        events?.eventDestination?.id === ids.mobility
-      ) {
-        return {
-          ...node,
-          data: {
-            ...node.data,
-            label: (
-              <div className="nodeMobility">
-                {eventsRes[0]?.event.eventMessage.actionMessage}
-              </div>
-            ),
-          },
+  //TODO :- THis logic is for updating nodes based on some logic
 
-          className: "activeMobility",
-        };
-      }
-      if (
-        node.id === ids.whatsappMobility &&
-        events?.eventSource?.id === ids.whatsappMobility &&
-        events?.eventDestination?.id === ids.whatsappMobility
-      ) {
-        return {
-          ...node,
-          data: {
-            ...node.data,
-            label: (
-              <div className="nodeMobility">
-                {eventsRes[0]?.event.eventMessage.actionMessage}
-              </div>
-            ),
-          },
+  // const updateNodes = nodes
+  //   .map((node) => {
+  //     if (
+  //       node.id === ids.pulseEnergyWhatsapp &&
+  //       events?.eventSource?.id === ids.pulseEnergyWhatsapp &&
+  //       events?.eventDestination?.id === ids.pulseEnergyWhatsapp
+  //     ) {
+  //       return {
+  //         ...node,
+  //         data: {
+  //           ...node.data,
+  //           label: (
+  //             <div className="nodeMobility">
+  //               this is an a a tion message
+  //               {/* {eventsRes[0]?.event.eventMessage.actionMessage} */}
+  //             </div>
+  //           ),
+  //         },
 
-          className: "activeWhatsappMobility",
-        };
-      }
-      if (
-        node.id === ids.luxeCabs &&
-        events?.eventSource?.id === ids.luxeCabs &&
-        events?.eventDestination?.id === ids.luxeCabs
-      ) {
-        return {
-          ...node,
-          data: {
-            ...node.data,
-            label: (
-              <div className="nodeMobility">
-                {eventsRes[0]?.event.eventMessage.actionMessage}
-              </div>
-            ),
-          },
+  //         className: "activeMobility",
+  //       };
+  //     }
+  //     if (
+  //       node.id === ids.sheruBap &&
+  //       events?.eventSource?.id === ids.sheruBap &&
+  //       events?.eventDestination?.id === ids.sheruBap
+  //     ) {
+  //       return {
+  //         ...node,
+  //         data: {
+  //           ...node.data,
+  //           label: (
+  //             <div className="nodeMobility">
+  //               {eventsRes[0]?.event.eventMessage.actionMessage}
+  //             </div>
+  //           ),
+  //         },
 
-          className: "activeLuxeCabs",
-        };
-      }
-      if (
-        node.id === ids.taxi &&
-        events?.eventSource?.id === ids.taxi &&
-        events?.eventDestination?.id === ids.taxi
-      ) {
-        return {
-          ...node,
-          data: {
-            ...node.data,
-            label: (
-              <div className="nodeMobility">
-                {eventsRes[0]?.event.eventMessage.actionMessage}
-              </div>
-            ),
-          },
+  //         className: "activeWhatsappMobility",
+  //       };
+  //     }
+  //     if (
+  //       node.id === ids.turnoBpp &&
+  //       events?.eventSource?.id === ids.turnoBpp &&
+  //       events?.eventDestination?.id === ids.turnoBpp
+  //     ) {
+  //       return {
+  //         ...node,
+  //         data: {
+  //           ...node.data,
+  //           label: (
+  //             <div className="nodeMobility">
+  //               {eventsRes[0]?.event.eventMessage.actionMessage}
+  //             </div>
+  //           ),
+  //         },
 
-          className: "activeTaxi",
-        };
-      }
+  //         className: "activeLuxeCabs",
+  //       };
+  //     }
+  //     if (
+  //       node.id === ids.pulseEnergyBpp &&
+  //       events?.eventSource?.id === ids.pulseEnergyBpp &&
+  //       events?.eventDestination?.id === ids.pulseEnergyBpp
+  //     ) {
+  //       return {
+  //         ...node,
+  //         data: {
+  //           ...node.data,
+  //           label: (
+  //             <div className="nodeMobility">
+  //               {eventsRes[0]?.event.eventMessage.actionMessage}
+  //             </div>
+  //           ),
+  //         },
 
-      if (
-        (node.id === ids.mobility &&
-          events?.eventSource?.id === ids.mobility) ||
-        (node.id === ids.mobility && events1?.eventSource?.id === ids.mobility)
-      ) {
-        return {
-          ...node,
+  //         className: "activeTaxi",
+  //       };
+  //     }
 
-          className: "activeMobility",
-        };
-      }
-      if (
-        (node.id === ids.gateway && events?.eventSource?.id === ids.gateway) ||
-        (node.id === ids.gateway && events1?.eventSource?.id === ids.gateway) ||
-        (node.id === ids.gateway &&
-          events?.eventDestination?.id === ids.gateway) ||
-        (node.id === ids.gateway &&
-          events1?.eventDestination?.id === ids.gateway)
-      ) {
-        return {
-          ...node,
-          className: "activeGateway",
-        };
-      }
-      if (
-        (node.id === ids.taxi && events?.eventSource?.id === ids.taxi) ||
-        (node.id === ids.taxi && events1?.eventSource?.id === ids.taxi)
-      ) {
-        return {
-          ...node,
-          className: "activeTaxi",
-        };
-      }
+  //     if (
+  //       (node.id === ids.pulseEnergyWhatsapp &&
+  //         events?.eventSource?.id === ids.pulseEnergyWhatsapp) ||
+  //       (node.id === ids.pulseEnergyWhatsapp &&
+  //         events1?.eventSource?.id === ids.pulseEnergyWhatsapp)
+  //     ) {
+  //       return {
+  //         ...node,
 
-      if (
-        (node.id === ids.luxeCabs &&
-          events?.eventSource?.id === ids.luxeCabs) ||
-        (node.id === ids.luxeCabs && events1?.eventSource?.id === ids.luxeCabs)
-      ) {
-        return {
-          ...node,
-          className: "activeLuxeCabs",
-        };
-      }
-      if (
-        (node.id === ids.whatsappMobility &&
-          events?.eventSource?.id === ids.whatsappMobility) ||
-        (node.id === ids.whatsappMobility &&
-          events1?.eventSource?.id === ids.whatsappMobility)
-      ) {
-        return {
-          ...node,
-          className: "activeWhatsappMobility",
-        };
-      }
-      if (
-        (node.id === ids.mobility &&
-          events?.eventDestination?.id === ids.mobility) ||
-        (node.id === ids.mobility &&
-          events1?.eventDestination?.id === ids.mobility)
-      ) {
-        return {
-          ...node,
-          className: "destMobility",
-        };
-      }
-      if (
-        (node.id === ids.taxi && events?.eventDestination?.id === ids.taxi) ||
-        (node.id === ids.taxi && events1?.eventDestination?.id === ids.taxi)
-      ) {
-        return {
-          ...node,
-          className: "destTaxi",
-        };
-      }
-      if (
-        (node.id === ids.luxeCabs &&
-          events?.eventDestination?.id === ids.luxeCabs) ||
-        (node.id === ids.luxeCabs &&
-          events1?.eventDestination?.id === ids.luxeCabs)
-      ) {
-        return {
-          ...node,
-          className: "destLuxeCabs",
-        };
-      }
-      if (
-        (node.id === ids.whatsappMobility &&
-          events?.eventDestination?.id === ids.whatsappMobility) ||
-        (node.id === ids.whatsappMobility &&
-          events1?.eventDestination?.id === ids.whatsappMobility)
-      ) {
-        return {
-          ...node,
-          className: "destWhatsappMobility",
-        };
-      }
+  //         className: "activeMobility",
+  //       };
+  //     }
+  //     if (
+  //       (node.id === ids.gateway && events?.eventSource?.id === ids.gateway) ||
+  //       (node.id === ids.gateway && events1?.eventSource?.id === ids.gateway) ||
+  //       (node.id === ids.gateway &&
+  //         events?.eventDestination?.id === ids.gateway) ||
+  //       (node.id === ids.gateway &&
+  //         events1?.eventDestination?.id === ids.gateway)
+  //     ) {
+  //       return {
+  //         ...node,
+  //         className: "activeGateway",
+  //       };
+  //     }
+  //     if (
+  //       (node.id === ids.pulseEnergyBpp &&
+  //         events?.eventSource?.id === ids.pulseEnergyBpp) ||
+  //       (node.id === ids.pulseEnergyBpp &&
+  //         events1?.eventSource?.id === ids.pulseEnergyBpp)
+  //     ) {
+  //       return {
+  //         ...node,
+  //         className: "activeTaxi",
+  //       };
+  //     }
 
-      return node;
-    })
-    .filter(Boolean);
+  //     if (
+  //       (node.id === ids.turnoBpp &&
+  //         events?.eventSource?.id === ids.turnoBpp) ||
+  //       (node.id === ids.turnoBpp && events1?.eventSource?.id === ids.turnoBpp)
+  //     ) {
+  //       return {
+  //         ...node,
+  //         className: "activeLuxeCabs",
+  //       };
+  //     }
+  //     if (
+  //       (node.id === ids.sheruBap &&
+  //         events?.eventSource?.id === ids.sheruBap) ||
+  //       (node.id === ids.sheruBap && events1?.eventSource?.id === ids.sheruBap)
+  //     ) {
+  //       return {
+  //         ...node,
+  //         className: "activeWhatsappMobility",
+  //       };
+  //     }
+  //     if (
+  //       (node.id === ids.pulseEnergyWhatsapp &&
+  //         events?.eventDestination?.id === ids.pulseEnergyWhatsapp) ||
+  //       (node.id === ids.pulseEnergyWhatsapp &&
+  //         events1?.eventDestination?.id === ids.pulseEnergyWhatsapp)
+  //     ) {
+  //       return {
+  //         ...node,
+  //         className: "destMobility",
+  //       };
+  //     }
+  //     if (
+  //       (node.id === ids.pulseEnergyBpp &&
+  //         events?.eventDestination?.id === ids.pulseEnergyBpp) ||
+  //       (node.id === ids.pulseEnergyBpp &&
+  //         events1?.eventDestination?.id === ids.pulseEnergyBpp)
+  //     ) {
+  //       return {
+  //         ...node,
+  //         className: "destTaxi",
+  //       };
+  //     }
+  //     if (
+  //       (node.id === ids.turnoBpp &&
+  //         events?.eventDestination?.id === ids.turnoBpp) ||
+  //       (node.id === ids.turnoBpp &&
+  //         events1?.eventDestination?.id === ids.turnoBpp)
+  //     ) {
+  //       return {
+  //         ...node,
+  //         className: "destLuxeCabs",
+  //       };
+  //     }
+  //     if (
+  //       (node.id === ids.sheruBap &&
+  //         events?.eventDestination?.id === ids.sheruBap) ||
+  //       (node.id === ids.sheruBap &&
+  //         events1?.eventDestination?.id === ids.sheruBap)
+  //     ) {
+  //       return {
+  //         ...node,
+  //         className: "destWhatsappMobility",
+  //       };
+  //     }
+
+  //     return node;
+  //   })
+  //   .filter(Boolean);
 
   return (
     <div className="floatingedges main-container page-content">
       <ReactFlow
-        nodes={updateNodes}
+        // nodes={updateNodes}
+        nodes={initialNodes}
         edges={initialEdge}
         onNodesChange={onNodesChange}
         fitView
