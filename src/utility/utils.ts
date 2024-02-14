@@ -4,6 +4,8 @@ import whatsappMobility from "../assets/whatsappMobility.svg";
 import LuxeCab from "../assets/luxe.svg";
 
 const ids = {
+  // TODO :- to change the IDs to the respective stakeholders
+
   pulseEnergyWhatsapp: "ps-bap-network.becknprotocol.io",
   pulseEnergyBpp: "industry4-bpp",
   gateway: "provider",
