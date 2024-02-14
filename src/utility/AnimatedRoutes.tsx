@@ -25,7 +25,9 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence initial={false}>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<WelcomeToExpCenter />} />
+        {/* TODO :- changed the homepage of the app to fulfill the needs of current demo */}
+        {/* <Route path="/" element={<WelcomeToExpCenter />} /> */}
+        <Route path="/" element={<CustomNodeFlow />} />
         <Route path="/VisualizeAction" element={<VisualizeAction />} />
         <Route path="/ChoiceToDo" element={<ChoiceToDo />} />
         <Route path="/TravelBuddy" element={<TravelBuddy />} />

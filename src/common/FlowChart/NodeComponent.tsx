@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ReactFlow, { useNodesState } from "reactflow";
 import "reactflow/dist/style.css";
@@ -11,12 +11,7 @@ import useInterval from "../MobilityCard/useInterval";
 import { Link } from "react-router-dom";
 import { Modal } from "antd";
 import ErrorModal from "../ErrorModal/ErrorModal";
-
-import io from "socket.io-client";
 import socket from "../../socket";
-// const socket = io(
-//   "https://observer-server-dev.becknprotocol.io/socket"
-// ).connect();
 
 const edgeTypes: any = {
   floating: FloatingEdge,
