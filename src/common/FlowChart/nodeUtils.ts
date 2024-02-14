@@ -1,4 +1,4 @@
-import { Position, MarkerType } from "reactflow";
+import { Position, MarkerType, Edge } from "reactflow";
 import "./index.css";
 import { ids } from "../../utility/utils";
 const getNodeIntersection = (intersectionNode: any, targetNode: any) => {
@@ -68,7 +68,7 @@ export const getEdgeParams = (source: any, target: any) => {
 };
 
 export const createNodesAndEdges = (data: any, data1: any) => {
-  const edges = [];
+  const edges: Edge[] = [];
   const nodes = [];
   // console.log({ data, data1 });
   nodes.push(
@@ -168,7 +168,8 @@ export const createNodesAndEdges = (data: any, data1: any) => {
           //       dataOfEvent?.target?.id === ids.sheruBap
           //     ? "translate(-45px, 4px)"
           //     : " ",
-          strokeWidth: 2,
+          // transform: "translate(41px, 19px)",
+          strokeWidth: 4,
           stroke: "#4498E8",
         },
       }

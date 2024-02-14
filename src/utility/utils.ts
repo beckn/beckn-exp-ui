@@ -10,13 +10,13 @@ const ids = {
   pulseEnergyBpp: "industry4-bpp",
   gateway: "provider",
   sheruBap: "mobilityreferencebap-staging.becknprotocol.io",
-  yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
   turnoBpp: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
+  kazam: "kazam",
+  yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
   searchBroadCast: "mbgw_srch_brdcst",
   mbthSentCatalogue: "mbth_snt_catalogue",
   mblcSentCatalogue: "mblc_snt_catalogue",
   mbgwSentCatalogueBap: "mbgw_sent_ctlg_bap",
-  kazam: "kazam",
 };
 
 const mobilityCardArr = [

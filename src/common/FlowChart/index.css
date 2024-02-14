@@ -702,3 +702,16 @@
     transform: translate(0);
   }
 }
+
+@keyframes drawEdge {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.react-flow__edge-path {
+  fill: #4498e8;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawEdge 5s linear forwards;
+}
