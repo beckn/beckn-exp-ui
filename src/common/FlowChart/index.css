@@ -218,21 +218,20 @@
   background-repeat: no-repeat;
   margin-left: 7px;
 }
+
 .react-flow__node.gateway {
-  border-radius: 50% !important;
-  width: 50px;
-  height: 50px;
+  background: url("../../../public/assets/gateway.svg");
+  margin-left: 7px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black !important;
-  color: #fff;
-  font-weight: 500;
-  font-size: 9px;
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .react-flow__node.activeGateway {
   border-radius: 50% !important;
   width: 40px;

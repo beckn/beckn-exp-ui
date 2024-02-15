@@ -26,6 +26,7 @@ const NodeAsHandleFlow: React.FC = () => {
     events1
   );
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
+  const [actionMessage, setActionMessage] = useState("");
   const { getEvent } = useContext(EventApiContext);
   const [experienceCenterId, setExperienceCenterId] = useState<any>("");
   const [open, setOpen] = useState(false);
@@ -38,7 +39,13 @@ const NodeAsHandleFlow: React.FC = () => {
   useEffect(() => {
     socket.on("telemetry_data", (data) => {
       console.log("telemetry data", data);
-      setTelemetryData(data.data);
+
+      const dataFromRes = data.data;
+
+      setTelemetryData(dataFromRes);
+      setActionMessage(
+        dataFromRes[dataFromRes.length - 1].data.events[0].data.action
+      );
       setEvents(data.data);
     });
 
@@ -49,11 +56,11 @@ const NodeAsHandleFlow: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (eventsRes[0]?.action === "ending ride") {
-      navigate("/WhatWouldYouDoLikeToNext");
-    }
-  }, [eventsRes]);
+  // useEffect(() => {
+  //   if (eventsRes[0]?.action === "ending ride") {
+  //     navigate("/WhatWouldYouDoLikeToNext");
+  //   }
+  // }, [eventsRes]);
 
   // const fetchEvent = async () => {
   //   const res = await getEvent();
@@ -291,7 +298,7 @@ const NodeAsHandleFlow: React.FC = () => {
         edgeTypes={edgeTypes}
       ></ReactFlow>
 
-      <div className="flowFooter">Serch brodcasted</div>
+      <div className="flowFooter">{actionMessage}</div>
 
       {/* <div className="mobilityFooter">
         <div
