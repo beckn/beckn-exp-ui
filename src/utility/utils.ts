@@ -9,7 +9,7 @@ const ids = {
   pulseEnergyWhatsapp: "pulseenergy-bap",
   pulseEnergyBpp: "pulseenergy-bpp",
   gateway: "provider",
-  sheruBap: "mobilityreferencebap-staging.becknprotocol.io",
+  sheruBap: "Sheru-BAP-UEI-Demo",
   turnoBpp: "turno-bpp-prod",
   kazam: "Kazam-BPP",
   yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
