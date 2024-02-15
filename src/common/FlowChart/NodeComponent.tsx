@@ -284,6 +284,9 @@ const NodeAsHandleFlow: React.FC = () => {
         nodes={initialNodes}
         edges={initialEdge}
         onNodesChange={onNodesChange}
+        panOnDrag={false}
+        zoomOnScroll={false}
+        zoomOnPinch={false}
         fitView
         edgeTypes={edgeTypes}
       ></ReactFlow>
