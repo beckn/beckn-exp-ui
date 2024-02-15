@@ -6,12 +6,12 @@ import LuxeCab from "../assets/luxe.svg";
 const ids = {
   // TODO :- to change the IDs to the respective stakeholders
 
-  pulseEnergyWhatsapp: "ps-bap-network.becknprotocol.io",
-  pulseEnergyBpp: "industry4-bpp",
+  pulseEnergyWhatsapp: "pulseenergy-bap",
+  pulseEnergyBpp: "pulseenergy-bpp",
   gateway: "provider",
   sheruBap: "mobilityreferencebap-staging.becknprotocol.io",
-  turnoBpp: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
-  kazam: "kazam",
+  turnoBpp: "turno-bpp-prod",
+  kazam: "Kazam-BPP",
   yatri: "becknify.humbhionline.in/mobility/beckn_open/taxi-staging/bpp",
   searchBroadCast: "mbgw_srch_brdcst",
   mbthSentCatalogue: "mbth_snt_catalogue",

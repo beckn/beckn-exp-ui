@@ -227,7 +227,7 @@
   align-items: center;
   background-color: black !important;
   color: #fff;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 9px;
   background-size: 80% 80%;
   background-position: center;
@@ -713,5 +713,5 @@
   fill: #4498e8;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: drawEdge 5s linear forwards;
+  animation: drawEdge 8s linear forwards;
 }
