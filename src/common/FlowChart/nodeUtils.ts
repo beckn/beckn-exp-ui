@@ -242,6 +242,14 @@ export const getActionConditions = (
   },
   {
     condition:
+      (source === ids.gateway && target === ids.pulseEnergyBpp) ||
+      ids.turnoBpp ||
+      (ids.kazam && action === "search"),
+    message:
+      "User's WhatsApp bot seeks Green Energy charging stations via Beckn Gateway, which broadcasts all available stations.",
+  },
+  {
+    condition:
       (source === ids.pulseEnergyBpp ||
         source === ids.kazam ||
         source === ids.turnoBpp) &&
