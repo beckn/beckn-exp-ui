@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ReactFlow, { useNodesState } from "reactflow";
 import "reactflow/dist/style.css";
 import FloatingEdge from "./FloatingEdge";
-import { createNodesAndEdges } from "./nodeUtils";
+import { createNodesAndEdges, getActionConditions } from "./nodeUtils";
 import { ids } from "../../utility/utils";
 import "./index.css";
 import EventApiContext from "../../context/EventApiContext";
@@ -16,6 +16,16 @@ import socket from "../../socket";
 const edgeTypes: any = {
   floating: FloatingEdge,
 };
+
+function extractEventDetails(event: any) {
+  const context = event.context;
+  const eventData = event.data;
+  return {
+    source: context.source.id || context.source.type,
+    target: context.target.id || context.target.type,
+    action: eventData.action,
+  };
+}
 
 const NodeAsHandleFlow: React.FC = () => {
   const [events, setEvents] = useState<any>([]);
@@ -42,10 +52,24 @@ const NodeAsHandleFlow: React.FC = () => {
 
       const dataFromRes = data.data;
 
+      console.log("dataFromRes", dataFromRes);
+
+      const latestEvent = data.data[data.data.length - 1].data.events[0];
+      const { source, target, action } = extractEventDetails(latestEvent);
+
+      const actionConditions = getActionConditions(source, target, action);
+
+      let actionMessage = "";
+      for (let i = 0; i < actionConditions.length; i++) {
+        if (actionConditions[i].condition) {
+          actionMessage = actionConditions[i].message;
+          break; // Exit the loop once a match is found
+        }
+      }
+      setActionMessage(actionMessage);
+
       setTelemetryData(dataFromRes);
-      setActionMessage(
-        dataFromRes[dataFromRes.length - 1].data.events[0].data.action
-      );
+
       setEvents(data.data);
     });
 

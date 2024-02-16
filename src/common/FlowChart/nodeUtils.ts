@@ -226,3 +226,119 @@ export const createNodesAndEdges = (data: any, data1: any) => {
 
   return { nodes, edges };
 };
+
+export const getActionConditions = (
+  source: string,
+  target: string,
+  action: string
+) => [
+  {
+    condition:
+      source === ids.pulseEnergyWhatsapp &&
+      target === ids.gateway &&
+      action === "search",
+    message:
+      "User's WhatsApp bot seeks Green Energy charging stations via Beckn Gateway, which broadcasts all available stations.",
+  },
+  {
+    condition:
+      (source === ids.pulseEnergyBpp ||
+        source === ids.kazam ||
+        source === ids.turnoBpp) &&
+      target === ids.pulseEnergyWhatsapp &&
+      action === "on_search",
+    message:
+      "Pulse Energy provides a list of nearby conventional and Green Energy charging stations.",
+  },
+  {
+    condition:
+      source === ids.pulseEnergyWhatsapp &&
+      target === ids.pulseEnergyBpp &&
+      action === "select",
+    message:
+      "User chooses a Green Energy station, selects per unit price, and confirms payment details.",
+  },
+  {
+    condition:
+      source === ids.pulseEnergyBpp &&
+      target === ids.pulseEnergyWhatsapp &&
+      action === "on_select",
+    message:
+      "Pulse Energy returns an order summary before confirming the order.",
+  },
+  {
+    condition:
+      source === ids.pulseEnergyWhatsapp &&
+      target === ids.pulseEnergyBpp &&
+      action === "confirm",
+    message: "User pays, connects the car, and confirms on the bot.",
+  },
+  {
+    condition:
+      source === ids.pulseEnergyBpp &&
+      target === ids.pulseEnergyWhatsapp &&
+      action === "on_confirm",
+    message:
+      "Pulse Energy receives the charging request and starts charging, creating a Demand Note for sale.",
+  },
+  {
+    condition:
+      source === ids.sheruBap &&
+      target === ids.pulseEnergyBpp &&
+      action === "init",
+    message:
+      "Sheru looks for and requests to purchase Demand Notes from Pulse Energy.",
+  },
+  {
+    condition:
+      source === ids.pulseEnergyBpp &&
+      target === ids.sheruBap &&
+      action === "on_init",
+    message:
+      "Pulse Energy confirms availability to sell the Demand Note to Sheru.",
+  },
+  {
+    condition:
+      source === ids.sheruBap &&
+      target === ids.pulseEnergyBpp &&
+      action === "confirm",
+    message: "Sheru confirms the intent to purchase Demand Notes.",
+  },
+  {
+    condition:
+      source === ids.pulseEnergyBpp &&
+      target === ids.sheruBap &&
+      action === "on_confirm",
+    message: "Pulse Energy hands over the Demand Notes to Sheru.",
+  },
+  {
+    condition:
+      source === ids.sheruBap && target === ids.turnoBpp && action === "init",
+    message:
+      "Sheru requests Green Energy supply from Turno, confirming held Demand Notes.",
+  },
+  {
+    condition:
+      source === ids.turnoBpp &&
+      target === ids.sheruBap &&
+      action === "on_init",
+    message:
+      "Turno confirms the availability of supply from its Green Energy bank.",
+  },
+  {
+    condition:
+      source === ids.sheruBap &&
+      target === ids.turnoBpp &&
+      action === "confirm",
+    message:
+      "Sheru confirms the unit number and shares Demand Notes after payment.",
+  },
+  {
+    condition:
+      source === ids.turnoBpp &&
+      target === ids.sheruBap &&
+      action === "on_confirm",
+    message:
+      "Turno confirms payment and prepares to push Green Energy into the power grid.",
+  },
+];
